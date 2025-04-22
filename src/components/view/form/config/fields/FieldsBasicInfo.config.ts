@@ -1,7 +1,7 @@
-import { BasicInfo } from "../../../../../api/types";
+import { UserBasicInfo } from "../../../../../api/types";
 import { FormField } from "../../common/field/ListGenericFields";
 
-const FieldsBasicInfo: FormField<BasicInfo>[] = [
+const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
     {
         type: "text",
         name: "firstName",
@@ -43,7 +43,7 @@ const FieldsBasicInfo: FormField<BasicInfo>[] = [
     }
 ];
 
-export const getEmptyBasicInfo = (): BasicInfo => ({
+export const getEmptyBasicInfo = (): UserBasicInfo => ({
     firstName: "",
     lastName: "",
     email: "",

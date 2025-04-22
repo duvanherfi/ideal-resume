@@ -1,5 +1,5 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import useResumeData from "../../../../api/hooks/useResumeData";
+import useUserData from "../../../../api/hooks/useUserData";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";
 import mockedResume from "../../../../mock/mockedResume";
@@ -14,7 +14,7 @@ interface TemplatePreviewProps {
 
 const TemplatePreview = (props: TemplatePreviewProps) => {
     const { templateToPreview, selectCurrentTemplate } = props;
-    const data = useResumeData();
+    const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
     const { defaultLabels } = useResumeLabels();

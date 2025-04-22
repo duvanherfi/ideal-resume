@@ -1,11 +1,11 @@
 import { UseGenericFormType } from "../../../../../hooks/useGenericForm";
-import { ResumeData } from "../../../../../api/types";
+import { UserData } from "../../../../../api/types";
 import Icons from "../../../../ui/icons/Icons";
 import GenericItem from "../items/GenericItem";
 
 interface AddedItemsListProps<T extends { id: string }> {
     title: string;
-    dataKey: keyof ResumeData;
+    dataKey: keyof UserData;
     form: UseGenericFormType<T>;
 }
 

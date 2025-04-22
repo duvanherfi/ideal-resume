@@ -1,6 +1,6 @@
 import useGenericForm from "../../../../../hooks/useGenericForm";
 import useTranslations from "../../../../../hooks/useTranslations";
-import { ResumeData } from "../../../../../api/types";
+import { UserData } from "../../../../../api/types";
 import GlassCard from "../../../../ui/GlassCard";
 import ListGenericFields, { FormField } from "../field/ListGenericFields";
 import ListItemsAdded from "./ListItemsAdded";
@@ -8,7 +8,7 @@ import ListItemsAdded from "./ListItemsAdded";
 export interface FormGenericProps<T extends { id: string }> {
     title: string;
     fields: FormField<T>[];
-    dataKey: keyof ResumeData;
+    dataKey: keyof UserData;
     emptyItem: () => T;
     isValid: (item: T) => boolean;
 }

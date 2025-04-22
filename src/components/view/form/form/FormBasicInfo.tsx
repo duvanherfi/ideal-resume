@@ -1,5 +1,5 @@
 import React from "react";
-import useResumeData from "../../../../api/hooks/useResumeData";
+import useUserData from "../../../../api/hooks/useUserData";
 import useTranslations from "../../../../hooks/useTranslations";
 import GlassCard from "../../../ui/GlassCard";
 import ImageUpload from "../../../ui/form/ImageUpload";
@@ -8,7 +8,7 @@ import FieldsBasicInfo from "../config/fields/FieldsBasicInfo.config";
 
 const FormBasicInfo: React.FC = () => {
   const { t } = useTranslations();
-  const data = useResumeData();
+  const data = useUserData();
 
   const handleImageChange = (imageData: string) => {
     data.update({ profilePhoto: imageData });

@@ -1,6 +1,6 @@
 import TemplateProps from "../common/TemplateProps";
 
-export interface BasicInfo {
+export interface UserBasicInfo {
   firstName: string;
   lastName: string;
   dateOfBirth: string;
@@ -47,7 +47,7 @@ export interface Language {
   proficiency: "Beginner" | "Intermediate" | "Advanced" | "Fluent" | "Native";
 }
 
-export interface ResumeData extends BasicInfo {
+export interface UserData extends UserBasicInfo {
   workExperiences: WorkExperience[];
   education: Education[];
   projects: Project[];

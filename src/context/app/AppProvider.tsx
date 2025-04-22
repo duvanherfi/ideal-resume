@@ -1,5 +1,5 @@
 import React from "react";
-import ResumeDataProvider from "../../api/context/resume-data/ResumeDataProvider";
+import UserDataProvider from "../../api/context/user-data/UserDataProvider";
 import ResumeLabelProvider from "../../api/context/resume-labels/ResumeLabelsProvider";
 import ResumeTemplateProvider from "../../api/context/resume-template/ResumeTemplateProvider";
 import ResumeThemeProvider from "../../api/context/resume-theme/ResumeThemeProvider";
@@ -12,7 +12,7 @@ interface AppProviderProps {
 const AppProvider = (props: AppProviderProps) => {
     return (
         <LanguageProvider>
-            <ResumeDataProvider>
+            <UserDataProvider>
                 <ResumeLabelProvider>
                     <ResumeTemplateProvider>
                         <ResumeThemeProvider>
@@ -20,7 +20,7 @@ const AppProvider = (props: AppProviderProps) => {
                         </ResumeThemeProvider>
                     </ResumeTemplateProvider>
                 </ResumeLabelProvider>
-            </ResumeDataProvider>
+            </UserDataProvider>
         </LanguageProvider>
     );
 }

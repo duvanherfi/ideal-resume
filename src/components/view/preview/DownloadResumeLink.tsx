@@ -1,14 +1,14 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import useTranslations from "../../../hooks/useTranslations";
 import Button from "../../ui/buttons/Button";
-import useResumeData from "../../../api/hooks/useResumeData";
+import useUserData from "../../../api/hooks/useUserData";
 import useResumeTheme from "../../../api/hooks/useResumeTheme";
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import useResumeLabels from "../../../api/hooks/useResumeLabels";
 
 const DownloadResumeLink = () => {
     const { t } = useTranslations();
-    const data = useResumeData();
+    const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
     const { labels } = useResumeLabels();

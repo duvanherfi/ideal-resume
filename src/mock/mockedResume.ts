@@ -1,4 +1,4 @@
-import { ResumeData } from "../api/types";
+import { UserData } from "../api/types";
 
 export default {
   firstName: "Juan",
@@ -104,4 +104,4 @@ export default {
       proficiency: "Intermediate"
     }
   ]
-} as ResumeData;
+} as UserData;

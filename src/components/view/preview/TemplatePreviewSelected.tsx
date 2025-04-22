@@ -1,31 +1,14 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import useResumeData from "../../../api/hooks/useResumeData";
-import useResumeTheme from "../../../api/hooks/useResumeTheme";
-import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
-import { ResumeLabels } from "../../../api/types";
 import useResumeLabels from "../../../api/hooks/useResumeLabels";
-
-const defaultLabels: ResumeLabels = {
-    profileSummary: "About",
-    workExperiences: "Professional Experience",
-    education: "Academic Background",
-    projects: "Projects",
-    skills: "Technical Skills",
-    languages: "Languages",
-    email: "Email",
-    phone: "Phone",
-    location: "Location",
-    lastUpdated: "Last updated",
-    present: "Present"
-};
+import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
+import useResumeTheme from "../../../api/hooks/useResumeTheme";
+import useUserData from "../../../api/hooks/useUserData";
 
 const TemplatePreviewSelected = () => {
-    const data = useResumeData();
+    const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
     const { labels } = useResumeLabels();
-    //const labels = useResumeLabels();
-    //const labels = propsLabels ? mergeData(propsLabels, defaultLabels) : defaultLabels;
 
     return (
         <div className="relative bg-transparent flex-shrink-0 aspect-[1/1.4142]">

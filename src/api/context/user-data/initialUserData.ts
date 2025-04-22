@@ -1,6 +1,6 @@
-import { ResumeData } from "../../types";
+import { UserData } from "../../types";
 
-const initialResumeData: ResumeData = {
+const initialUserData: UserData = {
     firstName: "",
     lastName: "",
     dateOfBirth: "",
@@ -17,4 +17,4 @@ const initialResumeData: ResumeData = {
 };
 
 
-export default initialResumeData;
+export default initialUserData;
