@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --a4-width: 794px;
+  --a4-height: 1123px;
+}
+
+html,
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+/* Contenedor principal del carrusel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wrapper para la previsualización estática */
+.static-preview-wrapper {
+  position: relative;
+  width: calc(var(--a4-width) / 2);
+  height: calc(var(--a4-height) / 2);
+  margin: 0 auto;
+  overflow: hidden;
+  scrollbar-width: none; /* Para Firefox */
+  background-color: white;
+}
+
+.static-preview-wrapper::-webkit-scrollbar {
+  display: none; /* Para Chrome y Safari */
+}
+
+/* Estilo para la previsualización del template */
+.template-preview {
+  width: var(--a4-width);
+  height: var(--a4-height);
+  transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para evitar desbordamiento del contenido */
+.template-preview * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Asegurar que las imágenes mantienen su proporción */
+.template-preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animación para el cambio de slides */
+.carousel-wrapper {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-wrapper.sliding {
+  opacity: 0.7;
+}
+
+/* Estilo para las tarjetas seleccionables */
+.template-card {
+  cursor: pointer;
+}
