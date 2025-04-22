@@ -1,11 +1,8 @@
 import React from "react";
-import Footer from "./components/layout/footer/Footer";
-import Header from "./components/layout/header/Header";
-import Main from "./components/layout/main/Main";
+import ResumeDataProvider from "./api/context/resume-data/ResumeDataProvider";
+import ResumeTemplateProvider from "./api/context/resume-template/ResumeTemplateProvider";
+import { ResumeThemeProvider } from "./api/context/resume-theme/ResumeThemeProvider";
 import LanguageProvider from "./context/language/LanguageProvider";
-import ResumeDataProvider from "./context/resume-data/ResumeDataProvider";
-import ResumeTemplateProvider from "./context/resume-template/ResumeTemplateProvider";
-import { ResumeThemeProvider } from "./context/resume-theme/ResumeThemeProvider";
 import "./styles.css";
 
 interface AppProviderProps {

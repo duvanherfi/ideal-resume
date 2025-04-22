@@ -1,5 +1,5 @@
-import ViewForm from "../../view/ViewForm";
-import ViewTemplatePreview from "../../view/ViewTemplatePreview";
+import ViewForm from "../../view/form/ViewForm";
+import ViewTemplatePreview from "../../view/preview/ViewTemplatePreview";
 
 const DesktopLayout = () => {
     return (

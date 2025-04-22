@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import ResumeDataContext from "../../context/resume-data/ResumeDataContext";
+import ResumeDataContext, { ResumeDataContextType } from "../context/resume-data/ResumeDataContext";
 
-const useResumeData = () => {
+const useResumeData = (): ResumeDataContextType => {
     const context = useContext(ResumeDataContext);
     if (!context) {
         throw new Error("useResumeData must be used within a ResumeDataProvider");

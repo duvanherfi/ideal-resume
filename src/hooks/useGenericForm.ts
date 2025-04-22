@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ResumeData } from "../api/types";
 import useResumeData from "../api/hooks/useResumeData";
 
-export type UseGenericForm<T> = {
+export type UseGenericFormType<T> = {
     current: T;
     items: T[];
     isEditing: boolean;
@@ -19,7 +19,7 @@ interface UseGenericFormProps<T extends { id: string }> {
     emptyItem: () => T;
 }
 
-const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>): UseGenericForm<T> => {
+const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>): UseGenericFormType<T> => {
     const { dataKey, emptyItem } = props;
     const data = useResumeData();
     const [currentItem, setCurrentItem] = useState<T>(emptyItem());

@@ -1,7 +1,11 @@
 import translations from "../locales/translations";
 import useLanguage from "./useLanguage";
 
-const useTranslations = () => {
+type UseTranslationsType = {
+    t: (key: string) => string;
+};
+
+const useTranslations = (): UseTranslationsType => {
     const { lang } = useLanguage();
     
     return {

@@ -1,9 +1,9 @@
-import ViewForm from "../../view/ViewForm";
-import ViewTemplateGallery from "../../view/ViewTemplateGallery";
-import ViewTemplatePreview from "../../view/ViewTemplatePreview";
+import ViewForm from "../../view/form/ViewForm";
+import ViewTemplatePreview from "../../view/preview/ViewTemplatePreview";
 import GlassCard from "../../ui/GlassCard";
 import { Tab } from "../../ui/tabs/TabsContainer";
 import Icons from "../../ui/icons/Icons";
+import ViewGallery from "../../view/gallery/ViewGallery";
 
 const screenTabs: Tab[] = [
   {
@@ -17,7 +17,7 @@ const screenTabs: Tab[] = [
     name: "app.tab.gallery",
     component: (
       <GlassCard className={`bg-white/50 border-primary-500/30 dark:bg-black/60 dark:border-primary-500/20 backdrop-blur-xl rounded-br-lg rounded-bl-lg  shadow-md p-4 w-full mx-auto border`}>
-        <ViewTemplateGallery />
+        <ViewGallery />
       </GlassCard>
     ),
     children: <Icons.Sheet />
