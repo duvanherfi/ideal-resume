@@ -14,7 +14,6 @@ interface FormField<T> {
     required?: boolean;
 }
 
-// Configuración de campos para el formulario de etiquetas
 const FieldsLabels: FormField<ResumeLabels>[] = [
     {
         type: "text",
