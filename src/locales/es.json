@@ -32,7 +32,7 @@
   "form.projects.title": "Proyectos",
   "form.projects.field.name": "Nombre",
   "form.projects.field.link": "Enlace",
-  "form.projects.field.startDate": "Fecha de inicio",
+  "form.projects.field.description": "Fecha de inicio",
   "form.language.field.name": "Idioma",
   "form.language.field.proficiency": "Nivel",
   "form.skills.title": "Habilidades",

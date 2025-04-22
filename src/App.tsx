@@ -1,4 +1,4 @@
-import AppProvider from "./AppProvider";
+import AppProvider from "./context/app/AppProvider";
 import Footer from "./components/layout/footer/Footer";
 import Header from "./components/layout/header/Header";
 import Main from "./components/layout/main/Main";

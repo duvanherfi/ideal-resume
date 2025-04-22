@@ -4,18 +4,20 @@ import Button from "../../ui/buttons/Button";
 import useResumeData from "../../../api/hooks/useResumeData";
 import useResumeTheme from "../../../api/hooks/useResumeTheme";
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
+import useResumeLabels from "../../../api/hooks/useResumeLabels";
 
 const DownloadResumeLink = () => {
     const { t } = useTranslations();
     const data = useResumeData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
-    
+    const { labels } = useResumeLabels();
+
     if (!template.active) return null;
     return (
         <div className="flex self-center">
             <PDFDownloadLink
-                document={<template.active.PDF data={data.get} theme={theme.get || undefined} />}
+                document={<template.active.PDF data={data.get} theme={theme.get || undefined} labels={labels} />}
                 fileName={`${data.get.firstName || 'Resume'}-${data.get.lastName || 'PDF'}.pdf`}
                 className="inline-flex"
             >

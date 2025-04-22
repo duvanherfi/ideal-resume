@@ -4,7 +4,7 @@ import styleBuilder from './TemplateModern.styles';
 import TemplateProps from '../../common/TemplateProps';
 import { WorkExperience, Education, Project, Skill, Language } from '../../types';
 
-const TemplateModern: React.FC<TemplateProps> = ({ data, theme }) => {
+const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------

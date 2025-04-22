@@ -4,7 +4,7 @@ import { Education, Language, Project, Skill, WorkExperience } from '../../types
 import TemplateProps from '../../common/TemplateProps';
 import styleBuilder from './TemplateMinimalist.styles';
 
-const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme }) => {
+const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------

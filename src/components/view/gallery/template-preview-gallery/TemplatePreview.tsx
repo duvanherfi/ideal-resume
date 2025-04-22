@@ -5,6 +5,7 @@ import useResumeTheme from "../../../../api/hooks/useResumeTheme";
 import mockedResume from "../../../../mock/mockedResume";
 import mergeData from "../../../../api/common/dataHelper";
 import { Template } from "../../../../api/types";
+import useResumeLabels from "../../../../api/hooks/useResumeLabels";
 
 interface TemplatePreviewProps {
     selectCurrentTemplate: () => void;
@@ -16,6 +17,7 @@ const TemplatePreview = (props: TemplatePreviewProps) => {
     const data = useResumeData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
+    const { defaultLabels } = useResumeLabels();
     const isActive = templateToPreview.id === template.active?.id;
     const templateCardClasses = `${isActive
         ? "border-4 border-b-primary-700 border-t-primary-500 border-r-primary-600 border-l-accent-300 dark:border-b-accent-700 dark:border-t-accent-500 dark:border-r-accent-600 dark:border-l-accent-400 rounded-md"
@@ -38,7 +40,7 @@ const TemplatePreview = (props: TemplatePreviewProps) => {
                 </button>
                 <div className="h-full w-full">
                     <PDFViewer width="100%" height="100%" style={{ border: 'none', overflow: "hidden" }} showToolbar={false}>
-                        <templateToPreview.PDF data={mockedResume} theme={theme.get ?? undefined} />
+                        <templateToPreview.PDF data={mockedResume} theme={theme.get ?? undefined} labels={defaultLabels} />
                     </PDFViewer>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import { Education } from "../../../../../../api/types";
+import ItemTitle from "../common/ItemTitle";
 import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
 
 const EducationItem = (props: FormAddedItemGenericProps<Education>) => {
@@ -6,7 +7,7 @@ const EducationItem = (props: FormAddedItemGenericProps<Education>) => {
   return (
     <FormAddedItem {...props}>
       <div>
-        <h4 className="font-medium text-secondary-900 dark:text-secondary-100">{item.degree}</h4>
+        <ItemTitle>{item.degree}</ItemTitle>
         <p className="text-xs md:text-sm text-secondary-600 dark:text-secondary-200">{item.institution}</p>
         <p className="text-xs md:text-sm text-secondary-500 dark:text-secondary-300">
           {new Date(item.startDate).toLocaleDateString()} -

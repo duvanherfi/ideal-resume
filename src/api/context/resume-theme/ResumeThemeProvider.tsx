@@ -8,7 +8,7 @@ interface ResumeThemeProviderProps {
   defaultTheme?: TemplateTheme | null;
 }
 
-export const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, defaultTheme = initialTheme }) => {
+const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, defaultTheme = initialTheme }) => {
   const [theme, setTheme] = useState<TemplateTheme | null>(defaultTheme);
 
   const changeProperty = (property: keyof TemplateTheme, value: string) => {
@@ -30,3 +30,5 @@ export const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ childr
     </ResumeThemeContext.Provider>
   );
 };
+
+export default ResumeThemeProvider;

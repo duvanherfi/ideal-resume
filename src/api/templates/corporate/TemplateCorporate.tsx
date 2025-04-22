@@ -1,25 +1,10 @@
 import { Document, Image, Link, Page, Text, View } from '@react-pdf/renderer';
 import React from 'react';
-import { Education, Language, Project, Skill, WorkExperience } from '../../types';
 import TemplateProps from '../../common/TemplateProps';
+import { Education, Language, Project, Skill, WorkExperience } from '../../types';
 import styleBuilder from './TemplateCorporate.styles';
 
-// Define labels with default values
-const labels = {
-    about: "About",
-    experience: "Professional Experience",
-    education: "Academic Background",
-    projects: "Key Projects",
-    skills: "Technical Skills",
-    languages: "Languages",
-    email: "Email",
-    phone: "Phone",
-    location: "Location",
-    lastUpdated: "Last updated",
-    present: "Present"
-};
-
-const TemplateCorporate: React.FC<TemplateProps> = ({ data, theme }) => {
+const TemplateCorporate: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------
@@ -74,7 +59,7 @@ const TemplateCorporate: React.FC<TemplateProps> = ({ data, theme }) => {
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    {labels.about}
+                    {labels.profileSummary}
                 </Text>
                 <View style={styles.sectionHeaderLine} />
             </View>
@@ -101,7 +86,7 @@ const TemplateCorporate: React.FC<TemplateProps> = ({ data, theme }) => {
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    {labels.experience}
+                    {labels.workExperiences}
                 </Text>
                 <View style={styles.sectionHeaderLine} />
             </View>

@@ -1,4 +1,6 @@
 import { Project } from "../../../../../../api/types";
+import ItemDescription from "../common/ItemDescription";
+import ItemTitle from "../common/ItemTitle";
 import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
 
 const ProjectItem = (props: FormAddedItemGenericProps<Project>) => {
@@ -6,7 +8,7 @@ const ProjectItem = (props: FormAddedItemGenericProps<Project>) => {
   return (
     <FormAddedItem {...props}>
       <div>
-        <h4 className="font-medium text-secondary-900 dark:text-secondary-100">{item.name}</h4>
+        <ItemTitle>{item.name}</ItemTitle>
         {item.link && (
           <a
             href={item.link}
@@ -17,7 +19,7 @@ const ProjectItem = (props: FormAddedItemGenericProps<Project>) => {
             {item.link}
           </a>
         )}
-        <p className="text-xs md:text-sm mt-1 text-secondary-600 dark:text-secondary-200">{item.description}</p>
+        <ItemDescription>{item.description}</ItemDescription>
       </div>
     </FormAddedItem>
   );

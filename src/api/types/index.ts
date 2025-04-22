@@ -62,6 +62,11 @@ export interface ResumeLabels {
   projects?: string;
   skills?: string;
   languages?: string;
+  email?: string;
+  phone?: string;
+  location?: string;
+  lastUpdated?: string;
+  present?: string;
 };
 
 export interface Template {

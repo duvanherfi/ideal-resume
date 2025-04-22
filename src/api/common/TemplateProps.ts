@@ -3,7 +3,7 @@ import TemplateTheme from "./TemplateTheme";
 
  interface TemplateProps {
     data: ResumeData;
-    labels?: ResumeLabels;
+    labels: ResumeLabels;
     theme?: TemplateTheme;
 }
 

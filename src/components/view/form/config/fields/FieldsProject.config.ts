@@ -18,7 +18,7 @@ const FieldsProject: FormField<Project>[] = [
   {
     type: "textarea",
     name: "description",
-    label: "form.projects.field.startDate",
+    label: "form.projects.field.description",
   },
 ];
 
