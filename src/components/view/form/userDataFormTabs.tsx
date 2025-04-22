@@ -5,7 +5,7 @@ import FormWorkExperience from "./form/FormWorkExperience";
 import FormProjects from "./form/FormProjects";
 import FormSkills from "./form/FormSkills";
 
-const formTabs: Tab[] = [
+const userDataFormTabs: Tab[] = [
     {
         id: "basicInfo",
         name: "form.basic.title",
@@ -33,4 +33,4 @@ const formTabs: Tab[] = [
     },
 ];
 
-export default formTabs;
+export default userDataFormTabs;

@@ -6,11 +6,10 @@ const MobileLayout = () => {
     const template = useResumeTemplate();
 
     return (
-        <div className="py-8 2xl:py-16 min-h-screen 2xl:hidden">
+        <div className="min-h-screen xl:hidden">
             <TabsContainer
                 items={screenTabs.filter(tab => !(tab.id === "preview" && !template.active))}
                 defaultIndex={0}
-                className="mt-8"
                 contentClassName=""
                 animationDuration={300}
                 slideDirection="right"
