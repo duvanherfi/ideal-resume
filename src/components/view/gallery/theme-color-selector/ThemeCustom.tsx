@@ -21,7 +21,7 @@ const CustomTheme = () => {
                     aria-label="Select primary color"
                 />
                 {theme.get?.primary &&
-                    <ThemeColorBadge suggestedTheme={{ name: theme.get?.primary, value: { primary: theme.get?.primary ?? '' } }} />}
+                    <ThemeColorBadge {...{ name: theme.get?.primary, value: { primary: theme.get?.primary ?? '' } }} />}
             </div>
         </div>
     );

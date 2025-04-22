@@ -1,6 +1,6 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
-import TemplateTheme from '../common/TemplateTheme';
-import { darkenHexColor, lightenHexColor } from '../common/templateHelper';
+import { darkenHexColor, lightenHexColor } from '../../common/templateHelper';
+import TemplateTheme from '../../common/TemplateTheme';
 
 Font.register({
     family: 'Open Sans',

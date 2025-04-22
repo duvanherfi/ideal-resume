@@ -1,7 +1,7 @@
 import React, { ReactNode, useMemo, useState } from "react";
-import TemplateTheme from "../../api/common/TemplateTheme";
 import ResumeThemeContext, { ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";
+import TemplateTheme from "../../common/TemplateTheme";
 
 interface ResumeThemeProviderProps {
   children: ReactNode;

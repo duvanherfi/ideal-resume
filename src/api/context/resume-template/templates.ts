@@ -1,7 +1,7 @@
 import TemplateCorporate from "../../templates/corporate/TemplateCorporate";
 import TemplateElegant from "../../templates/elegant/TemplateElegant";
 import TemplateMinimalist from "../../templates/minimalist/TemplateMinimalist";
-import TemplateModern from "../../api/modern/TemplateModern";
+import TemplateModern from "../../templates/modern/TemplateModern";
 import { Template } from "../../types";
 
 const templates: Template[] = [
