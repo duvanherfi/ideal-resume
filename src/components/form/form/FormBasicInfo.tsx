@@ -1,5 +1,5 @@
 import React from "react";
-import useResumeData from "../../../hooks/useResumeData";
+import useResumeData from "../../../api/hooks/useResumeData";
 import useTranslations from "../../../hooks/useTranslations";
 import GlassCard from "../../ui/GlassCard";
 import ImageUpload from "../../ui/form/ImageUpload";

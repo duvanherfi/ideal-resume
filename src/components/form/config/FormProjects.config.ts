@@ -1,4 +1,4 @@
-import { Project } from "../../../types";
+import { Project } from "../../../api/types";
 import { FormGenericProps } from "../common/form/FormGeneric";
 import FieldsProject, { getEmptyProject } from "./fields/FieldsProject.config";
 

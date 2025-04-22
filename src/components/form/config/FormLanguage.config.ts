@@ -1,4 +1,4 @@
-import { Language } from "../../../types";
+import { Language } from "../../../api/types";
 import { FormGenericProps } from "../common/form/FormGeneric";
 import FieldsLanguage, { getEmptyLanguage } from "./fields/FieldsLanguage.config";
 

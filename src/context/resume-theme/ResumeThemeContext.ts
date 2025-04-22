@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import TemplateTheme from "../../templates/common/TemplateTheme";
+import TemplateTheme from "../../api/common/TemplateTheme";
 
 export interface ResumeThemeContextType {
     get: TemplateTheme | null;

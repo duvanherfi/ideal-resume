@@ -1,4 +1,4 @@
-import useResumeTheme from "../../../hooks/useResumeTheme";
+import useResumeTheme from "../../../api/hooks/useResumeTheme";
 import useTranslations from "../../../hooks/useTranslations";
 import ColorThemeBadge from "./ThemeColorBadge";
 

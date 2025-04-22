@@ -1,5 +1,5 @@
 import React from "react";
-import { WorkExperience } from "../../../types";
+import { WorkExperience } from "../../../api/types";
 import FormGeneric from "../common/form/FormGeneric";
 import FormExperienceConfig from "../config/FormExperience.config";
 

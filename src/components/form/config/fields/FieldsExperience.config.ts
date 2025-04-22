@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { WorkExperience } from "../../../../types";
+import { WorkExperience } from "../../../../api/types";
 import { FormField } from "../../common/field/ListGenericFields";
 
 const FieldsExperience: FormField<WorkExperience>[] = [

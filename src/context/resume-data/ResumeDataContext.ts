@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ResumeData } from "../../types";
+import { ResumeData } from "../../api/types";
 
 export interface ResumeDataContextType {
   get: ResumeData;

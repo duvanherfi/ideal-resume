@@ -1,4 +1,4 @@
-import { Skill } from "../../../types";
+import { Skill } from "../../../api/types";
 import { FormGenericProps } from "../common/form/FormGeneric";
 import FieldsSkills, { getEmptySkill } from "./fields/FieldsSkills.config";
 

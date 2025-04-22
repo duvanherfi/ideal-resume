@@ -1,4 +1,4 @@
-import { Project } from "../../../../../types";
+import { Project } from "../../../../../api/types";
 import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
 
 const ProjectItem = (props: FormAddedItemGenericProps<Project>) => {

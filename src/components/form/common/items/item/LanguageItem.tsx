@@ -1,4 +1,4 @@
-import { Language } from "../../../../../types";
+import { Language } from "../../../../../api/types";
 import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
 
 const LanguageItem = (props: FormAddedItemGenericProps<Language>) => {

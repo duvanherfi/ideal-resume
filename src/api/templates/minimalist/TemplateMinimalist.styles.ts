@@ -1,5 +1,5 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
-import TemplateTheme from '../common/TemplateTheme';
+import TemplateTheme from '../../common/TemplateTheme';
 
 Font.register({
     family: 'Roboto',

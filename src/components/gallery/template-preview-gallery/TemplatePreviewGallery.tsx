@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useResumeTemplate from "../../../hooks/useResumeTemplate";
+import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import useTranslations from "../../../hooks/useTranslations";
 import ScrollButton from "../../ui/buttons/ScrollButton";
 import TemplatePreview from "./TemplatePreview";

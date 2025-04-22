@@ -1,4 +1,4 @@
-import TemplateProps from "../templates/common/TemplateProps";
+import TemplateProps from "../common/TemplateProps";
 
 export interface BasicInfo {
   firstName: string;

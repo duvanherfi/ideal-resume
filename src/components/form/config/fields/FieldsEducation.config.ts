@@ -1,4 +1,4 @@
-import { Education } from "../../../../types";
+import { Education } from "../../../../api/types";
 import { v4 as uuidv4 } from "uuid";
 import { FormField } from "../../common/field/ListGenericFields";
 

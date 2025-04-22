@@ -1,10 +1,25 @@
 import { Document, Image, Link, Page, Text, View } from '@react-pdf/renderer';
 import React from 'react';
 import { Education, Language, Project, Skill, WorkExperience } from '../../types';
-import TemplateProps from '../common/TemplateProps';
-import styleBuilder from './TemplateElegant.styles';
+import TemplateProps from '../../common/TemplateProps';
+import styleBuilder from './TemplateCorporate.styles';
 
-const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
+// Define labels with default values
+const labels = {
+    about: "About",
+    experience: "Professional Experience",
+    education: "Academic Background",
+    projects: "Key Projects",
+    skills: "Technical Skills",
+    languages: "Languages",
+    email: "Email",
+    phone: "Phone",
+    location: "Location",
+    lastUpdated: "Last updated",
+    present: "Present"
+};
+
+const TemplateCorporate: React.FC<TemplateProps> = ({ data, theme }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------
@@ -24,39 +39,44 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
                     <Image src={data.profilePhoto} style={styles.profilePhoto} />
                 )}
             </View>
-            <View style={styles.divider} />
+
         </View>
     );
 
     const ContactSection = () => (
         <View style={styles.contactContainer}>
-            <View style={styles.contactGroup}>
-                <View style={styles.contactItem}>
-                    <Text style={styles.contactLabel}>✉</Text>
-                    <Text style={styles.contactValue}>{data.email}</Text>
-                </View>
-                <View style={styles.contactItem}>
-                    <Text style={styles.contactLabel}>☎</Text>
-                    <Text style={styles.contactValue}>{data.phone}</Text>
-                </View>
+            <View style={styles.contactItem}>
+                <Text style={styles.contactLabel}>
+                    {labels.email}:
+                </Text>
+                <Text style={styles.contactValue}>{data.email}</Text>
             </View>
-            <View style={styles.contactGroup}>
-                <View style={styles.contactItem}>
-                    <Text style={styles.contactLabel}>⌂</Text>
-                    <Text style={styles.contactValue}>{data.address}</Text>
-                </View>
+            <View style={styles.contactDivider} />
+            <View style={styles.contactItem}>
+                <Text style={styles.contactLabel}>
+                    {labels.phone}:
+                </Text>
+                <Text style={styles.contactValue}>{data.phone}</Text>
+            </View>
+            <View style={styles.contactDivider} />
+            <View style={styles.contactItem}>
+                <Text style={styles.contactLabel}>
+                    {labels.location}:
+                </Text>
+                <Text style={styles.contactValue}>{data.address}</Text>
             </View>
         </View>
     );
 
     //-----------------------------------
-    // Profile Summary
+    // About section
     const ProfileSummary = () => (
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    Professional Profile
+                    {labels.about}
                 </Text>
+                <View style={styles.sectionHeaderLine} />
             </View>
             <Text style={styles.summaryText}>{data.profileSummary}</Text>
         </View>
@@ -66,33 +86,28 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
     // Work Experience
     const ExperienceItem = (exp: WorkExperience) => (
         <View style={styles.experienceItem}>
-            <View style={styles.timelineColumn}>
-                <View style={styles.timelineDot} />
-                <View style={styles.timelineLine} />
-                <View style={styles.dateContainer}>
-                    <Text style={styles.dateText}>{exp.startDate}</Text>
-                    <Text style={styles.dateText}>-</Text>
-                    <Text style={styles.dateText}>{exp.endDate || 'Present'}</Text>
-                </View>
-            </View>
-            <View style={styles.contentColumn}>
-                <Text style={styles.experienceRole}>{exp.role}</Text>
+            <View style={styles.experienceHeader}>
                 <Text style={styles.experienceCompany}>{exp.company}</Text>
-                <Text style={styles.experienceDescription}>{exp.description}</Text>
+                <Text style={styles.dateContainer}>
+                    {exp.startDate} - {exp.endDate === 'Present' ? labels.present : exp.endDate}
+                </Text>
             </View>
+            <Text style={styles.experienceRole}>{exp.role}</Text>
+            <Text style={styles.experienceDescription}>{exp.description}</Text>
         </View>
     );
 
     const WorkExperienceSection = () => (
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Work Experience</Text>
+                <Text style={styles.sectionTitle}>
+                    {labels.experience}
+                </Text>
+                <View style={styles.sectionHeaderLine} />
             </View>
-            <View style={styles.timelineContainer}>
-                {data.workExperiences.map((exp, index) => (
-                    <ExperienceItem key={exp.id || index} {...exp} />
-                ))}
-            </View>
+            {data.workExperiences.map((exp, index) => (
+                <ExperienceItem key={exp.id || index} {...exp} />
+            ))}
         </View>
     );
 
@@ -100,19 +115,11 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
     // Education
     const EducationItem = (edu: Education) => (
         <View style={styles.educationItem}>
-            <View style={styles.timelineColumn}>
-                <View style={styles.timelineDot} />
-                <View style={styles.timelineLine} />
-                <View style={styles.dateContainer}>
-                    <Text style={styles.dateText}>{edu.startDate}</Text>
-                    <Text style={styles.dateText}>-</Text>
-                    <Text style={styles.dateText}>{edu.endDate || 'Present'}</Text>
-                </View>
-            </View>
-            <View style={styles.contentColumn}>
+            <View style={styles.educationContent}>
                 <Text style={styles.educationDegree}>{edu.degree}</Text>
-                <Text style={styles.educationInstitution}>{edu.institution}</Text>
+                <Text style={styles.dateContainer}>{edu.startDate} - {edu.endDate}</Text>
             </View>
+            <Text style={styles.educationInstitution}>{edu.institution}</Text>
         </View>
     );
 
@@ -120,14 +127,13 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    Education
+                    {labels.education}
                 </Text>
+                <View style={styles.sectionHeaderLine} />
             </View>
-            <View style={styles.timelineContainer}>
-                {data.education.map((edu, index) => (
-                    <EducationItem key={edu.id || index} {...edu} />
-                ))}
-            </View>
+            {data.education.map((edu, index) => (
+                <EducationItem key={edu.id || index} {...edu} />
+            ))}
         </View>
     );
 
@@ -135,7 +141,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
     // Projects
     const ProjectItem = (project: Project) => (
         <View style={styles.projectItem}>
-            <Text style={styles.projectTitle}>{project.name}</Text>
+            <Text style={styles.projectName}>{project.name}</Text>
             {project.link && (
                 <Link src={project.link} style={styles.projectLink}>
                     {project.link}
@@ -147,8 +153,10 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
 
     const ProjectsSection = () => (
         <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Projects</Text>
+            <View style={styles.sideSectionHeader}>
+                <Text style={styles.sideSectionTitle}>
+                    {labels.projects}
+                </Text>
             </View>
             <View style={styles.projectsContainer}>
                 {data.projects.map((project, index) => (
@@ -160,14 +168,11 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
 
     //-----------------------------------
     // Skills
-    const SkillLevel = ({ level }: { level: number }) => {
-        const percentage = (level / 5) * 100;
-        return (
-            <View style={styles.skillBarContainer}>
-                <View style={[styles.skillBarFill, { width: `${percentage}%` }]} />
-            </View>
-        );
-    };
+    const SkillLevel = ({ level }: { level: number }) => (
+        <View style={styles.skillBarContainer}>
+            <View style={[styles.skillBarFill, { width: `${level * 20}%` }]} />
+        </View>
+    );
 
     const SkillItem = (skill: Skill) => (
         <View style={styles.skillItem}>
@@ -178,8 +183,10 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
 
     const SkillsSection = () => (
         <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Skills</Text>
+            <View style={styles.sideSectionHeader}>
+                <Text style={styles.sideSectionTitle}>
+                    {labels.skills}
+                </Text>
             </View>
             <View style={styles.skillsContainer}>
                 {data.skills.map((skill, index) => (
@@ -193,20 +200,16 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
     // Languages
     const LanguageItem = (language: Language) => (
         <View style={styles.languageItem}>
-            <View style={styles.languageNameContainer}>
-                <Text style={styles.languageName}>{language.name}</Text>
-            </View>
-            <View style={styles.languageProficiencyContainer}>
-                <Text style={styles.languageProficiency}>{language.proficiency}</Text>
-            </View>
+            <Text style={styles.languageName}>{language.name}</Text>
+            <Text style={styles.languageProficiency}>{language.proficiency}</Text>
         </View>
     );
 
     const LanguagesSection = () => (
         <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>
-                    Languages
+            <View style={styles.sideSectionHeader}>
+                <Text style={styles.sideSectionTitle}>
+                    {labels.languages}
                 </Text>
             </View>
             <View style={styles.languagesContainer}>
@@ -221,9 +224,11 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
     // Layout for side column
     const SideColumn = () => (
         <View style={styles.sideColumn}>
-            {data.projects.length > 0 && <ProjectsSection />}
-            {data.skills.length > 0 && <SkillsSection />}
-            {data.languages.length > 0 && <LanguagesSection />}
+            <View style={styles.sideContent}>
+                {data.projects.length > 0 && <ProjectsSection />}
+                {data.skills.length > 0 && <SkillsSection />}
+                {data.languages.length > 0 && <LanguagesSection />}
+            </View>
         </View>
     );
 
@@ -247,4 +252,4 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme }) => {
     );
 };
 
-export default TemplateElegant;
+export default TemplateCorporate;

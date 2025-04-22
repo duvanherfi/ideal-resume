@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo, useState } from "react";
-import { Template } from "../../types";
+import { Template } from "../../api/types";
 import ResumeTemplateContext, { ResumeTemplateContextType } from "./ResumeTemplateContext";
 import templates from "./templates";
 

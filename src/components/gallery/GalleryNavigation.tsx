@@ -1,4 +1,4 @@
-import { Template } from "../../types";
+import { Template } from "../../api/types";
 import NavigationIndicators from "../ui/NavigationIndicators";
 
 interface GalleryNavigationProps {

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Skill } from "../../../../types";
+import { Skill } from "../../../../api/types";
 import { FormField } from "../../common/field/ListGenericFields";
 
 const FieldsSkills: FormField<Skill>[] = [

@@ -1,4 +1,4 @@
-import { WorkExperience } from "../../../types";
+import { WorkExperience } from "../../../api/types";
 import { FormGenericProps } from "../common/form/FormGeneric";
 import FieldsExperience, { getEmptyExperience } from "./fields/FieldsExperience.config";
 

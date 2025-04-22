@@ -1,4 +1,4 @@
-import { Skill } from "../../../../../types";
+import { Skill } from "../../../../../api/types";
 import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
 
 const SkillItem = (props: FormAddedItemGenericProps<Skill>) => {

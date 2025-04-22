@@ -1,4 +1,4 @@
-import TemplateTheme from "../../templates/common/TemplateTheme";
+import TemplateTheme from "../../api/common/TemplateTheme";
 
 const initialTheme: TemplateTheme = {
     primary: "#3B82F6"

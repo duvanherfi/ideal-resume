@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ResumeDataContext from "../context/resume-data/ResumeDataContext";
+import ResumeDataContext from "../../context/resume-data/ResumeDataContext";
 
 const useResumeData = () => {
     const context = useContext(ResumeDataContext);

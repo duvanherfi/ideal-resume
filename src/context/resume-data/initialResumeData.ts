@@ -1,4 +1,4 @@
-import { ResumeData } from "../../types";
+import { ResumeData } from "../../api/types";
 
 const initialResumeData: ResumeData = {
     firstName: "",

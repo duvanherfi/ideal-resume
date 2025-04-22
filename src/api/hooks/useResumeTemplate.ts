@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ResumeTemplateContext from "../context/resume-template/ResumeTemplateContext";
+import ResumeTemplateContext from "../../context/resume-template/ResumeTemplateContext";
 
 const useResumeTemplate = () => {
     const context = useContext(ResumeTemplateContext);

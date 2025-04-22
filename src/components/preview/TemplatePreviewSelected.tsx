@@ -1,7 +1,7 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import useResumeData from "../../hooks/useResumeData";
-import useResumeTheme from "../../hooks/useResumeTheme";
-import useResumeTemplate from "../../hooks/useResumeTemplate";
+import useResumeData from "../../api/hooks/useResumeData";
+import useResumeTheme from "../../api/hooks/useResumeTheme";
+import useResumeTemplate from "../../api/hooks/useResumeTemplate";
 
 const TemplatePreviewSelected = () => {
     const data = useResumeData();

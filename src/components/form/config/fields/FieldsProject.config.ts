@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Project } from "../../../../types";
+import { Project } from "../../../../api/types";
 import { FormField } from "../../common/field/ListGenericFields";
 
 const FieldsProject: FormField<Project>[] = [

@@ -1,5 +1,5 @@
 import { UseGenericForm } from "../../../../hooks/useGenericForm";
-import { ResumeData } from "../../../../types";
+import { ResumeData } from "../../../../api/types";
 import Icons from "../../../ui/icons/Icons";
 import GenericItem from "../items/GenericItem";
 

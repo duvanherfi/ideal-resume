@@ -1,4 +1,4 @@
-import { ResumeData } from "../types";
+import { ResumeData } from "../api/types";
 
 export default {
   firstName: "Juan",

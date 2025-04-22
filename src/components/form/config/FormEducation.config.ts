@@ -1,4 +1,4 @@
-import { Education } from "../../../types";
+import { Education } from "../../../api/types";
 import { FormGenericProps } from "../common/form/FormGeneric";
 import FieldsEducation, { getEmptyEducation } from "./fields/FieldsEducation.config";
 

@@ -1,6 +1,6 @@
 import useGenericForm from "../../../../hooks/useGenericForm";
 import useTranslations from "../../../../hooks/useTranslations";
-import { ResumeData } from "../../../../types";
+import { ResumeData } from "../../../../api/types";
 import GlassCard from "../../../ui/GlassCard";
 import ListGenericFields, { FormField } from "../field/ListGenericFields";
 import ListItemsAdded from "./ListItemsAdded";

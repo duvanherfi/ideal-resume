@@ -1,4 +1,4 @@
-import { ResumeData, ResumeLabels } from "../../types";
+import { ResumeData, ResumeLabels } from "../types";
 import TemplateTheme from "./TemplateTheme";
 
  interface TemplateProps {

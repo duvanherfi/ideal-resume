@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo, useState } from "react";
-import { ResumeData } from "../../types";
+import { ResumeData } from "../../api/types";
 import initialResumeData from "./initialResumeData";
 import ResumeDataContext, { ResumeDataContextType } from "./ResumeDataContext";
 

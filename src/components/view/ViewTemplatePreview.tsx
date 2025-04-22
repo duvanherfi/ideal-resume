@@ -1,4 +1,4 @@
-import useResumeTemplate from "../../hooks/useResumeTemplate";
+import useResumeTemplate from "../../api/hooks/useResumeTemplate";
 import useTranslations from "../../hooks/useTranslations";
 import DownloadResumeLink from "../preview/DownloadResumeLink";
 import TemplatePreviewSelected from "../preview/TemplatePreviewSelected";

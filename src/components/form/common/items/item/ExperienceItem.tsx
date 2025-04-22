@@ -1,4 +1,4 @@
-import { WorkExperience } from "../../../../../types";
+import { WorkExperience } from "../../../../../api/types";
 import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
 
 const ExperienceItem = (props: FormAddedItemGenericProps<WorkExperience>) => {

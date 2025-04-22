@@ -1,10 +1,10 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import useResumeData from "../../../hooks/useResumeData";
-import useResumeTemplate from "../../../hooks/useResumeTemplate";
-import useResumeTheme from "../../../hooks/useResumeTheme";
+import useResumeData from "../../../api/hooks/useResumeData";
+import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
+import useResumeTheme from "../../../api/hooks/useResumeTheme";
 import mockedResume from "../../../mock/mockedResume";
-import mergeData from "../../../templates/common/dataHelper";
-import { Template } from "../../../types";
+import mergeData from "../../../api/common/dataHelper";
+import { Template } from "../../../api/types";
 
 interface TemplatePreviewProps {
     selectCurrentTemplate: () => void;

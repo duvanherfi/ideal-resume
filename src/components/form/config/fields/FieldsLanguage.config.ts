@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Language } from "../../../../types";
+import { Language } from "../../../../api/types";
 import { FormField } from "../../common/field/ListGenericFields";
 
 const FieldsLanguage: FormField<Language>[] = [

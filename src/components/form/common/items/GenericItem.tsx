@@ -1,4 +1,4 @@
-import { Education, Language, Project, Skill, WorkExperience } from "../../../../types";
+import { Education, Language, Project, Skill, WorkExperience } from "../../../../api/types";
 import EducationItem from "./item/EducationItem";
 import ExperienceItem from "./item/ExperienceItem";
 import ProjectItem from "./item/ProjectsItem";

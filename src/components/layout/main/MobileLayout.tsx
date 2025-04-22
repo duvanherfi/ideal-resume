@@ -1,4 +1,4 @@
-import useResumeTemplate from "../../../hooks/useResumeTemplate";
+import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import TabsContainer from "../../ui/tabs/TabsContainer";
 import screenTabs from "./screenTabs";
 

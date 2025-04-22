@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ResumeData } from "../types";
-import useResumeData from "./useResumeData";
+import { ResumeData } from "../api/types";
+import useResumeData from "../api/hooks/useResumeData";
 
 export type UseGenericForm<T> = {
     current: T;

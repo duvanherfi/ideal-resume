@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo, useState } from "react";
-import TemplateTheme from "../../templates/common/TemplateTheme";
+import TemplateTheme from "../../api/common/TemplateTheme";
 import ResumeThemeContext, { ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";
 

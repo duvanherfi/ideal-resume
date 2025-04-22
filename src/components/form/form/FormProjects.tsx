@@ -1,5 +1,5 @@
 import React from "react";
-import { Project } from "../../../types";
+import { Project } from "../../../api/types";
 import FormGeneric from "../common/form/FormGeneric";
 import FormProjectsConfig from "../config/FormProjects.config";
 

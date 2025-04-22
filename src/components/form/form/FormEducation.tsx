@@ -1,5 +1,5 @@
 import React from "react";
-import { Education } from "../../../types";
+import { Education } from "../../../api/types";
 import FormGeneric from "../common/form/FormGeneric";
 import FormEducationConfig from "../config/FormEducation.config";
 

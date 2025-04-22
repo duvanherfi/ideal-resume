@@ -1,4 +1,4 @@
-import { BasicInfo } from "../../../../types";
+import { BasicInfo } from "../../../../api/types";
 import { FormField } from "../../common/field/ListGenericFields";
 
 const FieldsBasicInfo: FormField<BasicInfo>[] = [
