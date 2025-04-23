@@ -1,18 +1,20 @@
 import { Document, Image, Link, Page, Text, View } from '@react-pdf/renderer';
 import React from 'react';
-import { Education, Language, Project, Skill, WorkExperience } from '../../types';
+import styleBuilder from './TemplateCreative.styles';
 import TemplateProps from '../../common/TemplateProps';
-import styleBuilder from './TemplateMinimalist.styles';
+import { WorkExperience, Education, Project, Skill, Language } from '../../types';
 
-const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) => {
+const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------
     //Header
     const ProfileContainer = () => (
-        <View style={styles.headerMain}>
+        <View style={styles.profileContainer}>
             {data.profilePhoto && (
-                <Image src={data.profilePhoto} style={styles.profilePhoto} />
+                <View style={styles.photoWrapper}>
+                    <Image src={data.profilePhoto} style={styles.profilePhoto} />
+                </View>
             )}
             <View style={styles.nameContainer}>
                 <Text style={styles.name}>{`${data.firstName} ${data.lastName}`}</Text>
@@ -26,7 +28,7 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     );
 
     const ContactSection = () => (
-        <View style={styles.contactGroup}>
+        <View style={styles.contactContainer}>
             <View style={styles.contactItem}>
                 <Text style={styles.contactLabel}>{labels.email}</Text>
                 <Text style={styles.contactValue}>{data.email}</Text>
@@ -45,7 +47,6 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     const ProfileHeader = () => (
         <View style={styles.headerContainer}>
             <ProfileContainer />
-            <View style={styles.divider} />
             <ContactSection />
         </View>
     );
@@ -54,12 +55,10 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     //Profile summary
     const ProfileSummary = () => (
         <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>
-                    {labels.profileSummary}
-                </Text>
+            <View style={styles.sectionTitleContainer}>
+                <Text style={styles.sectionTitle}>{labels.profileSummary}</Text>
             </View>
-            <Text style={styles.summaryText}>{data.profileSummary}</Text>
+            <Text style={styles.experienceDescription}>{data.profileSummary}</Text>
         </View>
     );
 
@@ -67,27 +66,21 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     // Work Experience
     const ExperienceItem = (exp: WorkExperience) => (
         <View style={styles.experienceItem}>
-            <View style={styles.dateContainer}>
-                <Text style={styles.dateText}>{exp.startDate}</Text>
-                <Text style={styles.dateText}>-</Text>
-                <Text style={styles.dateText}>{exp.endDate}</Text>
-            </View>
-            <View style={styles.experienceContent}>
+            <View style={styles.experienceHeader}>
                 <Text style={styles.experienceRole}>{exp.role}</Text>
-                <Text style={styles.experienceCompany}>{exp.company}</Text>
-                <Text style={styles.experienceDescription}>{exp.description}</Text>
+                <Text style={styles.dateText}>{`${exp.startDate} - ${exp.endDate}`}</Text>
             </View>
+            <Text style={styles.experienceCompany}>{exp.company}</Text>
+            <Text style={styles.experienceDescription}>{exp.description}</Text>
         </View>
     );
 
     const WorkExperienceSection = () => (
         <View style={styles.section}>
-            <View style={styles.sectionHeader}>
+            <View style={styles.sectionTitleContainer}>
                 <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
             </View>
-            {data.workExperiences.map((exp, index) => (
-                <ExperienceItem key={exp.id || index} {...exp} />
-            ))}
+            {data.workExperiences.map(exp => <ExperienceItem key={exp.id} {...exp} />)}
         </View>
     );
 
@@ -95,26 +88,20 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     //Education
     const EducationItem = (edu: Education) => (
         <View style={styles.educationItem}>
-            <View style={styles.dateContainer}>
-                <Text style={styles.dateText}>{edu.startDate}</Text>
-                <Text style={styles.dateText}>-</Text>
-                <Text style={styles.dateText}>{edu.endDate}</Text>
-            </View>
-            <View style={styles.educationContent}>
+            <View style={styles.educationHeader}>
                 <Text style={styles.educationDegree}>{edu.degree}</Text>
-                <Text style={styles.educationInstitution}>{edu.institution}</Text>
+                <Text style={styles.dateText}>{`${edu.startDate} - ${edu.endDate}`}</Text>
             </View>
+            <Text style={styles.educationInstitution}>{edu.institution}</Text>
         </View>
     );
 
     const EducationSection = () => (
         <View style={styles.section}>
-            <View style={styles.sectionHeader}>
+            <View style={styles.sectionTitleContainer}>
                 <Text style={styles.sectionTitle}>{labels.education}</Text>
             </View>
-            {data.education.map((edu, index) => (
-                <EducationItem key={edu.id || index} {...edu} />
-            ))}
+            {data.education.map((edu) => <EducationItem key={edu.id} {...edu} />)}
         </View>
     );
 
@@ -132,7 +119,7 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
 
     const ProjectsSection = () => (
         <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
+            <View style={styles.sectionTitleContainer}>
                 <Text style={styles.sectionTitle}>{labels.projects}</Text>
             </View>
             <View style={styles.projectsContainer}>
@@ -145,29 +132,18 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
 
     //-----------------------------------
     //Skills
-    const SkillLevel = ({ level }: { level: number }) => {
-        return (
-            <View style={styles.skillLevelContainer}>
-                {[...Array(5)].map((_, i) => (
-                    <View
-                        key={i}
-                        style={i < level ? styles.skillLevelFilled : styles.skillLevelEmpty}
-                    />
-                ))}
-            </View>
-        );
-    };
-
     const SkillItem = (skill: Skill) => (
         <View style={styles.skillItem}>
             <Text style={styles.skillName}>{skill.name}</Text>
-            <SkillLevel level={skill.level} />
+            <View style={styles.skillLevelContainer}>
+                <View style={[styles.skillLevelBar, { width: `${skill.level * 20}%` }]} />
+            </View>
         </View>
     );
 
     const SkillsSection = () => (
         <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
+            <View style={styles.sectionTitleContainer}>
                 <Text style={styles.sectionTitle}>{labels.skills}</Text>
             </View>
             <View style={styles.skillsContainer}>
@@ -189,7 +165,7 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
 
     const LanguagesSection = () => (
         <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
+            <View style={styles.sectionTitleContainer}>
                 <Text style={styles.sectionTitle}>{labels.languages}</Text>
             </View>
             <View style={styles.languagesContainer}>
@@ -201,32 +177,28 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     );
 
     //-----------------------------------
-    // Layout for side column
-    const SideColumn = () => (
-        <View style={styles.sideColumn}>
-            {data.skills.length > 0 && <SkillsSection />}
-            {data.projects.length > 0 && <ProjectsSection />}
-            {data.languages.length > 0 && <LanguagesSection />}
-        </View>
-    );
-
-    //-----------------------------------
-    //Main Layout
+    // Layout
     return (
         <Document>
             <Page size="A4" style={styles.page}>
-                <ProfileHeader />
-                <View style={styles.content}>
-                    <View style={styles.mainColumn}>
-                        {data.profileSummary && <ProfileSummary />}
-                        {data.workExperiences.length > 0 && <WorkExperienceSection />}
-                        {data.education.length > 0 && <EducationSection />}
+                <View style={styles.mainContent}>
+                    <ProfileHeader />
+                    <View style={styles.contentContainer}>
+                        <View style={styles.leftColumn}>
+                            {data.profileSummary && <ProfileSummary />}
+                            {data.workExperiences.length > 0 && <WorkExperienceSection />}
+                            {data.education.length > 0 && <EducationSection />}
+                        </View>
+                        <View style={styles.rightColumn}>
+                            {data.skills.length > 0 && <SkillsSection />}
+                            {data.languages.length > 0 && <LanguagesSection />}
+                            {data.projects.length > 0 && <ProjectsSection />}
+                        </View>
                     </View>
-                    <SideColumn />
                 </View>
             </Page>
         </Document>
     );
 };
 
-export default TemplateMinimalist;
+export default TemplateCreative;

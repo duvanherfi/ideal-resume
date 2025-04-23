@@ -67,6 +67,7 @@ export interface ResumeLabels {
   location?: string;
   lastUpdated?: string;
   present?: string;
+  address?: string;
 };
 
 export interface Template {

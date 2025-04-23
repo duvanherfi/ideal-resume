@@ -32,17 +32,17 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         <View style={styles.contactContainer}>
             <View style={styles.contactGroup}>
                 <View style={styles.contactItem}>
-                    <Text style={styles.contactLabel}>✉</Text>
+                    <Text style={styles.contactLabel}>{labels.email}</Text>
                     <Text style={styles.contactValue}>{data.email}</Text>
                 </View>
                 <View style={styles.contactItem}>
-                    <Text style={styles.contactLabel}>☎</Text>
+                    <Text style={styles.contactLabel}>{labels.phone}</Text>
                     <Text style={styles.contactValue}>{data.phone}</Text>
                 </View>
             </View>
             <View style={styles.contactGroup}>
                 <View style={styles.contactItem}>
-                    <Text style={styles.contactLabel}>⌂</Text>
+                    <Text style={styles.contactLabel}>{labels.address}</Text>
                     <Text style={styles.contactValue}>{data.address}</Text>
                 </View>
             </View>
@@ -55,7 +55,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    Professional Profile
+                    {labels.profileSummary}
                 </Text>
             </View>
             <Text style={styles.summaryText}>{data.profileSummary}</Text>
@@ -72,7 +72,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
                 <View style={styles.dateContainer}>
                     <Text style={styles.dateText}>{exp.startDate}</Text>
                     <Text style={styles.dateText}>-</Text>
-                    <Text style={styles.dateText}>{exp.endDate || 'Present'}</Text>
+                    <Text style={styles.dateText}>{exp.endDate || labels.present}</Text>
                 </View>
             </View>
             <View style={styles.contentColumn}>
@@ -86,7 +86,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const WorkExperienceSection = () => (
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Work Experience</Text>
+                <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
             </View>
             <View style={styles.timelineContainer}>
                 {data.workExperiences.map((exp, index) => (
@@ -106,7 +106,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
                 <View style={styles.dateContainer}>
                     <Text style={styles.dateText}>{edu.startDate}</Text>
                     <Text style={styles.dateText}>-</Text>
-                    <Text style={styles.dateText}>{edu.endDate || 'Present'}</Text>
+                    <Text style={styles.dateText}>{edu.endDate || labels.present}</Text>
                 </View>
             </View>
             <View style={styles.contentColumn}>
@@ -120,7 +120,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    Education
+                    {labels.education}
                 </Text>
             </View>
             <View style={styles.timelineContainer}>
@@ -148,7 +148,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const ProjectsSection = () => (
         <View style={styles.sideSection}>
             <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Projects</Text>
+                <Text style={styles.sectionTitle}>{labels.projects}</Text>
             </View>
             <View style={styles.projectsContainer}>
                 {data.projects.map((project, index) => (
@@ -179,7 +179,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const SkillsSection = () => (
         <View style={styles.sideSection}>
             <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>Skills</Text>
+                <Text style={styles.sectionTitle}>{labels.skills}</Text>
             </View>
             <View style={styles.skillsContainer}>
                 {data.skills.map((skill, index) => (
@@ -206,7 +206,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         <View style={styles.sideSection}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>
-                    Languages
+                    {labels.languages}
                 </Text>
             </View>
             <View style={styles.languagesContainer}>

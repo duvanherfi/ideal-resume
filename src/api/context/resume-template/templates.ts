@@ -1,4 +1,5 @@
 import TemplateCorporate from "../../templates/corporate/TemplateCorporate";
+import TemplateCreative from "../../templates/creative/TemplateCreative";
 import TemplateElegant from "../../templates/elegant/TemplateElegant";
 import TemplateMinimalist from "../../templates/minimalist/TemplateMinimalist";
 import TemplateModern from "../../templates/modern/TemplateModern";
@@ -24,6 +25,11 @@ const templates: Template[] = [
         id: "elegant",
         name: "Elegant",
         PDF: TemplateElegant,
+    },
+    {
+        id: "creative",
+        name: "Creative",
+        PDF: TemplateCreative,
     },
 ];
 

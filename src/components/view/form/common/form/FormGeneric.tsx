@@ -20,7 +20,7 @@ const FormGeneric = <T extends { id: string }>(props: FormGenericProps<T>) => {
 
     return (
         <div className="space-y-8 w-screen md:w-full">
-            <GlassCard className={`bg-accent-100/50 border-accent-500/30 dark:bg-accent-900/30 dark:border-accent-500/20 backdrop-blur-xl rounded-br-lg rounded-bl-lg  shadow-md p-4 w-full mx-auto border`}>
+            <GlassCard className={`bg-primary-200/50 dark:bg-primary-900/30 border-accent-500/30 dark:border-accent-500/20 backdrop-blur-xl rounded-br-lg rounded-bl-lg  shadow-md p-4 w-full mx-auto border`}>
                 <ListGenericFields
                     title={t(title)}
                     fields={fields}

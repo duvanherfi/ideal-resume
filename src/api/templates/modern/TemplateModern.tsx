@@ -37,15 +37,15 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const ContactSection = () => (
         <View style={styles.contactItem}>
             <Text style={styles.contactValue}>
-                <Text style={styles.contactLabel}>{"Email: "}</Text>
+                <Text style={styles.contactLabel}>{labels.email}</Text>
                 {data.email}
             </Text>
             <Text style={styles.contactValue}>
-                <Text style={styles.contactLabel}>{"Phone: "}</Text>
+                <Text style={styles.contactLabel}>{labels.phone}</Text>
                 {data.phone}
             </Text>
             <Text style={styles.contactValue}>
-                <Text style={styles.contactLabel}>{"Address: "}</Text>
+                <Text style={styles.contactLabel}>{labels.address}</Text>
                 {data.address}
             </Text>
         </View>
@@ -55,7 +55,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     //Profile summary
     const ProfileSummary = () => (
         <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{"Profile Summary"}</Text>
+            <Text style={styles.sectionTitle}>{labels.profileSummary}</Text>
             <Text style={styles.experienceDescription}>{data.profileSummary}</Text>
         </View>
     );
@@ -76,7 +76,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
 
     const WorkExperienceSection = () => (
         <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{"Work Experience"}</Text>
+            <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
             {data.workExperiences.map(exp => <ExperienceItem key={exp.id} {...exp} />)}
         </View>
     );
@@ -95,7 +95,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
 
     const EducationSection = () => (
         <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{"Education"}</Text>
+            <Text style={styles.sectionTitle}>{labels.education}</Text>
             {data.education.map((edu) => <EducationItem key={edu.id} {...edu} />)}
         </View>
     );
@@ -114,7 +114,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
 
     const ProjectsSection = () => (
         <View style={[styles.column, styles.leftColumn]}>
-            <Text style={styles.sectionTitle}>Projects</Text>
+            <Text style={styles.sectionTitle}>{labels.projects}</Text>
             <View style={styles.projectsGrid}>
                 {data.projects.map((project, index) => (
                     <ProjectItem key={project.id || index} {...project} />
@@ -143,7 +143,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
 
     const SkillsSection = () => (
         <>
-            <Text style={styles.sectionTitle}>Skills</Text>
+            <Text style={styles.sectionTitle}>{labels.skills}</Text>
             <View style={styles.skillsContainer}>
                 {data.skills.map((skill, index) => (
                     <SkillItem key={skill.id || index} {...skill} />
@@ -164,7 +164,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
 
     const LanguagesSection = () => (
         <>
-            <Text style={styles.sectionTitle}>Languages</Text>
+            <Text style={styles.sectionTitle}>{labels.languages}</Text>
             <View style={styles.skillsContainer}>
                 {data.languages.map((language, index) => (
                     <LanguageItem key={language.id || index} {...language} />

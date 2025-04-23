@@ -5,7 +5,7 @@ import ThemeColorSelector from "./theme-color-selector/ThemeColorSelector";
 
 const ViewGallery: React.FC = () => {
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 h-screen xl:h-auto">
       <TemplatePreviewGallery />
       <Icons.LineSeparator />
       <ThemeColorSelector />

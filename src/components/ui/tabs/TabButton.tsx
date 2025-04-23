@@ -11,12 +11,12 @@ const TabButton = (props: TabButtonProps) => {
   const { t } = useTranslations();
   const { onClick, active, text, children } = props;
 
-  const classNameNormal = `w-full px-2 py-1 transition-all text-sm md:text-base lg:text-lg rounded-md whitespace-nowrap`;
-  const classNameStatus = () => active
-    ? "font-bold bg-accent-100 text-primary-900 dark:bg-accent-900/70 dark:text-primary-100"
-    : "bg-secondary-500/10 dark:bg-white/10 text-black dark:text-primary-100 dark:hover:text-primary-100 hover:bg-accent-100 dark:hover:bg-accent-900/70";
+  const classNameNormal = `w-full px-3 py-2 transition-all text-sm md:text-base lg:text-lg rounded-md whitespace-nowrap`;
+  const classNameStatus = active
+    ? "font-bold bg-primary-200/50 text-blue-900 dark:bg-primary-900 dark:text-blue-100"
+    : "bg-secondary-300/80 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-300 hover:bg-blue-50 dark:hover:bg-blue-900/40";
 
-  const getTabClassName = () => `${classNameNormal} ${classNameStatus()}`;
+  const getTabClassName = () => `${classNameNormal} ${classNameStatus}`;
 
   return (
     <button
