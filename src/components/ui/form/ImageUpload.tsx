@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 
 interface ImageUploadProps {
-  onChange: (imageData: string) => void;
-  currentImage?: string;
   label?: string;
+  name: string;
+  onChange: (imageData: string) => void;
+  value?: string;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
-  onChange,
-  currentImage = "",
   label = "Profile Photo",
+  name,
+  value = "",
+  onChange,
 }) => {
-  const [previewUrl, setPreviewUrl] = useState<string>(currentImage);
+  const [previewUrl, setPreviewUrl] = useState<string>(value);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -35,6 +37,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         <div className="flex-shrink-0 w-24 h-24 bg-secondary-100 rounded-full overflow-hidden flex items-center justify-center">
           {previewUrl ? (
             <img
+              id={name}
               src={previewUrl}
               alt="Profile preview"
               className="w-full h-full object-cover"

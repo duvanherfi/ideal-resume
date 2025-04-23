@@ -28,7 +28,7 @@ const TemplatePreview = (props: TemplatePreviewProps) => {
     const mergedData = mergeData(data.get, mockedResume);
 
     return (
-        <div className="space-y-2">
+        <div className="space-y-2 xl:min-w-80">
             <span className={`text-xl ${isActive ? "font-black text-accent-500 dark:text-accent-200" : " text-black dark:text-white"}`}>
                 {templateToPreview.name}
             </span>

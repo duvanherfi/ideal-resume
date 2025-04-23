@@ -30,8 +30,9 @@ const FormBasicInfo: React.FC = () => {
         </div>
         <div className="mt-4">
           <ImageUpload
+            name="profilePhoto"
             onChange={handleImageChange}
-            currentImage={data.get.profilePhoto}
+            value={data.get.profilePhoto}
           />
         </div>
       </GlassCard>

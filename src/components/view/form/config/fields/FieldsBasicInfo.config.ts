@@ -40,7 +40,7 @@ const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
         type: "textarea",
         name: "profileSummary",
         label: "form.basic.field.profileSummary",
-    }
+    },
 ];
 
 export const getEmptyBasicInfo = (): UserBasicInfo => ({

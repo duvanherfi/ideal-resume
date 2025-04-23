@@ -17,11 +17,6 @@ const userDataFormTabs: Tab[] = [
         component: <FormWorkExperience />,
     },
     {
-        id: "projects",
-        name: "form.projects.title",
-        component: <FormProjects />,
-    },
-    {
         id: "education",
         name: "form.education.title",
         component: <FormEducation />,
@@ -30,6 +25,11 @@ const userDataFormTabs: Tab[] = [
         id: "skills",
         name: "form.skills.title",
         component: <FormSkills />,
+    },
+    {
+        id: "projects",
+        name: "form.projects.title",
+        component: <FormProjects />,
     },
 ];
 

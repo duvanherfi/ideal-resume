@@ -4,6 +4,7 @@ import ResumeLabelProvider from "../../api/context/resume-labels/ResumeLabelsPro
 import ResumeTemplateProvider from "../../api/context/resume-template/ResumeTemplateProvider";
 import ResumeThemeProvider from "../../api/context/resume-theme/ResumeThemeProvider";
 import LanguageProvider from "../language/LanguageProvider";
+import ResumeProvider from "../../api/context/ResumeProvider";
 
 interface AppProviderProps {
     children: React.ReactNode
@@ -12,15 +13,9 @@ interface AppProviderProps {
 const AppProvider = (props: AppProviderProps) => {
     return (
         <LanguageProvider>
-            <UserDataProvider>
-                <ResumeLabelProvider>
-                    <ResumeTemplateProvider>
-                        <ResumeThemeProvider>
-                            {props.children}
-                        </ResumeThemeProvider>
-                    </ResumeTemplateProvider>
-                </ResumeLabelProvider>
-            </UserDataProvider>
+            <ResumeProvider>
+                {props.children}
+            </ResumeProvider>
         </LanguageProvider>
     );
 }

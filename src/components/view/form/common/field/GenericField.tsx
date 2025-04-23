@@ -1,7 +1,8 @@
-import Select, { SelectOption } from "../../../../ui/form/Select";
-import Input from "../../../../ui/form/Input";
-import TextArea from "../../../../ui/form/TextArea";
 import useTranslations from "../../../../../hooks/useTranslations";
+import ImageUpload from "../../../../ui/form/ImageUpload";
+import Input from "../../../../ui/form/Input";
+import Select, { SelectOption } from "../../../../ui/form/Select";
+import TextArea from "../../../../ui/form/TextArea";
 
 const GenericField = (props: any) => {
     const { t } = useTranslations();
@@ -10,7 +11,7 @@ const GenericField = (props: any) => {
         case "text": case "date":
             return <Input {...props} label={t(props.label)} />;
         case "image":
-            return <Input {...props} label={t(props.label)} />;
+            return <ImageUpload {...props} label={t(props.label)} />;
         case "textarea":
             return <TextArea {...props} label={t(props.label)} />;
         case "select":

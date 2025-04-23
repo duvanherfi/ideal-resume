@@ -1,11 +1,11 @@
-import ViewForm from "../../view/form/ViewForm";
-import ViewTemplatePreview from "../../view/preview/ViewTemplatePreview";
-import GlassCard from "../../ui/GlassCard";
-import { Tab } from "../../ui/tabs/TabsContainer";
-import Icons from "../../ui/icons/Icons";
-import ViewGallery from "../../view/gallery/ViewGallery";
+import ViewForm from "../../../view/form/ViewForm";
+import ViewTemplatePreview from "../../../view/preview/ViewTemplatePreview";
+import GlassCard from "../../../ui/GlassCard";
+import { Tab } from "../../../ui/tabs/TabsContainer";
+import Icons from "../../../ui/icons/Icons";
+import ViewGallery from "../../../view/gallery/ViewGallery";
 
-const screenTabs: Tab[] = [
+const mobileScreenTabs: Tab[] = [
   {
     id: "form",
     name: "app.tab.form",
@@ -30,4 +30,4 @@ const screenTabs: Tab[] = [
   }
 ];
 
-export default screenTabs;
+export default mobileScreenTabs;

@@ -4,10 +4,10 @@ import FormLabels from "./form/FormLabels";
 
 const LabelsForm: React.FC = () => {
   return (
-    <>
+    <div className="py-8">
       <Title className="hidden md:block">screen.form.labels.title</Title>
       <FormLabels />
-    </>
+    </div>
   );
 };
 

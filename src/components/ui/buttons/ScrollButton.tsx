@@ -23,10 +23,10 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({
     const ariaLabel = isLeft ? "Scroll left" : "Scroll right";
     const chevronDirection = isLeft ? ChevronDirection.LEFT : ChevronDirection.RIGHT;
 
-    const baseClasses = "absolute top-1/2 -translate-y-1/2 bg-accent-200 dark:bg-accent-800 rounded-full p-2 shadow-md z-60 flex items-center justify-center";
+    const baseClasses = "absolute top-1/2 -translate-y-1/2 bg-accent-400 dark:bg-accent-800 rounded-full p-2 shadow-md z-60 flex items-center justify-center";
 
     const stateClasses = canScroll
-        ? "dark:text-primary-100 cursor-pointer hover:bg-accent-300 dark:hover:bg-accent-700"
+        ? "text-primary-100 cursor-pointer hover:bg-accent-500 dark:hover:bg-accent-700"
         : "text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50";
 
     const buttonClasses = `${baseClasses} ${stateClasses} ${positionClass} ${className}`;

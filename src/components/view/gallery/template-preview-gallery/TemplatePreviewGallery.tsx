@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
-import useTranslations from "../../../../hooks/useTranslations";
 import ScrollButton from "../../../ui/buttons/ScrollButton";
 import TemplatePreview from "./TemplatePreview";
-import Icons from "../../../ui/icons/Icons";
 
 enum ScrollDirection {
     LEFT = "left",
@@ -11,7 +9,6 @@ enum ScrollDirection {
 };
 
 const TemplatePreviewGallery = () => {
-    const { t } = useTranslations();
     const template = useResumeTemplate();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -47,10 +44,6 @@ const TemplatePreviewGallery = () => {
 
     return (
         <div className="relative">
-            <h2 className="text-xl md:text-3xl font-semibold text-primary-900 dark:text-primary-100 pb-6">
-                {t("gallery.templates.title")}
-            </h2>
-            <Icons.LineSeparator />
             <div className="relative px-8">
                 <ScrollButton direction={ScrollDirection.LEFT} canScroll={canScrollLeft} onScroll={scroll} />
                 <ScrollButton direction={ScrollDirection.RIGHT} canScroll={canScrollRight} onScroll={scroll} />

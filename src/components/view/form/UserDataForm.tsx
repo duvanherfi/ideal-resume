@@ -5,14 +5,14 @@ import userDataFormTabs from "./userDataFormTabs";
 
 const UserDataForm: React.FC = () => {
   return (
-    <>
+    <div className="py-8">
       <Title className="hidden xl:block">screen.form.data.title</Title>
       <TabsContainer
         items={userDataFormTabs}
         defaultIndex={0}
         slideDirection="bottom"
       />
-    </>
+    </div>
   );
 };
 

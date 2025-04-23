@@ -1,14 +1,14 @@
-import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
-import TabsContainer from "../../ui/tabs/TabsContainer";
-import screenTabs from "./screenTabs";
+import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
+import TabsContainer from "../../../ui/tabs/TabsContainer";
+import mobileScreenTabs from "./mobileScreenTabs";
 
 const MobileLayout = () => {
     const template = useResumeTemplate();
 
     return (
-        <div className="min-h-screen xl:hidden">
+        <div className="min-h-screen xl:hidden pb-16">
             <TabsContainer
-                items={screenTabs.filter(tab => !(tab.id === "preview" && !template.active))}
+                items={mobileScreenTabs.filter(tab => !(tab.id === "preview" && !template.active))}
                 defaultIndex={0}
                 contentClassName=""
                 animationDuration={300}

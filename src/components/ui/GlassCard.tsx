@@ -7,7 +7,7 @@ interface GlassCardProps {
 
 const GlassCard: React.FC<GlassCardProps> = ({ children, className = "" }) => {
   return (
-    <div className={`p-6 ${className}`}>
+    <div className={`py-6 px-8 ${className}`}>
       {children}
     </div>
   );

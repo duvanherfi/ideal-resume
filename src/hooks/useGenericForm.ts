@@ -21,9 +21,9 @@ interface UseGenericFormProps<T extends { id: string }> {
 
 const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>): UseGenericFormType<T> => {
     const { dataKey, emptyItem } = props;
-    const data = useUserData();
     const [currentItem, setCurrentItem] = useState<T>(emptyItem());
     const [isEditing, setIsEditing] = useState(false);
+    const data = useUserData();
 
     const items = data.get[dataKey] as unknown as T[];
 
