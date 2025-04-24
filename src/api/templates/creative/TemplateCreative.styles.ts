@@ -30,13 +30,13 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
         flexDirection: 'row',
         flex: 1,
     },
-    leftColumn: {
+    mainColumn: {
         width: '65%',
         paddingHorizontal: 20,
         paddingTop: 20,
         paddingBottom: 30,
     },
-    rightColumn: {
+    sideColumn: {
         width: '35%',
         backgroundColor: lightenHexColor(theme.primary, 95), // Very light theme color
         paddingHorizontal: 15,

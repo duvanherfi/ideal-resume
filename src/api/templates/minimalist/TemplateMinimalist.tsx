@@ -8,7 +8,15 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------
-    //Header
+    //HEADER
+    const ProfileHeader = () => (
+        <View style={styles.headerContainer}>
+            <ProfileContainer />
+            <View style={styles.divider} />
+            <ContactSection />
+        </View>
+    );
+
     const ProfileContainer = () => (
         <View style={styles.headerMain}>
             {data.profilePhoto && (
@@ -25,33 +33,23 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
         </View>
     );
 
+    const Contact = ({ label, value }: { label?: string, value?: string }) => value ? (
+        <View style={styles.contactItem}>
+            <Text style={styles.contactLabel}>{label}</Text>
+            <Text style={styles.contactValue}>{value}</Text>
+        </View>
+    ) : null;
+
     const ContactSection = () => (
         <View style={styles.contactGroup}>
-            <View style={styles.contactItem}>
-                <Text style={styles.contactLabel}>{labels.email}</Text>
-                <Text style={styles.contactValue}>{data.email}</Text>
-            </View>
-            <View style={styles.contactItem}>
-                <Text style={styles.contactLabel}>{labels.phone}</Text>
-                <Text style={styles.contactValue}>{data.phone}</Text>
-            </View>
-            <View style={styles.contactItem}>
-                <Text style={styles.contactLabel}>{labels.address}</Text>
-                <Text style={styles.contactValue}>{data.address}</Text>
-            </View>
-        </View>
-    );
-
-    const ProfileHeader = () => (
-        <View style={styles.headerContainer}>
-            <ProfileContainer />
-            <View style={styles.divider} />
-            <ContactSection />
+            <Contact label={labels.email} value={data.email} />
+            <Contact label={labels.phone} value={data.phone} />
+            <Contact label={labels.location} value={data.address} />
         </View>
     );
 
     //-----------------------------------
-    //Profile summary
+    //PROFILE SUMMARY
     const ProfileSummary = () => (
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
@@ -64,7 +62,7 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     );
 
     //-----------------------------------
-    // Work Experience
+    //ITEMS
     const ExperienceItem = (exp: WorkExperience) => (
         <View style={styles.experienceItem}>
             <View style={styles.dateContainer}>
@@ -80,19 +78,6 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
         </View>
     );
 
-    const WorkExperienceSection = () => (
-        <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
-            </View>
-            {data.workExperiences.map((exp, index) => (
-                <ExperienceItem key={exp.id || index} {...exp} />
-            ))}
-        </View>
-    );
-
-    //-----------------------------------
-    //Education
     const EducationItem = (edu: Education) => (
         <View style={styles.educationItem}>
             <View style={styles.dateContainer}>
@@ -107,19 +92,6 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
         </View>
     );
 
-    const EducationSection = () => (
-        <View style={styles.section}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>{labels.education}</Text>
-            </View>
-            {data.education.map((edu, index) => (
-                <EducationItem key={edu.id || index} {...edu} />
-            ))}
-        </View>
-    );
-
-    //-----------------------------------
-    //Projects
     const ProjectItem = (project: Project) => (
         <View style={styles.projectItem}>
             <Text style={styles.projectTitle}>{project.name}</Text>
@@ -130,21 +102,6 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
         </View>
     );
 
-    const ProjectsSection = () => (
-        <View style={styles.sideSection}>
-            <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>{labels.projects}</Text>
-            </View>
-            <View style={styles.projectsContainer}>
-                {data.projects.map((project, index) => (
-                    <ProjectItem key={project.id || index} {...project} />
-                ))}
-            </View>
-        </View>
-    );
-
-    //-----------------------------------
-    //Skills
     const SkillLevel = ({ level }: { level: number }) => {
         return (
             <View style={styles.skillLevelContainer}>
@@ -165,6 +122,50 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
         </View>
     );
 
+    const LanguageItem = (language: Language) => (
+        <View style={styles.languageItem}>
+            <Text style={styles.languageName}>{language.name}</Text>
+            <Text style={styles.languageProficiency}>{language.proficiency}</Text>
+        </View>
+    );
+
+    //-----------------------------------
+    //SECTIONS
+    const WorkExperienceSection = () => (
+        <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
+            </View>
+            {data.workExperiences.map((exp, index) => (
+                <ExperienceItem key={exp.id || index} {...exp} />
+            ))}
+        </View>
+    );
+
+    const EducationSection = () => (
+        <View style={styles.section}>
+            <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>{labels.education}</Text>
+            </View>
+            {data.education.map((edu, index) => (
+                <EducationItem key={edu.id || index} {...edu} />
+            ))}
+        </View>
+    );
+
+    const ProjectsSection = () => (
+        <View style={styles.sideSection}>
+            <View style={styles.sectionHeader}>
+                <Text style={styles.sectionTitle}>{labels.projects}</Text>
+            </View>
+            <View style={styles.projectsContainer}>
+                {data.projects.map((project, index) => (
+                    <ProjectItem key={project.id || index} {...project} />
+                ))}
+            </View>
+        </View>
+    );
+
     const SkillsSection = () => (
         <View style={styles.sideSection}>
             <View style={styles.sectionHeader}>
@@ -175,15 +176,6 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
                     <SkillItem key={skill.id || index} {...skill} />
                 ))}
             </View>
-        </View>
-    );
-
-    //-----------------------------------
-    //Languages
-    const LanguageItem = (language: Language) => (
-        <View style={styles.languageItem}>
-            <Text style={styles.languageName}>{language.name}</Text>
-            <Text style={styles.languageProficiency}>{language.proficiency}</Text>
         </View>
     );
 
@@ -201,7 +193,15 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     );
 
     //-----------------------------------
-    // Layout for side column
+    //LAYOUT
+    const MainColumn = () => (
+        <View style={styles.mainColumn}>
+            {data.profileSummary && <ProfileSummary />}
+            {data.workExperiences.length > 0 && <WorkExperienceSection />}
+            {data.education.length > 0 && <EducationSection />}
+        </View>
+    );
+
     const SideColumn = () => (
         <View style={styles.sideColumn}>
             {data.skills.length > 0 && <SkillsSection />}
@@ -211,17 +211,13 @@ const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) =>
     );
 
     //-----------------------------------
-    //Main Layout
+    //DOCUMENT
     return (
         <Document>
             <Page size="A4" style={styles.page}>
                 <ProfileHeader />
                 <View style={styles.content}>
-                    <View style={styles.mainColumn}>
-                        {data.profileSummary && <ProfileSummary />}
-                        {data.workExperiences.length > 0 && <WorkExperienceSection />}
-                        {data.education.length > 0 && <EducationSection />}
-                    </View>
+                    <MainColumn />
                     <SideColumn />
                 </View>
             </Page>

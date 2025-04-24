@@ -1,5 +1,4 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import { useState } from "react";
 import useResumeLabels from "../../../../api/hooks/useResumeLabels";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";

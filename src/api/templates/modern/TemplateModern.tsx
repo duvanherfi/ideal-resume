@@ -8,7 +8,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------
-    //Header
+    //HEADER
     const ProfileContainer = () => (
         <View style={styles.profileContainer}>
             {data.profilePhoto && (
@@ -34,25 +34,23 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
+    const Contact = ({ label, value }: { label?: string, value?: string }) => value ? (
+        <View style={styles.contactItem}>
+            <Text style={styles.contactLabel}>{label}</Text>
+            <Text style={styles.contactValue}>{value}</Text>
+        </View>
+    ) : null;
+
     const ContactSection = () => (
         <View style={styles.contactItem}>
-            <Text style={styles.contactValue}>
-                <Text style={styles.contactLabel}>{labels.email}</Text>
-                {data.email}
-            </Text>
-            <Text style={styles.contactValue}>
-                <Text style={styles.contactLabel}>{labels.phone}</Text>
-                {data.phone}
-            </Text>
-            <Text style={styles.contactValue}>
-                <Text style={styles.contactLabel}>{labels.address}</Text>
-                {data.address}
-            </Text>
+            <Contact label={labels.email} value={data.email} />
+            <Contact label={labels.phone} value={data.phone} />
+            <Contact label={labels.location} value={data.address} />
         </View>
     );
 
     //-----------------------------------
-    //Profile summary
+    //PROFILE SUMMARY
     const ProfileSummary = () => (
         <View style={styles.section}>
             <Text style={styles.sectionTitle}>{labels.profileSummary}</Text>
@@ -61,7 +59,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     );
 
     //-----------------------------------
-    // Work Experience
+    //ITEMS
     const ExperienceItem = (exp: WorkExperience) => (
         <View style={styles.experienceItem}>
             <View style={styles.experienceHeader}>
@@ -74,15 +72,6 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
-    const WorkExperienceSection = () => (
-        <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
-            {data.workExperiences.map(exp => <ExperienceItem key={exp.id} {...exp} />)}
-        </View>
-    );
-
-    //-----------------------------------
-    //Education
     const EducationItem = (edu: Education) => (
         <View style={styles.educationItem}>
             <View style={styles.educationContent}>
@@ -93,15 +82,6 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
-    const EducationSection = () => (
-        <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{labels.education}</Text>
-            {data.education.map((edu) => <EducationItem key={edu.id} {...edu} />)}
-        </View>
-    );
-
-    //-----------------------------------
-    //Projects
     const ProjectItem = (project: Project) => (
         <View style={styles.projectItem}>
             <Text style={styles.projectTitle}>{project.name}</Text>
@@ -112,19 +92,6 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
-    const ProjectsSection = () => (
-        <View style={[styles.column, styles.leftColumn]}>
-            <Text style={styles.sectionTitle}>{labels.projects}</Text>
-            <View style={styles.projectsGrid}>
-                {data.projects.map((project, index) => (
-                    <ProjectItem key={project.id || index} {...project} />
-                ))}
-            </View>
-        </View>
-    );
-
-    //-----------------------------------
-    //Skills
     const SkillLevel = ({ level }: { level: number }) => {
         return (
             <Text style={styles.skillLevel}>
@@ -141,6 +108,41 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
+    const LanguageItem = (language: Language) => (
+        <View style={styles.skillItem}>
+            <Text style={styles.skillText}>
+                {language.name} ({language.proficiency})
+            </Text>
+        </View>
+    );
+
+    //-----------------------------------
+    //SECTIONS
+    const WorkExperienceSection = () => (
+        <View style={styles.section}>
+            <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
+            {data.workExperiences.map(exp => <ExperienceItem key={exp.id} {...exp} />)}
+        </View>
+    );
+
+    const EducationSection = () => (
+        <View style={styles.section}>
+            <Text style={styles.sectionTitle}>{labels.education}</Text>
+            {data.education.map((edu) => <EducationItem key={edu.id} {...edu} />)}
+        </View>
+    );
+
+    const ProjectsSection = () => (
+        <View style={[styles.column, styles.leftColumn]}>
+            <Text style={styles.sectionTitle}>{labels.projects}</Text>
+            <View style={styles.projectsGrid}>
+                {data.projects.map((project, index) => (
+                    <ProjectItem key={project.id || index} {...project} />
+                ))}
+            </View>
+        </View>
+    );
+
     const SkillsSection = () => (
         <>
             <Text style={styles.sectionTitle}>{labels.skills}</Text>
@@ -150,16 +152,6 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
                 ))}
             </View>
         </>
-    );
-
-    //-----------------------------------
-    //Languages
-    const LanguageItem = (language: Language) => (
-        <View style={styles.skillItem}>
-            <Text style={styles.skillText}>
-                {language.name} ({language.proficiency})
-            </Text>
-        </View>
     );
 
     const LanguagesSection = () => (
@@ -174,7 +166,14 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     );
 
     //-----------------------------------
-    // Layout for last row
+    //LAYOUT
+    const MainSection = () => (
+        <>
+            {data.profileSummary && <ProfileSummary />}
+            {data.workExperiences.length > 0 && <WorkExperienceSection />}
+            {data.education.length > 0 && <EducationSection />}
+        </>
+    );
     const TwoColumnsSection = () => (
         <View style={styles.twoColumnSection}>
             {data.projects.length > 0 && <ProjectsSection />}
@@ -191,9 +190,7 @@ const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <ProfileHeader />
-                {data.profileSummary && <ProfileSummary />}
-                {data.workExperiences.length > 0 && <WorkExperienceSection />}
-                {data.education.length > 0 && <EducationSection />}
+                <MainSection />
                 <TwoColumnsSection />
             </Page>
         </Document>

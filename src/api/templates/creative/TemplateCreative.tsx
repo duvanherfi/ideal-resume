@@ -8,7 +8,14 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);
 
     //-----------------------------------
-    //Header
+    //HEADER
+    const ProfileHeader = () => (
+        <View style={styles.headerContainer}>
+            <ProfileContainer />
+            <ContactSection />
+        </View>
+    );
+
     const ProfileContainer = () => (
         <View style={styles.profileContainer}>
             {data.profilePhoto && (
@@ -27,32 +34,23 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
+    const Contact = ({ label, value }: { label?: string, value?: string }) => value ? (
+        <View style={styles.contactItem}>
+            <Text style={styles.contactLabel}>{label}</Text>
+            <Text style={styles.contactValue}>{value}</Text>
+        </View>
+    ) : null;
+
     const ContactSection = () => (
         <View style={styles.contactContainer}>
-            <View style={styles.contactItem}>
-                <Text style={styles.contactLabel}>{labels.email}</Text>
-                <Text style={styles.contactValue}>{data.email}</Text>
-            </View>
-            <View style={styles.contactItem}>
-                <Text style={styles.contactLabel}>{labels.phone}</Text>
-                <Text style={styles.contactValue}>{data.phone}</Text>
-            </View>
-            <View style={styles.contactItem}>
-                <Text style={styles.contactLabel}>{labels.address}</Text>
-                <Text style={styles.contactValue}>{data.address}</Text>
-            </View>
-        </View>
-    );
-
-    const ProfileHeader = () => (
-        <View style={styles.headerContainer}>
-            <ProfileContainer />
-            <ContactSection />
+            <Contact label={labels.email} value={data.email} />
+            <Contact label={labels.phone} value={data.phone} />
+            <Contact label={labels.location} value={data.address} />
         </View>
     );
 
     //-----------------------------------
-    //Profile summary
+    //PROFILE SUMMARY
     const ProfileSummary = () => (
         <View style={styles.section}>
             <View style={styles.sectionTitleContainer}>
@@ -63,7 +61,7 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     );
 
     //-----------------------------------
-    // Work Experience
+    //ITEMS
     const ExperienceItem = (exp: WorkExperience) => (
         <View style={styles.experienceItem}>
             <View style={styles.experienceHeader}>
@@ -75,17 +73,6 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
-    const WorkExperienceSection = () => (
-        <View style={styles.section}>
-            <View style={styles.sectionTitleContainer}>
-                <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
-            </View>
-            {data.workExperiences.map(exp => <ExperienceItem key={exp.id} {...exp} />)}
-        </View>
-    );
-
-    //-----------------------------------
-    //Education
     const EducationItem = (edu: Education) => (
         <View style={styles.educationItem}>
             <View style={styles.educationHeader}>
@@ -93,6 +80,43 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
                 <Text style={styles.dateText}>{`${edu.startDate} - ${edu.endDate}`}</Text>
             </View>
             <Text style={styles.educationInstitution}>{edu.institution}</Text>
+        </View>
+    );
+
+    const ProjectItem = (project: Project) => (
+        <View style={styles.projectItem}>
+            <Text style={styles.projectTitle}>{project.name}</Text>
+            <Link src={project.link} style={styles.projectLink}>
+                {project.link}
+            </Link>
+            <Text style={styles.projectDescription}>{project.description}</Text>
+        </View>
+    );
+
+    const SkillItem = (skill: Skill) => (
+        <View style={styles.skillItem}>
+            <Text style={styles.skillName}>{skill.name}</Text>
+            <View style={styles.skillLevelContainer}>
+                <View style={[styles.skillLevelBar, { width: `${skill.level * 20}%` }]} />
+            </View>
+        </View>
+    );
+
+    const LanguageItem = (language: Language) => (
+        <View style={styles.languageItem}>
+            <Text style={styles.languageName}>{language.name}</Text>
+            <Text style={styles.languageProficiency}>{language.proficiency}</Text>
+        </View>
+    );
+
+    //-----------------------------------
+    //SECTIONS
+    const WorkExperienceSection = () => (
+        <View style={styles.section}>
+            <View style={styles.sectionTitleContainer}>
+                <Text style={styles.sectionTitle}>{labels.workExperiences}</Text>
+            </View>
+            {data.workExperiences.map(exp => <ExperienceItem key={exp.id} {...exp} />)}
         </View>
     );
 
@@ -105,18 +129,6 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
-    //-----------------------------------
-    //Projects
-    const ProjectItem = (project: Project) => (
-        <View style={styles.projectItem}>
-            <Text style={styles.projectTitle}>{project.name}</Text>
-            <Link src={project.link} style={styles.projectLink}>
-                {project.link}
-            </Link>
-            <Text style={styles.projectDescription}>{project.description}</Text>
-        </View>
-    );
-
     const ProjectsSection = () => (
         <View style={styles.sideSection}>
             <View style={styles.sectionTitleContainer}>
@@ -126,17 +138,6 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
                 {data.projects.map((project, index) => (
                     <ProjectItem key={project.id || index} {...project} />
                 ))}
-            </View>
-        </View>
-    );
-
-    //-----------------------------------
-    //Skills
-    const SkillItem = (skill: Skill) => (
-        <View style={styles.skillItem}>
-            <Text style={styles.skillName}>{skill.name}</Text>
-            <View style={styles.skillLevelContainer}>
-                <View style={[styles.skillLevelBar, { width: `${skill.level * 20}%` }]} />
             </View>
         </View>
     );
@@ -154,15 +155,6 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
         </View>
     );
 
-    //-----------------------------------
-    //Languages
-    const LanguageItem = (language: Language) => (
-        <View style={styles.languageItem}>
-            <Text style={styles.languageName}>{language.name}</Text>
-            <Text style={styles.languageProficiency}>{language.proficiency}</Text>
-        </View>
-    );
-
     const LanguagesSection = () => (
         <View style={styles.sideSection}>
             <View style={styles.sectionTitleContainer}>
@@ -177,23 +169,33 @@ const TemplateCreative: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     );
 
     //-----------------------------------
-    // Layout
+    //LAYOUT
+    const MainColumn = () => (
+        <View style={styles.mainColumn}>
+            {data.profileSummary && <ProfileSummary />}
+            {data.workExperiences.length > 0 && <WorkExperienceSection />}
+            {data.education.length > 0 && <EducationSection />}
+        </View>
+    )
+
+    const SideColumn = () => (
+        <View style={styles.sideColumn}>
+            {data.skills.length > 0 && <SkillsSection />}
+            {data.languages.length > 0 && <LanguagesSection />}
+            {data.projects.length > 0 && <ProjectsSection />}
+        </View>
+    );
+
+    //-----------------------------------
+    //DOCUMENT
     return (
         <Document>
             <Page size="A4" style={styles.page}>
                 <View style={styles.mainContent}>
                     <ProfileHeader />
                     <View style={styles.contentContainer}>
-                        <View style={styles.leftColumn}>
-                            {data.profileSummary && <ProfileSummary />}
-                            {data.workExperiences.length > 0 && <WorkExperienceSection />}
-                            {data.education.length > 0 && <EducationSection />}
-                        </View>
-                        <View style={styles.rightColumn}>
-                            {data.skills.length > 0 && <SkillsSection />}
-                            {data.languages.length > 0 && <LanguagesSection />}
-                            {data.projects.length > 0 && <ProjectsSection />}
-                        </View>
+                        <MainColumn />
+                        <SideColumn />
                     </View>
                 </View>
             </Page>
