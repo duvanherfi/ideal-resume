@@ -10,6 +10,7 @@
 
 # production
 /build
+/public/404.html
 
 # misc
 .DS_Store
