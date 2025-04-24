@@ -1,13 +1,13 @@
-import { Education, Language, Project, Skill, WorkExperience } from "../../../../api/types";
+import { Education, Language, Project, Skill, UserData, WorkExperience } from "../../../../api/types";
+import { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
 import EducationItem from "./EducationItem";
 import ExperienceItem from "./ExperienceItem";
-import ProjectItem from "./ProjectsItem";
 import LanguageItem from "./LanguageItem";
+import ProjectItem from "./ProjectsItem";
 import SkillItem from "./SkillItem";
-import { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
 
 interface GenericItemProps<T> extends FormAddedItemGenericProps<T> {
-    dataKey: string;
+    dataKey: keyof UserData;
 }
 
 const GenericItem = (props: GenericItemProps<any>) => {

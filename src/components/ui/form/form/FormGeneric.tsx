@@ -27,11 +27,7 @@ const FormGeneric = <T extends { id: string }>(props: FormGenericProps<T>) => {
                     isValid={isValid}
                     form={form}
                 />
-                <ListItemsAdded
-                    title={t(title)}
-                    dataKey={dataKey}
-                    form={form}
-                />
+                <ListItemsAdded dataKey={dataKey} form={form} />
             </GlassCard>
         </div>
     );

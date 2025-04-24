@@ -7,13 +7,12 @@ import GenericItem from "../../../view/user-data/item/GenericItem";
 import Icons from "../../icons/Icons";
 
 interface AddedItemsListProps<T extends { id: string }> {
-    title: string;
     dataKey: keyof UserData;
     form: UseGenericFormType<T>;
 }
 
 const ListItemsAdded = <T extends { id: string }>(props: AddedItemsListProps<T>) => {
-    const { title, dataKey, form } = props;
+    const { dataKey, form } = props;
 
     return (
         <div className="">
@@ -22,7 +21,7 @@ const ListItemsAdded = <T extends { id: string }>(props: AddedItemsListProps<T>)
                 <Text className="text-secondary-500 italic p-4">{`items.empty.${dataKey}`}</Text>
             ) : (
                 <DndProvider backend={HTML5Backend}>
-                    <div className="space-y-2 bg-primary-500/10 dark:bg-primary-900/50 rounded-md">
+                    <div className="space-y-2 bg-accent-500/10 dark:bg-accent-900/50 rounded-md lg:p-2">
                         {form.items.map((item, index) => (
                             <GenericItem
                                 key={item.id}

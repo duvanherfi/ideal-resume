@@ -29,7 +29,6 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
     const { item, index, handleSwap } = props;
     const ref = useRef<HTMLDivElement>(null);
 
-    // Usamos tipado genérico para useDrag
     const [{ isDragging }, drag] = useDrag<DragItem, void, { isDragging: boolean }>({
         type: ItemType.ITEM,
         item: { id: item.id, index, type: ItemType.ITEM },
@@ -38,7 +37,6 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
         }),
     });
 
-    // Usamos tipado genérico para useDrop
     const [{ handlerId }, drop] = useDrop<DragItem, void, { handlerId: string | symbol | null }>({
         accept: ItemType.ITEM,
         collect(monitor: DropTargetMonitor<DragItem, void>) {
@@ -93,12 +91,7 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
     const opacity = isDragging ? 0.1 : 1;
 
     return (
-        <div
-            ref={ref}
-            style={{ opacity }}
-            className="p-3 border bg-white/70 border-secondary-200 dark:bg-black/70 dark:border-secondary-800 rounded-lg shadow-sm cursor-move"
-            data-handler-id={handlerId}
-        >
+        <div ref={ref} style={{ opacity }} data-handler-id={handlerId} className="p-3 border bg-white/70 border-secondary-200 dark:bg-black/70 dark:border-secondary-800 rounded-lg shadow-sm cursor-move">
             <div className="flex justify-between items-start">
                 <div className="flex-1 overflow-hidden">
                     {props.children}

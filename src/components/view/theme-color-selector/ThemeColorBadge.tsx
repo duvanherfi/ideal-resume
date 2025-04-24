@@ -1,4 +1,4 @@
-import useResumeTheme from "../../../../api/hooks/useResumeTheme";
+import useResumeTheme from "../../../api/hooks/useResumeTheme";
 
 export interface ThemeColorBadgeProps {
     name: string;

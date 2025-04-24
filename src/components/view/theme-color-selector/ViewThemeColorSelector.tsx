@@ -1,7 +1,7 @@
 import SuggestedThemes from "./SuggestedThemes";
 import ThemeCustom from "./ThemeCustom";
 
-const ThemeColorSelector = () => {
+const ViewThemeColorSelector = () => {
     return (
         <div className="flex flex-col space-y-8 lg:space-y-0 lg:space-x-8 lg:flex-row">
             <ThemeCustom />
@@ -10,4 +10,4 @@ const ThemeColorSelector = () => {
     );
 };
 
-export default ThemeColorSelector;
+export default ViewThemeColorSelector;

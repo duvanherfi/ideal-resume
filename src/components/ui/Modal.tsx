@@ -35,7 +35,7 @@ const Modal: React.FC<ModalButtonProps> = ({
             </Button>
 
             {isOpen && (
-                <div className="transition-all duration-500 absolute inset-0 backdrop-blur-sm flex items-center justify-center z-50 w-auto absolute" onClick={handleOutsideClick}>
+                <div className="transition-all duration-500 inset-0 backdrop-blur-sm flex items-center justify-center z-50 w-auto absolute" onClick={handleOutsideClick}>
                     <div className={`dark:border-primary-500/20 border-primary-500/30 bg-white dark:bg-black/ backdrop-blur-xl rounded-lg shadow-xl p-6 w-full max-w-6xl mx-4 transform transition-all duration-300 ${modalClassName} z-50`}>
                         <div className="flex justify-end items-center">
                             {modalTitle && (
