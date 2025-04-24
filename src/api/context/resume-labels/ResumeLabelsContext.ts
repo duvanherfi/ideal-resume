@@ -2,17 +2,17 @@ import { createContext } from 'react';
 import { ResumeLabels } from '../../types';
 
 export const defaultLabels: ResumeLabels = {
-    profileSummary: "About",
-    workExperiences: "Professional Experience",
-    education: "Academic Background",
-    projects: "Projects",
-    skills: "Technical Skills",
-    languages: "Languages",
-    email: "Email",
-    phone: "Phone",
-    location: "Location",
-    lastUpdated: "Last updated",
-    present: "Present"
+    profileSummary: "form.labels.field.profileSummary",
+    workExperiences: "form.labels.field.workExperiences",
+    education: "form.labels.field.education",
+    projects: "form.labels.field.projects",
+    skills: "form.labels.field.skills",
+    languages: "form.labels.field.languages",
+    email: "form.labels.field.email",
+    phone: "form.labels.field.phone",
+    location: "form.labels.field.location",
+    lastUpdated: "form.labels.field.lastUpdated",
+    present: "form.labels.field.present"
 };
 
 export interface ResumeLabelsContextType {
