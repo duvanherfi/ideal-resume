@@ -5,7 +5,7 @@ import useTranslations from "../../../../hooks/useTranslations";
 import GlassCard from "../../../ui/GlassCard";
 import Subtitle from "../../../ui/text/Subtitle";
 import GenericField from "../../../ui/form/field/GenericField";
-import FieldsLabels from "../config/fields/FieldsLabels.config";
+import FieldsLabels from "./fields/FieldsLabels.config";
 
 const FormLabels: React.FC = () => {
     const { t } = useTranslations();

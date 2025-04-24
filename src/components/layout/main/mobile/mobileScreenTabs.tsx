@@ -1,6 +1,5 @@
 import ViewUserDataForm from "../../../view/user-data/ViewUserDataForm";
 import ViewTemplatePreview from "../../../view/preview/ViewTemplatePreview";
-import GlassCard from "../../../ui/GlassCard";
 import { Tab } from "../../../ui/tabs/TabsContainer";
 import Icons from "../../../ui/icons/Icons";
 import ViewThumbGallery from "../../../view/gallery/ViewThumbGallery";

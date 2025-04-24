@@ -1,6 +1,6 @@
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import Title from "../../ui/text/Title";
-import ViewLabelsForm from "../user-data/ViewLabelsForm";
+import ViewLabelsForm from "../labels/ViewLabelsForm";
 import DownloadResumeLink from "./DownloadResumeLink";
 import TemplatePreviewSelected from "./TemplatePreviewSelected";
 

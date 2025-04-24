@@ -1,4 +1,5 @@
 import { PDFViewer } from "@react-pdf/renderer";
+import { useState } from "react";
 import useResumeLabels from "../../../../api/hooks/useResumeLabels";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";
@@ -23,10 +24,11 @@ const TemplateThumb = (props: TemplateThumbProps) => {
          dark:hover:border-4 dark:hover:border-b-accent-700 dark:hover:border-t-accent-500 dark:hover:border-r-accent-600 dark:hover:border-l-accent-400 group absolute inset-0 transition-all duration-300`;
 
     return (
-        <div className="space-y-2 xl:min-w-80">
+        <div className="space-y-2 md:min-w-80">
             <span className={`text-xl ${isActive ? "font-black text-accent-500 dark:text-accent-400" : " text-black dark:text-white"}`}>
                 {templateToPreview.name}
             </span>
+
             <div className="relative bg-transparent flex-shrink-0 aspect-[1/1.4142]">
                 <button onClick={selectCurrentTemplate} className={templateCardClasses}>
                     <span className="transform rotate-45 text-xl font-bold text-white opacity-0 group-hover:opacity-100">
