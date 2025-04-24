@@ -4,12 +4,16 @@ import desktopScreenTabs from "./desktopScreenTabs";
 
 const DesktopLayout = () => {
     return (
-        <div className="py-32 px-16 min-h-screen hidden xl:grid xl:grid-cols-2">
-            <TabsContainer
-                items={desktopScreenTabs}
-                defaultIndex={0}
-                slideDirection="left"
-            />
+        <div className="hidden xl:grid xl:grid-cols-3 xl:h-screen overflow-hidden mt-16">
+            <div className="col-span-2 w-full overflow-y-auto h-full pr-4 scrollbar">
+                <TabsContainer
+                    items={desktopScreenTabs}
+                    defaultIndex={0}
+                    slideDirection="left"
+                    contentClassName="px-8 pb-32"
+                    tabsClassName=""
+                />
+            </div>
             <ViewTemplatePreview />
         </div>
     );

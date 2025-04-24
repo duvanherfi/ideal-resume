@@ -10,9 +10,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: defaultColors.blue,
+                primary: defaultColors.indigo,
                 secondary: defaultColors.slate,
-                accent: defaultColors.indigo
+                accent: defaultColors.blue
             },
         },
     },
@@ -21,22 +21,23 @@ module.exports = {
             addUtilities({
                 '.scrollbar': {
                     '&::-webkit-scrollbar': {
-                        width: theme('spacing.1'),
+                        width: theme('spacing.2'),
+                        height: theme('spacing.1'),
                     },
                     '&::-webkit-scrollbar-track': {
                         borderRadius: theme('borderRadius.full'),
-                        backgroundColor: theme('colors.accent.100'),
+                        backgroundColor: theme('colors.primary.100'),
                     },
                     '&::-webkit-scrollbar-thumb': {
                         borderRadius: theme('borderRadius.full'),
-                        backgroundColor: theme('colors.accent.300'),
+                        backgroundColor: theme('colors.primary.300'),
                     },
                 },
                 '.dark .scrollbar::-webkit-scrollbar-track': {
-                    backgroundColor: theme('colors.accent.700'),
+                    backgroundColor: theme('colors.primary.700'),
                 },
                 '.dark .scrollbar::-webkit-scrollbar-thumb': {
-                    backgroundColor: theme('colors.accent.500'),
+                    backgroundColor: theme('colors.primary.500'),
                 },
             }, ['responsive']);
         }),

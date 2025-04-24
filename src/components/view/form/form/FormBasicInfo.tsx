@@ -21,7 +21,7 @@ const FormBasicInfo: React.FC = () => {
 
   return (
     <div className="w-screen md:w-full">
-      <GlassCard className={`bg-primary-200/50 dark:bg-primary-900/30 border-accent-500/30 dark:border-accent-500/20 backdrop-blur-xl rounded-br-lg rounded-bl-lg  shadow-md p-4 w-full mx-auto border`}>
+      <GlassCard className={`bg-white/20 dark:bg-black/50 border-secondary-500/30 dark:border-secondary-500/20 backdrop-blur-xl rounded-br-lg rounded-bl-lg  shadow-md p-4 w-full mx-auto border`}>
         <h2 className="text-2xl font-semibold mb-8 text-primary-900 dark:text-primary-100">
           {t("form.basic.title")}
         </h2>

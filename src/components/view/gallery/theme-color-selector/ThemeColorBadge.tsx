@@ -20,7 +20,7 @@ const ThemeColorBadge = (props: ThemeColorBadgeProps) => {
     return (
         <button key={value.primary} onClick={() => theme.setTheme(value)} className="flex flex-col items-center gap-x-1 px-3 py-1 rounded-full text-xs transition-all" style={style}>
             <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: value.primary }}></span>
-            {name}
+            <span className="hidden xl:block">{name}</span>
         </button>
     );
 };

@@ -5,8 +5,8 @@ import userDataFormTabs from "./userDataFormTabs";
 
 const UserDataForm: React.FC = () => {
   return (
-    <div className="py-8">
-      <Title className="hidden xl:block">screen.form.data.title</Title>
+    <div className="lg:py-8 lg:space-y-4">
+      <Title className="hidden lg:block">screen.form.data.title</Title>
       <TabsContainer
         items={userDataFormTabs}
         defaultIndex={0}

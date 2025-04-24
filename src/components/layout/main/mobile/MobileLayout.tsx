@@ -6,7 +6,7 @@ const MobileLayout = () => {
     const template = useResumeTemplate();
 
     return (
-        <div className="min-h-screen xl:hidden pb-16">
+        <div className="min-h-screen xl:hidden pb-16 overflow-x-hidden">
             <TabsContainer
                 items={mobileScreenTabs.filter(tab => !(tab.id === "preview" && !template.active))}
                 defaultIndex={0}

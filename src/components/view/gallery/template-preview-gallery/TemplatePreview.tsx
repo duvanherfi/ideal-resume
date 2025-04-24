@@ -3,7 +3,7 @@ import useUserData from "../../../../api/hooks/useUserData";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";
 import mockedResume from "../../../../mock/mockedResume";
-import mergeData from "../../../../api/common/dataHelper";
+import { mergeData } from "../../../../api/common/dataHelper";
 import { Template } from "../../../../api/types";
 import useResumeLabels from "../../../../api/hooks/useResumeLabels";
 
