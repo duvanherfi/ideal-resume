@@ -24,7 +24,7 @@ const TemplateThumb = (props: TemplateThumbProps) => {
 
     return (
         <div className="space-y-2 xl:min-w-80">
-            <span className={`text-xl ${isActive ? "font-black text-accent-500 dark:text-accent-200" : " text-black dark:text-white"}`}>
+            <span className={`text-xl ${isActive ? "font-black text-accent-500 dark:text-accent-400" : " text-black dark:text-white"}`}>
                 {templateToPreview.name}
             </span>
             <div className="relative bg-transparent flex-shrink-0 aspect-[1/1.4142]">

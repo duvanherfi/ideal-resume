@@ -26,18 +26,18 @@ module.exports = {
                     },
                     '&::-webkit-scrollbar-track': {
                         borderRadius: theme('borderRadius.full'),
-                        backgroundColor: theme('colors.primary.100'),
+                        backgroundColor: theme('colors.accent.100'),
                     },
                     '&::-webkit-scrollbar-thumb': {
                         borderRadius: theme('borderRadius.full'),
-                        backgroundColor: theme('colors.primary.300'),
+                        backgroundColor: theme('colors.accent.300'),
                     },
                 },
                 '.dark .scrollbar::-webkit-scrollbar-track': {
-                    backgroundColor: theme('colors.primary.700'),
+                    backgroundColor: theme('colors.accent.900'),
                 },
                 '.dark .scrollbar::-webkit-scrollbar-thumb': {
-                    backgroundColor: theme('colors.primary.500'),
+                    backgroundColor: theme('colors.accent.700'),
                 },
             }, ['responsive']);
         }),

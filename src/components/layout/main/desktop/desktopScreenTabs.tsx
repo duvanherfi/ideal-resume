@@ -1,23 +1,27 @@
+import Icons from "../../../ui/icons/Icons";
 import { Tab } from "../../../ui/tabs/TabsContainer";
-import LabelsForm from "../../../view/form/LabelsForm";
-import UserDataForm from "../../../view/form/UserDataForm";
+import ViewLabelsForm from "../../../view/form/ViewLabelsForm";
+import ViewUserDataForm from "../../../view/form/ViewUserDataForm";
 import ViewThumbGallery from "../../../view/gallery/ViewThumbGallery";
 
 const desktopScreenTabs: Tab[] = [
   {
     id: "userData",
     name: "screen.form.data.title",
-    component: <UserDataForm />,
+    component: <ViewUserDataForm />,
+    children: <Icons.Person />
   },
   {
     id: "templates",
     name: "gallery.templates.title",
     component: <ViewThumbGallery />,
+    children: <Icons.Sheet />
   },
   {
     id: "labels",
     name: "screen.form.labels.title",
-    component: <LabelsForm />,
+    component: <ViewLabelsForm />,
+    children: <Icons.Draw />
   },
 ];
 

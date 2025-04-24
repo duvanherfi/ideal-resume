@@ -1,6 +1,6 @@
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
-import GlassCard from "../../ui/GlassCard";
 import Title from "../../ui/text/Title";
+import ViewLabelsForm from "../form/ViewLabelsForm";
 import DownloadResumeLink from "./DownloadResumeLink";
 import TemplatePreviewSelected from "./TemplatePreviewSelected";
 
@@ -9,17 +9,18 @@ const ViewTemplatePreview = () => {
     if (!template.active) return null;
 
     return (
-        <GlassCard className={`min-h-screen xl:overflow-y-hidden bg-primary-200/50 dark:bg-black/30 border-primary-500/30 dark:border-secondary-500/20 backdrop-blur-xl shadow-md w-full mx-auto border-l-2 xl:h-full`}>
-            <div className="space-y-8 h-full">
-                <Title className="hidden 2xl:text-center">screen.preview.title</Title>
-                <div className="mx-auto w-1/2 xl:w-full px-8">
-                    <TemplatePreviewSelected />
-                </div>
-                <div className="flex w-full justify-center">
-                    <DownloadResumeLink />
-                </div>
+        <div className="space-y-2 h-full w-full bg-primary-300/20 dark:bg-primary-950/20 backdrop-blur-lg py-4">
+            <Title className="hidden 2xl:text-center">screen.preview.title</Title>
+            <div className="flex w-full justify-end px-8">
+                <DownloadResumeLink />
             </div>
-        </GlassCard>
+            <div className="mx-auto w-1/2 xl:w-full px-8">
+                <TemplatePreviewSelected />
+            </div>
+            <div className="xl:hidden">
+                <ViewLabelsForm />
+            </div>
+        </div>
     )
 };
 

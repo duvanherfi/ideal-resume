@@ -21,10 +21,10 @@ const TabButton = (props: TabButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`${getTabClassName()} flex flex-col lg:flex-row items-center justify-between xl:justify-center`}
+      className={`${getTabClassName()} flex flex-col lg:flex-row items-center justify-between xl:justify-center xl:space-x-2`}
     >
       {children}
-      {t(text)}
+      <span>{t(text)}</span>
     </button>
   );
 };
