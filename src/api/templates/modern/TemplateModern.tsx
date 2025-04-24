@@ -1,8 +1,8 @@
 import { Document, Image, Link, Page, Text, View } from '@react-pdf/renderer';
 import React from 'react';
-import styleBuilder from './TemplateModern.styles';
 import TemplateProps from '../../common/TemplateProps';
-import { WorkExperience, Education, Project, Skill, Language } from '../../types';
+import { Education, Language, Project, Skill, WorkExperience } from '../../types';
+import styleBuilder from './TemplateModern.styles';
 
 const TemplateModern: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     const styles = styleBuilder(theme || undefined);

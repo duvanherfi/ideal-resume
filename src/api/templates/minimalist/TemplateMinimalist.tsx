@@ -1,7 +1,7 @@
 import { Document, Image, Link, Page, Text, View } from '@react-pdf/renderer';
 import React from 'react';
-import { Education, Language, Project, Skill, WorkExperience } from '../../types';
 import TemplateProps from '../../common/TemplateProps';
+import { Education, Language, Project, Skill, WorkExperience } from '../../types';
 import styleBuilder from './TemplateMinimalist.styles';
 
 const TemplateMinimalist: React.FC<TemplateProps> = ({ data, theme, labels }) => {
