@@ -9,9 +9,9 @@ const Title = (props: TitleProps) => {
     const { t } = useTranslations();
 
     return (
-        <h2 className={`text-2xl md:text-4xl text-center font-semibold text-primary-900 dark:text-primary-100 py-4 ${props.className}`}>
+        <h1 className={`text-2xl md:text-4xl font-semibold text-accent-900 dark:text-accent-100 py-2 ${props.className}`}>
             {t(props.children)}
-        </h2>
+        </h1>
     );
 }
 

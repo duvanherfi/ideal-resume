@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import ScrollButton from "../../../ui/buttons/ScrollButton";
-import TemplatePreview from "./TemplatePreview";
+import TemplateThumb from "./TemplateThumb";
 
 enum ScrollDirection {
     LEFT = "left",
     RIGHT = "right"
 };
 
-const TemplatePreviewGallery = () => {
+const TemplateThumbGallery = () => {
     const template = useResumeTemplate();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -42,6 +42,8 @@ const TemplatePreviewGallery = () => {
         }
     };
 
+    const x = [...template.getAll];
+
     return (
         <div className="relative">
             <div className="relative px-8">
@@ -50,8 +52,8 @@ const TemplatePreviewGallery = () => {
 
                 <div ref={scrollContainerRef} className="overflow-x-auto pb-4 scrollbar" onScroll={checkScrollability}>
                     <div className="flex space-x-4 min-w-min">
-                        {template.getAll.map((templateToPreview) => (
-                            <TemplatePreview
+                        {x.map((templateToPreview) => (
+                            <TemplateThumb
                                 key={templateToPreview.id}
                                 selectCurrentTemplate={() => template.select(templateToPreview)}
                                 templateToPreview={templateToPreview}
@@ -64,4 +66,4 @@ const TemplatePreviewGallery = () => {
     );
 };
 
-export default TemplatePreviewGallery;
+export default TemplateThumbGallery;

@@ -1,20 +1,17 @@
 import { PDFViewer } from "@react-pdf/renderer";
-import useUserData from "../../../../api/hooks/useUserData";
+import useResumeLabels from "../../../../api/hooks/useResumeLabels";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";
-import mockedResume from "../../../../mock/mockedResume";
-import { mergeData } from "../../../../api/common/dataHelper";
 import { Template } from "../../../../api/types";
-import useResumeLabels from "../../../../api/hooks/useResumeLabels";
+import mockedResume from "../../../../mock/mockedUserData";
 
-interface TemplatePreviewProps {
+interface TemplateThumbProps {
     selectCurrentTemplate: () => void;
     templateToPreview: Template;
 }
 
-const TemplatePreview = (props: TemplatePreviewProps) => {
+const TemplateThumb = (props: TemplateThumbProps) => {
     const { templateToPreview, selectCurrentTemplate } = props;
-    const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
     const { defaultLabels } = useResumeLabels();
@@ -24,8 +21,6 @@ const TemplatePreview = (props: TemplatePreviewProps) => {
         : " hover:bg-black/50 cursor-pointer z-20 "
         } hover:border-4 hover:border-b-accent-700 hover:border-t-accent-500 hover:border-r-accent-600 hover:border-l-accent-400 
          dark:hover:border-4 dark:hover:border-b-accent-700 dark:hover:border-t-accent-500 dark:hover:border-r-accent-600 dark:hover:border-l-accent-400 group absolute inset-0 transition-all duration-300`;
-
-    const mergedData = mergeData(data.get, mockedResume);
 
     return (
         <div className="space-y-2 xl:min-w-80">
@@ -48,4 +43,4 @@ const TemplatePreview = (props: TemplatePreviewProps) => {
     )
 };
 
-export default TemplatePreview;
+export default TemplateThumb;

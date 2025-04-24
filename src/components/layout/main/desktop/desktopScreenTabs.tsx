@@ -1,7 +1,7 @@
 import { Tab } from "../../../ui/tabs/TabsContainer";
 import LabelsForm from "../../../view/form/LabelsForm";
 import UserDataForm from "../../../view/form/UserDataForm";
-import ViewGallery from "../../../view/gallery/ViewGallery";
+import ViewThumbGallery from "../../../view/gallery/ViewThumbGallery";
 
 const desktopScreenTabs: Tab[] = [
   {
@@ -12,7 +12,7 @@ const desktopScreenTabs: Tab[] = [
   {
     id: "templates",
     name: "gallery.templates.title",
-    component: <ViewGallery />,
+    component: <ViewThumbGallery />,
   },
   {
     id: "labels",

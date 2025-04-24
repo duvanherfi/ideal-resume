@@ -4,6 +4,7 @@ import { SelectOption } from "../../../../ui/form/Select";
 import Icons from "../../../../ui/icons/Icons";
 import GenericField from "./GenericField";
 import { UseGenericFormType } from "../../../../../hooks/useGenericForm";
+import Subtitle from "../../../../ui/text/Subtitle";
 
 export interface FormField<T> {
     name: keyof T;
@@ -26,7 +27,7 @@ const ListGenericFields = <T extends { id: string }>(props: FormGenericFieldsPro
 
     return (
         <div className={"w-full space-y-2"}>
-            <h2 className="text-2xl font-semibold mb-8 text-primary-900 dark:text-primary-100">{title}</h2>
+            <Subtitle>{title}</Subtitle>
 
             <div className="md:grid md:grid-cols-2 xl:grid-cols-2 gap-4">
                 {fields.map((field) => <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />)}
@@ -35,10 +36,12 @@ const ListGenericFields = <T extends { id: string }>(props: FormGenericFieldsPro
             <div className="mt-4 flex justify-end">
                 {form.isEditing ? (
                     <div className="space-x-2">
-                        <Button variant="outline" onClick={form.reset}>
-                            Cancel
+                        <Button variant="danger" onClick={form.reset}>
+                            <Icons.Restore />
                         </Button>
-                        <Button onClick={form.update}>Update</Button>
+                        <Button variant="secondary" onClick={form.update}>
+                            <Icons.FloppyDisk />
+                        </Button>
                     </div>
                 ) : (
                     <Button onClick={form.add} disabled={!isValid(form.current)}>

@@ -33,7 +33,7 @@ const ResumeLabelProvider: React.FC<ResumeLabelProviderProps> = ({ children, ini
 
     const value = useMemo(() => ({
         labels: resumeLabels,
-        defaultLabels,
+        defaultLabels: translatedLabels,
         resetLabels,
         updateLabels,
         updateLabel,

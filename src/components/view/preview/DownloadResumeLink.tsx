@@ -5,6 +5,7 @@ import useUserData from "../../../api/hooks/useUserData";
 import useResumeTheme from "../../../api/hooks/useResumeTheme";
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import useResumeLabels from "../../../api/hooks/useResumeLabels";
+import Icons from "../../ui/icons/Icons";
 
 const DownloadResumeLink = () => {
     const { t } = useTranslations();
@@ -23,7 +24,7 @@ const DownloadResumeLink = () => {
             >
                 {({ blob, url, loading, error }) => (
                     <Button disabled={loading} variant="secondary">
-                        {loading ? t("link.download.loading") : t("link.download.label")}
+                        {loading ? t("link.download.loading") : <Icons.FloppyDisk />}
                     </Button>
                 )}
             </PDFDownloadLink>
