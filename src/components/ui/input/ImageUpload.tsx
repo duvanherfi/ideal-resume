@@ -3,7 +3,7 @@ import React, { useState } from "react";
 interface ImageUploadProps {
   label?: string;
   name: string;
-  onChange: (imageData: string) => void;
+  onChange: (name: string, imageData: string) => void;
   value?: string;
 }
 
@@ -23,7 +23,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     reader.onloadend = () => {
       const base64String = reader.result as string;
       setPreviewUrl(base64String);
-      onChange(base64String);
+      onChange(name, base64String);
     };
     reader.readAsDataURL(file);
   };

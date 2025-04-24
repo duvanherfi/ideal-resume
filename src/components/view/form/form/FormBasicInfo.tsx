@@ -1,21 +1,22 @@
 import React from "react";
 import useUserData from "../../../../api/hooks/useUserData";
+import { UserData } from "../../../../api/types";
+import GenericField from "../../../ui/form/field/GenericField";
 import GlassCard from "../../../ui/GlassCard";
 import ImageUpload from "../../../ui/input/ImageUpload";
 import Subtitle from "../../../ui/text/Subtitle";
 import FieldsBasicInfo from "../config/fields/FieldsBasicInfo.config";
-import GenericField from "../../../ui/form/field/GenericField";
 
 const FormBasicInfo: React.FC = () => {
   const data = useUserData();
 
-  const handleImageChange = (imageData: string) => {
-    data.update({ profilePhoto: imageData });
+  const handleImageChange = (name: string, imageData: string) => {
+    data.updateField(name as keyof UserData, imageData);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    data.update({ [name]: value });
+    data.updateField(name as keyof UserData, value);
   };
 
   return (

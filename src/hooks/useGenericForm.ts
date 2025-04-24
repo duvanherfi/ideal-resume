@@ -12,6 +12,7 @@ export type UseGenericFormType<T> = {
     reset: () => void;
     edit: (item: T) => void;
     delete: (id: string) => void;
+    swap: (dragIndex: number, hoverIndex: number) => void;
 };
 
 interface UseGenericFormProps<T extends { id: string }> {
@@ -52,7 +53,6 @@ const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>)
         setCurrentItem(emptyItem());
     };
 
-
     const handleEdit = (item: T) => {
         setCurrentItem(item);
         setIsEditing(true);
@@ -61,6 +61,14 @@ const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>)
     const handleDelete = (id: string) => {
         const filteredItems = items.filter((item) => item.id !== id);
         data.update({ [dataKey]: filteredItems });
+    };
+
+    const handleSwap = (dragIndex: number, hoverIndex: number) => {
+        const newItems = [...items];
+        const draggedItem = newItems[dragIndex];
+        newItems.splice(dragIndex, 1);
+        newItems.splice(hoverIndex, 0, draggedItem);
+        data.updateField(dataKey, newItems);
     };
 
     return {
@@ -73,6 +81,7 @@ const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>)
         reset: resetForm,
         edit: handleEdit,
         delete: handleDelete,
+        swap: handleSwap,
     };
 };
 
