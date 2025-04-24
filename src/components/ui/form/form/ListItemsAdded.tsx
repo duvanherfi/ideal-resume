@@ -3,7 +3,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { UserData } from "../../../../api/types";
 import { UseGenericFormType } from "../../../../hooks/useGenericForm";
 import Text from "../../../ui/text/Text";
-import GenericItem from "../../../view/form/item/GenericItem";
+import GenericItem from "../../../view/user-data/item/GenericItem";
 import Icons from "../../icons/Icons";
 
 interface AddedItemsListProps<T extends { id: string }> {

@@ -11,7 +11,7 @@ const ViewUserDataForm: React.FC = () => {
         <TabsContainer
           items={userDataFormTabs}
           defaultIndex={0}
-          slideDirection="bottom"
+          slideDirection="left"
         />
       </div>
     </div>

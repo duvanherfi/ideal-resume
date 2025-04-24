@@ -1,4 +1,4 @@
-import ViewUserDataForm from "../../../view/form/ViewUserDataForm";
+import ViewUserDataForm from "../../../view/user-data/ViewUserDataForm";
 import ViewTemplatePreview from "../../../view/preview/ViewTemplatePreview";
 import GlassCard from "../../../ui/GlassCard";
 import { Tab } from "../../../ui/tabs/TabsContainer";
