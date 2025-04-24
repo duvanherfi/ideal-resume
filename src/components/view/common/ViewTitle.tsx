@@ -9,9 +9,9 @@ interface ViewTitleProps {
 
 const ViewTitle = (props: ViewTitleProps) => {
     return (
-        <div>
+        <div className="px-2">
             <Icons.LineSeparator />
-            <Title className="hidden lg:block">{props.title}</Title>
+            <Title className="">{props.title}</Title>
             {props.subtitle && <Text className="text-secondary-500">{props.subtitle}</Text>}
             <Icons.LineSeparator />
         </div>

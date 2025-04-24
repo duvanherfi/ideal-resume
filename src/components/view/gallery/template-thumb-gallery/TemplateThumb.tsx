@@ -33,7 +33,7 @@ const TemplateThumb = (props: TemplateThumbProps) => {
                         {templateToPreview.name}
                     </span>
                 </button>
-                <div className="h-full w-full">
+                <div className="h-full w-64 lg:w-full">
                     <PDFViewer width="100%" height="100%" style={{ border: 'none', overflow: "hidden" }} showToolbar={false}>
                         <templateToPreview.PDF data={mockedResume} theme={theme.get ?? undefined} labels={defaultLabels} />
                     </PDFViewer>

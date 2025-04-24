@@ -2,7 +2,7 @@ import useResumeTheme from "../../../../api/hooks/useResumeTheme";
 import useTranslations from "../../../../hooks/useTranslations";
 import ThemeColorBadge from "./ThemeColorBadge";
 
-const CustomTheme = () => {
+const ThemeCustom = () => {
     const { t } = useTranslations();
     const theme = useResumeTheme();
 
@@ -27,4 +27,4 @@ const CustomTheme = () => {
     );
 };
 
-export default CustomTheme;
+export default ThemeCustom;
