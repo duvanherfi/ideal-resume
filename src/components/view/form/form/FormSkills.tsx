@@ -6,7 +6,7 @@ import FormSkillsConfig from "../config/FormSkills.config";
 
 const FormSkills: React.FC = () => {
   return (
-    <div className="flex flex-col w-full lg:flex-row xl:flex-col">
+    <div className="flex flex-col w-full lg:flex-row">
       <FormGeneric<Skill> {...FormSkillsConfig} />
       <FormGeneric<Language> {...FormLanguageConfig} />
     </div>

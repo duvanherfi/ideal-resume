@@ -13,8 +13,8 @@ const TabButton = (props: TabButtonProps) => {
 
   const classNameNormal = `w-full px-3 py-2 transition-all text-sm md:text-base lg:text-lg whitespace-nowrap border-b-4`;
   const classNameStatus = active
-    ? "rounded-tr-md rounded-tl-md bg-primary-200/50 dark:bg-primary-900/50 font-bold text-primary-900 dark:text-primary-300 border-primary-900 dark:border-primary-300"
-    : "text-secondary-700 dark:text-secondary-300 border-transparent hover:text-primary-800 dark:hover:text-primary-200 hover:border-primary-800 dark:hover:border-primary-200";
+    ? "rounded-tr-md rounded-tl-md bg-accent-200/50 dark:bg-accent-900/50 font-bold text-accent-900 dark:text-accent-300 border-accent-900 dark:border-accent-300"
+    : "text-secondary-700 dark:text-secondary-300 border-transparent hover:text-accent-800 dark:hover:text-accent-200 hover:border-accent-800 dark:hover:border-accent-200";
 
   const getTabClassName = () => `${classNameNormal} ${classNameStatus}`;
 

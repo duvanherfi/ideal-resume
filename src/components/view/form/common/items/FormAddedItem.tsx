@@ -15,7 +15,7 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
     return (
         <div className="p-3 border bg-white/70 border-secondary-200 dark:bg-black/70 dark:border-secondary-800 rounded-lg shadow-sm">
             <div className="flex justify-between items-start">
-                <div className="flex-1 pr-4 overflow-hidden">
+                <div className="flex-1 overflow-hidden">
                     {props.children}
                 </div>
                 <div className="flex-shrink-0 flex space-x-2">
