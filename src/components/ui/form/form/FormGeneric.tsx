@@ -1,7 +1,7 @@
-import useGenericForm from "../../../../../hooks/useGenericForm";
-import useTranslations from "../../../../../hooks/useTranslations";
-import { UserData } from "../../../../../api/types";
-import GlassCard from "../../../../ui/GlassCard";
+import { UserData } from "../../../../api/types";
+import useGenericForm from "../../../../hooks/useGenericForm";
+import useTranslations from "../../../../hooks/useTranslations";
+import GlassCard from "../../GlassCard";
 import ListGenericFields, { FormField } from "../field/ListGenericFields";
 import ListItemsAdded from "./ListItemsAdded";
 

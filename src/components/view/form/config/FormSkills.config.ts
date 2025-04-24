@@ -1,5 +1,5 @@
 import { Skill } from "../../../../api/types";
-import { FormGenericProps } from "../common/form/FormGeneric";
+import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
 import FieldsSkills, { getEmptySkill } from "./fields/FieldsSkills.config";
 
 const FormSkillsConfig: FormGenericProps<Skill> = ({

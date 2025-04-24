@@ -1,5 +1,5 @@
 import { WorkExperience } from "../../../../api/types";
-import { FormGenericProps } from "../common/form/FormGeneric";
+import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
 import FieldsExperience, { getEmptyExperience } from "./fields/FieldsExperience.config";
 
 const FormExperienceConfig: FormGenericProps<WorkExperience> = {

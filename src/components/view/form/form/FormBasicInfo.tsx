@@ -1,10 +1,10 @@
 import React from "react";
 import useUserData from "../../../../api/hooks/useUserData";
 import GlassCard from "../../../ui/GlassCard";
-import ImageUpload from "../../../ui/form/ImageUpload";
+import ImageUpload from "../../../ui/input/ImageUpload";
 import Subtitle from "../../../ui/text/Subtitle";
-import GenericField from "../common/field/GenericField";
 import FieldsBasicInfo from "../config/fields/FieldsBasicInfo.config";
+import GenericField from "../../../ui/form/field/GenericField";
 
 const FormBasicInfo: React.FC = () => {
   const data = useUserData();

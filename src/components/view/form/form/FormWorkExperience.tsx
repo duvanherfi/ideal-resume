@@ -1,6 +1,6 @@
 import React from "react";
 import { WorkExperience } from "../../../../api/types";
-import FormGeneric from "../common/form/FormGeneric";
+import FormGeneric from "../../../ui/form/form/FormGeneric";
 import FormExperienceConfig from "../config/FormExperience.config";
 
 const FormWorkExperience: React.FC = () => {

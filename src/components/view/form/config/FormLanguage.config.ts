@@ -1,5 +1,5 @@
 import { Language } from "../../../../api/types";
-import { FormGenericProps } from "../common/form/FormGeneric";
+import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
 import FieldsLanguage, { getEmptyLanguage } from "./fields/FieldsLanguage.config";
 
 const FormLanguageConfig: FormGenericProps<Language> = ({

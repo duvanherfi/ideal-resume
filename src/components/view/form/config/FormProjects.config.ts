@@ -1,5 +1,5 @@
 import { Project } from "../../../../api/types";
-import { FormGenericProps } from "../common/form/FormGeneric";
+import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
 import FieldsProject, { getEmptyProject } from "./fields/FieldsProject.config";
 
 const FormProjectsConfig: FormGenericProps<Project> = ({

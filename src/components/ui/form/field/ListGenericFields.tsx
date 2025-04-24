@@ -1,10 +1,9 @@
-import React from "react";
-import Button from "../../../../ui/buttons/Button";
-import { SelectOption } from "../../../../ui/form/Select";
-import Icons from "../../../../ui/icons/Icons";
+import { UseGenericFormType } from "../../../../hooks/useGenericForm";
+import Button from "../../buttons/Button";
+import Icons from "../../icons/Icons";
+import { SelectOption } from "../../input/Select";
+import Subtitle from "../../text/Subtitle";
 import GenericField from "./GenericField";
-import { UseGenericFormType } from "../../../../../hooks/useGenericForm";
-import Subtitle from "../../../../ui/text/Subtitle";
 
 export interface FormField<T> {
     name: keyof T;

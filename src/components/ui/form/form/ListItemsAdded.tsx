@@ -1,8 +1,8 @@
-import { UseGenericFormType } from "../../../../../hooks/useGenericForm";
-import { UserData } from "../../../../../api/types";
-import Icons from "../../../../ui/icons/Icons";
-import GenericItem from "../items/GenericItem";
-import Text from "../../../../ui/text/Text";
+import { UserData } from "../../../../api/types";
+import { UseGenericFormType } from "../../../../hooks/useGenericForm";
+import GenericItem from "../../../view/form/item/GenericItem";
+import Icons from "../../icons/Icons";
+import Text from "../../../ui/text/Text";
 
 interface AddedItemsListProps<T extends { id: string }> {
     title: string;

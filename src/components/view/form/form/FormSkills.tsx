@@ -1,6 +1,6 @@
 import React from "react";
 import { Language, Skill } from "../../../../api/types";
-import FormGeneric from "../common/form/FormGeneric";
+import FormGeneric from "../../../ui/form/form/FormGeneric";
 import FormLanguageConfig from "../config/FormLanguage.config";
 import FormSkillsConfig from "../config/FormSkills.config";
 

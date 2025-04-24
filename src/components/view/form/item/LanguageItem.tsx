@@ -1,6 +1,6 @@
-import { Language } from "../../../../../../api/types";
-import ItemTitle from "../common/ItemTitle";
-import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
+import { Language } from "../../../../api/types";
+import ItemTitle from "../../../ui/form/items/common/ItemTitle";
+import FormAddedItem, { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
 
 const LanguageItem = (props: FormAddedItemGenericProps<Language>) => {
   const { item } = props;

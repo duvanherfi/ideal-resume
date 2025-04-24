@@ -1,6 +1,6 @@
-import { Skill } from "../../../../../../api/types";
-import ItemTitle from "../common/ItemTitle";
-import FormAddedItem, { FormAddedItemGenericProps } from "../FormAddedItem";
+import { Skill } from "../../../../api/types";
+import ItemTitle from "../../../ui/form/items/common/ItemTitle";
+import FormAddedItem, { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
 
 const SkillItem = (props: FormAddedItemGenericProps<Skill>) => {
   const { item } = props;

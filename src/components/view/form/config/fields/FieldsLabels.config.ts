@@ -1,5 +1,5 @@
 import { ResumeLabels } from "../../../../../api/types";
-import { FormField } from "../../common/field/ListGenericFields";
+import { FormField } from "../../../../ui/form/field/ListGenericFields";
 
 const FieldsLabels: FormField<ResumeLabels>[] = [
     {

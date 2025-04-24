@@ -1,6 +1,6 @@
 import React from "react";
 import { Education } from "../../../../api/types";
-import FormGeneric from "../common/form/FormGeneric";
+import FormGeneric from "../../../ui/form/form/FormGeneric";
 import FormEducationConfig from "../config/FormEducation.config";
 
 const FormEducation: React.FC = () => {

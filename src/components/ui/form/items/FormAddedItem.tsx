@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Icons from "../../../../ui/icons/Icons";
+import Icons from "../../icons/Icons";
 
 export interface FormAddedItemGenericProps<T> {
     item: T;

@@ -1,5 +1,5 @@
 import { Education } from "../../../../api/types";
-import { FormGenericProps } from "../common/form/FormGeneric";
+import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
 import FieldsEducation, { getEmptyEducation } from "./fields/FieldsEducation.config";
 
 const FormEducationConfig: FormGenericProps<Education> = {

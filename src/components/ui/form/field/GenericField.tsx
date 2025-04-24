@@ -1,8 +1,8 @@
-import useTranslations from "../../../../../hooks/useTranslations";
-import ImageUpload from "../../../../ui/form/ImageUpload";
-import Input from "../../../../ui/form/Input";
-import Select, { SelectOption } from "../../../../ui/form/Select";
-import TextArea from "../../../../ui/form/TextArea";
+import useTranslations from "../../../../hooks/useTranslations";
+import ImageUpload from "../../input/ImageUpload";
+import Input from "../../input/Input";
+import Select, { SelectOption } from "../../input/Select";
+import TextArea from "../../input/TextArea";
 
 const GenericField = (props: any) => {
     const { t } = useTranslations();
