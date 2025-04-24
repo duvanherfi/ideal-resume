@@ -24,7 +24,7 @@ const DownloadResumeLink = () => {
             >
                 {({ blob, url, loading, error }) => (
                     <Button disabled={loading} variant="secondary">
-                        {loading ? t("link.download.loading") : <Icons.FloppyDisk />}
+                        {loading ? t("link.download.loading") : <Icons.Save />}
                     </Button>
                 )}
             </PDFDownloadLink>

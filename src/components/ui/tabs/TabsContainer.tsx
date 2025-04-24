@@ -3,7 +3,7 @@ import TabList from "./TabList";
 
 export interface Tab {
     id: string;
-    name: string;
+    name?: string;
     component?: ReactNode;
     children?: ReactNode;
 }

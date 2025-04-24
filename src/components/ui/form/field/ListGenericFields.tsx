@@ -35,11 +35,11 @@ const ListGenericFields = <T extends { id: string }>(props: FormGenericFieldsPro
             <div className="mt-4 flex justify-end">
                 {form.isEditing ? (
                     <div className="space-x-2">
-                        <Button variant="danger" onClick={form.reset}>
-                            <Icons.Restore />
-                        </Button>
                         <Button variant="secondary" onClick={form.update}>
-                            <Icons.FloppyDisk />
+                            <Icons.Save />
+                        </Button>
+                        <Button variant="danger" onClick={form.reset}>
+                            <Icons.Cross />
                         </Button>
                     </div>
                 ) : (

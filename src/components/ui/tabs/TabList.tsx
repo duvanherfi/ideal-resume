@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import TabButton from "./TabButton";
 
 export interface TabListProps {
-  items: Array<{ id: string; name: string, children?: ReactNode }>;
+  items: Array<{ id: string; name?: string, children?: ReactNode }>;
   currentIndex: number;
   onChange: (index: number) => void;
   className?: string;

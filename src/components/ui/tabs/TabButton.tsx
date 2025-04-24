@@ -1,7 +1,7 @@
 import useTranslations from "../../../hooks/useTranslations";
 
 interface TabButtonProps {
-  text: string;
+  text?: string;
   children?: React.ReactNode;
   onClick: () => void;
   active: boolean;
@@ -9,7 +9,7 @@ interface TabButtonProps {
 
 const TabButton = (props: TabButtonProps) => {
   const { t } = useTranslations();
-  const { onClick, active, text, children } = props;
+  const { onClick, active, text = "", children } = props;
 
   const classNameNormal = `w-full px-3 py-2 transition-all text-sm md:text-base lg:text-lg whitespace-nowrap border-b-4`;
   const classNameStatus = active
@@ -21,7 +21,7 @@ const TabButton = (props: TabButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`${getTabClassName()} flex flex-col lg:flex-row items-center justify-between xl:justify-center xl:space-x-2`}
+      className={`${getTabClassName()} flex flex-col items-center justify-between`}
     >
       {children}
       <span>{t(text)}</span>

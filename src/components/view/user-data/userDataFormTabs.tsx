@@ -4,32 +4,39 @@ import FormEducation from "./form/FormEducation";
 import FormWorkExperience from "./form/FormWorkExperience";
 import FormProjects from "./form/FormProjects";
 import FormSkills from "./form/FormSkills";
+import Icons from "../../ui/icons/Icons";
+import FormLanguages from "./form/FormLanguages";
 
 const userDataFormTabs: Tab[] = [
     {
         id: "basicInfo",
-        name: "form.basic.title",
         component: <FormBasicInfo />,
+        children: <Icons.Person />
     },
     {
         id: "experience",
-        name: "form.experience.title",
         component: <FormWorkExperience />,
+        children: <Icons.Briefcase />
     },
     {
         id: "education",
-        name: "form.education.title",
         component: <FormEducation />,
+        children: <Icons.Academic />
     },
     {
         id: "skills",
-        name: "form.skills.title",
         component: <FormSkills />,
+        children: <Icons.Skills />
+    },
+    {
+        id: "languages",
+        component: <FormLanguages />,
+        children: <Icons.Globe />
     },
     {
         id: "projects",
-        name: "form.projects.title",
         component: <FormProjects />,
+        children: <Icons.Projects />
     },
 ];
 
