@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { Project } from "../../../../../api/types";
 import { FormField } from "../../../../ui/form/field/ListGenericFields";
 
@@ -21,12 +20,5 @@ const FieldsProject: FormField<Project>[] = [
     label: "form.projects.field.description",
   },
 ];
-
-export const getEmptyProject = (): Project => ({
-  id: uuidv4(),
-  name: "",
-  link: "",
-  description: "",
-});
 
 export default FieldsProject;

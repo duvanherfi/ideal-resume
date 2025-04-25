@@ -1,12 +1,11 @@
 import { Education } from "../../../../api/types";
 import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
-import FieldsEducation, { getEmptyEducation } from "./fields/FieldsEducation.config";
+import FieldsEducation from "./fields/FieldsEducation.config";
 
 const FormEducationConfig: FormGenericProps<Education> = {
     dataKey: "education",
     title: "form.education.title",
     fields: FieldsEducation,
-    emptyItem: getEmptyEducation,
     isValid: (education: Education) => Boolean(education.institution && education.degree && education.startDate),
 };
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { UserData } from "../api/types";
 import useUserData from "../api/hooks/useUserData";
+import { UserDataItems } from "../api/types";
+import emptyItems from "../components/view/user-data/config/FormItemEmpty";
 
 export type UseGenericFormType<T> = {
     current: T;
@@ -16,13 +17,13 @@ export type UseGenericFormType<T> = {
 };
 
 interface UseGenericFormProps<T extends { id: string }> {
-    dataKey: keyof UserData;
-    emptyItem: () => T;
+    dataKey: keyof UserDataItems;
 }
 
 const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>): UseGenericFormType<T> => {
-    const { dataKey, emptyItem } = props;
-    const [currentItem, setCurrentItem] = useState<T>(emptyItem());
+    const { dataKey } = props;
+    const [empty] = useState(emptyItems[dataKey] as T || { id: "" });
+    const [currentItem, setCurrentItem] = useState<T>(empty);
     const [isEditing, setIsEditing] = useState(false);
     const data = useUserData();
 
@@ -36,7 +37,7 @@ const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>)
     const handleAdd = () => {
         const newItems = [...items, currentItem];
         data.updateField(dataKey, newItems);
-        setCurrentItem(emptyItem());
+        setCurrentItem(empty);
     };
 
     const handleUpdate = () => {
@@ -44,13 +45,13 @@ const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>)
             item.id === currentItem.id ? currentItem : item
         );
         data.updateField(dataKey, updatedItems);
-        setCurrentItem(emptyItem());
+        setCurrentItem(empty);
         setIsEditing(false);
     };
 
     const resetForm = () => {
         setIsEditing(false);
-        setCurrentItem(emptyItem());
+        setCurrentItem(empty);
     };
 
     const handleEdit = (item: T) => {

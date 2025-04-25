@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { Skill } from "../../../../../api/types";
 import { FormField } from "../../../../ui/form/field/ListGenericFields";
 
@@ -22,11 +21,5 @@ const FieldsSkills: FormField<Skill>[] = [
         ],
     },
 ];
-
-export const getEmptySkill = (): Skill => ({
-    id: uuidv4(),
-    name: "",
-    level: 3,
-});
 
 export default FieldsSkills;

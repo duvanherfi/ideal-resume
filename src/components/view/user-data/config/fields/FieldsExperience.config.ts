@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { WorkExperience } from "../../../../../api/types";
 import { FormField } from "../../../../ui/form/field/ListGenericFields";
 
@@ -34,15 +33,5 @@ const FieldsExperience: FormField<WorkExperience>[] = [
         label: "form.experience.field.description",
     },
 ];
-
-
-export const getEmptyExperience = (): WorkExperience => ({
-    id: uuidv4(),
-    company: "",
-    role: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-});
 
 export default FieldsExperience;

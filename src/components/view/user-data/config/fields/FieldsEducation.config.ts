@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { Education } from "../../../../../api/types";
 import { FormField } from "../../../../ui/form/field/ListGenericFields";
 
@@ -28,13 +27,5 @@ const FieldsEducation: FormField<Education>[] = [
         placeholder: "Leave blank for current education",
     },
 ];
-
-export const getEmptyEducation = (): Education => ({
-    id: uuidv4(),
-    institution: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-});
 
 export default FieldsEducation;

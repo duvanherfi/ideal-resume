@@ -1,4 +1,5 @@
-import { UseGenericFormType } from "../../../../hooks/useGenericForm";
+import { UserDataItems } from "../../../../api/types";
+import useGenericForm from "../../../../hooks/useGenericForm";
 import Button from "../../buttons/Button";
 import Icons from "../../icons/Icons";
 import { SelectOption } from "../../input/Select";
@@ -17,12 +18,13 @@ export interface FormField<T> {
 interface FormGenericFieldsProps<T extends { id: string }> {
     title: string;
     fields: FormField<T>[];
+    dataKey: keyof UserDataItems;
     isValid: (item: T) => boolean;
-    form: UseGenericFormType<T>;
 }
 
 const ListGenericFields = <T extends { id: string }>(props: FormGenericFieldsProps<T>) => {
-    const { title, fields, isValid, form } = props;
+    const { title, fields, isValid, dataKey } = props;
+    const form = useGenericForm<T>({ dataKey });
 
     return (
         <div className={"w-full space-y-2"}>

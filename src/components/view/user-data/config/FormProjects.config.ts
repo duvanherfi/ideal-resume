@@ -1,12 +1,11 @@
 import { Project } from "../../../../api/types";
 import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
-import FieldsProject, { getEmptyProject } from "./fields/FieldsProject.config";
+import FieldsProject from "./fields/FieldsProject.config";
 
 const FormProjectsConfig: FormGenericProps<Project> = ({
     dataKey: "projects",
     title: "form.projects.title",
     fields: FieldsProject,
-    emptyItem: getEmptyProject,
     isValid: (project: Project) => Boolean(project.name),
 });
 

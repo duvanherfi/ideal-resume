@@ -1,4 +1,4 @@
-import { UserData } from "../../../../api/types";
+import { UserDataItems } from "../../../../api/types";
 import useGenericForm from "../../../../hooks/useGenericForm";
 import useTranslations from "../../../../hooks/useTranslations";
 import GlassCard from "../../GlassCard";
@@ -8,15 +8,13 @@ import ListItemsAdded from "./ListItemsAdded";
 export interface FormGenericProps<T extends { id: string }> {
     title: string;
     fields: FormField<T>[];
-    dataKey: keyof UserData;
-    emptyItem: () => T;
+    dataKey: keyof UserDataItems;
     isValid: (item: T) => boolean;
 }
 
 const FormGeneric = <T extends { id: string }>(props: FormGenericProps<T>) => {
-    const { title, fields, dataKey, emptyItem, isValid } = props;
+    const { title, fields, dataKey, isValid } = props;
     const { t } = useTranslations();
-    const form = useGenericForm({ dataKey, emptyItem });
 
     return (
         <div className="space-y-8 w-screen md:w-full">
@@ -25,9 +23,9 @@ const FormGeneric = <T extends { id: string }>(props: FormGenericProps<T>) => {
                     title={t(title)}
                     fields={fields}
                     isValid={isValid}
-                    form={form}
+                    dataKey={dataKey}
                 />
-                <ListItemsAdded dataKey={dataKey} form={form} />
+                <ListItemsAdded dataKey={dataKey} />
             </GlassCard>
         </div>
     );

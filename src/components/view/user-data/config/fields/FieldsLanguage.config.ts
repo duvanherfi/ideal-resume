@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { Language } from "../../../../../api/types";
 import { FormField } from "../../../../ui/form/field/ListGenericFields";
 
@@ -22,11 +21,5 @@ const FieldsLanguage: FormField<Language>[] = [
         ],
     },
 ];
-
-export const getEmptyLanguage = (): Language => ({
-    id: uuidv4(),
-    name: "",
-    proficiency: "Intermediate",
-});
 
 export default FieldsLanguage;

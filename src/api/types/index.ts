@@ -8,7 +8,7 @@ export interface UserBasicInfo {
   phone: string;
   address: string;
   profileSummary: string;
-  profilePhoto: string; 
+  profilePhoto: string;
 }
 
 export interface WorkExperience {
@@ -47,13 +47,15 @@ export interface Language {
   proficiency: "Beginner" | "Intermediate" | "Advanced" | "Fluent" | "Native";
 }
 
-export interface UserData extends UserBasicInfo {
+export interface UserDataItems {
   workExperiences: WorkExperience[];
   education: Education[];
   projects: Project[];
   skills: Skill[];
   languages: Language[];
 }
+
+export interface UserData extends UserDataItems, UserBasicInfo { }
 
 export interface ResumeLabels {
   profileSummary?: string;
