@@ -1,6 +1,6 @@
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
-import Title from "../../ui/text/Title";
-import ViewLabelsForm from "../labels/ViewLabelsForm";
+import ViewTitle from "../common/ViewTitle";
+import ViewCustomizeTemplate from "../customize/ViewCustomizeTemplate";
 import DownloadResumeLink from "./DownloadResumeLink";
 import TemplatePreviewSelected from "./TemplatePreviewSelected";
 
@@ -9,8 +9,8 @@ const ViewTemplatePreview = () => {
     if (!template.active) return null;
 
     return (
-        <div className="space-y-2 h-full w-full bg-primary-300/20 dark:bg-primary-950/20 backdrop-blur-lg py-4">
-            <Title className="hidden 2xl:text-center">screen.preview.title</Title>
+        <div className="space-y-2 h-full w-full bg-gradient-to-bl from-primary-100 via-primary-200/50 to-white/50 dark:from-primary-950/50 dark:via-secondary-900/50 dark:to-black backdrop-blur-lg py-4 2xl:w-full">
+            <ViewTitle className="md:hidden" title="screen.preview.title" />
             <div className="flex w-full justify-end px-8">
                 <DownloadResumeLink />
             </div>
@@ -18,7 +18,7 @@ const ViewTemplatePreview = () => {
                 <TemplatePreviewSelected />
             </div>
             <div className="xl:hidden">
-                <ViewLabelsForm />
+                <ViewCustomizeTemplate />
             </div>
         </div>
     )

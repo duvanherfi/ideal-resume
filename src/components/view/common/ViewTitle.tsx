@@ -5,11 +5,12 @@ import Text from "../../ui/text/Text";
 interface ViewTitleProps {
     title: string;
     subtitle?: string;
+    className?: string;
 }
 
 const ViewTitle = (props: ViewTitleProps) => {
     return (
-        <div className="px-2">
+        <div className={`px-2 ${props.className}`}>
             <Icons.LineSeparator />
             <Title className="">{props.title}</Title>
             {props.subtitle && <Text className="text-secondary-500">{props.subtitle}</Text>}
