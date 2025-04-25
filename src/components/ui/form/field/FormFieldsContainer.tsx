@@ -1,4 +1,5 @@
-import { UseGenericFormType } from "../../../../hooks/useGenericForm";
+import { MultiItemFormType } from "../../../../hooks/useMultiItemForm";
+import useTranslations from "../../../../hooks/useTranslations";
 import Button from "../../buttons/Button";
 import Icons from "../../icons/Icons";
 import { SelectOption } from "../../input/Select";
@@ -14,19 +15,20 @@ export interface FormField<T> {
     options?: SelectOption[];
 }
 
-interface FormGenericFieldsProps<T extends { id: string }> {
+interface FormFieldsContainerProps<T extends { id: string }> {
     title: string;
     fields: FormField<T>[];
     isValid: (item: T) => boolean;
-    form: UseGenericFormType<T>;
+    form: MultiItemFormType<T>;
 }
 
-const ListGenericFields = <T extends { id: string }>(props: FormGenericFieldsProps<T>) => {
+const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
     const { title, fields, isValid, form } = props;
+    const { t } = useTranslations();
 
     return (
         <div className={"w-full space-y-2"}>
-            <Subtitle>{title}</Subtitle>
+            <Subtitle>{t(title)}</Subtitle>
 
             <div className="md:grid md:grid-cols-2 xl:grid-cols-2 gap-4">
                 {fields.map((field) => <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />)}
@@ -52,4 +54,4 @@ const ListGenericFields = <T extends { id: string }>(props: FormGenericFieldsPro
     );
 };
 
-export default ListGenericFields;
+export default FormFieldsContainer;

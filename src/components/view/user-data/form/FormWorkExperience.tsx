@@ -1,11 +1,11 @@
 import React from "react";
 import { WorkExperience } from "../../../../api/types";
-import FormGeneric from "../../../ui/form/form/FormGeneric";
+import MultiItemForm from "../../../ui/form/form/MultiItemForm";
 import FormExperienceConfig from "../config/FormExperience.config";
 
 const FormWorkExperience: React.FC = () => {
   return (
-    <FormGeneric<WorkExperience> {...FormExperienceConfig} />
+    <MultiItemForm<WorkExperience> {...FormExperienceConfig} />
   );
 };
 

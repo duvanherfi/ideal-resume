@@ -1,15 +1,13 @@
 import { Project } from "../../../../api/types";
-import { FormGenericProps } from "../../../ui/form/form/FormGeneric";
+import { MultiItemFormProps } from "../../../ui/form/form/MultiItemForm";
 import FieldsProject from "./fields/FieldsProject.config";
-import emptyItems from "./FormItemEmpty";
 
 const dataKey = "projects";
 
-const FormProjectsConfig: FormGenericProps<Project> = ({
+const FormProjectsConfig: MultiItemFormProps<Project> = ({
     dataKey,
     title: "form.projects.title",
     fields: FieldsProject,
-    emptyItem: emptyItems[dataKey],
     isValid: (project: Project) => Boolean(project.name),
 });
 

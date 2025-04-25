@@ -1,11 +1,11 @@
 import React from "react";
 import { Education } from "../../../../api/types";
-import FormGeneric from "../../../ui/form/form/FormGeneric";
+import MultiItemForm from "../../../ui/form/form/MultiItemForm";
 import FormEducationConfig from "../config/FormEducation.config";
 
 const FormEducation: React.FC = () => {
   return (
-    <FormGeneric<Education> {...FormEducationConfig} />
+    <MultiItemForm<Education> {...FormEducationConfig} />
   );
 };
 

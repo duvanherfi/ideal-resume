@@ -1,11 +1,11 @@
 import React from "react";
 import { Language } from "../../../../api/types";
-import FormGeneric from "../../../ui/form/form/FormGeneric";
+import MultiItemForm from "../../../ui/form/form/MultiItemForm";
 import FormLanguageConfig from "../config/FormLanguage.config";
 
 const FormLanguages: React.FC = () => {
   return (
-    <FormGeneric<Language> {...FormLanguageConfig} />
+    <MultiItemForm<Language> {...FormLanguageConfig} />
   );
 };
 

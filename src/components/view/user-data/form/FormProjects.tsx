@@ -1,11 +1,11 @@
 import React from "react";
 import { Project } from "../../../../api/types";
 import FormProjectsConfig from "../config/FormProjects.config";
-import FormGeneric from "../../../ui/form/form/FormGeneric";
+import MultiItemForm from "../../../ui/form/form/MultiItemForm";
 
 const FormProjects: React.FC = () => {
   return (
-    <FormGeneric<Project> {...FormProjectsConfig} />
+    <MultiItemForm<Project> {...FormProjectsConfig} />
   );
 };
 

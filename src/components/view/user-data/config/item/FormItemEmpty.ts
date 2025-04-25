@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Education, Language, Project, Skill, UserDataItems, WorkExperience } from "../../../../api/types";
+import { Education, Language, Project, Skill, UserDataItems, WorkExperience } from "../../../../../api/types";
 
 const getEmptyEducation = (): Education => ({
     id: uuidv4(),

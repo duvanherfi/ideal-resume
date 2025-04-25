@@ -1,5 +1,5 @@
 import { ResumeLabels } from "../../../../../api/types";
-import { FormField } from "../../../../ui/form/field/ListGenericFields";
+import { FormField } from "../../../../ui/form/field/FormFieldsContainer";
 
 interface FormFieldSectionContainer {
     title: string;

@@ -1,5 +1,5 @@
 import { Skill } from "../../../../../api/types";
-import { FormField } from "../../../../ui/form/field/ListGenericFields";
+import { FormField } from "../../../../ui/form/field/FormFieldsContainer";
 
 const FieldsSkills: FormField<Skill>[] = [
     {

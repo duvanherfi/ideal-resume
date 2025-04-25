@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { UserData } from "../api/types";
 import useUserData from "../api/hooks/useUserData";
+import { UserDataItems } from "../api/types";
+import emptyItems from "../components/view/user-data/config/item/FormItemEmpty";
 
-export type UseGenericFormType<T> = {
+export type MultiItemFormType<T> = {
     current: T;
     items: T[];
     isEditing: boolean;
@@ -15,14 +16,13 @@ export type UseGenericFormType<T> = {
     swap: (dragIndex: number, hoverIndex: number) => void;
 };
 
-interface UseGenericFormProps<T extends { id: string }> {
-    dataKey: keyof UserData;
-    emptyItem?: () => T;
+interface MultiItemFormProps<T extends { id: string }> {
+    dataKey: keyof UserDataItems;
 }
 
-const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>): UseGenericFormType<T> => {
-    const { dataKey, emptyItem } = props;
-    const [empty] = useState<T>(emptyItem ? emptyItem() : { id: "" } as T);
+const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>): MultiItemFormType<T> => {
+    const { dataKey } = props;
+    const [empty] = useState<T>(emptyItems[dataKey]);
     const [currentItem, setCurrentItem] = useState<T>(empty);
     const [isEditing, setIsEditing] = useState(false);
     const data = useUserData();
@@ -86,4 +86,4 @@ const useGenericForm = <T extends { id: string }>(props: UseGenericFormProps<T>)
     };
 };
 
-export default useGenericForm;
+export default useMultiItemForm;
