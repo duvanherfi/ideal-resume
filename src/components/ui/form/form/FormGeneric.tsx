@@ -16,6 +16,8 @@ export interface FormGenericProps<T extends { id: string }> {
 const FormGeneric = <T extends { id: string }>(props: FormGenericProps<T>) => {
     const { title, fields, dataKey, emptyItem, isValid } = props;
     const { t } = useTranslations();
+    console.log("formegeneric")
+    console.log(emptyItem)
     const form = useGenericForm({ dataKey, emptyItem });
 
     return (

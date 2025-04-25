@@ -44,11 +44,11 @@ type FormItemEmpty = {
 }
 
 const emptyItems: FormItemEmpty = {
-    workExperiences: getEmptyExperience(),
-    education: getEmptyEducation(),
-    projects: getEmptyProject(),
-    skills: getEmptySkill(),
-    languages: getEmptyLanguage(),
+    workExperiences: getEmptyExperience,
+    education: getEmptyEducation,
+    projects: getEmptyProject,
+    skills: getEmptySkill,
+    languages: getEmptyLanguage,
 };
 
 export default emptyItems;
