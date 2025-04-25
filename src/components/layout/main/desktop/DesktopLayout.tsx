@@ -4,7 +4,7 @@ import desktopScreenTabs from "./desktopScreenTabs";
 
 const DesktopLayout = () => {
     return (
-        <div className="hidden xl:grid xl:grid-cols-3 xl:h-screen overflow-hidden mt-16">
+        <div className="hidden xl:grid xl:grid-cols-3 xl:h-screen overflow-hidden mt-12">
             <div className="col-span-2 w-full overflow-y-auto h-full scrollbar">
                 <TabsContainer
                     items={desktopScreenTabs}
