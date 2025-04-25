@@ -1,10 +1,10 @@
 import { WorkExperience } from "../../../../api/types";
-import FormAddedItem, { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
+import AddedItem, { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
 
-const ExperienceItem = (props: FormAddedItemGenericProps<WorkExperience>) => {
+const ExperienceItem = (props: AddedItemGenericProps<WorkExperience>) => {
   const { item } = props;
   return (
-    <FormAddedItem {...props}>
+    <AddedItem {...props}>
       <h4 className="font-medium text-secondary-900 dark:text-secondary-100 truncate">
         {item.role} at {item.company}
       </h4>
@@ -17,7 +17,7 @@ const ExperienceItem = (props: FormAddedItemGenericProps<WorkExperience>) => {
       <p className="text-xs md:text-sm mt-1 text-secondary-500 dark:text-secondary-400 break-words">
         {item.description}
       </p>
-    </FormAddedItem>
+    </AddedItem>
   );
 }
 

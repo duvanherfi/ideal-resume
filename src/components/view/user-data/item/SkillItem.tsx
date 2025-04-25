@@ -1,11 +1,11 @@
 import { Skill } from "../../../../api/types";
 import ItemTitle from "../../../ui/form/items/common/ItemTitle";
-import FormAddedItem, { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
+import AddedItem, { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
 
-const SkillItem = (props: FormAddedItemGenericProps<Skill>) => {
+const SkillItem = (props: AddedItemGenericProps<Skill>) => {
   const { item } = props;
   return (
-    <FormAddedItem key={item.id} {...props}>
+    <AddedItem key={item.id} {...props}>
       <ItemTitle>{item.name}</ItemTitle>
       <div className="flex items-center space-x-1 mt-2">
         {Array.from({ length: 5 }).map((_, index) => (
@@ -14,7 +14,7 @@ const SkillItem = (props: FormAddedItemGenericProps<Skill>) => {
           />
         ))}
       </div>
-    </FormAddedItem>
+    </AddedItem>
   );
 }
 export default SkillItem;

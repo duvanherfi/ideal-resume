@@ -1,12 +1,12 @@
 import { Education, Language, Project, Skill, UserData, WorkExperience } from "../../../../api/types";
-import { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
+import { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
 import EducationItem from "./EducationItem";
 import ExperienceItem from "./ExperienceItem";
 import LanguageItem from "./LanguageItem";
 import ProjectItem from "./ProjectsItem";
 import SkillItem from "./SkillItem";
 
-interface GenericItemProps<T> extends FormAddedItemGenericProps<T> {
+interface GenericItemProps<T> extends AddedItemGenericProps<T> {
     dataKey: keyof UserData;
 }
 

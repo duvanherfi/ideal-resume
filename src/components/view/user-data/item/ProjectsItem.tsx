@@ -1,12 +1,12 @@
 import { Project } from "../../../../api/types";
 import ItemDescription from "../../../ui/form/items/common/ItemDescription";
 import ItemTitle from "../../../ui/form/items/common/ItemTitle";
-import FormAddedItem, { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
+import AddedItem, { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
 
-const ProjectItem = (props: FormAddedItemGenericProps<Project>) => {
+const ProjectItem = (props: AddedItemGenericProps<Project>) => {
   const { item } = props;
   return (
-    <FormAddedItem {...props}>
+    <AddedItem {...props}>
       <div>
         <ItemTitle>{item.name}</ItemTitle>
         {item.link && (
@@ -21,7 +21,7 @@ const ProjectItem = (props: FormAddedItemGenericProps<Project>) => {
         )}
         <ItemDescription>{item.description}</ItemDescription>
       </div>
-    </FormAddedItem>
+    </AddedItem>
   );
 }
 

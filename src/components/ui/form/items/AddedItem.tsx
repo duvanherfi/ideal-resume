@@ -2,7 +2,7 @@ import { ReactNode, useRef } from "react";
 import { DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
 import Icons from "../../icons/Icons";
 
-export interface FormAddedItemGenericProps<T> {
+export interface AddedItemGenericProps<T> {
     item: T;
     index: number;
     handleEdit: (item: T) => void;
@@ -10,11 +10,10 @@ export interface FormAddedItemGenericProps<T> {
     handleSwap: (dragIndex: number, hoverIndex: number) => void;
 }
 
-interface FormAddedItemProps<T> extends FormAddedItemGenericProps<T> {
+interface AddedItemProps<T> extends AddedItemGenericProps<T> {
     children: ReactNode;
 }
 
-// Definimos el tipo de ítem para arrastrar
 interface DragItem {
     index: number;
     id: string;
@@ -25,7 +24,7 @@ const ItemType = {
     ITEM: 'ITEM',
 };
 
-const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) => {
+const AddedItem = <T extends { id: string; }>(props: AddedItemProps<T>) => {
     const { item, index, handleSwap } = props;
     const ref = useRef<HTMLDivElement>(null);
 
@@ -109,4 +108,4 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
     );
 };
 
-export default FormAddedItem;
+export default AddedItem;

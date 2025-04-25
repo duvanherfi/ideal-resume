@@ -1,11 +1,11 @@
 import { Education } from "../../../../api/types";
 import ItemTitle from "../../../ui/form/items/common/ItemTitle";
-import FormAddedItem, { FormAddedItemGenericProps } from "../../../ui/form/items/FormAddedItem";
+import AddedItem, { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
 
-const EducationItem = (props: FormAddedItemGenericProps<Education>) => {
+const EducationItem = (props: AddedItemGenericProps<Education>) => {
   const { item } = props;
   return (
-    <FormAddedItem {...props}>
+    <AddedItem {...props}>
       <div>
         <ItemTitle>{item.degree}</ItemTitle>
         <p className="text-xs md:text-sm text-secondary-600 dark:text-secondary-200">{item.institution}</p>
@@ -16,7 +16,7 @@ const EducationItem = (props: FormAddedItemGenericProps<Education>) => {
             : " Present"}
         </p>
       </div>
-    </FormAddedItem>
+    </AddedItem>
   );
 }
 
