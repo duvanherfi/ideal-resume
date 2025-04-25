@@ -1,5 +1,5 @@
 import { WorkExperience } from "../../../../api/types";
-import AddedItem, { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
+import AddedItem, { AddedItemGenericProps } from "../../common/form/items/AddedItem";
 
 const ExperienceItem = (props: AddedItemGenericProps<WorkExperience>) => {
   const { item } = props;

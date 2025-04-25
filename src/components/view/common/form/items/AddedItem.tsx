@@ -1,6 +1,6 @@
 import { ReactNode, useRef } from "react";
 import { DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
-import Icons from "../../icons/Icons";
+import Icons from "../../../../ui/icons/Icons";
 
 export interface AddedItemGenericProps<T> {
     item: T;

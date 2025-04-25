@@ -1,5 +1,5 @@
 import { WorkExperience } from "../../../../api/types";
-import { MultiItemFormProps } from "../../../ui/form/form/MultiItemForm";
+import { MultiItemFormProps } from "../../common/form/form/MultiItemForm";
 import FieldsExperience from "./fields/FieldsExperience.config";
 
 const dataKey = "workExperiences";

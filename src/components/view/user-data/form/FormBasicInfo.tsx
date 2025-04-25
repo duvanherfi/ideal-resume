@@ -1,7 +1,7 @@
 import React from "react";
 import useUserData from "../../../../api/hooks/useUserData";
 import { UserData } from "../../../../api/types";
-import GenericField from "../../../ui/form/field/GenericField";
+import GenericField from "../../common/form/field/GenericField";
 import GlassCard from "../../../ui/GlassCard";
 import ImageUpload from "../../../ui/input/ImageUpload";
 import Subtitle from "../../../ui/text/Subtitle";

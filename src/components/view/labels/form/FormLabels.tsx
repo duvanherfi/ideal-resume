@@ -2,7 +2,7 @@ import React from "react";
 import useResumeLabels from "../../../../api/hooks/useResumeLabels";
 import { ResumeLabels } from "../../../../api/types";
 import useTranslations from "../../../../hooks/useTranslations";
-import GenericField from "../../../ui/form/field/GenericField";
+import GenericField from "../../common/form/field/GenericField";
 import GlassCard from "../../../ui/GlassCard";
 import Icons from "../../../ui/icons/Icons";
 import Subtitle from "../../../ui/text/Subtitle";

@@ -1,5 +1,5 @@
 import { Project } from "../../../../api/types";
-import { MultiItemFormProps } from "../../../ui/form/form/MultiItemForm";
+import { MultiItemFormProps } from "../../common/form/form/MultiItemForm";
 import FieldsProject from "./fields/FieldsProject.config";
 
 const dataKey = "projects";

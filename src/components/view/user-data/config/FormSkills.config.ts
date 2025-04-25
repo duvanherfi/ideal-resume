@@ -1,5 +1,5 @@
 import { Skill } from "../../../../api/types";
-import { MultiItemFormProps } from "../../../ui/form/form/MultiItemForm";
+import { MultiItemFormProps } from "../../common/form/form/MultiItemForm";
 import FieldsSkills from "./fields/FieldsSkills.config";
 
 const dataKey = "skills";

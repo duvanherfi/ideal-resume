@@ -1,5 +1,5 @@
 import { Language } from "../../../../../api/types";
-import { FormField } from "../../../../ui/form/field/FormFieldsContainer";
+import { FormField } from "../../../common/form/field/FormFieldsContainer";
 
 const FieldsLanguage: FormField<Language>[] = [
     {

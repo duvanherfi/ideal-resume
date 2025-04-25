@@ -1,10 +1,10 @@
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { UserData } from "../../../../api/types";
-import { MultiItemFormType } from "../../../../hooks/useMultiItemForm";
-import GenericItem from "../../../view/user-data/item/GenericItem";
-import Icons from "../../icons/Icons";
-import Text from "../../text/Text";
+import { UserData } from "../../../../../api/types";
+import { MultiItemFormType } from "../../../../../hooks/useMultiItemForm";
+import GenericItem from "../../../user-data/item/GenericItem";
+import Icons from "../../../../ui/icons/Icons";
+import Text from "../../../../ui/text/Text";
 
 interface AddedItemsListProps<T extends { id: string }> {
     dataKey: keyof UserData;

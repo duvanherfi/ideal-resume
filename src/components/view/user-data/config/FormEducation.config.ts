@@ -1,5 +1,5 @@
 import { Education } from "../../../../api/types";
-import { MultiItemFormProps } from "../../../ui/form/form/MultiItemForm";
+import { MultiItemFormProps } from "../../common/form/form/MultiItemForm";
 import FieldsEducation from "./fields/FieldsEducation.config";
 
 const dataKey = "education";

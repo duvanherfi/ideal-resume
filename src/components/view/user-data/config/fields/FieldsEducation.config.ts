@@ -1,5 +1,5 @@
 import { Education } from "../../../../../api/types";
-import { FormField } from "../../../../ui/form/field/FormFieldsContainer";
+import { FormField } from "../../../common/form/field/FormFieldsContainer";
 
 const FieldsEducation: FormField<Education>[] = [
     {

@@ -1,7 +1,7 @@
 import { Project } from "../../../../api/types";
-import ItemDescription from "../../../ui/form/items/common/ItemDescription";
-import ItemTitle from "../../../ui/form/items/common/ItemTitle";
-import AddedItem, { AddedItemGenericProps } from "../../../ui/form/items/AddedItem";
+import ItemDescription from "../../common/form/items/common/ItemDescription";
+import ItemTitle from "../../common/form/items/common/ItemTitle";
+import AddedItem, { AddedItemGenericProps } from "../../common/form/items/AddedItem";
 
 const ProjectItem = (props: AddedItemGenericProps<Project>) => {
   const { item } = props;

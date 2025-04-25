@@ -1,9 +1,9 @@
-import { MultiItemFormType } from "../../../../hooks/useMultiItemForm";
-import useTranslations from "../../../../hooks/useTranslations";
-import Button from "../../buttons/Button";
-import Icons from "../../icons/Icons";
-import { SelectOption } from "../../input/Select";
-import Subtitle from "../../text/Subtitle";
+import { MultiItemFormType } from "../../../../../hooks/useMultiItemForm";
+import useTranslations from "../../../../../hooks/useTranslations";
+import Button from "../../../../ui/buttons/Button";
+import Icons from "../../../../ui/icons/Icons";
+import { SelectOption } from "../../../../ui/input/Select";
+import Subtitle from "../../../../ui/text/Subtitle";
 import GenericField from "./GenericField";
 
 export interface FormField<T> {

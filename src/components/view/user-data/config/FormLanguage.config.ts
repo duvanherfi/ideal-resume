@@ -1,5 +1,5 @@
 import { Language } from "../../../../api/types";
-import { MultiItemFormProps } from "../../../ui/form/form/MultiItemForm";
+import { MultiItemFormProps } from "../../common/form/form/MultiItemForm";
 import FieldsLanguage from "./fields/FieldsLanguage.config";
 
 const dataKey = "languages";
