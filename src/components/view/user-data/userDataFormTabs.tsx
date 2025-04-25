@@ -1,11 +1,8 @@
-import { Tab } from "../../ui/tabs/TabsContainer";
-import FormBasicInfo from "./form/FormBasicInfo";
-import FormEducation from "./form/FormEducation";
-import FormWorkExperience from "./form/FormWorkExperience";
-import FormProjects from "./form/FormProjects";
-import FormSkills from "./form/FormSkills";
+import { Education, Language, Project, Skill, WorkExperience } from "../../../api/types";
 import Icons from "../../ui/icons/Icons";
-import FormLanguages from "./form/FormLanguages";
+import { Tab } from "../../ui/tabs/TabsContainer";
+import MultiItemForm from "../common/form/form/MultiItemForm";
+import FormBasicInfo from "./form/FormBasicInfo";
 
 const userDataFormTabs: Tab[] = [
     {
@@ -15,27 +12,27 @@ const userDataFormTabs: Tab[] = [
     },
     {
         id: "experience",
-        component: <FormWorkExperience />,
+        component: <MultiItemForm<WorkExperience> dataKey="workExperiences" />,
         children: <Icons.Briefcase />
     },
     {
         id: "education",
-        component: <FormEducation />,
+        component: <MultiItemForm<Education> dataKey="education" />,
         children: <Icons.Academic />
     },
     {
         id: "skills",
-        component: <FormSkills />,
+        component: <MultiItemForm<Skill> dataKey="skills" />,
         children: <Icons.Skills />
     },
     {
         id: "languages",
-        component: <FormLanguages />,
+        component: <MultiItemForm<Language> dataKey="languages" />,
         children: <Icons.Globe />
     },
     {
         id: "projects",
-        component: <FormProjects />,
+        component: <MultiItemForm<Project> dataKey="projects" />,
         children: <Icons.Projects />
     },
 ];

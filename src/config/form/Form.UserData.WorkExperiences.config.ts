@@ -1,0 +1,21 @@
+import { v4 as uuidv4 } from "uuid";
+import { WorkExperience } from "../../api/types";
+import FieldsExperience from "../fields/Fields.Experience.config";
+import FormConfig from "./Form.UserData.types";
+
+const workExperiences: FormConfig<WorkExperience> = {
+    dataKey: "workExperiences",
+    title: "form.experience.title",
+    fields: FieldsExperience,
+    isValid: (experience: WorkExperience) => Boolean(experience.company && experience.role && experience.startDate),
+    empty: {
+        id: uuidv4(),
+        company: "",
+        role: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+    }
+};
+
+export default workExperiences;

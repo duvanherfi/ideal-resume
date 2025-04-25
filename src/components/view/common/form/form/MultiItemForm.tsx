@@ -1,14 +1,11 @@
 import { UserDataItems } from "../../../../../api/types";
 import useMultiItemForm from "../../../../../hooks/useMultiItemForm";
 import GlassCard from "../../../../ui/GlassCard";
-import FormFieldsContainer, { FormField } from "../field/FormFieldsContainer";
+import FormFieldsContainer from "../field/FormFieldsContainer";
 import AddedItemList from "./AddedItemList";
 
 export interface MultiItemFormProps<T extends { id: string }> {
-    title: string;
-    fields: FormField<T>[];
     dataKey: keyof UserDataItems;
-    isValid: (item: T) => boolean;
 }
 
 const MultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>) => {

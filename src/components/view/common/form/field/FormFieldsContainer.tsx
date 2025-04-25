@@ -16,22 +16,19 @@ export interface FormField<T> {
 }
 
 interface FormFieldsContainerProps<T extends { id: string }> {
-    title: string;
-    fields: FormField<T>[];
-    isValid: (item: T) => boolean;
     form: MultiItemFormType<T>;
 }
 
 const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
-    const { title, fields, isValid, form } = props;
+    const { form } = props;
     const { t } = useTranslations();
 
     return (
         <div className={"w-full space-y-2"}>
-            <Subtitle>{t(title)}</Subtitle>
+            <Subtitle>{t(form.title)}</Subtitle>
 
             <div className="md:grid md:grid-cols-2 xl:grid-cols-2 gap-4">
-                {fields.map((field) => <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />)}
+                {form.fields.map((field) => <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />)}
             </div>
 
             <div className="mt-4 flex justify-end">
@@ -45,7 +42,7 @@ const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContaine
                         </Button>
                     </div>
                 ) : (
-                    <Button onClick={form.add} disabled={!isValid(form.current)}>
+                    <Button onClick={form.add} disabled={!form.isValid(form.current)}>
                         <Icons.Add />
                     </Button>
                 )}

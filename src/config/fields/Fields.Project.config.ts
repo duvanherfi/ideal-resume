@@ -1,5 +1,5 @@
-import { Project } from "../../../../../api/types";
-import { FormField } from "../../../common/form/field/FormFieldsContainer";
+import { Project } from "../../api/types";
+import { FormField } from "../../components/view/common/form/field/FormFieldsContainer";
 
 const FieldsProject: FormField<Project>[] = [
   {

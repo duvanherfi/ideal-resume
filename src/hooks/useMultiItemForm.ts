@@ -1,9 +1,13 @@
 import { useState } from "react";
 import useUserData from "../api/hooks/useUserData";
 import { UserDataItems } from "../api/types";
-import emptyItems from "../components/view/user-data/config/item/FormItemEmpty";
+import { FormField } from "../components/view/common/form/field/FormFieldsContainer";
+import getConfig from "../config/form/Form.UserData.config";
+import FormConfig from "../config/form/Form.UserData.types";
 
 export type MultiItemFormType<T> = {
+    title: string;
+    fields: FormField<T>[];
     current: T;
     items: T[];
     isEditing: boolean;
@@ -14,6 +18,7 @@ export type MultiItemFormType<T> = {
     edit: (item: T) => void;
     delete: (id: string) => void;
     swap: (dragIndex: number, hoverIndex: number) => void;
+    isValid: (item: T) => boolean;
 };
 
 interface MultiItemFormProps<T extends { id: string }> {
@@ -22,8 +27,8 @@ interface MultiItemFormProps<T extends { id: string }> {
 
 const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>): MultiItemFormType<T> => {
     const { dataKey } = props;
-    const [empty] = useState<T>(emptyItems[dataKey]);
-    const [currentItem, setCurrentItem] = useState<T>(empty);
+    const config = getConfig(dataKey) as unknown as FormConfig<T>;
+    const [currentItem, setCurrentItem] = useState<T>(config.empty);
     const [isEditing, setIsEditing] = useState(false);
     const data = useUserData();
 
@@ -37,7 +42,7 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
     const handleAdd = () => {
         const newItems = [...items, currentItem];
         data.updateField(dataKey, newItems);
-        setCurrentItem(empty);
+        setCurrentItem(config.empty);
     };
 
     const handleUpdate = () => {
@@ -45,13 +50,13 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
             item.id === currentItem.id ? currentItem : item
         );
         data.updateField(dataKey, updatedItems);
-        setCurrentItem(empty);
+        setCurrentItem(config.empty);
         setIsEditing(false);
     };
 
     const resetForm = () => {
         setIsEditing(false);
-        setCurrentItem(empty);
+        setCurrentItem(config.empty);
     };
 
     const handleEdit = (item: T) => {
@@ -73,6 +78,9 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
     };
 
     return {
+        title: config.title,
+        isValid: config.isValid,
+        fields: config.fields,
         current: currentItem,
         items,
         isEditing,
