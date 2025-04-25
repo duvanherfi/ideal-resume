@@ -1,19 +1,20 @@
 import { ReactNode, useRef } from "react";
 import { DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
-import { UserDataItems } from "../../../../api/types";
-import useGenericForm from "../../../../hooks/useGenericForm";
 import Icons from "../../icons/Icons";
 
 export interface FormAddedItemGenericProps<T> {
     item: T;
     index: number;
-    dataKey: keyof UserDataItems;
+    handleEdit: (item: T) => void;
+    handleDelete: (id: string) => void;
+    handleSwap: (dragIndex: number, hoverIndex: number) => void;
 }
 
 interface FormAddedItemProps<T> extends FormAddedItemGenericProps<T> {
     children: ReactNode;
 }
 
+// Definimos el tipo de ítem para arrastrar
 interface DragItem {
     index: number;
     id: string;
@@ -25,9 +26,8 @@ const ItemType = {
 };
 
 const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) => {
-    const { item, index, dataKey } = props;
+    const { item, index, handleSwap } = props;
     const ref = useRef<HTMLDivElement>(null);
-    const form = useGenericForm({ dataKey });
 
     const [{ isDragging }, drag] = useDrag<DragItem, void, { isDragging: boolean }>({
         type: ItemType.ITEM,
@@ -56,7 +56,9 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
             }
 
             const hoverBoundingRect = ref.current?.getBoundingClientRect();
+
             const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+
             const clientOffset = monitor.getClientOffset();
 
             if (!clientOffset) {
@@ -76,7 +78,7 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
             }
 
             // Realizar la acción de reordenamiento
-            form.swap(dragIndex, hoverIndex);
+            handleSwap(dragIndex, hoverIndex);
 
             // Nota: cambiamos el índice del monitor
             draggedItem.index = hoverIndex;
@@ -95,10 +97,10 @@ const FormAddedItem = <T extends { id: string; }>(props: FormAddedItemProps<T>) 
                     {props.children}
                 </div>
                 <div className="flex-shrink-0 flex space-x-2">
-                    <button onClick={() => form.edit(props.item)} className="text-blue-600 hover:text-blue-800">
+                    <button onClick={() => props.handleEdit(props.item)} className="text-blue-600 hover:text-blue-800">
                         <Icons.Draw />
                     </button>
-                    <button onClick={() => form.delete(props.item.id)} className="text-red-600 hover:text-red-800">
+                    <button onClick={() => props.handleDelete(props.item.id)} className="text-red-600 hover:text-red-800">
                         <Icons.Trash />
                     </button>
                 </div>

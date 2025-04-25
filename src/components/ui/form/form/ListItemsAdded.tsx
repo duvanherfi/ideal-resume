@@ -1,18 +1,18 @@
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { UserDataItems } from "../../../../api/types";
-import useGenericForm from "../../../../hooks/useGenericForm";
+import { UserData } from "../../../../api/types";
+import { UseGenericFormType } from "../../../../hooks/useGenericForm";
 import Text from "../../../ui/text/Text";
 import GenericItem from "../../../view/user-data/item/GenericItem";
 import Icons from "../../icons/Icons";
 
 interface AddedItemsListProps<T extends { id: string }> {
-    dataKey: keyof UserDataItems;
+    dataKey: keyof UserData;
+    form: UseGenericFormType<T>;
 }
 
 const ListItemsAdded = <T extends { id: string }>(props: AddedItemsListProps<T>) => {
-    const { dataKey } = props;
-    const form = useGenericForm({ dataKey });
+    const { dataKey, form } = props;
 
     return (
         <div className="">
@@ -28,6 +28,9 @@ const ListItemsAdded = <T extends { id: string }>(props: AddedItemsListProps<T>)
                                 dataKey={dataKey}
                                 item={item}
                                 index={index}
+                                handleDelete={form.delete}
+                                handleEdit={form.edit}
+                                handleSwap={form.swap}
                             />
                         ))}
                     </div>
