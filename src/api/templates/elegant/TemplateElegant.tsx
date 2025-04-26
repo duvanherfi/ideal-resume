@@ -20,9 +20,7 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
                             : ''}
                     </Text>
                 </View>
-                {data.profilePhoto && (
-                    <Image src={data.profilePhoto} style={styles.profilePhoto} />
-                )}
+                {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.profilePhoto} />) : null}
             </View>
             <View style={styles.divider} />
         </View>
@@ -213,17 +211,17 @@ const TemplateElegant: React.FC<TemplateProps> = ({ data, theme, labels }) => {
     //LAYOUT
     const MainColumn = () => (
         <View style={styles.mainColumn}>
-            {data.profileSummary && <ProfileSummary />}
-            {data.workExperiences.length > 0 && <WorkExperienceSection />}
-            {data.education.length > 0 && <EducationSection />}
+            {data.profileSummary ? <ProfileSummary /> : null}
+            {data.workExperiences.length > 0 ? <WorkExperienceSection /> : null}
+            {data.education.length > 0 ? <EducationSection /> : null}
         </View>
     );
 
     const SideColumn = () => (
         <View style={styles.sideColumn}>
-            {data.projects.length > 0 && <ProjectsSection />}
-            {data.skills.length > 0 && <SkillsSection />}
-            {data.languages.length > 0 && <LanguagesSection />}
+            {data.projects.length > 0 ? <ProjectsSection /> : null}
+            {data.skills.length > 0 ? <SkillsSection /> : null}
+            {data.languages.length > 0 ? <LanguagesSection /> : null}
         </View>
     );
 

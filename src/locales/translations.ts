@@ -5,7 +5,7 @@ export type Locale = "en" | "es";
 
 export type Translations = {
     [K in Locale]: {
-        [prop: string]: string;
+        [prop: string]: string | string[];
     };
 };
 

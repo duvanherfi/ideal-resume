@@ -3,7 +3,7 @@
   "app.tab.gallery": "Templates",
   "app.tab.preview": "Preview",
   "screen.form.data.title": "Your Information",
-  "screen.form.data.subtitle": "Fill in only the fields you want to show. Empty ones won’t appear.",
+  "screen.form.data.subtitle": "Fill in the fields you want to show. Empty ones won’t appear.",
   "screen.customize.title": "Customize",
   "screen.form.labels.title": "Titles",
   "screen.form.labels.subtitle": "Edit how titles appear in the document.",

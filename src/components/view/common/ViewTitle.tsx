@@ -10,10 +10,10 @@ interface ViewTitleProps {
 
 const ViewTitle = (props: ViewTitleProps) => {
     return (
-        <div className={`px-2 ${props.className}`}>
+        <div className={`px-4 ${props.className}`}>
             <Icons.LineSeparator />
             <Title className="">{props.title}</Title>
-            {props.subtitle && <Text className="text-secondary-500">{props.subtitle}</Text>}
+            {props.subtitle && <Text className="text-secondary-600 dark:text-secondary-400">{props.subtitle}</Text>}
             <Icons.LineSeparator />
         </div>
     );

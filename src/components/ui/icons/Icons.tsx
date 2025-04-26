@@ -113,7 +113,7 @@ const Icons = {
         </svg>
     ),
     LineSeparator: () => (
-        <div className="flex items-center w-full py-6">
+        <div className="flex items-center w-full py-2 2xl:py-6">
             <div className="flex-grow border-t border-secondary-400/50 dark:border-secondary-700/50"></div>
             <div className="flex-shrink-0 mx-4 w-4 h-4 bg-accent-500/50 rounded-full"></div>
             <div className="flex-grow border-t border-secondary-400/50 dark:border-secondary-700/50"></div>

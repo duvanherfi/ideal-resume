@@ -20,12 +20,10 @@ const TemplateProfessional: React.FC<TemplateProps> = ({ data, theme, labels }) 
                             : ''}
                     </Text>
                 </View>
-                
-                {data.profilePhoto && (
-                    <Image src={data.profilePhoto} style={styles.profilePhoto} />
-                )}
+
+                {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.profilePhoto} />) : null}
             </View>
-            
+
             <View style={styles.contactContainer}>
                 {data.email && (
                     <View style={styles.contactItem}>
@@ -33,14 +31,14 @@ const TemplateProfessional: React.FC<TemplateProps> = ({ data, theme, labels }) 
                         <Text style={styles.contactValue}>{data.email}</Text>
                     </View>
                 )}
-                
+
                 {data.phone && (
                     <View style={styles.contactItem}>
                         <Text style={styles.contactLabel}>{labels.phone}</Text>
                         <Text style={styles.contactValue}>{data.phone}</Text>
                     </View>
                 )}
-                
+
                 {data.address && (
                     <View style={styles.contactItem}>
                         <Text style={styles.contactLabel}>{labels.location}</Text>
@@ -109,7 +107,7 @@ const TemplateProfessional: React.FC<TemplateProps> = ({ data, theme, labels }) 
             <Text style={styles.skillName}>{skill.name}</Text>
             <View style={styles.skillLevelContainer}>
                 {[1, 2, 3, 4, 5].map((level) => (
-                    <View 
+                    <View
                         key={level}
                         style={[
                             styles.skillLevelDot,
@@ -198,18 +196,18 @@ const TemplateProfessional: React.FC<TemplateProps> = ({ data, theme, labels }) 
         <Document>
             <Page size="A4" style={styles.page}>
                 <ProfileHeader />
-                
+
                 <View style={styles.contentContainer}>
                     <View style={styles.leftColumn}>
-                        {data.profileSummary && <ProfileSummary />}
-                        {data.workExperiences.length > 0 && <WorkExperienceSection />}
-                        {data.education.length > 0 && <EducationSection />}
+                        {data.profileSummary ? <ProfileSummary /> : null}
+                        {data.workExperiences.length > 0 ? <WorkExperienceSection /> : null}
+                        {data.education.length > 0 ? <EducationSection /> : null}
                     </View>
-                    
+
                     <View style={styles.rightColumn}>
-                        {data.skills.length > 0 && <SkillsSection />}
-                        {data.languages.length > 0 && <LanguagesSection />}
-                        {data.projects.length > 0 && <ProjectsSection />}
+                        {data.skills.length > 0 ? <SkillsSection /> : null}
+                        {data.languages.length > 0 ? <LanguagesSection /> : null}
+                        {data.projects.length > 0 ? <ProjectsSection /> : null}
                     </View>
                 </View>
             </Page>
