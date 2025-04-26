@@ -1,5 +1,5 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
-import { lightenHexColor } from '../../common/templateHelper';
+import { lightenHexColor } from '../../common/templateStyleHelper';
 import TemplateTheme from '../../common/TemplateTheme';
 
 Font.register({

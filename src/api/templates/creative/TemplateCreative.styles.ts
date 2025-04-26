@@ -1,5 +1,5 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
-import { darkenHexColor, lightenHexColor } from '../../common/templateHelper';
+import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../../common/templateStyleHelper';
 import TemplateTheme from '../../common/TemplateTheme';
 
 Font.register({
@@ -38,13 +38,14 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
     sideColumn: {
         width: '35%',
-        backgroundColor: lightenHexColor(theme.primary, 95), // Very light theme color
+        backgroundColor: lightenHexColor(theme.primary, 95),
         paddingHorizontal: 15,
         paddingTop: 20,
         paddingBottom: 30,
     },
     headerContainer: {
         backgroundColor: theme.primary,
+        color: getContrastingTextColor(theme.primary),
         padding: 20,
         flexDirection: 'column',
     },

@@ -7,11 +7,11 @@ const ViewTemplatePreview = () => {
     return (
         <div className="space-y-2 h-full w-full bg-white/50 dark:bg-black/10 backdrop-blur-lg py-4 2xl:w-full">
             <ViewTitle className="md:hidden" title="screen.preview.title" />
-            <div className="flex w-full justify-end px-8">
-                <DownloadResumeLink />
-            </div>
             <div className="mx-auto w-1/2 xl:w-full px-8">
                 <TemplatePreviewSelected />
+            </div>
+            <div className="flex w-full justify-end px-8">
+                <DownloadResumeLink />
             </div>
             <div className="xl:hidden">
                 <ViewCustomizeTemplate />

@@ -22,7 +22,7 @@ const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestion
           {suggestions.map((suggestion, index) => (
             <button
               key={suggestion + index}
-              className="w-full text-left px-3 py-2 text-sm cursor-pointer hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors duration-150"
+              className="w-full text-left px-3 py-2 text-sm cursor-pointer hover:bg-primary-100 dark:hover:bg-accent-900/80 dark:text-secondary-100 transition-colors duration-150"
               onMouseDown={(e) => handleMouseDown(e, suggestion)}
             >
               {suggestion}

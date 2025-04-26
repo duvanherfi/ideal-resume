@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { Language } from "../../api/types";
-import FieldsLanguage from "../fields/Fields.Language.config";
+import { Language } from "../../../api/types";
+import FieldsLanguage from "../../fields/Fields.Language.config";
 import FormConfig from "./Form.UserData.types";
 
 const languages: FormConfig<Language> = {
@@ -8,11 +8,11 @@ const languages: FormConfig<Language> = {
     title: "form.language.title",
     fields: FieldsLanguage,
     isValid: (language: Language) => Boolean(language.name),
-    empty: {
+    empty: () => ({
         id: uuidv4(),
         name: "",
         proficiency: "Intermediate",
-    }
+    })
 };
 
 export default languages;

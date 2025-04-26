@@ -2,8 +2,8 @@ import { useState } from "react";
 import useUserData from "../api/hooks/useUserData";
 import { UserDataItems } from "../api/types";
 import { FormField } from "../components/view/common/form/field/GenericField";
-import getConfig from "../config/form/Form.UserData.config";
-import FormConfig from "../config/form/Form.UserData.types";
+import getConfig from "../config/form/user-data/Form.UserData.config";
+import FormConfig from "../config/form/user-data/Form.UserData.types";
 
 export type MultiItemFormType<T> = {
     title: string;
@@ -28,7 +28,7 @@ interface MultiItemFormProps<T extends { id: string }> {
 const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>): MultiItemFormType<T> => {
     const { dataKey } = props;
     const config = getConfig(dataKey) as unknown as FormConfig<T>;
-    const [currentItem, setCurrentItem] = useState<T>(config.empty);
+    const [currentItem, setCurrentItem] = useState<T>(config.empty());
     const [isEditing, setIsEditing] = useState(false);
     const data = useUserData();
 
@@ -42,7 +42,7 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
     const handleAdd = () => {
         const newItems = [...items, currentItem];
         data.updateField(dataKey, newItems);
-        setCurrentItem(config.empty);
+        setCurrentItem(config.empty());
     };
 
     const handleUpdate = () => {
@@ -50,13 +50,13 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
             item.id === currentItem.id ? currentItem : item
         );
         data.updateField(dataKey, updatedItems);
-        setCurrentItem(config.empty);
+        setCurrentItem(config.empty());
         setIsEditing(false);
     };
 
     const resetForm = () => {
         setIsEditing(false);
-        setCurrentItem(config.empty);
+        setCurrentItem(config.empty());
     };
 
     const handleEdit = (item: T) => {

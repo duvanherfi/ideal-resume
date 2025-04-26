@@ -21,8 +21,8 @@ const DownloadResumeLink = () => {
                 className="inline-flex"
             >
                 {({ blob, url, loading, error }) => (
-                    <Button disabled={loading} variant="secondary">
-                        {loading ? <Icons.Loading /> : <Icons.Save />}
+                    <Button disabled={loading} variant="primary">
+                        {loading ? <Icons.Loading /> : <Icons.Download />}
                     </Button>
                 )}
             </PDFDownloadLink>

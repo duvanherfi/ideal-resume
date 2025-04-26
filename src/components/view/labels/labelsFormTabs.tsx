@@ -1,6 +1,6 @@
 import Icons from "../../ui/icons/Icons";
 import { Tab } from "../../ui/tabs/TabsContainer";
-import { FieldsLabelsHeader, FieldsLabelsOthers, FieldsLabelsSections } from "./form/fields/FormLabelsSectionsProps.config";
+import { FieldsLabelsHeader, FieldsLabelsOthers, FieldsLabelsSections } from "../../../config/form/labels/FormLabelsSectionsProps.config";
 import FormLabels from "./form/FormLabels";
 
 const labelsFormTabs: Tab[] = [

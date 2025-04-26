@@ -1,12 +1,12 @@
-import { UserDataItems } from "../../api/types";
-import { FormField } from "../../components/view/common/form/field/GenericField";
+import { UserDataItems } from "../../../api/types";
+import { FormField } from "../../../components/view/common/form/field/GenericField";
 
 interface FormConfig<T> {
     dataKey: keyof UserDataItems;
     title: string;
     fields: FormField<T>[];
     isValid: (item: T) => boolean;
-    empty: T;
+    empty: () => T;
 }
 
 export default FormConfig;

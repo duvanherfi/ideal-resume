@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
-import ScrollButton from "../../../ui/buttons/ScrollButton";
+import ScrollButton from "./ScrollButton";
 import TemplateThumb from "./TemplateThumb";
 
 enum ScrollDirection {
@@ -42,8 +42,6 @@ const TemplateThumbGallery = () => {
         }
     };
 
-    const x = [...template.getAll];
-
     return (
         <div className="relative">
             <div className="relative px-8">
@@ -52,7 +50,7 @@ const TemplateThumbGallery = () => {
 
                 <div ref={scrollContainerRef} className="overflow-x-auto pb-4 px-4 scrollbar" onScroll={checkScrollability}>
                     <div className="flex space-x-4 min-w-min">
-                        {x.map((templateToPreview) => (
+                        {template.getAll.map((templateToPreview) => (
                             <TemplateThumb
                                 key={templateToPreview.id}
                                 selectCurrentTemplate={() => template.select(templateToPreview)}

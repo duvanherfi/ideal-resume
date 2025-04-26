@@ -13,7 +13,7 @@ const useTranslations = (): UseTranslationsType => {
         t: (key: string): string => {
             return translations[lang][key] as string ?? key;
         },
-        list: (key: string): string[] => translations[lang][key] as string[] ?? [key]
+        list: (key: string): string[] => translations[lang][key] as string[] ?? []
     };
 }
 

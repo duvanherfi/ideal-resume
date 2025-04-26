@@ -42,3 +42,28 @@ export const darkenHexColor = (hex: string, percent = 10) => {
 export const lightenHexColor = (hex: string, percent = 10) => {
   return adjustHexBrightness(hex, percent, false);
 };
+
+/**
+ * Dado un color de fondo en formato hex (p. ej. "#fc0" o "#ffcc00"),
+ * devuelve "white" o "#333" para que el texto contraste correctamente.
+ */
+export function getContrastingTextColor(hex: string): string {
+  let cleanHex = hex.replace('#', '');
+  if (cleanHex.length === 3) {
+    cleanHex = cleanHex
+      .split('')
+      .map(ch => ch + ch)
+      .join('');
+  }
+  if (cleanHex.length !== 6) {
+    throw new Error(`Invalid HEX color: "${hex}"`);
+  }
+
+  const r = parseInt(cleanHex.substring(0, 2), 16);
+  const g = parseInt(cleanHex.substring(2, 4), 16);
+  const b = parseInt(cleanHex.substring(4, 6), 16);
+
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+
+  return yiq >= 128 ? '#333' : 'white';
+}

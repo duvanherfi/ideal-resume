@@ -22,7 +22,7 @@ const TemplateViewer: React.FC<TemplateViewerProps> = (props: TemplateViewerProp
                 </div>
             )}
             {blobUrl && (
-                <iframe title={template.name} src={`${blobUrl}#toolbar=0&navpanes=0&scrollbar=0`} width="100%" height="100%" style={{ border: 'none' }} />
+                <iframe title={template.name} src={`${blobUrl}#toolbar=0&navpanes=0&scrollbar=0`} width="100%" height="100%" style={{ border: `none` }} />
             )}
         </div>
     );

@@ -3,7 +3,7 @@ import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";
 import { Template } from "../../../../api/types";
 import mockedResume from "../../../../mock/mockedUserData";
-import TemplateViewer from "../../preview/TemplateViewer";
+import TemplateViewer from "../../common/TemplateViewer";
 
 interface TemplateThumbProps {
     selectCurrentTemplate: () => void;

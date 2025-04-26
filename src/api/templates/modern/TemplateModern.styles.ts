@@ -1,5 +1,5 @@
 import { Font, StyleSheet } from '@react-pdf/renderer';
-import { darkenHexColor, lightenHexColor } from '../../common/templateHelper';
+import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../../common/templateStyleHelper';
 import TemplateTheme from '../../common/TemplateTheme';
 
 Font.register({
@@ -23,13 +23,13 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
     headerContainer: {
         backgroundColor: theme.primary,
-        color: 'white',
         padding: 16,
     },
     headerMain: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        color: getContrastingTextColor(theme.primary),
     },
     profileContainer: {
         flexDirection: 'row',
@@ -60,11 +60,9 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
     contactValue: {
         fontSize: 10,
-        color: '#F9FAFB', // indigo-200
         marginBottom: 3,
     },
     contactLabel: {
-        color: 'white',
         fontWeight: 'bold',
     },
     section: {

@@ -1,9 +1,8 @@
 import React from "react";
+import UserDataProvider from "./user-data/UserDataProvider";
 import ResumeLabelProvider from "./resume-labels/ResumeLabelsProvider";
 import ResumeTemplateProvider from "./resume-template/ResumeTemplateProvider";
 import ResumeThemeProvider from "./resume-theme/ResumeThemeProvider";
-import UserDataProvider from "./user-data/UserDataProvider";
-import mockedUserData from "../../mock/mockedUserData";
 
 interface ResumeProviderProps {
     children: React.ReactNode
@@ -11,7 +10,7 @@ interface ResumeProviderProps {
 
 const ResumeProvider = (props: ResumeProviderProps) => {
     return (
-        <UserDataProvider defaultData={mockedUserData}>
+        <UserDataProvider>
             <ResumeLabelProvider>
                 <ResumeTemplateProvider>
                     <ResumeThemeProvider>

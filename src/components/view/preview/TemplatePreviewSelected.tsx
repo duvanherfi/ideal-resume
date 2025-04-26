@@ -2,7 +2,7 @@ import useResumeLabels from "../../../api/hooks/useResumeLabels";
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../api/hooks/useResumeTheme";
 import useUserData from "../../../api/hooks/useUserData";
-import TemplateViewer from "./TemplateViewer";
+import TemplateViewer from "../common/TemplateViewer";
 
 const TemplatePreviewSelected = () => {
     const data = useUserData();

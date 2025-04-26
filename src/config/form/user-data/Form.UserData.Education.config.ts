@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { Education } from "../../api/types";
-import FieldsEducation from "../fields/Fields.Education.config";
+import { Education } from "../../../api/types";
+import FieldsEducation from "../../fields/Fields.Education.config";
 import FormConfig from "./Form.UserData.types";
 
 const education: FormConfig<Education> = {
@@ -8,13 +8,13 @@ const education: FormConfig<Education> = {
     title: "form.education.title",
     fields: FieldsEducation,
     isValid: (education: Education) => Boolean(education.institution && education.degree && education.startDate),
-    empty: {
+    empty: () => ({
         id: uuidv4(),
         institution: "",
         degree: "",
         startDate: "",
         endDate: "",
-    }
+    })
 };
 
 export default education;

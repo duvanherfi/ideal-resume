@@ -6,25 +6,21 @@ const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
         type: "text",
         name: "firstName",
         label: "form.basic.field.firstName",
-        required: true,
     },
     {
         type: "text",
         name: "lastName",
         label: "form.basic.field.lastName",
-        required: true,
     },
     {
         type: "email",
         name: "email",
         label: "form.basic.field.email",
-        required: true,
     },
     {
         type: "text",
         name: "phone",
         label: "form.basic.field.phone",
-        required: true,
     },
     {
         type: "date",
@@ -32,9 +28,9 @@ const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
         label: "form.basic.field.dateOfBirth",
     },
     {
-        type: "text",
-        name: "address",
-        label: "form.basic.field.address",
+        type: "emai",
+        name: "email",
+        label: "form.basic.field.email",
     },
     {
         type: "textarea",
