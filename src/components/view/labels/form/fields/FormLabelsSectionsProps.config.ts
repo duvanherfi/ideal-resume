@@ -1,19 +1,18 @@
-import { FormFieldSectionContainer } from "../FormLabels";
+import { FormLabelsProps } from "../FormLabels";
 
-export const FieldsLabelsHeader: FormFieldSectionContainer = {
+export const FieldsLabelsHeader: FormLabelsProps = {
     title: "form.labels.section.header",
     fields: [
         {
             type: "text",
             name: "email",
             label: "form.labels.field.email",
-            required: true,
+            suggestions: ["email", "correo", ""]
         },
         {
             type: "text",
             name: "phone",
             label: "form.labels.field.phone",
-            required: true,
         },
         {
             type: "text",
@@ -24,25 +23,22 @@ export const FieldsLabelsHeader: FormFieldSectionContainer = {
             type: "text",
             name: "profileSummary",
             label: "form.labels.field.profileSummary",
-            required: true,
         },
     ]
 }
 
-export const FieldsLabelsSections: FormFieldSectionContainer = {
+export const FieldsLabelsSections: FormLabelsProps = {
     title: "form.labels.section.sections",
     fields: [
         {
             type: "text",
             name: "workExperiences",
             label: "form.labels.field.workExperiences",
-            required: true,
         },
         {
             type: "text",
             name: "education",
             label: "form.labels.field.education",
-            required: true,
         },
         {
             type: "text",
@@ -53,7 +49,6 @@ export const FieldsLabelsSections: FormFieldSectionContainer = {
             type: "text",
             name: "skills",
             label: "form.labels.field.skills",
-            required: true,
         },
         {
             type: "text",
@@ -63,7 +58,7 @@ export const FieldsLabelsSections: FormFieldSectionContainer = {
     ]
 };
 
-export const FieldsLabelsOthers: FormFieldSectionContainer = {
+export const FieldsLabelsOthers: FormLabelsProps = {
     title: "form.labels.section.others",
     fields: [
         {
@@ -75,15 +70,14 @@ export const FieldsLabelsOthers: FormFieldSectionContainer = {
             type: "text",
             name: "present",
             label: "form.labels.field.present",
-            required: true,
         }
     ]
 };
 
-const FieldsLabels: FormFieldSectionContainer[] = [
+const FormLabelsSectionsProps: FormLabelsProps[] = [
     FieldsLabelsHeader,
     FieldsLabelsSections,
     FieldsLabelsOthers
 ];
 
-export default FieldsLabels;
+export default FormLabelsSectionsProps;

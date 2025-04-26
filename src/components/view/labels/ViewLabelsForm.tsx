@@ -7,7 +7,7 @@ const ViewLabelsForm: React.FC = () => {
   return (
     <div className="2xl:w-full lg:px-16 2xl:py-12">
       <ViewTitle title="screen.form.labels.title" subtitle="screen.form.labels.subtitle" />
-      <TabsContainer items={labelsFormTabs} defaultIndex={0} slideDirection="left" />
+      <TabsContainer items={labelsFormTabs} defaultIndex={0} slideDirection="bottom" />
     </div>
   );
 };

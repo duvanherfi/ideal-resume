@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useUserData from "../api/hooks/useUserData";
 import { UserDataItems } from "../api/types";
-import { FormField } from "../components/view/common/form/field/FormFieldsContainer";
+import { FormField } from "../components/view/common/form/field/GenericField";
 import getConfig from "../config/form/Form.UserData.config";
 import FormConfig from "../config/form/Form.UserData.types";
 

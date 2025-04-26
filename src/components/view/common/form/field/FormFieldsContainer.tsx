@@ -2,21 +2,11 @@ import { MultiItemFormType } from "../../../../../hooks/useMultiItemForm";
 import useTranslations from "../../../../../hooks/useTranslations";
 import Button from "../../../../ui/buttons/Button";
 import Icons from "../../../../ui/icons/Icons";
-import { SelectOption } from "../../../../ui/input/Select";
 import Subtitle from "../../../../ui/text/Subtitle";
 import GenericField from "./GenericField";
 
-export interface FormField<T> {
-    name: keyof T;
-    label: string;
-    type?: string;
-    placeholder?: string;
-    required?: boolean;
-    options?: SelectOption[];
-}
-
 interface FormFieldsContainerProps<T extends { id: string }> {
-    form: MultiItemFormType<T>;
+    form: MultiItemFormType<T & Record<string, any>>;
 }
 
 const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
@@ -28,7 +18,14 @@ const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContaine
             <Subtitle>{t(form.title)}</Subtitle>
 
             <div className="md:grid md:grid-cols-2 xl:grid-cols-2 gap-4">
-                {form.fields.map((field) => <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />)}
+                {form.fields.map((field) => (
+                    <GenericField
+                        key={field.name}
+                        {...field}
+                        value={form.current[field.name as keyof typeof form.current]}
+                        onChange={form.change}
+                    />
+                ))}
             </div>
 
             <div className="mt-4 flex justify-end">

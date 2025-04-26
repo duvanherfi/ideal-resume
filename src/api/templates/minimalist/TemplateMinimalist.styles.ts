@@ -62,7 +62,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
         paddingTop: 5,
     },
     contactItem: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         alignItems: 'center',
     },
     contactLabel: {

@@ -1,5 +1,5 @@
 import { UserBasicInfo } from "../../api/types";
-import { FormField } from "../../components/view/common/form/field/FormFieldsContainer";
+import { FormField } from "../../components/view/common/form/field/GenericField";
 
 const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
     {
