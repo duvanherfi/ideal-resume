@@ -1,9 +1,9 @@
-import useResumeLabels from "../../../../api/hooks/useResumeLabels";
-import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
-import useResumeTheme from "../../../../api/hooks/useResumeTheme";
-import { Template } from "../../../../api/types";
-import mockedResume from "../../../../mock/mockedUserData";
-import TemplateViewer from "../../common/TemplateViewer";
+import useResumeLabels from "../../../api/hooks/useResumeLabels";
+import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
+import useResumeTheme from "../../../api/hooks/useResumeTheme";
+import { Template } from "../../../api/types";
+import mockedResume from "../../../mock/mockedUserData";
+import TemplateViewer from "../common/TemplateViewer";
 
 interface TemplateThumbProps {
     selectCurrentTemplate: () => void;

@@ -1,7 +1,7 @@
 import React from "react";
-import TabsContainer from "../../ui/tabs/TabsContainer";
-import ViewTitle from "../common/ViewTitle";
-import labelsFormTabs from "./labelsFormTabs";
+import TabsContainer from "../ui/tabs/TabsContainer";
+import ViewTitle from "../view/common/ViewTitle";
+import labelsFormTabs from "../tabs/labelsFormTabs";
 
 const ViewLabelsForm: React.FC = () => {
   return (

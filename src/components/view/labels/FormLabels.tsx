@@ -1,10 +1,9 @@
-import React from "react";
-import useResumeLabels from "../../../../api/hooks/useResumeLabels";
-import { ResumeLabels } from "../../../../api/types";
-import GlassCard from "../../../ui/GlassCard";
-import Icons from "../../../ui/icons/Icons";
-import Subtitle from "../../../ui/text/Subtitle";
-import GenericField, { FormField } from "../../common/form/field/GenericField";
+import useResumeLabels from "../../../api/hooks/useResumeLabels";
+import { ResumeLabels } from "../../../api/types";
+import GlassCard from "../../ui/GlassCard";
+import Icons from "../../ui/icons/Icons";
+import Subtitle from "../../ui/text/Subtitle";
+import GenericField, { FormField } from "../common/form/field/GenericField";
 
 export interface FormLabelsProps {
     title: string;

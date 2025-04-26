@@ -1,8 +1,8 @@
 import Icons from "../../../ui/icons/Icons";
 import { Tab } from "../../../ui/tabs/TabsContainer";
-import ViewCustomizeTemplate from "../../../view/customize/ViewCustomizeTemplate";
-import ViewThumbGallery from "../../../view/gallery/ViewThumbGallery";
-import ViewUserDataForm from "../../../view/user-data/ViewUserDataForm";
+import ViewCustomizeTemplate from "../../../presentation/ViewCustomizeTemplate";
+import ViewThumbGallery from "../../../presentation/ViewThumbGallery";
+import ViewUserDataForm from "../../../presentation/ViewUserDataForm";
 
 const desktopScreenTabs: Tab[] = [
   {

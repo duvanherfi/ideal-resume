@@ -1,7 +1,7 @@
 import React from "react";
-import TabsContainer from "../../ui/tabs/TabsContainer";
-import ViewTitle from "../common/ViewTitle";
-import userDataFormTabs from "./userDataFormTabs";
+import TabsContainer from "../ui/tabs/TabsContainer";
+import ViewTitle from "../view/common/ViewTitle";
+import userDataFormTabs from "../tabs/userDataFormTabs";
 
 const ViewUserDataForm: React.FC = () => {
   return (

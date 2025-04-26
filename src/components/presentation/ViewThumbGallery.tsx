@@ -1,7 +1,7 @@
 import React from "react";
-import GlassCard from "../../ui/GlassCard";
-import ViewTitle from "../common/ViewTitle";
-import TemplateThumbGallery from "./template-thumb-gallery/TemplateThumbGallery";
+import GlassCard from "../ui/GlassCard";
+import ViewTitle from "../view/common/ViewTitle";
+import TemplateThumbGallery from "../view/gallery/TemplateThumbGallery";
 
 const ViewThumbGallery: React.FC = () => {
   return (

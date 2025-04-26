@@ -1,7 +1,7 @@
-import GlassCard from "../../ui/GlassCard";
-import ViewTitle from "../common/ViewTitle";
-import SuggestedThemes from "./SuggestedThemes";
-import ThemeCustom from "./ThemeCustom";
+import GlassCard from "../ui/GlassCard";
+import ViewTitle from "../view/common/ViewTitle";
+import SuggestedThemes from "../view/theme-color-selector/SuggestedThemes";
+import ThemeCustom from "../view/theme-color-selector/ThemeCustom";
 
 const ViewThemeColorSelector = () => {
     return (

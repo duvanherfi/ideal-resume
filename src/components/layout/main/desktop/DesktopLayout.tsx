@@ -1,5 +1,5 @@
 import TabsContainer from "../../../ui/tabs/TabsContainer";
-import ViewTemplatePreview from "../../../view/preview/ViewTemplatePreview";
+import ViewTemplatePreview from "../../../presentation/ViewTemplatePreview";
 import desktopScreenTabs from "./desktopScreenTabs";
 
 const DesktopLayout = () => {

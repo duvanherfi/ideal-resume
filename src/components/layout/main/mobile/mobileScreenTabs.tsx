@@ -1,8 +1,8 @@
-import ViewUserDataForm from "../../../view/user-data/ViewUserDataForm";
-import ViewTemplatePreview from "../../../view/preview/ViewTemplatePreview";
+import ViewUserDataForm from "../../../presentation/ViewUserDataForm";
+import ViewTemplatePreview from "../../../presentation/ViewTemplatePreview";
 import { Tab } from "../../../ui/tabs/TabsContainer";
 import Icons from "../../../ui/icons/Icons";
-import ViewThumbGallery from "../../../view/gallery/ViewThumbGallery";
+import ViewThumbGallery from "../../../presentation/ViewThumbGallery";
 
 const mobileScreenTabs: Tab[] = [
   {

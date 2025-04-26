@@ -1,5 +1,5 @@
-import ViewLabelsForm from "../labels/ViewLabelsForm";
-import ViewThemeColorSelector from "../theme-color-selector/ViewThemeColorSelector";
+import ViewLabelsForm from "./ViewLabelsForm";
+import ViewThemeColorSelector from "./ViewThemeColorSelector";
 
 const ViewCustomizeTemplate = () => {
     return (

@@ -1,8 +1,8 @@
-import { Education, Language, Project, Skill, WorkExperience } from "../../../api/types";
-import Icons from "../../ui/icons/Icons";
-import { Tab } from "../../ui/tabs/TabsContainer";
-import MultiItemForm from "../common/form/form/MultiItemForm";
-import FormBasicInfo from "./form/FormBasicInfo";
+import { Education, Language, Project, Skill, WorkExperience } from "../../api/types";
+import Icons from "../ui/icons/Icons";
+import { Tab } from "../ui/tabs/TabsContainer";
+import MultiItemForm from "../view/common/form/form/MultiItemForm";
+import FormBasicInfo from "../view/user-data/form/FormBasicInfo";
 
 const userDataFormTabs: Tab[] = [
     {
