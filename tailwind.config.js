@@ -10,9 +10,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: defaultColors.indigo,
+                primary: defaultColors.blue,
                 secondary: defaultColors.slate,
-                accent: defaultColors.blue
+                accent: defaultColors.indigo
             },
         },
     },
@@ -34,10 +34,10 @@ module.exports = {
                     },
                 },
                 '.dark .scrollbar::-webkit-scrollbar-track': {
-                    backgroundColor: theme('colors.accent.900'),
+                    backgroundColor: theme('colors.accent.950'),
                 },
                 '.dark .scrollbar::-webkit-scrollbar-thumb': {
-                    backgroundColor: theme('colors.accent.700'),
+                    backgroundColor: theme('colors.accent.900'),
                 },
             }, ['responsive']);
         }),

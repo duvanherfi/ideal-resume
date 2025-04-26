@@ -3,10 +3,10 @@ import ViewThemeColorSelector from "../theme-color-selector/ViewThemeColorSelect
 
 const ViewCustomizeTemplate = () => {
     return (
-        <>
+        <div className="space-y-8 my-4">
             <ViewThemeColorSelector />
             <ViewLabelsForm />
-        </>
+        </div>
     );
 };
 

@@ -9,7 +9,7 @@ const ViewTemplatePreview = () => {
     if (!template.active) return null;
 
     return (
-        <div className="space-y-2 h-full w-full bg-gradient-to-bl from-primary-100 via-primary-200/50 to-white/50 dark:from-primary-950/50 dark:via-secondary-900/50 dark:to-black backdrop-blur-lg py-4 2xl:w-full">
+        <div className="space-y-2 h-full w-full bg-white/50 dark:bg-black/10 backdrop-blur-lg py-4 2xl:w-full">
             <ViewTitle className="md:hidden" title="screen.preview.title" />
             <div className="flex w-full justify-end px-8">
                 <DownloadResumeLink />
