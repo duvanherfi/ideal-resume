@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import InputSuggestions from "./InputSuggestions";
 
 interface InputProps {
   label: string;
@@ -10,27 +11,29 @@ interface InputProps {
   required?: boolean;
   className?: string;
   error?: string;
-  suggestions?: string[];  // Lista de sugerencias opcional
-  onSuggestionClick?: (suggestion: string) => void; // Función opcional para manejar el clic en una sugerencia
+  suggestions?: string[];
+  onSuggestionClick?: (suggestion: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({
-  label,
-  name,
-  type = "text",
-  value,
-  onChange,
-  placeholder = "",
-  required = false,
-  className = "",
-  error,
-  suggestions = [],
-  onSuggestionClick,
-}) => {
+const Input: React.FC<InputProps> = (props: InputProps) => {
+  const {
+    label,
+    name,
+    type = "text",
+    value,
+    onChange,
+    placeholder = "",
+    required = false,
+    className = "",
+    error,
+    suggestions = [],
+    onSuggestionClick,
+  } = props;
   const [isFocused, setIsFocused] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -39,13 +42,9 @@ const Input: React.FC<InputProps> = ({
     }
   };
 
-  const handleBlur = (e: React.FocusEvent) => {
-    if (suggestionsRef.current && !suggestionsRef.current.contains(e.relatedTarget as Node)) {
-      setIsFocused(false);
-      setTimeout(() => {
-        setShowSuggestions(false);
-      }, 200);
-    }
+  const handleBlur = () => {
+    setIsFocused(false);
+    setShowSuggestions(false);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -67,6 +66,11 @@ const Input: React.FC<InputProps> = ({
     setShowSuggestions(false);
   };
 
+  const handleSuggestionMouseDown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, suggestion: string) => {
+    e.preventDefault();
+    handleSuggestionClick(suggestion);
+  }
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && showSuggestions) {
@@ -80,12 +84,22 @@ const Input: React.FC<InputProps> = ({
     };
   }, [showSuggestions]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={`mb-4 ${className} w-full relative`}>
-      <label
-        htmlFor={name}
-        className="block text-sm font-medium text-secondary-700 dark:text-white mb-1"
-      >
+    <div ref={containerRef} className={`mb-4 ${className} w-full relative`}>
+      <label htmlFor={name} className="block text-sm font-medium text-secondary-700 dark:text-white mb-1">
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <input
@@ -101,31 +115,12 @@ const Input: React.FC<InputProps> = ({
         onBlur={handleBlur}
         className="transition-all duration-200 w-full px-3 py-2 dark:text-white bg-white/70 dark:bg-black/50 border dark:border-primary-500/50 border-primary-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
       />
-
-      {suggestions.length > 0 && (
-        <ul
-          ref={suggestionsRef}
-          className={`absolute z-10 w-full mt-1 bg-white dark:bg-gray-800 border border-primary-500/50 dark:border-primary-500/50 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${showSuggestions
-            ? "max-h-60 opacity-100 scale-y-100 origin-top"
-            : "max-h-0 opacity-0 scale-y-0 origin-top"
-            }`}
-          tabIndex={-1}
-        >
-          {suggestions.map((suggestion, index) => (
-            <li
-              key={index}
-              className="px-3 py-2 text-sm cursor-pointer hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors duration-150"
-              onMouseDown={(e) => {
-                e.preventDefault(); // Prevenir el blur antes del clic
-                handleSuggestionClick(suggestion);
-              }}
-            >
-              {suggestion}
-            </li>
-          ))}
-        </ul>
-      )}
-
+      <InputSuggestions
+        suggestions={suggestions}
+        showSuggestions={showSuggestions && isFocused}
+        handleMouseDown={handleSuggestionMouseDown}
+        ref={suggestionsRef}
+      />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
   );

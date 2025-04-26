@@ -8,13 +8,14 @@
   "screen.form.labels.title": "Titles",
   "screen.form.labels.subtitle": "Edit how titles appear in the document.",
   "screen.preview.title": "Preview",
+  "viewer.loading": "Loading...",
   "gallery.templates.title": "Templates",
   "gallery.templates.subtitle": "Choose the template you like the most. You can change the color in the Customize tab.",
   "form.basic.title": "Basic Information",
   "form.basic.field.firstName": "First Name(s)",
   "form.basic.field.lastName": "Last Name(s)",
   "form.basic.field.email": "Email",
-  "form.basic.field.phone": "Mobile Phone",
+  "form.basic.field.phone": "Phone",
   "form.basic.field.dateOfBirth": "Date of Birth",
   "form.basic.field.address": "Address",
   "form.basic.field.profileSummary": "Professional Summary",
@@ -53,17 +54,72 @@
   "form.labels.section.header": "Header",
   "form.labels.section.sections": "Sections",
   "form.labels.section.others": "Others",
-  "form.labels.field.profileSummary": "Professional Summary",
-  "form.labels.field.workExperiences": "Professional Experience",
+  "form.labels.field.profileSummary": "Profile Summary",
+  "form.labels.field.profileSummary.suggestions": [
+    "Profile Summary",
+    "Profile",
+    "About Me"
+  ],
+  "form.labels.field.workExperiences": "Work Experience",
+  "form.labels.field.workExperiences.suggestions": [
+    "Work Experience",
+    "Professional Experience",
+    "Experience"
+  ],
   "form.labels.field.education": "Education",
+  "form.labels.field.education.suggestions": [
+    "Education",
+    "Academic Background",
+    "Studies"
+  ],
   "form.labels.field.projects": "Projects",
+  "form.labels.field.projects.suggestions": [
+    "Projects",
+    "Portfolio",
+    "Personal Projects"
+  ],
   "form.labels.field.skills": "Skills",
+  "form.labels.field.skills.suggestions": [
+    "Skills",
+    "Competencies",
+    "Abilities"
+  ],
   "form.labels.field.languages": "Languages",
+  "form.labels.field.languages.suggestions": [
+    "Languages",
+    "Language Skills",
+    "Proficiencies"
+  ],
   "form.labels.field.email": "Email",
+  "form.labels.field.email.suggestions": [
+    "Email",
+    "Email Address",
+    "Contact Email"
+  ],
   "form.labels.field.phone": "Phone",
+  "form.labels.field.phone.suggestions": [
+    "Phone",
+    "Phone Number",
+    "Mobile Number"
+  ],
   "form.labels.field.location": "Location",
+  "form.labels.field.location.suggestions": [
+    "Location",
+    "Address",
+    "Place"
+  ],
   "form.labels.field.lastUpdated": "Last Updated",
+  "form.labels.field.lastUpdated.suggestions": [
+    "Last Updated",
+    "Updated",
+    "Updated On"
+  ],
   "form.labels.field.present": "Present",
+  "form.labels.field.present.suggestions": [
+    "Present",
+    "Current",
+    "Ongoing"
+  ],
   "form.language.title": "Languages",
   "form.language.option.1": "Beginner",
   "form.language.option.2": "Intermediate",
@@ -80,5 +136,6 @@
   "themes.suggested.option.orange": "Orange",
   "themes.customize.label": "Customize Theme",
   "link.download.label": "Download PDF",
-  "link.download.loading": "Generating PDF..."
+  "link.download.loading": "Generating PDF...",
+  "input.suggestions.title": "Suggestions"
 }

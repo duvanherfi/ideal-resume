@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { usePdfWorker } from "../../../api/hooks/usePdfWorker";
 import useResumeLabels from "../../../api/hooks/useResumeLabels";
 import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../api/hooks/useResumeTheme";

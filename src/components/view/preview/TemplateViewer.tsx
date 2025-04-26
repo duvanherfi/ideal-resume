@@ -1,50 +1,24 @@
-import { useEffect, useState } from "react";
-import TemplateProps from "../../../api/common/TemplateProps";
-import { usePdfWorker } from "../../../api/hooks/usePdfWorker";
-import { Template } from "../../../api/types";
+import React from 'react';
+import TemplateProps from '../../../api/common/TemplateProps';
+import usePdfPreview from '../../../api/hooks/usePdfWorker';
+import type { Template } from '../../../api/types';
+import Icons from '../../ui/icons/Icons';
 
 interface TemplateViewerProps extends TemplateProps {
     template?: Template | null;
 }
 
-const TemplateViewer = (props: TemplateViewerProps) => {
-    const { data, theme, template, labels } = props;
-    const { generatePdf } = usePdfWorker();
-
-    const [blobUrl, setBlobUrl] = useState<string>();
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        let url: string;
-        if (!template) return;
-
-        setLoading(true);
-
-        generatePdf({ template, data, theme, labels })
-            .then(blob => {
-                url = URL.createObjectURL(blob);
-                setBlobUrl(url);
-            }).catch(err => {
-                console.error('Error generando PDF:', err);
-            }).finally(() => {
-                setLoading(false);
-            });
-
-        return () => {
-            if (url) {
-                URL.revokeObjectURL(url);
-            }
-            setBlobUrl(undefined);
-        };
-    }, [template, data, theme, labels, generatePdf]);
+const TemplateViewer: React.FC<TemplateViewerProps> = (props: TemplateViewerProps) => {
+    const { data, theme, labels, template } = props;
+    const { blobUrl, loading } = usePdfPreview({ template, data, theme, labels });
 
     if (!template) return null;
 
     return (
         <div className="relative bg-transparent flex-shrink-0 aspect-[1/1.4142]">
             {loading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-white/80">
-                    Generando previsualización…
+                <div className="absolute inset-0 flex items-center justify-center bg-white/80 dark:bg-black/50  text-accent-500 dark:text-accent-400">
+                    <Icons.Loading />
                 </div>
             )}
             {blobUrl && (

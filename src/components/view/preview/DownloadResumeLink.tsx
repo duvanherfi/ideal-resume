@@ -1,14 +1,12 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import useTranslations from "../../../hooks/useTranslations";
-import Button from "../../ui/buttons/Button";
-import useUserData from "../../../api/hooks/useUserData";
-import useResumeTheme from "../../../api/hooks/useResumeTheme";
-import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
 import useResumeLabels from "../../../api/hooks/useResumeLabels";
+import useResumeTemplate from "../../../api/hooks/useResumeTemplate";
+import useResumeTheme from "../../../api/hooks/useResumeTheme";
+import useUserData from "../../../api/hooks/useUserData";
+import Button from "../../ui/buttons/Button";
 import Icons from "../../ui/icons/Icons";
 
 const DownloadResumeLink = () => {
-    const { t } = useTranslations();
     const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
@@ -24,7 +22,7 @@ const DownloadResumeLink = () => {
             >
                 {({ blob, url, loading, error }) => (
                     <Button disabled={loading} variant="secondary">
-                        {loading ? t("link.download.loading") : <Icons.Save />}
+                        {loading ? <Icons.Loading /> : <Icons.Save />}
                     </Button>
                 )}
             </PDFDownloadLink>

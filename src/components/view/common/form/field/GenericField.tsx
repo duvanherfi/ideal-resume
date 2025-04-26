@@ -11,15 +11,15 @@ export interface FormField<T> {
     placeholder?: string;
     required?: boolean;
     options?: SelectOption[];
-    suggestions?: string[];
+    suggestions?: string;
 }
 
 const GenericField = (props: any) => {
-    const { t } = useTranslations();
+    const { t, list } = useTranslations();
 
     switch (props.type) {
         case "text": case "date":
-            return <Input {...props} label={t(props.label)} suggestions={props.suggestions?.map(t)} />;
+            return <Input {...props} label={t(props.label)} suggestions={list(props.suggestions)} />;
         case "image":
             return <ImageUpload {...props} label={t(props.label)} />;
         case "textarea":
