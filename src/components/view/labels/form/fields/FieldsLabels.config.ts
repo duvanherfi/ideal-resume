@@ -1,12 +1,6 @@
-import { ResumeLabels } from "../../../../../api/types";
-import { FormField } from "../../../common/form/field/FormFieldsContainer";
+import { FormFieldSectionContainer } from "../FormLabels";
 
-interface FormFieldSectionContainer {
-    title: string;
-    fields: FormField<ResumeLabels>[];
-}
-
-const FieldsLabelsHeader: FormFieldSectionContainer = {
+export const FieldsLabelsHeader: FormFieldSectionContainer = {
     title: "form.labels.section.header",
     fields: [
         {
@@ -35,7 +29,7 @@ const FieldsLabelsHeader: FormFieldSectionContainer = {
     ]
 }
 
-const FieldsLabelsSections: FormFieldSectionContainer = {
+export const FieldsLabelsSections: FormFieldSectionContainer = {
     title: "form.labels.section.sections",
     fields: [
         {
@@ -69,7 +63,7 @@ const FieldsLabelsSections: FormFieldSectionContainer = {
     ]
 };
 
-const FieldsLabelsOthers: FormFieldSectionContainer = {
+export const FieldsLabelsOthers: FormFieldSectionContainer = {
     title: "form.labels.section.others",
     fields: [
         {
@@ -86,7 +80,7 @@ const FieldsLabelsOthers: FormFieldSectionContainer = {
     ]
 };
 
-const FieldsLabels:  FormFieldSectionContainer[] = [
+const FieldsLabels: FormFieldSectionContainer[] = [
     FieldsLabelsHeader,
     FieldsLabelsSections,
     FieldsLabelsOthers
