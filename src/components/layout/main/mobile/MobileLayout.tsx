@@ -1,14 +1,11 @@
-import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import TabsContainer from "../../../ui/tabs/TabsContainer";
 import mobileScreenTabs from "./mobileScreenTabs";
 
 const MobileLayout = () => {
-    const template = useResumeTemplate();
-
     return (
         <div className="min-h-screen xl:hidden py-12 overflow-x-hidden">
             <TabsContainer
-                items={mobileScreenTabs.filter(tab => !(tab.id === "preview" && !template.active))}
+                items={mobileScreenTabs}
                 defaultIndex={0}
                 contentClassName=""
                 animationDuration={300}

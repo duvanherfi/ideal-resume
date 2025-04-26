@@ -4,6 +4,7 @@ import useResumeTemplate from "../../../../api/hooks/useResumeTemplate";
 import useResumeTheme from "../../../../api/hooks/useResumeTheme";
 import { Template } from "../../../../api/types";
 import mockedResume from "../../../../mock/mockedUserData";
+import TemplateViewer from "../../preview/TemplateViewer";
 
 interface TemplateThumbProps {
     selectCurrentTemplate: () => void;
@@ -35,9 +36,7 @@ const TemplateThumb = (props: TemplateThumbProps) => {
                     </span>
                 </button>
                 <div className="h-full w-64 lg:w-full">
-                    <PDFViewer width="100%" height="100%" style={{ border: 'none', overflow: "hidden" }} showToolbar={false}>
-                        <templateToPreview.PDF data={mockedResume} theme={theme.get ?? undefined} labels={defaultLabels} />
-                    </PDFViewer>
+                    <TemplateViewer data={mockedResume} theme={theme.get ?? undefined} labels={defaultLabels} template={templateToPreview} />
                 </div>
             </div>
         </div>
