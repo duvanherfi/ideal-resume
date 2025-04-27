@@ -13,12 +13,10 @@ const MultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>) =
     const form = useMultiItemForm<T>({ dataKey });
 
     return (
-        <div className="space-y-8 w-screen md:w-full">
-            <GlassCard>
-                <FormFieldsContainer form={form} {...props} />
-                <AddedItemList form={form} dataKey={dataKey} />
-            </GlassCard>
-        </div>
+        <GlassCard>
+            <FormFieldsContainer form={form} {...props} />
+            <AddedItemList form={form} dataKey={dataKey} />
+        </GlassCard>
     );
 };
 

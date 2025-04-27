@@ -20,6 +20,7 @@
   "form.basic.field.dateOfBirth": "Fecha de nacimiento",
   "form.basic.field.address": "Dirección",
   "form.basic.field.profileSummary": "Resumen profesional",
+  "form.basic.field.photo": "Foto de perfil",
   "form.education.title": "Educación",
   "form.education.field.institution": "Institución",
   "form.education.field.degree": "Título obtenido",
@@ -138,5 +139,7 @@
   "themes.customize.label": "Personalizar tema",
   "link.download.label": "Descargar PDF",
   "link.download.loading": "Generando PDF...",
-  "input.suggestions.title": "Sugerido"
+  "input.suggestions.title": "Sugerido",
+  "input.image.load": "Cargar",
+  "input.image.empty": "Sin imagen"
 }

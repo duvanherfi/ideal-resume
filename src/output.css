@@ -806,10 +806,6 @@ video {
   width: max-content;
 }
 
-.w-screen{
-  width: 100vw;
-}
-
 .min-w-min{
   min-width: min-content;
 }
@@ -2056,8 +2052,8 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), #0f172a var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.dark\:to-black:is(.dark *){
-  --tw-gradient-to: #000 var(--tw-gradient-to-position);
+.dark\:to-secondary-800:is(.dark *){
+  --tw-gradient-to: #1e293b var(--tw-gradient-to-position);
 }
 
 .dark\:text-accent-100:is(.dark *){
@@ -2194,6 +2190,11 @@ body {
 }
 
 @media (min-width: 640px){
+  .sm\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .sm\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2211,14 +2212,6 @@ body {
 
   .md\:grid{
     display: grid;
-  }
-
-  .md\:hidden{
-    display: none;
-  }
-
-  .md\:w-full{
-    width: 100%;
   }
 
   .md\:min-w-80{
@@ -2241,6 +2234,11 @@ body {
     --tw-space-x-reverse: 0;
     margin-right: calc(0.5rem * var(--tw-space-x-reverse));
     margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:text-2xl{
@@ -2306,6 +2304,10 @@ body {
     padding-right: 2rem;
   }
 
+  .lg\:pb-80{
+    padding-bottom: 20rem;
+  }
+
   .lg\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -2362,10 +2364,6 @@ body {
   .xl\:py-6{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-  }
-
-  .xl\:pb-80{
-    padding-bottom: 20rem;
   }
 }
 

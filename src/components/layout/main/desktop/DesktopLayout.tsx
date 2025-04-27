@@ -10,7 +10,7 @@ const DesktopLayout = () => {
                     items={desktopScreenTabs}
                     defaultIndex={0}
                     slideDirection="left"
-                    contentClassName="xl:pb-80 2xl:px-8 2xl:pb-32"
+                    contentClassName="lg:pb-80 2xl:px-8 2xl:pb-32"
                     tabsClassName=""
                 />
             </div>

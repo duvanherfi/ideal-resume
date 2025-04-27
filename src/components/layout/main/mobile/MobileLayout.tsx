@@ -7,7 +7,7 @@ const MobileLayout = () => {
             <TabsContainer
                 items={mobileScreenTabs}
                 defaultIndex={0}
-                contentClassName=""
+                contentClassName="sm:px-4 md:px-8 w-full"
                 animationDuration={300}
                 slideDirection="right"
                 tabsClassName="fixed bottom-0 z-50 h-16"

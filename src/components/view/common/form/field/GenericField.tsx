@@ -1,5 +1,5 @@
 import useTranslations from "@hooks/useTranslations";
-import ImageUpload from "../../../../ui/input/ImageUpload";
+import InputImage from "../../../../ui/input/InputImage";
 import Input from "../../../../ui/input/Input";
 import Select, { SelectOption } from "../../../../ui/input/Select";
 import TextArea from "../../../../ui/input/TextArea";
@@ -21,7 +21,7 @@ const GenericField = (props: any) => {
         case "text": case "date": case "email":
             return <Input {...props} label={t(props.label)} suggestions={list(props.suggestions)} />;
         case "image":
-            return <ImageUpload {...props} label={t(props.label)} />;
+            return <InputImage {...props} label={t(props.label)} />;
         case "textarea":
             return <TextArea {...props} label={t(props.label)} />;
         case "select":

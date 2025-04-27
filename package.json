@@ -48,9 +48,9 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build && firebase deploy",
     "build:tailwind": "npx tailwindcss -i ./src/styles.css -o ./src/output.css",
-    "watch:tailwind": "npm run build:tailwind --watch",
+    "watch:tailwind": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch",
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production && npm run build:taiilwind",
+    "build": "npm run build:tailwind && webpack --mode production",
     "dev": "webpack --mode development"
   },
   "browserslist": [
