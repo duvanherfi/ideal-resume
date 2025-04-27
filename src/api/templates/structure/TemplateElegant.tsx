@@ -1,10 +1,10 @@
 import { Document, Page, View } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
-import { ContactSection, MainColumn, ProfileHeader, SideColumn } from './TemplateMinimalist.sections';
-import styleBuilder from './TemplateMinimalist.styles';
+import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../sections/TemplateElegant.sections';
+import styleBuilder from '../styles/TemplateElegant.styles';
 
-const TemplateMinimalist: React.FC<TemplateProps> = (props: TemplateProps) => {
+const TemplateElegant: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
     const styles = styleBuilder(theme || undefined);
 
@@ -12,9 +12,8 @@ const TemplateMinimalist: React.FC<TemplateProps> = (props: TemplateProps) => {
         <Document>
             <Page size="A4" style={styles.page}>
                 <ProfileHeader {...props} styles={styles} />
-                <View style={styles.divider} />
                 <ContactSection {...props} styles={styles} />
-                <View style={styles.content}>
+                <View style={styles.mainContent}>
                     <MainColumn {...props} styles={styles} />
                     <SideColumn {...props} styles={styles} />
                 </View>
@@ -23,4 +22,4 @@ const TemplateMinimalist: React.FC<TemplateProps> = (props: TemplateProps) => {
     );
 };
 
-export default TemplateMinimalist;
+export default TemplateElegant;

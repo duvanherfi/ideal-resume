@@ -1,7 +1,7 @@
 import { Image, Text, View } from "@react-pdf/renderer";
 import { SectionTemplateProps } from "../../common/TemplateProps";
-import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "./TemplateModern.items";
-import { TemplateModernStyles } from "./TemplateModern.styles";
+import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "../items/TemplateModern.items";
+import { TemplateModernStyles } from "../styles/TemplateModern.styles";
 
 const ProfileContainer: React.FC<SectionTemplateProps<TemplateModernStyles>> = ({ data, styles }) => (
     <View style={styles.profileContainer}>

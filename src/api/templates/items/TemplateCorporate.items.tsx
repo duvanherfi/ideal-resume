@@ -1,7 +1,7 @@
 import { Link, Text, View } from "@react-pdf/renderer";
 import { ItemTemplateProps } from "../../common/TemplateProps";
 import { Education, Language, Project, Skill, WorkExperience } from "../../types";
-import { TemplateCorporateStyles } from "./TemplateCorporate.styles";
+import { TemplateCorporateStyles } from "../styles/TemplateCorporate.styles";
 
 type ContactProps = { label?: string, value?: string, styles: TemplateCorporateStyles };
 type SkillLevelProps = { level: number, styles: TemplateCorporateStyles };

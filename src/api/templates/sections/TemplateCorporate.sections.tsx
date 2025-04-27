@@ -1,7 +1,7 @@
 import { Image, Text, View } from "@react-pdf/renderer";
 import { SectionTemplateProps } from "../../common/TemplateProps";
-import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "./TemplateCorporate.items";
-import { TemplateCorporateStyles } from "./TemplateCorporate.styles";
+import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "../items/TemplateCorporate.items";
+import { TemplateCorporateStyles } from "../styles/TemplateCorporate.styles";
 
 const ProfileSummary: React.FC<SectionTemplateProps<TemplateCorporateStyles>> = ({ data, styles, labels }) => (
     <View style={styles.section}>

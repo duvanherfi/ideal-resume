@@ -1,9 +1,9 @@
-import TemplateCorporate from "../../templates/corporate/TemplateCorporate";
-import TemplateCreative from "../../templates/creative/TemplateCreative";
-import TemplateElegant from "../../templates/elegant/TemplateElegant";
-import TemplateMinimalist from "../../templates/minimalist/TemplateMinimalist";
-import TemplateModern from "../../templates/modern/TemplateModern";
-import TemplateProfessional from "../../templates/professional/TemplateProfessional";
+import TemplateCorporate from "../../templates/structure/TemplateCorporate";
+import TemplateCreative from "../../templates/structure/TemplateCreative";
+import TemplateElegant from "../../templates/structure/TemplateElegant";
+import TemplateMinimalist from "../../templates/structure/TemplateMinimalist";
+import TemplateModern from "../../templates/structure/TemplateModern";
+import TemplateProfessional from "../../templates/structure/TemplateProfessional";
 import { Template } from "../../types";
 
 const templates: Template[] = [

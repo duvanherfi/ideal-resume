@@ -1,7 +1,7 @@
 import { Image, Text, View } from "@react-pdf/renderer";
 import { SectionTemplateProps } from "../../common/TemplateProps";
-import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "./TemplateCreative.items";
-import { TemplateCreativeStyles } from "./TemplateCreative.styles";
+import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "../items/TemplateCreative.items";
+import { TemplateCreativeStyles } from "../styles/TemplateCreative.styles";
 
 const ProfileSummary: React.FC<SectionTemplateProps<TemplateCreativeStyles>> = ({ data, styles, labels }) => (
     <View style={styles.section}>

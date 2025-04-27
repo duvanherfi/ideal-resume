@@ -1,24 +1,23 @@
-// src/hooks/usePdfPreview.ts
-import { useCallback, useEffect, useRef, useState } from 'react';
-import TemplateProps from '../common/TemplateProps';
-import type { Template } from '../types';
+import { useCallback, useEffect, useRef, useState } from "react";
+import TemplateProps from "../common/TemplateProps";
+import type { Template } from "../types";
 
 interface WorkerMessage {
     templateId: string;
     props: TemplateProps;
 }
 
-function usePdfPreview({
-    template,
-    data,
-    theme,
-    labels,
-}: {
+type WorkerData = {
+    success: boolean;
+    blob?: Blob;
+    error?: string;
+}
+
+interface UsePdfPreviewProps extends TemplateProps {
     template?: Template | null;
-    data: TemplateProps['data'];
-    theme?: TemplateProps['theme'];
-    labels: TemplateProps['labels'];
-}) {
+}
+
+function usePdfPreview({ template, data, theme, labels, }: UsePdfPreviewProps) {
     const workerRef = useRef<Worker>();
     const [blobUrl, setBlobUrl] = useState<string>();
     const [loading, setLoading] = useState(false);
@@ -38,19 +37,15 @@ function usePdfPreview({
     const generatePdf = useCallback(
         (templateId: string, props: TemplateProps) =>
             new Promise<Blob>((resolve, reject) => {
-                const w = workerRef.current;
-                if (!w) return reject(new Error('Worker no inicializado'));
+                const worker = workerRef.current;
+                if (!worker) return reject(new Error("Worker no inicializado"));
                 const onMsg = (e: MessageEvent) => {
-                    w.removeEventListener('message', onMsg);
-                    const { success, blob, error } = e.data as {
-                        success: boolean;
-                        blob?: Blob;
-                        error?: string;
-                    };
+                    worker.removeEventListener("message", onMsg);
+                    const { success, blob, error } = e.data as WorkerData;
                     success ? resolve(blob!) : reject(new Error(error));
                 };
-                w.addEventListener('message', onMsg);
-                w.postMessage({ templateId, props });
+                worker.addEventListener("message", onMsg);
+                worker.postMessage({ templateId, props });
             }),
         []
     );
@@ -69,7 +64,7 @@ function usePdfPreview({
                 setBlobUrl(url);
             })
             .catch(err => {
-                console.error('Error generando PDF:', err);
+                console.error("Error generando PDF:", err);
             })
             .finally(() => {
                 setLoading(false);

@@ -1,7 +1,7 @@
 import { Image, Text, View } from "@react-pdf/renderer";
 import { SectionTemplateProps } from "../../common/TemplateProps";
-import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "./TemplateMinimalist.items";
-import { TemplateMinimalistStyles } from "./TemplateMinimalist.styles";
+import { Contact, EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "../items/TemplateMinimalist.items";
+import { TemplateMinimalistStyles } from "../styles/TemplateMinimalist.styles";
 
 const ProfileSummary: React.FC<SectionTemplateProps<TemplateMinimalistStyles>> = ({ data, styles, labels }) => (
     <View style={styles.section}>

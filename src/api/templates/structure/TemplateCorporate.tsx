@@ -1,8 +1,8 @@
 import { Document, Page, View } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
-import { ContactSection, MainColumn, ProfileHeader, SideColumn } from './TemplateCorporate.sections';
-import styleBuilder from './TemplateCorporate.styles';
+import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../sections/TemplateCorporate.sections';
+import styleBuilder from '../styles/TemplateCorporate.styles';
 
 const TemplateCorporate: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
