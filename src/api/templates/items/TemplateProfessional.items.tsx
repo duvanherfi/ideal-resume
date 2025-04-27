@@ -6,12 +6,12 @@ import { TemplateProfessionalStyles } from "../styles/TemplateProfessional.style
 type ContactItemProps = { label?: string, value?: string, styles: TemplateProfessionalStyles };
 type CurrentTemplateItemProps<T> = ItemTemplateProps<T, TemplateProfessionalStyles>;
 
-export const ContactItem = ({ label, value, styles }: ContactItemProps) => (
+export const ContactItem = ({ label, value, styles }: ContactItemProps) => value ? (
     <View style={styles.contactItem}>
         <Text style={styles.contactLabel}>{label}</Text>
         <Text style={styles.contactValue}>{value}</Text>
     </View>
-);
+) : null;
 
 export const ExperienceItem = ({ styles, item }: CurrentTemplateItemProps<WorkExperience>) => (
     <View style={styles.experienceItem}>

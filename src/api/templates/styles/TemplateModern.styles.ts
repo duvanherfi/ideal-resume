@@ -64,6 +64,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
     contactLabel: {
         fontWeight: 'bold',
+        fontSize: 12,
     },
     section: {
         paddingRight: 20,

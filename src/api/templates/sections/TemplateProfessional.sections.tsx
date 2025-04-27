@@ -80,28 +80,16 @@ export const ProfileHeader: React.FC<SectionTemplateProps<TemplateProfessionalSt
         <View style={styles.headerContent}>
             <View style={styles.nameContainer}>
                 <Text style={styles.name}>{`${data.firstName} ${data.lastName}`}</Text>
-                <Text style={styles.role}>
-                    {data.workExperiences && data.workExperiences.length > 0
-                        ? data.workExperiences[0].role
-                        : ''}
-                </Text>
+                <Text style={styles.role}>{data.role}</Text>
             </View>
 
             {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.profilePhoto} />) : null}
         </View>
 
         <View style={styles.contactContainer}>
-            {data.email && (
-                <ContactItem label={labels.email} value={data.email} styles={styles} />
-            )}
-
-            {data.phone && (
-                <ContactItem label={labels.phone} value={data.phone} styles={styles} />
-            )}
-
-            {data.address && (
-                <ContactItem label={labels.location} value={data.address} styles={styles} />
-            )}
+            <ContactItem label={labels.email} value={data.email} styles={styles} />
+            <ContactItem label={labels.phone} value={data.phone} styles={styles} />
+            <ContactItem label={labels.location} value={data.address} styles={styles} />
         </View>
     </View>
 );

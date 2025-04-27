@@ -5,11 +5,11 @@ import templates from "./templates";
 
 interface ResumeTemplateProviderProps {
   children: ReactNode;
-  defaultTemplate?: Template | null;
+  defaultTemplate?: Template;
 }
 
 const ResumeTemplateProvider: React.FC<ResumeTemplateProviderProps> = ({ children, defaultTemplate = templates[0] }) => {
-  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(defaultTemplate);
+  const [selectedTemplate, setSelectedTemplate] = useState<Template>(defaultTemplate);
 
   const value = useMemo<ResumeTemplateContextType>(() => ({
     active: selectedTemplate,

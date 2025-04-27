@@ -13,14 +13,22 @@ type WorkerData = {
     error?: string;
 }
 
-interface UsePdfPreviewProps extends TemplateProps {
+interface UsePDFWorkerProps extends TemplateProps {
     template?: Template | null;
+    isStatic?: boolean;
 }
 
-function usePdfPreview({ template, data, theme, labels, }: UsePdfPreviewProps) {
+type PDFWorkerType = {
+    blobUrl: string | undefined;
+    loading: boolean;
+}
+
+const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePDFWorkerProps): PDFWorkerType => {
     const workerRef = useRef<Worker>();
     const [blobUrl, setBlobUrl] = useState<string>();
     const [loading, setLoading] = useState(false);
+    const currentBlobUrlRef = useRef<string>();
+    const hasGeneratedOnceRef = useRef<boolean>(false);
 
     // Inicializa / termina el worker una sola vez
     useEffect(() => {
@@ -51,17 +59,33 @@ function usePdfPreview({ template, data, theme, labels, }: UsePdfPreviewProps) {
     );
 
     // Efecto que dispara la generación cada vez que cambian template/data/…
+    // A menos que isStatic sea true y ya hayamos generado una vez
     useEffect(() => {
-        let url: string | undefined;
+        // Si no hay template, no hay nada que generar
         if (!template) {
             setBlobUrl(undefined);
             return;
         }
+
+        // Si es estático y ya hemos generado una vez, no hacemos nada
+        if (isStatic && hasGeneratedOnceRef.current && currentBlobUrlRef.current) {
+            return;
+        }
+
         setLoading(true);
+        let url: string | undefined;
+
         generatePdf(template.id, { data, theme, labels })
             .then(blob => {
+                // Si había una URL previa y estamos generando una nueva, revocamos la anterior
+                if (currentBlobUrlRef.current && !isStatic) {
+                    URL.revokeObjectURL(currentBlobUrlRef.current);
+                }
+
                 url = URL.createObjectURL(blob);
+                currentBlobUrlRef.current = url;
                 setBlobUrl(url);
+                hasGeneratedOnceRef.current = true;
             })
             .catch(err => {
                 console.error("Error generando PDF:", err);
@@ -69,12 +93,27 @@ function usePdfPreview({ template, data, theme, labels, }: UsePdfPreviewProps) {
             .finally(() => {
                 setLoading(false);
             });
+
+        // Solo limpiamos si no es estático o si estamos desmontando el componente
         return () => {
-            if (url) URL.revokeObjectURL(url);
+            if (!isStatic && url) {
+                URL.revokeObjectURL(url);
+                currentBlobUrlRef.current = undefined;
+            }
         };
-    }, [template, data, theme, labels, generatePdf]);
+    }, [template, data, theme, labels, generatePdf, isStatic]);
+
+    // Garantizar que se limpian los recursos cuando se desmonta el componente
+    useEffect(() => {
+        return () => {
+            if (currentBlobUrlRef.current) {
+                URL.revokeObjectURL(currentBlobUrlRef.current);
+                currentBlobUrlRef.current = undefined;
+            }
+        };
+    }, []);
 
     return { blobUrl, loading };
 }
 
-export default usePdfPreview;
+export default usePDFWorker;

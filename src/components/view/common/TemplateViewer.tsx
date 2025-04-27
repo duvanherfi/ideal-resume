@@ -1,16 +1,17 @@
 import React from 'react';
 import TemplateProps from '../../../api/common/TemplateProps';
-import usePdfPreview from '../../../api/hooks/usePdfWorker';
 import type { Template } from '../../../api/types';
 import Icons from '../../ui/icons/Icons';
+import usePDFWorker from '../../../api/hooks/usePDFWorker';
 
 interface TemplateViewerProps extends TemplateProps {
     template?: Template | null;
+    isStatic?: boolean;
 }
 
 const TemplateViewer: React.FC<TemplateViewerProps> = (props: TemplateViewerProps) => {
-    const { data, theme, labels, template } = props;
-    const { blobUrl, loading } = usePdfPreview({ template, data, theme, labels });
+    const { data, theme, labels, template, isStatic } = props;
+    const { blobUrl, loading } = usePDFWorker({ template, data, theme, labels, isStatic });
 
     if (!template) return null;
 
@@ -22,7 +23,7 @@ const TemplateViewer: React.FC<TemplateViewerProps> = (props: TemplateViewerProp
                 </div>
             )}
             {blobUrl && (
-                <iframe title={template.name} src={`${blobUrl}#toolbar=0&navpanes=0&scrollbar=0`} width="100%" height="100%" style={{ border: `none` }} />
+                <iframe title={template.name} src={`${blobUrl}#toolbar=0&navpanes=0&scrollbar=0`} width="100%" height="100%" />
             )}
         </div>
     );

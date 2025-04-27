@@ -93,11 +93,7 @@ export const ProfileHeader: React.FC<SectionTemplateProps<TemplateMinimalistStyl
             {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.profilePhoto} />) : null}
             <View style={styles.nameContainer}>
                 <Text style={styles.name}>{`${data.firstName} ${data.lastName}`}</Text>
-                <Text style={styles.role}>
-                    {data.workExperiences && data.workExperiences.length > 0
-                        ? data.workExperiences[0].role
-                        : ''}
-                </Text>
+                <Text style={styles.role}>{data.role}</Text>
             </View>
         </View>
     </View>
