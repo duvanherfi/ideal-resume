@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import useModal from "../../hooks/useModal";
+import useModal from "@hooks/useModal";
 import Button from "./buttons/Button";
 import Icons from "./icons/Icons";
 

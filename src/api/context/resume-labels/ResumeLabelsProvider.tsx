@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { ResumeLabels } from '../../types';
 import ResumeLabelContext, { defaultLabels } from './ResumeLabelsContext';
-import useTranslations from '../../../hooks/useTranslations';
+import useTranslations from '@hooks/useTranslations';
 
 interface ResumeLabelProviderProps {
     children: React.ReactNode;

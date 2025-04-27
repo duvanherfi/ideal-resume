@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import useLanguage from "../../../hooks/useLanguage";
+import useLanguage from "@hooks/useLanguage";
 import { Locale } from "../../../locales/translations";
 import Icons, { ChevronDirection } from "../../ui/icons/Icons";
 

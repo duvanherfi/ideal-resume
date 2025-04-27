@@ -1,4 +1,4 @@
-import useTranslations from "../../../../../hooks/useTranslations";
+import useTranslations from "@hooks/useTranslations";
 import ImageUpload from "../../../../ui/input/ImageUpload";
 import Input from "../../../../ui/input/Input";
 import Select, { SelectOption } from "../../../../ui/input/Select";

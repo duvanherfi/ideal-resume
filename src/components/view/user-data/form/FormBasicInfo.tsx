@@ -1,4 +1,4 @@
-import useUserData from "@resume-api/hooks/useUserData";
+import useUserData from "@api-hooks/useUserData";
 import { UserData } from "@resume-api/types";
 import React from "react";
 import FieldsBasicInfo from "../../../../config/fields/Fields.BasicInfo.config";

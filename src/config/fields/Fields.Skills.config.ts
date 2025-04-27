@@ -1,5 +1,5 @@
 import { Skill } from "@resume-api/types";
-import { FormField } from "../../components/view/common/form/field/GenericField";
+import { FormField } from "@components/view/common/form/field/GenericField";
 
 const FieldsSkills: FormField<Skill>[] = [
     {

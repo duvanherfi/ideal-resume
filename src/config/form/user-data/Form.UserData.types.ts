@@ -1,5 +1,5 @@
 import { UserDataItems } from "@resume-api/types";
-import { FormField } from "../../../components/view/common/form/field/GenericField";
+import { FormField } from "@components/view/common/form/field/GenericField";
 
 interface FormConfig<T> {
     dataKey: keyof UserDataItems;

@@ -5,6 +5,9 @@
             "@resume-api/*": [
                 "src/api/*"
             ],
+            "@api-hooks/*": [
+                "src/api/hooks/*"
+            ],
             "@components/*": [
                 "src/components/*"
             ],

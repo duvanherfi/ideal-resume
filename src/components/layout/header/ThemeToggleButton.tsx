@@ -1,4 +1,4 @@
-import useDarkMode from "../../../hooks/useDarkMode";
+import useDarkMode from "@hooks/useDarkMode";
 import Icons from "../../ui/icons/Icons";
 
 const ThemeToggleButton = () => {

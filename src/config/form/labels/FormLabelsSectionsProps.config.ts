@@ -1,4 +1,4 @@
-import { FormLabelsProps } from "../../../components/view/labels/FormLabels";
+import { FormLabelsProps } from "@components/view/labels/FormLabels";
 
 export const FieldsLabelsHeader: FormLabelsProps = {
     title: "form.labels.section.header",

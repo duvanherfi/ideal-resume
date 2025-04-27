@@ -1,5 +1,5 @@
 import React from "react";
-import useTranslations from "../../../hooks/useTranslations";
+import useTranslations from "@hooks/useTranslations";
 
 interface ButtonProps {
   children: React.ReactNode;

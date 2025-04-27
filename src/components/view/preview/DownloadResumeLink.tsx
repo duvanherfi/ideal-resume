@@ -1,8 +1,8 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import useResumeLabels from "@resume-api/hooks/useResumeLabels";
-import useResumeTemplate from "@resume-api/hooks/useResumeTemplate";
-import useResumeTheme from "@resume-api/hooks/useResumeTheme";
-import useUserData from "@resume-api/hooks/useUserData";
+import useResumeLabels from "@api-hooks/useResumeLabels";
+import useResumeTemplate from "@api-hooks/useResumeTemplate";
+import useResumeTheme from "@api-hooks/useResumeTheme";
+import useUserData from "@api-hooks/useUserData";
 import Button from "../../ui/buttons/Button";
 import Icons from "../../ui/icons/Icons";
 

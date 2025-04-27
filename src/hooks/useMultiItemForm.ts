@@ -1,7 +1,7 @@
-import useUserData from "@resume-api/hooks/useUserData";
+import useUserData from "@api-hooks/useUserData";
 import { UserDataItems } from "@resume-api/types";
 import { useState } from "react";
-import { FormField } from "../components/view/common/form/field/GenericField";
+import { FormField } from "@components/view/common/form/field/GenericField";
 import getConfig from "../config/form/user-data/Form.UserData.config";
 import FormConfig from "../config/form/user-data/Form.UserData.types";
 

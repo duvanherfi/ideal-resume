@@ -1,5 +1,5 @@
-import { MultiItemFormType } from "../../../../../hooks/useMultiItemForm";
-import useTranslations from "../../../../../hooks/useTranslations";
+import { MultiItemFormType } from "@hooks/useMultiItemForm";
+import useTranslations from "@hooks/useTranslations";
 import Button from "../../../../ui/buttons/Button";
 import Icons from "../../../../ui/icons/Icons";
 import Subtitle from "../../../../ui/text/Subtitle";

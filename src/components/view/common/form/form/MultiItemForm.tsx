@@ -1,5 +1,5 @@
 import { UserDataItems } from "@resume-api/types";
-import useMultiItemForm from "../../../../../hooks/useMultiItemForm";
+import useMultiItemForm from "@hooks/useMultiItemForm";
 import GlassCard from "../../../../ui/GlassCard";
 import FormFieldsContainer from "../field/FormFieldsContainer";
 import AddedItemList from "./AddedItemList";
