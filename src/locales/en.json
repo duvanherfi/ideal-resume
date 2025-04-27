@@ -14,6 +14,7 @@
   "form.basic.title": "Basic Information",
   "form.basic.field.firstName": "First Name(s)",
   "form.basic.field.lastName": "Last Name(s)",
+  "form.basic.field.role": "Position",
   "form.basic.field.email": "Email",
   "form.basic.field.phone": "Phone",
   "form.basic.field.dateOfBirth": "Date of Birth",

@@ -304,4 +304,6 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
 });
 
+export type TemplateElegantStyles = ReturnType<typeof styleBuilder>;
+
 export default styleBuilder;

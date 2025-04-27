@@ -284,4 +284,6 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
 });
 
+export type TemplateCorporateStyles = ReturnType<typeof styleBuilder>;
+
 export default styleBuilder;

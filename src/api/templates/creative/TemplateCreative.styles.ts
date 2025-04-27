@@ -248,4 +248,6 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
 });
 
+export type TemplateCreativeStyles = ReturnType<typeof styleBuilder>;
+
 export default styleBuilder;

@@ -1,16 +1,5 @@
 import TemplateProps from "../common/TemplateProps";
 
-export interface UserBasicInfo {
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  email: string;
-  phone: string;
-  address: string;
-  profileSummary: string;
-  profilePhoto: string;
-}
-
 export interface WorkExperience {
   id: string;
   company: string;
@@ -53,6 +42,18 @@ export interface UserDataItems {
   projects: Project[];
   skills: Skill[];
   languages: Language[];
+}
+
+export interface UserBasicInfo {
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  email: string;
+  phone: string;
+  address: string;
+  role: string;
+  profileSummary: string;
+  profilePhoto: string;
 }
 
 export interface UserData extends UserDataItems, UserBasicInfo { }

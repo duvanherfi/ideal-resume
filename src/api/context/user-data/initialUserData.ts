@@ -9,6 +9,7 @@ const initialUserData: UserData = {
     address: "",
     profileSummary: "",
     profilePhoto: "",
+    role: "",
     workExperiences: [],
     projects: [],
     education: [],

@@ -189,4 +189,6 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
 });
 
+export type TemplateModernStyles = ReturnType<typeof styleBuilder>;
+
 export default styleBuilder;

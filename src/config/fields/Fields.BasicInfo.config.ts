@@ -13,6 +13,11 @@ const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
         label: "form.basic.field.lastName",
     },
     {
+        type: "text",
+        name: "role",
+        label: "form.basic.field.role",
+    },
+    {
         type: "email",
         name: "email",
         label: "form.basic.field.email",
@@ -28,11 +33,6 @@ const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
         label: "form.basic.field.dateOfBirth",
     },
     {
-        type: "emai",
-        name: "email",
-        label: "form.basic.field.email",
-    },
-    {
         type: "textarea",
         name: "profileSummary",
         label: "form.basic.field.profileSummary",
@@ -42,6 +42,7 @@ const FieldsBasicInfo: FormField<UserBasicInfo>[] = [
 export const getEmptyBasicInfo = (): UserBasicInfo => ({
     firstName: "",
     lastName: "",
+    role: "",
     email: "",
     phone: "",
     dateOfBirth: "",

@@ -261,4 +261,6 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
     },
 });
 
+export type TemplateMinimalistStyles = ReturnType<typeof styleBuilder>;
+
 export default styleBuilder;

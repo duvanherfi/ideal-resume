@@ -14,6 +14,7 @@
   "form.basic.title": "Información básica",
   "form.basic.field.firstName": "Nombre(s)",
   "form.basic.field.lastName": "Apellido(s)",
+  "form.basic.field.role": "Puesto",
   "form.basic.field.email": "Email",
   "form.basic.field.phone": "Celular",
   "form.basic.field.dateOfBirth": "Fecha de nacimiento",
