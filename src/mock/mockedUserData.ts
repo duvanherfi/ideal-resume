@@ -1,4 +1,4 @@
-import { UserData } from "../api/types";
+import { UserData } from "@resume-api/types";
 
 export default {
   firstName: "Juan",

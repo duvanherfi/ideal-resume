@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Education } from "../../../api/types";
+import { Education } from "@resume-api/types";
 import FieldsEducation from "../../fields/Fields.Education.config";
 import FormConfig from "./Form.UserData.types";
 

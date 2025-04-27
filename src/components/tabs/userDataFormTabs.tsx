@@ -1,4 +1,4 @@
-import { Education, Language, Project, Skill, WorkExperience } from "../../api/types";
+import { Education, Language, Project, Skill, WorkExperience } from "@resume-api/types";
 import Icons from "../ui/icons/Icons";
 import { Tab } from "../ui/tabs/TabsContainer";
 import MultiItemForm from "../view/common/form/form/MultiItemForm";

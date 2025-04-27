@@ -1,4 +1,4 @@
-import { Education, Language, Project, Skill, UserData, WorkExperience } from "../../../../api/types";
+import { Education, Language, Project, Skill, UserData, WorkExperience } from "@resume-api/types";
 import { AddedItemGenericProps } from "../../common/form/items/AddedItem";
 import EducationItem from "./EducationItem";
 import ExperienceItem from "./ExperienceItem";

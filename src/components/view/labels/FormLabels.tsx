@@ -1,5 +1,5 @@
-import useResumeLabels from "../../../api/hooks/useResumeLabels";
-import { ResumeLabels } from "../../../api/types";
+import useResumeLabels from "@resume-api/hooks/useResumeLabels";
+import { ResumeLabels } from "@resume-api/types";
 import GlassCard from "../../ui/GlassCard";
 import Icons from "../../ui/icons/Icons";
 import Subtitle from "../../ui/text/Subtitle";

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Project } from "../../../api/types";
+import { Project } from "@resume-api/types";
 import FieldsProject from "../../fields/Fields.Project.config";
 import FormConfig from "./Form.UserData.types";
 

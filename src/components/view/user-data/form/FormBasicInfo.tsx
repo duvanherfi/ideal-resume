@@ -1,6 +1,6 @@
+import useUserData from "@resume-api/hooks/useUserData";
+import { UserData } from "@resume-api/types";
 import React from "react";
-import useUserData from "../../../../api/hooks/useUserData";
-import { UserData } from "../../../../api/types";
 import FieldsBasicInfo from "../../../../config/fields/Fields.BasicInfo.config";
 import GlassCard from "../../../ui/GlassCard";
 import ImageUpload from "../../../ui/input/ImageUpload";

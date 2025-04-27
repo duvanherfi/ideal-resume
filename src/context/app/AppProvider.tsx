@@ -1,6 +1,6 @@
 import React from "react";
 import LanguageProvider from "../language/LanguageProvider";
-import ResumeProvider from "../../api/context/ResumeProvider";
+import ResumeProvider from "@resume-api/context/ResumeProvider";
 
 interface AppProviderProps {
     children: React.ReactNode

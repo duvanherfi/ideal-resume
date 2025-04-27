@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { WorkExperience } from "../../../api/types";
+import { WorkExperience } from "@resume-api/types";
 import FieldsExperience from "../../fields/Fields.Experience.config";
 import FormConfig from "./Form.UserData.types";
 

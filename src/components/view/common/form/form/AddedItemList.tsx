@@ -1,6 +1,6 @@
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { UserData } from "../../../../../api/types";
+import { UserData } from "@resume-api/types";
 import { MultiItemFormType } from "../../../../../hooks/useMultiItemForm";
 import GenericItem from "../../../user-data/item/GenericItem";
 import Icons from "../../../../ui/icons/Icons";

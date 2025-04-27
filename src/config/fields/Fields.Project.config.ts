@@ -1,4 +1,4 @@
-import { Project } from "../../api/types";
+import { Project } from "@resume-api/types";
 import { FormField } from "../../components/view/common/form/field/GenericField";
 
 const FieldsProject: FormField<Project>[] = [
