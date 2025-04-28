@@ -25,12 +25,12 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
         color: '#333333',
     },
     headerContainer: {
-        paddingBottom: 16,
+        paddingBottom: 8,
     },
     headerMain: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 10,
+        marginBottom: 1,
     },
     profilePhoto: {
         width: 60,

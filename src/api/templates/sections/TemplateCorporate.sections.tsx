@@ -123,9 +123,9 @@ export const MainColumn: React.FC<SectionTemplateProps<TemplateCorporateStyles>>
 export const SideColumn: React.FC<SectionTemplateProps<TemplateCorporateStyles>> = (props: SectionTemplateProps<TemplateCorporateStyles>) => (
     <View style={props.styles.sideColumn}>
         <View style={props.styles.sideContent}>
-            {props.data.projects.length > 0 ? <ProjectsSection  {...props} /> : null}
-            {props.data.skills.length > 0 ? <SkillsSection  {...props} /> : null}
             {props.data.languages.length > 0 ? <LanguagesSection  {...props} /> : null}
+            {props.data.skills.length > 0 ? <SkillsSection  {...props} /> : null}
+            {props.data.projects.length > 0 ? <ProjectsSection  {...props} /> : null}
         </View>
     </View>
 );

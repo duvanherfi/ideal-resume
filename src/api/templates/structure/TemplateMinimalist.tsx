@@ -14,6 +14,7 @@ const TemplateMinimalist: React.FC<TemplateProps> = (props: TemplateProps) => {
                 <ProfileHeader {...props} styles={styles} />
                 <View style={styles.divider} />
                 <ContactSection {...props} styles={styles} />
+                <View style={styles.divider} />
                 <View style={styles.content}>
                     <MainColumn {...props} styles={styles} />
                     <SideColumn {...props} styles={styles} />

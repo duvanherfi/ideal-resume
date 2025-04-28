@@ -23,16 +23,21 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.c
         backgroundColor: '#FFFFFF',
         color: '#333333',
     },
+    divider: {
+        height: 1,
+        backgroundColor: '#E2E8F0', // Light gray
+        marginVertical: 10,
+    },
 
     // Header styles
     headerContainer: {
-        marginBottom: 20,
+        marginBottom: 12,
     },
     headerMain: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 15,
+        marginBottom: 6,
     },
     nameContainer: {
         flex: 1,
