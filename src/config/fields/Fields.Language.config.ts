@@ -2,24 +2,19 @@ import { Language } from "@resume-api/types";
 import { FormField } from "@components/view/common/form/field/GenericField";
 
 const FieldsLanguage: FormField<Language>[] = [
-    {
-        type: "text",
-        name: "name",
-        label: "form.language.field.name",
-        required: true,
-    },
+    { type: "text", name: "name", label: "form.language.field.name", required: true },
     {
         type: "select",
         name: "proficiency",
         label: "form.language.field.proficiency",
-        options: [
-            { value: "Beginner", label: "form.language.option.1" },
-            { value: "Intermediate", label: "form.language.option.2" },
-            { value: "Advanced", label: "form.language.option.3" },
-            { value: "Fluent", label: "form.language.option.4" },
-            { value: "Native", label: "form.language.option.5" },
-        ],
+        options: [/*"Beginner", "Intermediate", "Advanced", "Fluent", "Native"*/],
     },
+    { type: "textarea", name: "comment", label: "form.language.field.comment" },
+    //{ type: "text", name: "certification.name", label: "form.language.field.certificationName" },
+    //{ type: "text", name: "certification.institution", label: "form.language.field.certificationInstitution" },
+    //{ type: "date", name: "certification.date", label: "form.language.field.certificationDate" },
+    //{ type: "url", name: "certification.credentialUrl", label: "form.language.field.certificationUrl" },
 ];
+
 
 export default FieldsLanguage;

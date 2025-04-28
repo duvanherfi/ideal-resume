@@ -3,7 +3,7 @@ import { UserData } from "../../types";
 import initialUserData from "./initialUserData";
 import UserDataContext, { UserDataContextType } from "./UserDataContext";
 
-interface UserDataProviderProps {
+export interface UserDataProviderProps {
   children: ReactNode;
   defaultData?: UserData;
 }

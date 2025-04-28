@@ -2,12 +2,7 @@ import { Skill } from "@resume-api/types";
 import { FormField } from "@components/view/common/form/field/GenericField";
 
 const FieldsSkills: FormField<Skill>[] = [
-    {
-        type: "text",
-        name: "name",
-        label: "form.skills.field.name",
-        required: true,
-    },
+    { type: "text", name: "name", label: "form.skills.field.name", required: true },
     {
         type: "select",
         name: "level",
@@ -20,6 +15,8 @@ const FieldsSkills: FormField<Skill>[] = [
             { value: 5, label: "form.skills.option.5" },
         ],
     },
+    { type: "number", name: "yearsExperience", label: "form.skills.field.yearsExperience" },
+    { type: "url", name: "certificationUrl", label: "form.skills.field.certificationUrl" },
 ];
 
 export default FieldsSkills;

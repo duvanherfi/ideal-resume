@@ -1,39 +1,89 @@
 import TemplateProps from "../common/TemplateProps";
 
+export type ContractType = "Full-time" | "Part-time" | "Freelance" | "Internship";
+
+export interface Certification {
+  id: string;
+  name: string;
+  institution: string;
+  date: string; // ISO date
+  credentialUrl?: string;
+}
+
+export interface Link {
+  id: string;
+  label: string;
+  url: string;
+}
+
 export interface WorkExperience {
   id: string;
   company: string;
   role: string;
+  location?: string;
   startDate: string;
-  endDate: string;
+  endDate?: string;
+  present?: boolean;
+  contractType?: ContractType;
   description: string;
+  technologies?: string[];
+  link?: string;
 }
 
 export interface Project {
   id: string;
   name: string;
-  link: string;
+  link?: string;
+  startDate?: string;
+  endDate?: string;
+  role?: string;
   description: string;
+  technologies?: string[];
+  imageUrl?: string;
 }
 
 export interface Education {
   id: string;
   institution: string;
   degree: string;
+  location?: string;
   startDate: string;
-  endDate: string;
+  endDate?: string;
+  present?: boolean;
+  gpa?: string;
+  description?: string;
+  certifications?: Certification[];
 }
 
 export interface Skill {
   id: string;
   name: string;
-  level: number;
+  category?: string;       // e.g. "Technical", "Soft Skill"
+  level: number;           // e.g. 1-5
+  yearsExperience?: number;
+  certificationUrl?: string;
 }
 
 export interface Language {
   id: string;
   name: string;
   proficiency: "Beginner" | "Intermediate" | "Advanced" | "Fluent" | "Native";
+  certification?: Certification;
+  comment?: string;
+}
+
+export interface UserBasicInfo {
+  firstName: string;
+  lastName: string;
+  dateOfBirth?: string;
+  email: string;
+  phone?: string;
+  address?: string;
+  location?: string;
+  role: string;
+  profileSummary: string;
+  profilePhoto?: string;
+  links?: Link[];
 }
 
 export interface UserDataItems {
@@ -44,19 +94,7 @@ export interface UserDataItems {
   languages: Language[];
 }
 
-export interface UserBasicInfo {
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  email: string;
-  phone: string;
-  address: string;
-  role: string;
-  profileSummary: string;
-  profilePhoto: string;
-}
-
-export interface UserData extends UserDataItems, UserBasicInfo { }
+export interface UserData extends UserBasicInfo, UserDataItems { }
 
 export interface ResumeLabels {
   profileSummary?: string;
@@ -68,10 +106,14 @@ export interface ResumeLabels {
   email?: string;
   phone?: string;
   location?: string;
+  address?: string;
   lastUpdated?: string;
   present?: string;
-  address?: string;
-};
+  link?: string;
+  certification?: string;
+  contractType?: string;
+  technologies?: string;
+}
 
 export interface Template {
   id: string;

@@ -39,7 +39,7 @@ const InputImage: React.FC<InputImageProps> = (props: InputImageProps) => {
           }
         </div>
         <div>
-          <label className="cursor-pointer bg-white/60 backdrop-blur-sm hover:bg-white/80 text-primary-600 font-medium py-2 px-4 rounded-lg border border-secondary-300 shadow-sm transition-all duration-300">
+          <label className="cursor-pointer transition-all duration-200 w-full px-3 py-2 bg-white/70 dark:bg-black/50 hover:bg-accent-100 dark:hover:bg-accent-950/80 dark:text-white border dark:border-primary-300/50 border-primary-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-300 dark:focus:border-primary-300">
             {t("input.image.load")} <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
           </label>
         </div>

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState, useEffect } from "react";
 import { Locale } from "../../locales/translations";
 import LanguageContext from "./LanguageContext";
 
@@ -7,8 +7,28 @@ interface LanguageProviderProps {
   lang?: Locale;
 }
 
+const getBrowserLanguage = (): Locale => {
+  const browserLang = navigator.language.slice(0, 2).toLowerCase();
+  return browserLang === "es" ? "es" : "en";
+};
+
+const getInitialLanguage = (defLang?: Locale): Locale => {
+  const storedLang = localStorage.getItem("lang") as Locale | null;
+  if (storedLang === "es" || storedLang === "en") {
+    return storedLang;
+  }
+  if (defLang === "es" || defLang === "en") {
+    return defLang;
+  }
+  return getBrowserLanguage();
+};
+
 const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, lang: defLang }) => {
-  const [lang, setLang] = useState<Locale>(defLang ?? "es");
+  const [lang, setLang] = useState<Locale>(getInitialLanguage(defLang));
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
 
   const contextValue = React.useMemo(() => ({ lang, setLang }), [lang, setLang]);
 

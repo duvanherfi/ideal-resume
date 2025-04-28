@@ -19,7 +19,7 @@ export const ExperienceItem = ({ styles, item, labels }: CurrentTemplateItemProp
         <View style={styles.experienceHeader}>
             <Text style={styles.experienceCompany}>{item.company}</Text>
             <Text style={styles.dateContainer}>
-                {item.startDate} - {item.endDate === 'Present' ? labels.present : item.endDate}
+                {item.startDate} - {item.endDate ?? labels.present}
             </Text>
         </View>
         <Text style={styles.experienceRole}>{item.role}</Text>

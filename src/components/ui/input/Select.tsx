@@ -12,6 +12,7 @@ interface SelectProps {
 }
 
 const Select = (props: SelectProps) => {
+
     return (
         <div>
             <label htmlFor={props.name} className="block text-sm font-medium text-secondary-700 dark:text-white mb-1">

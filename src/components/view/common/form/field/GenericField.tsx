@@ -18,7 +18,7 @@ const GenericField = (props: any) => {
     const { t, list } = useTranslations();
 
     switch (props.type) {
-        case "text": case "date": case "email":
+        case "text": case "date": case "email": case "number": case "url":
             return <Input {...props} label={t(props.label)} suggestions={list(props.suggestions)} />;
         case "image":
             return <InputImage {...props} label={t(props.label)} />;
