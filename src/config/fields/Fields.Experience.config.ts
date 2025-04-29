@@ -7,7 +7,6 @@ const FieldsExperience: FormField<WorkExperience>[] = [
     { type: "text", name: "location", label: "form.experience.field.location" },
     { type: "date", name: "startDate", label: "form.experience.field.startDate", required: true },
     { type: "date", name: "endDate", label: "form.experience.field.endDate", placeholder: "Leave blank for current position" },
-    { type: "checkbox", name: "present", label: "form.experience.field.present" },
     {
         type: "select",
         name: "contractType",

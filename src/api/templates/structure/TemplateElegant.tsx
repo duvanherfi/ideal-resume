@@ -6,14 +6,14 @@ import styleBuilder from '../styles/TemplateElegant.styles';
 
 const TemplateElegant: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
-    const styles = styleBuilder(theme || undefined);
+    const styles = styleBuilder(theme);
 
     return (
         <Document>
             <Page size="A4" style={styles.page}>
                 <ProfileHeader {...props} styles={styles} />
                 <ContactSection {...props} styles={styles} />
-                <View style={styles.mainContent}>
+                <View style={styles.layout.mainContent}>
                     <MainColumn {...props} styles={styles} />
                     <SideColumn {...props} styles={styles} />
                 </View>

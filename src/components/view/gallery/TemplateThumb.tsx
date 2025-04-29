@@ -33,7 +33,7 @@ const TemplateThumb = (props: TemplateThumbProps) => {
                     </span>
                 </button>
                 <div className="h-full w-64 lg:w-72 xl:w-full">
-                    <TemplateViewer isStatic={true} data={mockedResume} theme={theme.get ?? undefined} labels={defaultLabels} template={templateToPreview} />
+                    <TemplateViewer isStatic={true} data={mockedResume} theme={theme.get} labels={defaultLabels} template={templateToPreview} />
                 </div>
             </div>
         </div>

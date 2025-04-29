@@ -1,8 +1,8 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
 import useResumeLabels from "@api-hooks/useResumeLabels";
 import useResumeTemplate from "@api-hooks/useResumeTemplate";
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import useUserData from "@api-hooks/useUserData";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import Button from "../../ui/buttons/Button";
 import Icons from "../../ui/icons/Icons";
 
@@ -16,8 +16,8 @@ const DownloadResumeLink = () => {
     return (
         <div className="flex self-center">
             <PDFDownloadLink
-                document={<template.active.PDF data={data.get} theme={theme.get || undefined} labels={labels} />}
-                fileName={`${data.get.firstName || 'Resume'}-${data.get.lastName || 'PDF'}.pdf`}
+                document={<template.active.PDF data={data.get} theme={theme.get} labels={labels} />}
+                fileName={`${data.get.firstName ?? 'Resume'}-${data.get.lastName ?? 'PDF'}.pdf`}
                 className="inline-flex"
             >
                 {({ blob, url, loading, error }) => (

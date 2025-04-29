@@ -6,7 +6,7 @@ import styleBuilder from '../styles/TemplateModern.styles';
 
 const TemplateModern: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
-    const styles = styleBuilder(theme || undefined);
+    const styles = styleBuilder(theme);
 
     return (
         <Document>

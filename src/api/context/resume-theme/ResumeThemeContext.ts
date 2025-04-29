@@ -2,8 +2,8 @@ import React, { createContext } from "react";
 import TemplateTheme from "../../common/TemplateTheme";
 
 export interface ResumeThemeContextType {
-    get: TemplateTheme | null;
-    setTheme: React.Dispatch<React.SetStateAction<TemplateTheme | null>>;
+    get: TemplateTheme;
+    setTheme: React.Dispatch<React.SetStateAction<TemplateTheme>>;
     changeProperty: (property: keyof TemplateTheme, value: string) => void;
 }
 

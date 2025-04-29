@@ -1,195 +1,349 @@
-import { Font, StyleSheet } from '@react-pdf/renderer';
-import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../helper/templateStyleHelper';
+import { Font } from '@react-pdf/renderer';
 import TemplateTheme from '../../common/TemplateTheme';
+import { FontOpenSans } from '../helper/TemplateFonts';
+import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../helper/templateStyleHelper';
+import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
-Font.register({
-    family: 'Open Sans',
-    fonts: [
-        { src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf' },
-        { src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf', fontWeight: 600 },
-        { src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-700.ttf', fontWeight: 700 },
-    ],
-});
+Font.register(FontOpenSans);
 
 const defaultThemeColors: TemplateTheme = {
     primary: '#4F46E5',
 };
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.create({
+const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Open Sans',
         padding: 0,
         backgroundColor: '#FFFFFF',
     },
-    headerContainer: {
-        backgroundColor: theme.primary,
-        padding: 16,
+
+    // Common styles
+    common: {
+        divider: {
+            borderBottomWidth: 1,
+            borderBottomColor: '#E5E7EB', // gray-200
+        },
+        techContainer: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            marginBottom: 15,
+        },
+        date: {
+            container: {
+                alignItems: 'flex-end',
+            },
+            text: {
+                fontSize: 10,
+                color: '#6B7280', // gray-500
+            },
+        },
+        badge: {
+            container: {
+                backgroundColor: lightenHexColor(theme.primary, 90), // indigo-100
+                borderRadius: 10,
+                paddingVertical: 3,
+                paddingHorizontal: 8,
+                margin: 3,
+                flexDirection: 'row',
+            },
+            text: {
+                fontSize: 9,
+                color: darkenHexColor(theme.primary, 20), // indigo-800
+            },
+        },
     },
-    headerMain: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        color: getContrastingTextColor(theme.primary),
+
+    // Layout styles
+    layout: {
+        row: {
+            flexDirection: 'row',
+        },
+        mainContent: {
+            flex: 1,
+        },
+        column: {
+            main: {
+                flex: 1,
+                padding: 20,
+            },
+            side: {
+                flex: 1,
+                padding: 20,
+                borderRightWidth: 1,
+                borderRightColor: '#E5E7EB', // gray-200
+            },
+        },
     },
-    profileContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    profilePhoto: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-        borderWidth: 3,
-        borderColor: 'white',
-        marginRight: 15,
-    },
-    nameContainer: {
-        marginLeft: 10,
-    },
-    name: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 3,
-    },
-    role: {
-        fontSize: 14,
-        color: '#F9FAFB', // indigo-200
-    },
-    contactItem: {
-        alignItems: 'flex-end',
-    },
-    contactValue: {
-        fontSize: 10,
-        marginBottom: 3,
-    },
-    contactLabel: {
-        fontWeight: 'bold',
-        fontSize: 12,
-    },
+
+    // Section styles
     section: {
-        paddingRight: 20,
-        paddingLeft: 20,
-        paddingTop: 10,
-        paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#E5E7EB', // gray-200
+        container: {
+            paddingRight: 20,
+            paddingLeft: 20,
+            paddingTop: 10,
+            paddingBottom: 10,
+            borderBottomWidth: 1,
+            borderBottomColor: '#E5E7EB', // gray-200
+        },
+        header: {
+            marginBottom: 10,
+        },
+        title: {
+            fontSize: 16,
+            fontWeight: 'bold',
+            color: darkenHexColor(theme.primary), // indigo-700
+            marginBottom: 10,
+        },
+        headerLine: {
+            borderBottomWidth: 1,
+            borderBottomColor: '#E5E7EB', // gray-200
+        },
+        side: {
+            container: {
+                paddingRight: 20,
+                paddingLeft: 20,
+                paddingTop: 10,
+                paddingBottom: 10,
+            },
+            header: {
+                marginBottom: 10,
+            },
+            title: {
+                fontSize: 16,
+                fontWeight: 'bold',
+                color: darkenHexColor(theme.primary), // indigo-700
+                marginBottom: 10,
+            },
+        },
     },
-    twoColumnSection: {
-        flexDirection: 'row',
+
+    // Header styles
+    header: {
+        container: {
+            backgroundColor: theme.primary,
+            display: "flex",
+            flexDirection: "row",
+            alignContent: "center",
+            padding: 16,
+        },
+        main: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            color: getContrastingTextColor(theme.primary),
+        },
+        name: {
+            container: {
+                marginLeft: 10,
+            },
+            text: {
+                fontSize: 24,
+                fontWeight: 'bold',
+                marginBottom: 3,
+            },
+        },
+        role: {
+            fontSize: 14,
+            color: '#F9FAFB', // indigo-200
+        },
+        photo: {
+            width: 80,
+            height: 80,
+            borderRadius: 40,
+            borderWidth: 3,
+            borderColor: 'white',
+            marginRight: 15,
+        },
+        contact: {
+            container: {
+                alignItems: 'flex-end',
+            },
+            item: {
+                alignItems: 'flex-end',
+            },
+            label: {
+                fontWeight: 'bold',
+                fontSize: 12,
+            },
+            value: {
+                fontSize: 10,
+                marginBottom: 3,
+            },
+            divider: {
+                marginVertical: 2,
+            },
+        },
     },
-    column: {
-        flex: 1,
-        padding: 20,
+
+    // Summary styles
+    summary: {
+        text: {
+            fontSize: 10,
+            color: '#4B5563', // gray-700
+            lineHeight: 1.5,
+        },
     },
-    leftColumn: {
-        borderRightWidth: 1,
-        borderRightColor: '#E5E7EB', // gray-200
+
+    // Experience styles
+    experience: {
+        item: {
+            marginBottom: 15,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginBottom: 5,
+        },
+        role: {
+            fontSize: 12,
+            fontWeight: 'bold',
+        },
+        company: {
+            color: theme.primary, // indigo-600
+        },
+        contractType: {
+            fontSize: 10,
+            color: '#6B7280', // gray-500
+        },
+        location: {
+            fontSize: 10,
+            fontStyle: 'italic',
+            color: '#6B7280', // gray-500
+        },
+        description: {
+            fontSize: 10,
+            color: '#4B5563', // gray-700
+            lineHeight: 1.5,
+        },
     },
-    sectionTitle: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: darkenHexColor(theme.primary), // indigo-700
-        marginBottom: 10,
+
+    // Education styles
+    education: {
+        item: {
+            marginBottom: 12,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginBottom: 2,
+        },
+        degree: {
+            fontSize: 12,
+            fontWeight: 'bold',
+        },
+        institution: {
+            fontSize: 11,
+            color: theme.primary, // indigo-600
+        },
+        description: {
+            fontSize: 10,
+            color: '#4B5563', // gray-700
+        },
+        location: {
+            fontSize: 10,
+            fontStyle: 'italic',
+            color: '#6B7280', // gray-500
+        },
     },
-    experienceItem: {
-        marginBottom: 15,
+
+    // Project styles
+    project: {
+        container: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+        },
+        item: {
+            width: '48%',
+            marginBottom: 10,
+            marginRight: '2%',
+            padding: 8,
+            backgroundColor: '#F9FAFB', // gray-50
+            borderRadius: 4,
+        },
+        name: {
+            fontSize: 12,
+            fontWeight: 'bold',
+            marginBottom: 2,
+        },
+        link: {
+            fontSize: 9,
+            color: theme.primary, // indigo-600
+            marginBottom: 4,
+        },
+        description: {
+            fontSize: 9,
+            color: '#4B5563', // gray-700
+        },
     },
-    experienceHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 5,
+
+    // Skill styles
+    skill: {
+        container: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            marginBottom: 15,
+        },
+        item: {
+            backgroundColor: lightenHexColor(theme.primary, 90), // indigo-100
+            borderRadius: 10,
+            paddingVertical: 3,
+            paddingHorizontal: 8,
+            margin: 3,
+            flexDirection: 'row',
+        },
+        name: {
+            fontSize: 9,
+            color: darkenHexColor(theme.primary, 20), // indigo-800
+        },
+        bar: {
+            container: {
+                marginTop: 4,
+                height: 6,
+                width: '100%',
+                backgroundColor: lightenHexColor(theme.primary, 90),
+                borderRadius: 3,
+            },
+            fill: {
+                height: '100%',
+                backgroundColor: theme.primary,
+                borderRadius: 3,
+            },
+        }
     },
-    experienceRole: {
-        fontSize: 12,
-        fontWeight: 'bold',
+
+    // Language styles
+    language: {
+        container: {
+            marginBottom: 8,
+        },
+        item: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 5,
+        },
+        name: {
+            fontSize: 10,
+            fontWeight: 'bold',
+        },
+        proficiency: {
+            fontSize: 9,
+            color: theme.primary,
+        },
     },
-    experienceCompany: {
-        color: theme.primary, // indigo-600
-    },
-    dateText: {
-        fontSize: 10,
-        color: '#6B7280', // gray-500
-    },
-    experienceDescription: {
-        fontSize: 10,
-        color: '#4B5563', // gray-700
-        lineHeight: 1.5,
-    },
-    projectsGrid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-    },
-    projectItem: {
-        width: '48%',
-        marginBottom: 10,
-        marginRight: '2%',
-        padding: 8,
-        backgroundColor: '#F9FAFB', // gray-50
-        borderRadius: 4,
-    },
-    projectTitle: {
-        fontSize: 12,
-        fontWeight: 'bold',
-        marginBottom: 2,
-    },
-    projectLink: {
-        fontSize: 9,
-        color: theme.primary, // indigo-600
-        marginBottom: 4,
-    },
-    projectDescription: {
-        fontSize: 9,
-        color: '#4B5563', // gray-700
-    },
-    educationItem: {
-        marginBottom: 12,
-    },
-    educationContent: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 2,
-    },
-    educationDegree: {
-        fontSize: 12,
-        fontWeight: 'bold',
-    },
-    educationInstitution: {
-        fontSize: 11,
-        color: theme.primary, // indigo-600
-    },
-    skillsContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        marginBottom: 15,
-    },
-    skillItem: {
-        backgroundColor: lightenHexColor(theme.primary, 90), // indigo-100
-        borderRadius: 10,
-        paddingVertical: 3,
-        paddingHorizontal: 8,
-        margin: 3,
-        flexDirection: 'row',
-    },
-    skillText: {
-        fontSize: 9,
-        color: darkenHexColor(theme.primary, 20), // indigo-800
-    },
-    skillLevel: {
-        fontSize: 9,
-        color: lightenHexColor(theme.primary), // indigo-500
-        marginLeft: 3,
-    },
+
+    // Footer styles
     footer: {
-        padding: 10,
-        backgroundColor: '#F9FAFB', // gray-100
-        alignItems: 'center',
-    },
-    footerText: {
-        fontSize: 8,
-        color: '#6B7280', // gray-500
+        container: {
+            padding: 10,
+            backgroundColor: '#F9FAFB', // gray-100
+            alignItems: 'center',
+        },
+        text: {
+            fontSize: 8,
+            color: '#6B7280', // gray-500
+        },
     },
 });
-
-export type TemplateModernStyles = ReturnType<typeof styleBuilder>;
 
 export default styleBuilder;

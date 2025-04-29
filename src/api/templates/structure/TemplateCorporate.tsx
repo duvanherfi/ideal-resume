@@ -13,8 +13,8 @@ const TemplateCorporate: React.FC<TemplateProps> = (props: TemplateProps) => {
             <Page size="A4" style={styles.page}>
                 <ProfileHeader {...props} styles={styles} />
                 <ContactSection {...props} styles={styles} />
-                <View style={styles.divider} />
-                <View style={styles.mainContent}>
+                <View style={styles.common.divider} />
+                <View style={styles.layout.mainContent}>
                     <MainColumn  {...props} styles={styles} />
                     <SideColumn  {...props} styles={styles} />
                 </View>

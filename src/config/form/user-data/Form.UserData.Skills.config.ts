@@ -12,6 +12,9 @@ const skills: FormConfig<Skill> = {
         id: uuidv4(),
         name: "",
         level: 3,
+        category: "",
+        yearsExperience: 0,
+        certificationUrl: ""
     })
 };
 

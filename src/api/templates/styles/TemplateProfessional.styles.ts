@@ -1,242 +1,360 @@
-import { Font, StyleSheet } from '@react-pdf/renderer';
-import { lightenHexColor } from '../helper/templateStyleHelper';
+import { Font } from '@react-pdf/renderer';
 import TemplateTheme from '../../common/TemplateTheme';
+import { FontRoboto } from '../helper/TemplateFonts';
+import { lightenHexColor } from '../helper/templateStyleHelper';
+import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
-Font.register({
-    family: 'Roboto',
-    fonts: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf', fontWeight: 300 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-regular-webfont.ttf', fontWeight: 400 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-medium-webfont.ttf', fontWeight: 500 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-bold-webfont.ttf', fontWeight: 700 },
-    ],
-});
+Font.register(FontRoboto);
 
 const defaultThemeColors: TemplateTheme = {
     primary: '#2563EB', // A professional blue color
 };
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.create({
+const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Roboto',
         padding: 0,
         backgroundColor: '#FFFFFF',
     },
-    headerContainer: {
-        backgroundColor: '#F8FAFC', // Very light slate
-        borderBottomWidth: 3,
-        borderBottomColor: theme.primary,
-        padding: 20,
+
+    // Common styles
+    common: {
+        divider: {
+            height: 2,
+            backgroundColor: lightenHexColor(theme.primary, 75),
+            width: '100%',
+        },
+        techContainer: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            marginBottom: 8,
+        },
+        date: {
+            container: {
+                alignItems: 'flex-end',
+            },
+            text: {
+                fontSize: 10,
+                color: '#64748B', // Slate-500
+            },
+        },
+        badge: {
+            container: {
+                backgroundColor: lightenHexColor(theme.primary, 85),
+                borderRadius: 4,
+                paddingVertical: 2,
+                paddingHorizontal: 6,
+                margin: 2,
+            },
+            text: {
+                fontSize: 9,
+                color: theme.primary,
+            },
+        },
     },
-    headerContent: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 15,
+
+    // Layout styles
+    layout: {
+        row: {
+            flexDirection: 'row',
+            flex: 1,
+        },
+        mainContent: {
+            flex: 1,
+        },
+        column: {
+            main: {
+                width: '65%',
+                padding: 20,
+                paddingRight: 15,
+            },
+            side: {
+                width: '35%',
+                backgroundColor: '#F8FAFC', // Very light slate
+                padding: 20,
+                paddingLeft: 15,
+            },
+        },
     },
-    nameContainer: {
-        flex: 1,
-    },
-    name: {
-        fontSize: 24,
-        fontWeight: 700,
-        color: theme.primary,
-        marginBottom: 4,
-    },
-    role: {
-        fontSize: 14,
-        fontWeight: 500,
-        color: '#64748B', // Slate-500
-    },
-    profilePhoto: {
-        width: 70,
-        height: 70,
-        borderRadius: 35,
-        borderWidth: 2,
-        borderColor: theme.primary,
-    },
-    contactContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-    },
-    contactItem: {
-        minWidth: '30%',
-        marginRight: 10,
-    },
-    contactLabel: {
-        fontSize: 9,
-        fontWeight: 700,
-        color: theme.primary,
-        textTransform: 'uppercase',
-        marginBottom: 2,
-    },
-    contactValue: {
-        fontSize: 10,
-        color: '#334155', // Slate-700
-    },
-    contentContainer: {
-        flexDirection: 'row',
-        flex: 1,
-    },
-    leftColumn: {
-        width: '65%',
-        padding: 20,
-        paddingRight: 15,
-    },
-    rightColumn: {
-        width: '35%',
-        backgroundColor: '#F8FAFC', // Very light slate
-        padding: 20,
-        paddingLeft: 15,
-    },
+
+    // Section styles
     section: {
-        marginBottom: 20,
+        container: {
+            marginBottom: 20,
+        },
+        header: {
+            marginBottom: 12,
+        },
+        title: {
+            fontSize: 14,
+            fontWeight: 700,
+            color: theme.primary,
+            textTransform: 'uppercase',
+            marginBottom: 4,
+        },
+        headerLine: {
+            height: 2,
+            backgroundColor: lightenHexColor(theme.primary, 75),
+            width: '100%',
+        },
+        side: {
+            container: {
+                marginBottom: 20,
+            },
+            header: {
+                marginBottom: 12,
+            },
+            title: {
+                fontSize: 14,
+                fontWeight: 700,
+                color: theme.primary,
+                textTransform: 'uppercase',
+                marginBottom: 4,
+            },
+        },
     },
-    rightColumnSection: {
-        marginBottom: 20,
+
+    // Header styles
+    header: {
+        container: {
+            backgroundColor: '#F8FAFC', // Very light slate
+            borderBottomWidth: 3,
+            borderBottomColor: theme.primary,
+            padding: 20,
+        },
+        main: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 15,
+        },
+        name: {
+            container: {
+                flex: 1,
+            },
+            text: {
+                fontSize: 24,
+                fontWeight: 700,
+                color: theme.primary,
+                marginBottom: 4,
+            },
+        },
+        role: {
+            fontSize: 14,
+            fontWeight: 500,
+            color: '#64748B', // Slate-500
+        },
+        photo: {
+            width: 70,
+            height: 70,
+            borderRadius: 35,
+            borderWidth: 2,
+            borderColor: theme.primary,
+        },
+        contact: {
+            container: {
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+            },
+            item: {
+                minWidth: '30%',
+                marginRight: 10,
+            },
+            label: {
+                fontSize: 9,
+                fontWeight: 700,
+                color: theme.primary,
+                textTransform: 'uppercase',
+                marginBottom: 2,
+            },
+            value: {
+                fontSize: 10,
+                color: '#334155', // Slate-700
+            },
+            divider: {
+                marginVertical: 1,
+            },
+        },
     },
-    sectionHeader: {
-        marginBottom: 12,
+
+    // Summary styles
+    summary: {
+        text: {
+            fontSize: 10,
+            lineHeight: 1.5,
+            color: '#334155', // Slate-700
+        },
     },
-    sectionTitle: {
-        fontSize: 14,
-        fontWeight: 700,
-        color: theme.primary,
-        textTransform: 'uppercase',
-        marginBottom: 4,
+
+    // Experience styles
+    experience: {
+        item: {
+            marginBottom: 15,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 2,
+        },
+        role: {
+            fontSize: 12,
+            fontWeight: 700,
+            color: '#0F172A', // Slate-900
+        },
+        company: {
+            fontSize: 11,
+            fontWeight: 500,
+            color: theme.primary,
+            marginBottom: 4,
+        },
+        contractType: {
+            fontSize: 10,
+            color: '#64748B', // Slate-500
+        },
+        location: {
+            fontSize: 10,
+            color: '#64748B', // Slate-500
+        },
+        description: {
+            fontSize: 10,
+            lineHeight: 1.5,
+            color: '#334155', // Slate-700
+        },
     },
-    divider: {
-        height: 2,
-        backgroundColor: lightenHexColor(theme.primary, 75),
-        width: '100%',
+
+    // Education styles
+    education: {
+        item: {
+            marginBottom: 12,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 2,
+        },
+        degree: {
+            fontSize: 12,
+            fontWeight: 700,
+            color: '#0F172A', // Slate-900
+        },
+        institution: {
+            fontSize: 11,
+            fontWeight: 500,
+            color: theme.primary,
+        },
+        description: {
+            fontSize: 10,
+            color: '#334155', // Slate-700
+        },
+        location: {
+            fontSize: 10,
+            color: '#64748B', // Slate-500
+        },
     },
-    // Summary
-    summaryText: {
-        fontSize: 10,
-        lineHeight: 1.5,
-        color: '#334155', // Slate-700
+
+    // Project styles
+    project: {
+        container: {
+            marginBottom: 20,
+        },
+        item: {
+            marginBottom: 12,
+            paddingBottom: 10,
+            borderBottomWidth: 1,
+            borderBottomColor: lightenHexColor(theme.primary, 85),
+        },
+        name: {
+            fontSize: 11,
+            fontWeight: 700,
+            color: '#0F172A', // Slate-900
+            marginBottom: 2,
+        },
+        link: {
+            fontSize: 9,
+            color: theme.primary,
+            marginBottom: 3,
+            textDecoration: 'none',
+        },
+        description: {
+            fontSize: 9,
+            lineHeight: 1.4,
+            color: '#334155', // Slate-700
+        },
     },
-    // Experience
-    experienceItem: {
-        marginBottom: 15,
+
+    // Skill styles
+    skill: {
+        container: {
+            marginBottom: 10,
+        },
+        item: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 8,
+        },
+        name: {
+            fontSize: 10,
+            fontWeight: 500,
+            color: '#0F172A', // Slate-900
+        },
+        bar: {
+            container: {
+                flexDirection: 'row',
+            },
+            fill: {
+                // Adaptado para el sistema de puntos
+                // El original usa un sistema de puntos en lugar de barras
+                // Se mantiene la estructura pero se adapta al contexto
+                width: 6,
+                height: 6,
+                borderRadius: 3,
+                marginHorizontal: 1,
+                backgroundColor: theme.primary,
+            },
+        },
     },
-    experienceHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 2,
+
+    // Language styles
+    language: {
+        container: {
+            marginBottom: 10,
+        },
+        item: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 8,
+        },
+        name: {
+            fontSize: 10,
+            fontWeight: 500,
+            color: '#0F172A', // Slate-900
+        },
+        proficiency: {
+            fontSize: 10,
+            color: theme.primary,
+            fontWeight: 500,
+        },
     },
-    experienceRole: {
-        fontSize: 12,
-        fontWeight: 700,
-        color: '#0F172A', // Slate-900
-    },
-    experienceCompany: {
-        fontSize: 11,
-        fontWeight: 500,
-        color: theme.primary,
-        marginBottom: 4,
-    },
-    dateText: {
-        fontSize: 10,
-        color: '#64748B', // Slate-500
-    },
-    experienceDescription: {
-        fontSize: 10,
-        lineHeight: 1.5,
-        color: '#334155', // Slate-700
-    },
-    // Education
-    educationItem: {
-        marginBottom: 12,
-    },
-    educationHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 2,
-    },
-    educationDegree: {
-        fontSize: 12,
-        fontWeight: 700,
-        color: '#0F172A', // Slate-900
-    },
-    educationInstitution: {
-        fontSize: 11,
-        fontWeight: 500,
-        color: theme.primary,
-    },
-    // Projects
-    projectItem: {
-        marginBottom: 12,
-        paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: lightenHexColor(theme.primary, 85),
-    },
-    projectTitle: {
-        fontSize: 11,
-        fontWeight: 700,
-        color: '#0F172A', // Slate-900
-        marginBottom: 2,
-    },
-    projectLink: {
-        fontSize: 9,
-        color: theme.primary,
-        marginBottom: 3,
-        textDecoration: 'none',
-    },
-    projectDescription: {
-        fontSize: 9,
-        lineHeight: 1.4,
-        color: '#334155', // Slate-700
-    },
-    // Skills
-    skillItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 8,
-    },
-    skillName: {
-        fontSize: 10,
-        fontWeight: 500,
-        color: '#0F172A', // Slate-900
-    },
-    skillLevelContainer: {
-        flexDirection: 'row',
-    },
-    skillLevelDot: {
-        width: 6,
-        height: 6,
-        borderRadius: 3,
-        marginHorizontal: 1,
-    },
-    skillLevelDotFilled: {
-        backgroundColor: theme.primary,
-    },
-    skillLevelDotEmpty: {
-        backgroundColor: lightenHexColor(theme.primary, 85),
-    },
-    // Languages
-    languageItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 8,
-    },
-    languageName: {
-        fontSize: 10,
-        fontWeight: 500,
-        color: '#0F172A', // Slate-900
-    },
-    languageProficiency: {
-        fontSize: 10,
-        color: theme.primary,
-        fontWeight: 500,
+
+    // Footer styles
+    footer: {
+        container: {
+            padding: 10,
+            backgroundColor: '#F8FAFC', // Very light slate
+            borderTopWidth: 1,
+            borderTopColor: lightenHexColor(theme.primary, 75),
+            alignItems: 'center',
+        },
+        text: {
+            fontSize: 8,
+            color: '#64748B', // Slate-500
+        },
     },
 });
-
-export type TemplateProfessionalStyles = ReturnType<typeof styleBuilder>;
 
 export default styleBuilder;

@@ -1,91 +1,83 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { ItemTemplateProps } from "../../common/TemplateProps";
+import { ItemProps, SectionTemplateProps } from "../../common/TemplateProps";
 import { Education, Language, Project, Skill, WorkExperience } from "../../types";
-import { TemplateElegantStyles } from "../styles/TemplateElegant.styles";
 
-type ContactProps = { label?: string, value?: string, styles: TemplateElegantStyles };
-type SkillLevelProps = { level: number, styles: TemplateElegantStyles };
-type CurrentTemplateItemProps<T> = ItemTemplateProps<T, TemplateElegantStyles>;
-
-export const Contact = ({ label, value, styles }: ContactProps) => value ? (
-    <View style={styles.contactItem}>
-        <Text style={styles.contactLabel}>{label}:</Text>
-        <Text style={styles.contactValue}>{value}</Text>
+export const ProfileSummary: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+    <View style={styles.section.container}>
+        <View style={styles.section.header}>
+            <Text style={styles.section.title}>
+                {labels.profileSummary}
+            </Text>
+        </View>
+        <Text style={styles.summary.text}>{data.profileSummary}</Text>
     </View>
-) : null;
+);
 
-export const ExperienceItem = ({ styles, item, labels }: CurrentTemplateItemProps<WorkExperience>) => (
-    <View style={styles.experienceItem}>
-        <View style={styles.timelineColumn}>
-            <View style={styles.timelineDot} />
-            <View style={styles.timelineLine} />
-            <View style={styles.dateContainer}>
-                <Text style={styles.dateText}>{item.startDate}</Text>
-                <Text style={styles.dateText}>-</Text>
-                <Text style={styles.dateText}>{item.endDate || labels.present}</Text>
+export const ExperienceItem = ({ styles, item, labels }: ItemProps<WorkExperience>) => (
+    <View style={styles.experience.item}>
+        <View style={styles.header.container}>
+            <View style={styles.common.divider} /> {/** era .dot esto */}
+            <View style={styles.common.divider} />
+            <View style={styles.common.date.container}>
+                <Text style={styles.common.date.text}>{item.startDate}</Text>
+                <Text style={styles.common.date.text}>-</Text>
+                <Text style={styles.common.date.text}>{item.endDate ?? labels.present}</Text>
             </View>
         </View>
-        <View style={styles.contentColumn}>
-            <Text style={styles.experienceRole}>{item.role}</Text>
-            <Text style={styles.experienceCompany}>{item.company}</Text>
-            <Text style={styles.experienceDescription}>{item.description}</Text>
+        <View style={styles.layout.column}>
+            <Text style={styles.experience.role}>{item.role}</Text>
+            <Text style={styles.experience.company}>{item.company}</Text>
+            <Text style={styles.experience.description}>{item.description}</Text>
         </View>
     </View>
 );
 
-export const EducationItem = ({ styles, item, labels }: CurrentTemplateItemProps<Education>) => (
-    <View style={styles.educationItem}>
-        <View style={styles.timelineColumn}>
-            <View style={styles.timelineDot} />
-            <View style={styles.timelineLine} />
-            <View style={styles.dateContainer}>
-                <Text style={styles.dateText}>{item.startDate}</Text>
-                <Text style={styles.dateText}>-</Text>
-                <Text style={styles.dateText}>{item.endDate || labels.present}</Text>
+export const EducationItem = ({ styles, item, labels }: ItemProps<Education>) => (
+    <View style={styles.education.item}>
+        <View style={styles.header.container}>
+            <View style={styles.common.divider} /> {/** era .dot esto */}
+            <View style={styles.common.divider} />
+            <View style={styles.common.date.container}>
+                <Text style={styles.common.date.text}>{item.startDate}</Text>
+                <Text style={styles.common.date.text}>-</Text>
+                <Text style={styles.common.date.text}>{item.endDate ?? labels.present}</Text>
             </View>
         </View>
-        <View style={styles.contentColumn}>
-            <Text style={styles.educationDegree}>{item.degree}</Text>
-            <Text style={styles.educationInstitution}>{item.institution}</Text>
+        <View style={styles.layout.column}>
+            <Text style={styles.education.degree}>{item.degree}</Text>
+            <Text style={styles.education.institution}>{item.institution}</Text>
         </View>
     </View>
 );
 
-export const ProjectItem = ({ styles, item }: CurrentTemplateItemProps<Project>) => (
-    <View style={styles.projectItem}>
-        <Text style={styles.projectTitle}>{item.name}</Text>
+export const ProjectItem = ({ styles, item }: ItemProps<Project>) => (
+    <View style={styles.project.item}>
+        <Text style={styles.project.name}>{item.name}</Text>
         {item.link && (
-            <Link src={item.link} style={styles.projectLink}>
+            <Link src={item.link} style={styles.project.link}>
                 {item.link}
             </Link>
         )}
-        <Text style={styles.projectDescription}>{item.description}</Text>
+        <Text style={styles.project.description}>{item.description}</Text>
     </View>
 );
 
-export const SkillLevel = ({ level, styles }: SkillLevelProps) => {
-    const percentage = (level / 5) * 100;
-    return (
-        <View style={styles.skillBarContainer}>
-            <View style={[styles.skillBarFill, { width: `${percentage}%` }]} />
+export const SkillItem = ({ styles, item }: ItemProps<Skill>) => (
+    <View style={styles.skill.item}>
+        <Text style={styles.skill.name}>{item.name}</Text>
+        <View style={styles.skill.bar.container}>
+            <View style={[styles.skill.bar.fill, { width: `${(item.level / 5) * 100}%` }]} />
         </View>
-    );
-};
-
-export const SkillItem = ({ styles, item }: CurrentTemplateItemProps<Skill>) => (
-    <View style={styles.skillItem}>
-        <Text style={styles.skillName}>{item.name}</Text>
-        <SkillLevel level={item.level} styles={styles} />
     </View>
 );
 
-export const LanguageItem = ({ styles, item }: CurrentTemplateItemProps<Language>) => (
-    <View style={styles.languageItem}>
-        <View style={styles.languageNameContainer}>
-            <Text style={styles.languageName}>{item.name}</Text>
+export const LanguageItem = ({ styles, item }: ItemProps<Language>) => (
+    <View style={styles.language.item}>
+        <View style={styles.language.container}>
+            <Text style={styles.language.name}>{item.name}</Text>
         </View>
-        <View style={styles.languageProficiencyContainer}>
-            <Text style={styles.languageProficiency}>{item.proficiency}</Text>
+        <View style={styles.language.container}>
+            <Text style={styles.language.proficiency}>{item.proficiency}</Text>
         </View>
     </View>
 );

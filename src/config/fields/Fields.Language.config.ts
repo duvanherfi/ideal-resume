@@ -9,7 +9,7 @@ const FieldsLanguage: FormField<Language>[] = [
         label: "form.language.field.proficiency",
         options: [/*"Beginner", "Intermediate", "Advanced", "Fluent", "Native"*/],
     },
-    { type: "textarea", name: "comment", label: "form.language.field.comment" },
+    //{ type: "textarea", name: "comment", label: "form.language.field.comment" },
     //{ type: "text", name: "certification.name", label: "form.language.field.certificationName" },
     //{ type: "text", name: "certification.institution", label: "form.language.field.certificationInstitution" },
     //{ type: "date", name: "certification.date", label: "form.language.field.certificationDate" },

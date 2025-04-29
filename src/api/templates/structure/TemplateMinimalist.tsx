@@ -6,16 +6,16 @@ import styleBuilder from '../styles/TemplateMinimalist.styles';
 
 const TemplateMinimalist: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
-    const styles = styleBuilder(theme || undefined);
+    const styles = styleBuilder(theme);
 
     return (
         <Document>
             <Page size="A4" style={styles.page}>
                 <ProfileHeader {...props} styles={styles} />
-                <View style={styles.divider} />
+                <View style={styles.common.divider} />
                 <ContactSection {...props} styles={styles} />
-                <View style={styles.divider} />
-                <View style={styles.content}>
+                <View style={styles.common.divider} />
+                <View style={styles.layout.mainContent}>
                     <MainColumn {...props} styles={styles} />
                     <SideColumn {...props} styles={styles} />
                 </View>

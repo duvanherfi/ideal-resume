@@ -15,6 +15,10 @@ const workExperiences: FormConfig<WorkExperience> = {
         startDate: "",
         endDate: "",
         description: "",
+        location: "",
+        contractType: undefined,
+        technologies: "",
+        link: ""
     })
 };
 

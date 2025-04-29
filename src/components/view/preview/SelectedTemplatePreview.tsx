@@ -11,7 +11,7 @@ const SelectedTemplatePreview = () => {
     const { labels } = useResumeLabels();
 
     return (
-        <TemplateViewer data={data.get} theme={theme.get ?? undefined} labels={labels} template={template.active} />
+        <TemplateViewer data={data.get} theme={theme.get} labels={labels} template={template.active} />
     );
 };
 

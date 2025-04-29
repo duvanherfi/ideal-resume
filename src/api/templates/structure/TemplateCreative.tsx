@@ -6,14 +6,14 @@ import styleBuilder from '../styles/TemplateCreative.styles';
 
 const TemplateCreative: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
-    const styles = styleBuilder(theme || undefined);
+    const styles = styleBuilder(theme);
 
     return (
         <Document>
             <Page size="A4" style={styles.page}>
-                <View style={styles.mainContent}>
+                <View style={styles.layout.mainContent}>
                     <ProfileHeader {...props} styles={styles} />
-                    <View style={styles.contentContainer}>
+                    <View style={styles.layout.row}>
                         <MainColumn {...props} styles={styles} />
                         <SideColumn {...props} styles={styles} />
                     </View>

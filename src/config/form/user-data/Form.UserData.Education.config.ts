@@ -12,8 +12,12 @@ const education: FormConfig<Education> = {
         id: uuidv4(),
         institution: "",
         degree: "",
+        location: "",
         startDate: "",
         endDate: "",
+        gpa: "",
+        description: "",
+        certifications: []
     })
 };
 

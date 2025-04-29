@@ -1,15 +1,15 @@
 import React, { ReactNode, useMemo, useState } from "react";
+import TemplateTheme from "../../common/TemplateTheme";
 import ResumeThemeContext, { ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";
-import TemplateTheme from "../../common/TemplateTheme";
 
 interface ResumeThemeProviderProps {
   children: ReactNode;
-  defaultTheme?: TemplateTheme | null;
+  defaultTheme?: TemplateTheme;
 }
 
 const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, defaultTheme = initialTheme }) => {
-  const [theme, setTheme] = useState<TemplateTheme | null>(defaultTheme);
+  const [theme, setTheme] = useState<TemplateTheme>(defaultTheme);
 
   const changeProperty = (property: keyof TemplateTheme, value: string) => {
     setTheme(prevTheme => ({

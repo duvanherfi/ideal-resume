@@ -1,99 +1,107 @@
 import { UserData } from "@resume-api/types";
 
-export default {
-  firstName: "Juan",
-  lastName: "Perez",
-  dateOfBirth: "1990-05-15",
-  email: "juan.perez@example.com",
-  phone: "+54 9 11 1234-5678",
-  address: "Calle Falsa 123, Ciudad, Provincia, Argentina",
-  profileSummary: "Desarrollador de software con amplia experiencia en proyectos tecnológicos. Apasionado por la innovación y la mejora continua, con habilidades en múltiples lenguajes de programación y un sólido trasfondo en estudios de astrología. Capaz de trabajar en equipos multidisciplinarios y adaptarse a nuevos entornos de trabajo.",
-  profilePhoto: "", // Foto de perfil vacía
+const mockUserData: UserData = {
+  // Basic Info
+  firstName: "Jane",
+  lastName: "Doe",
+  dateOfBirth: "1990-04-25",
+  email: "jane.doe@example.com",
+  phone: "+1 (555) 123-4567",
+  address: "1234 Elm Street, Springfield, USA",
+  location: "Springfield, USA",
+  role: "Lead Frontend Developer",
+  profileSummary: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at ligula in lectus efficitur pretium. Sed vel sem vitae nisl fermentum commodo. Duis nec tellus at risus suscipit bibendum.`,
+  profilePhoto: "https://example.com/jane-doe.jpg",
+  links: [
+    { id: "1", label: "GitHub", url: "https://github.com/janedoe" },
+    { id: "2", label: "LinkedIn", url: "https://linkedin.com/in/janedoe" },
+    { id: "3", label: "Portfolio", url: "https://janedoe.dev" }
+  ],
+
+  // Work Experiences
   workExperiences: [
     {
       id: "we1",
-      company: "Acme Solutions",
-      role: "Frontend Developer",
-      startDate: "2020-03-01",
-      endDate: "2021-08-31",
-      description: "Desarrollé interfaces de usuario responsivas utilizando React y Tailwind CSS, colaborando con diseñadores para implementar componentes accesibles."
+      company: "Acme Corp",
+      role: "Frontend Engineer",
+      location: "New York, NY",
+      startDate: "2015-01-15",
+      endDate: "2018-07-31",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut purus vel libero tincidunt dictum. Maecenas at quam nec purus vulputate malesuada.`,
+      technologies: `React, TypeScript, Redux`,
+      link: "https://acme-corp.example.com"
     },
     {
       id: "we2",
-      company: "Beta Tech",
-      role: "Fullstack Engineer",
-      startDate: "2021-09-01",
-      endDate: "2023-12-31",
-      description: "Implementé microservicios en Node.js y bases de datos NoSQL, mejorando la escalabilidad de la plataforma y reduciendo tiempos de respuesta en un 30%."
+      company: "Globex Inc.",
+      role: "Senior Frontend Developer",
+      location: "Remote",
+      startDate: "2018-08-01",
+      present: true,
+      contractType: "Full-time",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.`,
+      technologies: `Next.js, Tailwind CSS, Jest`,
+      link: "https://globex.example.com"
     }
   ],
+
+  // Education
+  education: [
+    {
+      id: "edu1",
+      institution: "State University",
+      degree: "B.Sc. Computer Science",
+      location: "Springfield, USA",
+      startDate: "2008-09-01",
+      endDate: "2012-06-15",
+      gpa: "3.8",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor.`,
+      certifications: [
+        {
+          id: "cert1",
+          name: "AWS Certified Solutions Architect",
+          institution: "Amazon Web Services (AWS)",
+          date: "2020-05-20",
+          credentialUrl: "https://aws.amazon.com/certification/"
+        }
+      ]
+    }
+  ],
+
+  // Projects
   projects: [
     {
       id: "pr1",
-      name: "WeatherNow",
-      link: "https://github.com/juanperez/weathernow",
-      description: "Aplicación web que consume APIs meteorológicas en tiempo real. Construida con React, Redux y Material UI para mostrar datos del clima de forma interactiva."
+      name: "Resume Builder App",
+      link: "https://github.com/janedoe/resume-builder",
+      startDate: "2021-01-10",
+      endDate: "2021-04-30",
+      role: "Fullstack Developer",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.`,
+      technologies: "React, Node.js, MongoDB",
+      imageUrl: "https://example.com/project-resume-builder.png"
     },
     {
       id: "pr2",
-      name: "ShopEasy",
-      link: "https://github.com/juanperez/shopeasy",
-      description: "Plataforma de comercio electrónico de código abierto, desarrollada con Next.js y Stripe, que facilita la gestión de inventarios y pagos en línea."
+      name: "E-commerce Platform",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem mi. Proin in lobortis ipsum.`,
+      technologies: "Next.js, GraphQL, PostgreSQL"
     }
   ],
-  education: [
-    {
-      id: "ed1",
-      institution: "Instituto Tecnológico Falso",
-      degree: "Técnico en Programación",
-      startDate: "2012-02-01",
-      endDate: "2014-11-30"
-    },
-    {
-      id: "ed2",
-      institution: "Universidad Imaginaria",
-      degree: "Licenciatura en Ciencias de la Computación",
-      startDate: "2015-03-01",
-      endDate: "2019-12-15"
-    }
-  ],
+
+  // Skills
   skills: [
-    {
-      id: "sk1",
-      name: "JavaScript",
-      level: 5
-    },
-    {
-      id: "sk2",
-      name: "Python",
-      level: 4
-    },
-    {
-      id: "sk3",
-      name: "React",
-      level: 4
-    }
+    { id: "sk1", name: "JavaScript", category: "Technical", level: 5, yearsExperience: 8 },
+    { id: "sk2", name: "React", category: "Technical", level: 5, yearsExperience: 6 },
+    { id: "sk3", name: "Team Leadership", category: "Soft Skill", level: 4, yearsExperience: 3 },
+    { id: "sk4", name: "Communication", category: "Soft Skill", level: 5 }
   ],
+
+  // Languages
   languages: [
-    {
-      id: "lang1",
-      name: "Español",
-      proficiency: "Native"
-    },
-    {
-      id: "lang2",
-      name: "Inglés",
-      proficiency: "Fluent"
-    },
-    {
-      id: "lang3",
-      name: "Francés",
-      proficiency: "Intermediate"
-    },
-    {
-      id: "lang4",
-      name: "Alemán",
-      proficiency: "Basic"
-    }
+    { id: "lang1", name: "English", proficiency: "Native" },
+    { id: "lang2", name: "Spanish", proficiency: "Fluent", comment: "Uso profesional diario." }
   ]
-} as UserData;
+};
+
+export default mockUserData;

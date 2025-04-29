@@ -12,6 +12,8 @@ const languages: FormConfig<Language> = {
         id: uuidv4(),
         name: "",
         proficiency: "Intermediate",
+        certification: undefined,
+        comment: ""
     })
 };
 

@@ -1,294 +1,381 @@
-import { Font, StyleSheet } from '@react-pdf/renderer';
+import { Font } from '@react-pdf/renderer';
+import { Style } from '@react-pdf/types';
 import TemplateTheme from '../../common/TemplateTheme';
+import { FontRoboto } from '../helper/TemplateFonts';
+import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from '../helper/TemplateStyleSheet';
 
-Font.register({
-    family: 'Roboto',
-    fonts: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf', fontWeight: 300 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-regular-webfont.ttf', fontWeight: 400 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-medium-webfont.ttf', fontWeight: 500 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-bold-webfont.ttf', fontWeight: 700 },
-    ],
-});
+Font.register(FontRoboto);
 
 const defaultThemeColors: TemplateTheme = {
     primary: '#1E40AF',
 };
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.create({
-    page: {
-        fontFamily: 'Roboto',
-        fontSize: 10,
-        padding: 30,
-        backgroundColor: '#FFFFFF',
-        color: '#333333',
-    },
+const page = (): Style => ({
+    fontFamily: 'Roboto',
+    fontSize: 10,
+    padding: 30,
+    backgroundColor: '#FFFFFF',
+    color: '#333333',
+});
+
+const common = (theme: TemplateTheme): CommonStyles => ({
     divider: {
         height: 1,
-        backgroundColor: '#E2E8F0', // Light gray
+        backgroundColor: '#E2E8F0',
         marginVertical: 10,
     },
-
-    // Header styles
-    headerContainer: {
-        marginBottom: 12,
-    },
-    headerMain: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 6,
-    },
-    nameContainer: {
-        flex: 1,
-    },
-    name: {
-        fontFamily: 'Roboto',
-        fontSize: 24,
-        fontWeight: 700,
-        color: theme.primary,
-        marginBottom: 5,
-    },
-    role: {
-        fontSize: 14,
-        color: '#4B5563', // Gray-600
-    },
-    profilePhoto: {
-        width: 70,
-        height: 70,
-        borderRadius: 35,
-        borderWidth: 2,
-        borderColor: theme.primary,
-    },
-    contactContainer: {
-        flexDirection: 'row',
-        backgroundColor: '#F3F4F6', // Gray-100
-        padding: 10,
-        borderRadius: 5,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    contactItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    contactLabel: {
-        fontWeight: 600,
-        fontSize: 9,
-        color: theme.primary,
-        marginRight: 5,
-    },
-    contactValue: {
-        fontSize: 9,
-    },
-    contactDivider: {
-        height: 15,
-        width: 1,
-        backgroundColor: '#D1D5DB', // Gray-300
+    techContainer: {
+        display: 'flex' as const,
+        flexDirection: 'row' as const,
+        flexWrap: 'wrap' as const,
+        gap: 4, // Converted from rem
+        alignSelf: "flex-end" as const,
+        justifySelf: "center" as const,
     },
 
-    // Main content layout
+    date: {
+        container: {
+            fontSize: 9,
+            marginBottom: 4,
+            color: '#6B7280',
+        },
+        text: {}
+    },
+
+    // Badge component
+    badge: {
+        container: {
+            display: "flex" as const,
+            justifyContent: "center" as const,
+            alignItems: 'center' as const,
+            borderRadius: 3,
+            textAlign: "center" as const,
+            height: 13,
+            fontSize: 8, // Converted from rem
+            fontWeight: 500,
+            backgroundColor: `${theme.primary}20`,
+            color: theme.primary,
+            borderWidth: 1,
+            borderColor: theme.primary,
+            lineHeight: 1,
+        },
+        text: {
+            padding: 1,
+            alignSelf: "flex-start" as const,
+        },
+    },
+});
+
+const layout = (): LayoutStyles => ({
+    row: {
+        flexDirection: 'row' as const,
+        justifyContent: 'space-between' as const,
+    },
     mainContent: {
-        flexDirection: 'row',
+        flexDirection: 'row' as const,
         flex: 1,
     },
-    mainColumn: {
-        width: '65%',
-        paddingRight: 15,
+    column: {
+        main: {
+            width: '65%',
+            paddingRight: 15,
+        },
+        side: {
+            width: '35%',
+            paddingLeft: 15,
+            borderLeftWidth: 1,
+            borderLeftColor: '#E5E7EB',
+        },
     },
-    sideColumn: {
-        width: '35%',
-        paddingLeft: 15,
-        borderLeftWidth: 1,
-        borderLeftColor: '#E5E7EB', // Gray-200
-    },
+});
 
-    // Section styles
-    section: {
+const section = (theme: TemplateTheme): SectionStyles => ({
+    container: {
         marginBottom: 20,
     },
-    sectionHeader: {
-        flexDirection: 'row',
-        alignItems: 'center',
+    header: {
+        flexDirection: 'row' as const,
+        alignItems: 'center' as const,
         marginBottom: 10,
     },
-    sectionTitle: {
+    title: {
         fontFamily: 'Roboto',
         fontSize: 16,
         fontWeight: 600,
         color: theme.primary,
         marginRight: 10,
     },
-    sectionHeaderLine: {
+    headerLine: {
         flex: 1,
         height: 1,
-        backgroundColor: '#E5E7EB', // Gray-200
+        backgroundColor: '#E5E7EB',
     },
-
-    // About section
-    summaryText: {
-        fontSize: 10,
-        lineHeight: 1.6,
-        textAlign: 'justify',
+    side: {
+        container: {
+            marginBottom: 20,
+        },
+        header: {
+            paddingBottom: 5,
+            borderBottomWidth: 1,
+            borderBottomColor: '#E5E7EB',
+            marginBottom: 8,
+        },
+        title: {
+            fontFamily: 'Roboto',
+            fontSize: 14,
+            fontWeight: 600,
+            color: theme.primary,
+        },
     },
+});
 
-    // Experience section
-    experienceItem: {
+const header = (theme: TemplateTheme): HeaderStyles => ({
+    container: {
         marginBottom: 12,
     },
-    experienceHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+    main: {
+        flexDirection: 'row' as const,
+        justifyContent: 'space-between' as const,
+        alignItems: 'center' as const,
+        marginBottom: 6,
+    },
+    name: {
+        container: {
+            flex: 1,
+        },
+        text: {
+            fontFamily: 'Roboto',
+            fontSize: 24,
+            fontWeight: 700,
+            color: theme.primary,
+            marginBottom: 5,
+        },
+    },
+    role: {
+        fontSize: 14,
+        color: '#4B5563',
+    },
+    photo: {
+        width: 70,
+        height: 70,
+        borderRadius: 35,
+        borderWidth: 2,
+        borderColor: theme.primary,
+    },
+    contact: {
+        container: {
+            flexDirection: 'row' as const,
+            backgroundColor: '#F3F4F6',
+            padding: 10,
+            borderRadius: 5,
+            justifyContent: 'space-between' as const,
+            alignItems: 'center' as const,
+        },
+        item: {
+            flexDirection: 'row' as const,
+            alignItems: 'center' as const,
+        },
+        label: {
+            fontWeight: 600,
+            fontSize: 9,
+            color: theme.primary,
+            marginRight: 5,
+        },
+        value: {
+            fontSize: 9,
+        },
+        divider: {
+            height: 15,
+            width: 1,
+            backgroundColor: '#D1D5DB',
+        },
+    },
+});
+
+const summary = (): SummaryStyles => ({
+    text: {
+        fontSize: 10,
+        lineHeight: 1.6,
+        textAlign: 'justify' as const,
+    },
+});
+
+const experience = (theme: TemplateTheme): ExperienceStyles => ({
+    item: {
+        marginBottom: 12,
+    },
+    header: {
+        flexDirection: 'row' as const,
+        justifyContent: 'space-between' as const,
+        alignItems: 'center' as const,
         marginBottom: 3,
     },
-    experienceCompany: {
+    company: {
         fontFamily: 'Roboto',
-        fontWeight: 600,
         fontSize: 12,
-        color: '#111827', // Gray-900
+        fontWeight: 600,
+        color: '#111827',
     },
-    dateContainer: {
-        fontSize: 9,
-        color: '#6B7280', // Gray-500
-    },
-    experienceRole: {
+    role: {
         fontSize: 11,
         fontWeight: 600,
         color: theme.primary,
         marginBottom: 4,
     },
-    experienceDescription: {
+    contractType: {
+        fontSize: 9,
+        fontWeight: 400,
+        color: '#111827',
+    },
+    location: {
+        fontSize: 9,
+        color: '#111827',
+        alignSelf: "flex-end" as const,
+    },
+    description: {
         fontSize: 9,
         lineHeight: 1.5,
-        textAlign: 'justify',
+        textAlign: 'justify' as const,
     },
+});
 
-    // Education section
-    educationItem: {
+const education = (theme: TemplateTheme): EducationStyles => ({
+    item: {
         marginBottom: 10,
     },
-    educationContent: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+    header: {
+        flexDirection: 'row' as const,
+        justifyContent: 'space-between' as const,
+        alignItems: 'center' as const,
         marginBottom: 2,
     },
-    educationDegree: {
+    degree: {
         fontFamily: 'Roboto',
         fontSize: 11,
         fontWeight: 600,
         color: theme.primary,
     },
-    educationInstitution: {
-        fontSize: 10,
-        color: '#374151', // Gray-700
-    },
-
-    // Side content
-    sideContent: {
-        paddingTop: 2,
-    },
-    sideSection: {
-        marginBottom: 20,
-    },
-    sideSectionHeader: {
-        paddingBottom: 5,
-        borderBottomWidth: 1,
-        borderBottomColor: '#E5E7EB', // Gray-200
-        marginBottom: 8,
-    },
-    sideSectionTitle: {
+    institution: {
         fontFamily: 'Roboto',
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: 600,
-        color: theme.primary,
+        color: '#111827',
     },
+    description: {
+        fontSize: 9,
+        lineHeight: 1.5,
+        textAlign: 'justify' as const,
+    },
+    location: {
+        fontSize: 9,
+        color: '#111827',
+        alignSelf: "flex-end" as const,
+    },
+});
 
-    // Projects section
-    projectsContainer: {
+const project = (theme: TemplateTheme): ProjectStyles => ({
+    container: {
         gap: 8,
     },
-    projectItem: {
+    item: {
         marginBottom: 8,
         padding: 6,
-        backgroundColor: '#F9FAFB', // Gray-50
+        backgroundColor: '#F9FAFB',
         borderRadius: 4,
         borderLeftWidth: 2,
         borderLeftColor: theme.primary,
     },
-    projectName: {
+    name: {
         fontFamily: 'Roboto',
         fontSize: 10,
         fontWeight: 600,
         marginBottom: 3,
     },
-    projectLink: {
+    link: {
         fontSize: 8,
         color: theme.primary,
-        textDecoration: 'none',
+        textDecoration: 'none' as const,
         marginBottom: 3,
     },
-    projectDescription: {
+    description: {
         fontSize: 8,
         lineHeight: 1.4,
-    },
-
-    // Skills section
-    skillsContainer: {
-        gap: 6,
-    },
-    skillItem: {
-        marginBottom: 6,
-    },
-    skillName: {
-        fontSize: 9,
-        marginBottom: 3,
-    },
-    skillBarContainer: {
-        height: 4,
-        backgroundColor: '#E5E7EB', // Gray-200
-        borderRadius: 2,
-        width: '100%',
-    },
-    skillBarFill: {
-        height: 4,
-        backgroundColor: theme.primary,
-        borderRadius: 2,
-    },
-
-    // Languages section
-    languagesContainer: {
-        gap: 5,
-    },
-    languageItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 5,
-    },
-    languageName: {
-        fontSize: 9,
-    },
-    languageProficiency: {
-        fontSize: 9,
-        color: theme.primary,
-    },
-
-    // Footer
-    footer: {
-        borderTopWidth: 1,
-        borderTopColor: '#E5E7EB', // Gray-200
-        paddingTop: 10,
-        marginTop: 20,
-        alignItems: 'center',
-    },
-    footerText: {
-        fontSize: 8,
-        color: '#9CA3AF', // Gray-400
+        paddingBottom: 4
     },
 });
 
-export type TemplateCorporateStyles = ReturnType<typeof styleBuilder>;
+const skill = (theme: TemplateTheme): SkillStyles => ({
+    container: {
+        gap: 6,
+    },
+    item: {
+        marginBottom: 6,
+    },
+    name: {
+        fontSize: 9,
+        marginBottom: 3,
+    },
+    bar: {
+        container: {
+            height: 4,
+            backgroundColor: '#E5E7EB',
+            borderRadius: 2,
+            width: '100%',
+        },
+        fill: {
+            height: 4,
+            backgroundColor: theme.primary,
+            borderRadius: 2,
+        },
+    },
+});
+
+const language = (theme: TemplateTheme): LanguageStyles => ({
+    container: {
+        gap: 5,
+    },
+    item: {
+        flexDirection: 'row' as const,
+        justifyContent: 'space-between' as const,
+        alignItems: 'center' as const,
+        marginBottom: 5,
+    },
+    name: {
+        fontSize: 9,
+    },
+    proficiency: {
+        fontSize: 9,
+        color: theme.primary,
+    },
+});
+
+const footer = (): FooterStyles => ({
+    container: {
+        borderTopWidth: 1,
+        borderTopColor: '#E5E7EB',
+        paddingTop: 10,
+        marginTop: 20,
+        alignItems: 'center' as const,
+    },
+    text: {
+        fontSize: 8,
+        color: '#9CA3AF',
+    },
+});
+
+const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
+    page: page(),
+    common: common(theme),
+    layout: layout(),
+    section: section(theme),
+    header: header(theme),
+    summary: summary(),
+    experience: experience(theme),
+    education: education(theme),
+    project: project(theme),
+    skill: skill(theme),
+    language: language(theme),
+    footer: footer(),
+});
 
 export default styleBuilder;

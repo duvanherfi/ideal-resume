@@ -26,7 +26,7 @@ export interface WorkExperience {
   present?: boolean;
   contractType?: ContractType;
   description: string;
-  technologies?: string[];
+  technologies?: string;
   link?: string;
 }
 
@@ -34,11 +34,11 @@ export interface Project {
   id: string;
   name: string;
   link?: string;
+  description: string;
   startDate?: string;
   endDate?: string;
   role?: string;
-  description: string;
-  technologies?: string[];
+  technologies?: string;
   imageUrl?: string;
 }
 

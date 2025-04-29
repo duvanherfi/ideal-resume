@@ -1,253 +1,353 @@
-import { Font, StyleSheet } from '@react-pdf/renderer';
+import { Font } from '@react-pdf/renderer';
+import TemplateTheme from '@resume-api/common/TemplateTheme';
+import { FontRoboto } from '../helper/TemplateFonts';
 import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../helper/templateStyleHelper';
-import TemplateTheme from '../../common/TemplateTheme';
+import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
-Font.register({
-    family: 'Roboto',
-    fonts: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf', fontWeight: 300 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-regular-webfont.ttf', fontWeight: 400 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-medium-webfont.ttf', fontWeight: 500 },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-bold-webfont.ttf', fontWeight: 700 },
-    ],
-});
+Font.register(FontRoboto);
 
-const defaultThemeColors: TemplateTheme = {
-    primary: '#5D48E3',
-};
-
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors) => StyleSheet.create({
+const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Roboto',
         padding: 0,
         backgroundColor: '#FFFFFF',
     },
-    mainContent: {
-        flexDirection: 'column',
-        height: '100%',
-    },
-    contentContainer: {
-        flexDirection: 'row',
-        flex: 1,
-    },
-    mainColumn: {
-        width: '65%',
-        paddingHorizontal: 20,
-        paddingTop: 20,
-        paddingBottom: 30,
-    },
-    sideColumn: {
-        width: '35%',
-        backgroundColor: lightenHexColor(theme.primary, 95),
-        paddingHorizontal: 15,
-        paddingTop: 20,
-        paddingBottom: 30,
-    },
-    headerContainer: {
-        backgroundColor: theme.primary,
-        color: getContrastingTextColor(theme.primary),
-        padding: 20,
-        flexDirection: 'column',
-    },
-    profileContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 15,
-    },
-    photoWrapper: {
-        width: 85,
-        height: 85,
-        borderRadius: 42.5,
-        overflow: 'hidden',
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    profilePhoto: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-    },
-    nameContainer: {
-        marginLeft: 15,
-    },
-    name: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        color: 'white',
-        marginBottom: 5,
-    },
-    role: {
-        fontSize: 12,
-        color: lightenHexColor(theme.primary, 85),
-        fontWeight: 'medium',
-    },
-    contactContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        borderTopWidth: 1,
-        borderTopColor: lightenHexColor(theme.primary, 30),
-        paddingTop: 10,
-    },
-    contactItem: {
-        width: '32%',
-        marginBottom: 5,
-    },
-    contactLabel: {
-        fontSize: 8,
-        color: lightenHexColor(theme.primary, 85),
-        fontWeight: 'medium',
-        marginBottom: 2,
-    },
-    contactValue: {
-        fontSize: 9,
-        color: 'white',
-    },
-    section: {
-        marginBottom: 20,
-        paddingBottom: 10,
-    },
-    sideSection: {
-        marginBottom: 25,
-    },
-    sectionTitleContainer: {
-        borderBottomWidth: 2,
-        borderBottomColor: theme.primary,
-        marginBottom: 10,
-        paddingBottom: 3,
-    },
-    sectionTitle: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: darkenHexColor(theme.primary, 15),
-    },
-    experienceItem: {
-        marginBottom: 15,
-    },
-    experienceHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    experienceRole: {
-        fontSize: 12,
-        fontWeight: 'bold',
-        color: '#333333',
-    },
-    experienceCompany: {
-        fontSize: 11,
-        color: theme.primary,
-        fontWeight: 'medium',
-        marginBottom: 5,
-    },
-    dateText: {
-        fontSize: 9,
-        color: '#666666',
-    },
-    experienceDescription: {
-        fontSize: 10,
-        color: '#444444',
-        lineHeight: 1.6,
-    },
-    educationItem: {
-        marginBottom: 12,
-    },
-    educationHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    educationDegree: {
-        fontSize: 12,
-        fontWeight: 'bold',
-        color: '#333333',
-    },
-    educationInstitution: {
-        fontSize: 11,
-        color: theme.primary,
-        marginTop: 3,
-    },
-    projectsContainer: {
-        marginTop: 5,
-    },
-    projectItem: {
-        marginBottom: 12,
-        padding: 8,
-        backgroundColor: 'white',
-        borderRadius: 5,
-        borderLeftWidth: 3,
-        borderLeftColor: theme.primary,
-    },
-    projectTitle: {
-        fontSize: 11,
-        fontWeight: 'bold',
-        color: '#333333',
-        marginBottom: 3,
-    },
-    projectLink: {
-        fontSize: 8,
-        color: theme.primary,
-        marginBottom: 4,
-    },
-    projectDescription: {
-        fontSize: 9,
-        color: '#444444',
-        lineHeight: 1.4,
-    },
-    skillsContainer: {
-        marginTop: 5,
-    },
-    skillItem: {
-        marginBottom: 8,
-    },
-    skillName: {
-        fontSize: 10,
-        color: '#333333',
-        marginBottom: 3,
-    },
-    skillLevelContainer: {
-        height: 4,
-        backgroundColor: lightenHexColor(theme.primary, 70),
-        borderRadius: 2,
-        overflow: 'hidden',
-    },
-    skillLevelBar: {
-        height: '100%',
-        backgroundColor: theme.primary,
-        borderRadius: 2,
-    },
-    languagesContainer: {
-        marginTop: 5,
-    },
-    languageItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingVertical: 6,
-        borderBottomWidth: 1,
-        borderBottomColor: lightenHexColor(theme.primary, 80),
-    },
-    languageName: {
-        fontSize: 10,
-        color: '#333333',
-    },
-    languageProficiency: {
-        fontSize: 9,
-        color: theme.primary,
-        fontWeight: 'medium',
-    },
-    footer: {
-        padding: 10,
-        backgroundColor: lightenHexColor(theme.primary, 95),
-        alignItems: 'center',
-    },
-    footerText: {
-        fontSize: 8,
-        color: '#666666',
-    },
-});
 
-export type TemplateCreativeStyles = ReturnType<typeof styleBuilder>;
+    common: {
+        divider: {
+            borderBottomWidth: 1,
+            borderBottomColor: lightenHexColor(theme.primary, 80),
+        },
+        techContainer: {
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            gap: '0.5rem',
+        },
+        date: {
+            container: {
+                fontSize: 9,
+                color: '#666666',
+            },
+            text: {
+                fontSize: 9,
+                color: '#666666',
+            }
+        },
+        badge: {
+            container: {
+                display: "flex",
+                borderRadius: '4px',
+                textAlign: "center",
+                height: 13,
+                fontSize: '0.75rem',
+                fontWeight: 500,
+                backgroundColor: `${theme.primary}20`,
+                color: theme.primary,
+                border: `1px solid ${theme.primary}`,
+                lineHeight: 1,
+            },
+            text: {
+                padding: 1,
+                alignSelf: "flex-start"
+            }
+        },
+    },
+
+    layout: {
+        row: {
+            flexDirection: 'row',
+        },
+        mainContent: {
+            flexDirection: 'column',
+            height: '100%',
+        },
+        column: {
+            main: {
+                width: '65%',
+                paddingHorizontal: 20,
+                paddingTop: 20,
+                paddingBottom: 30,
+            },
+            side: {
+                width: '35%',
+                backgroundColor: lightenHexColor(theme.primary, 95),
+                paddingHorizontal: 15,
+                paddingTop: 20,
+                paddingBottom: 30,
+            }
+        }
+    },
+
+    section: {
+        container: {
+            marginBottom: 20,
+            paddingBottom: 10,
+        },
+        header: {
+            marginBottom: 10,
+        },
+        title: {
+            fontSize: 14,
+            fontWeight: 'bold',
+            color: darkenHexColor(theme.primary, 15),
+        },
+        headerLine: {
+            borderBottomWidth: 2,
+            borderBottomColor: theme.primary,
+            paddingBottom: 3,
+        },
+        side: {
+            container: {
+                marginBottom: 25,
+            },
+            header: {
+                marginBottom: 10,
+            },
+            title: {
+                fontSize: 14,
+                fontWeight: 'bold',
+                color: darkenHexColor(theme.primary, 15),
+            }
+        }
+    },
+
+    header: {
+        container: {
+            backgroundColor: theme.primary,
+            color: getContrastingTextColor(theme.primary),
+            padding: 20,
+            flexDirection: 'column',
+        },
+        main: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginBottom: 15,
+        },
+        name: {
+            container: {
+                marginLeft: 15,
+            },
+            text: {
+                fontSize: 22,
+                fontWeight: 'bold',
+                color: 'white',
+                marginBottom: 5,
+            }
+        },
+        role: {
+            fontSize: 12,
+            color: lightenHexColor(theme.primary, 85),
+            fontWeight: 'medium',
+        },
+        photo: {
+            width: 85,
+            height: 85,
+            borderRadius: 42.5,
+            overflow: 'hidden',
+            backgroundColor: 'white',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        contact: {
+            container: {
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
+                borderTopWidth: 1,
+                borderTopColor: lightenHexColor(theme.primary, 30),
+                paddingTop: 10,
+            },
+            item: {
+                width: '32%',
+                marginBottom: 5,
+            },
+            label: {
+                fontSize: 8,
+                color: lightenHexColor(theme.primary, 85),
+                fontWeight: 'medium',
+                marginBottom: 2,
+            },
+            value: {
+                fontSize: 9,
+                color: 'white',
+            },
+            divider: {
+                borderTopWidth: 1,
+                borderTopColor: lightenHexColor(theme.primary, 30),
+            }
+        }
+    },
+
+    summary: {
+        text: {
+            fontSize: 10,
+            lineHeight: 1.6,
+            color: '#444444',
+        }
+    },
+
+    experience: {
+        item: {
+            marginBottom: 15,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+        },
+        role: {
+            fontSize: 12,
+            fontWeight: 'bold',
+            color: '#333333',
+        },
+        company: {
+            fontSize: 11,
+            color: theme.primary,
+            fontWeight: 'medium',
+            marginBottom: 5,
+        },
+        contractType: {
+            fontSize: 9,
+            fontWeight: 400,
+            color: '#111827',
+        },
+        location: {
+            fontSize: 9,
+            color: '#111827',
+            alignSelf: "flex-end"
+        },
+        description: {
+            fontSize: 10,
+            color: '#444444',
+            lineHeight: 1.6,
+        }
+    },
+
+    education: {
+        item: {
+            marginBottom: 12,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingBottom: 4
+        },
+        degree: {
+            fontSize: 12,
+            fontWeight: 'bold',
+            color: '#333333',
+        },
+        institution: {
+            fontSize: 11,
+            color: theme.primary,
+            marginTop: 3,
+        },
+        description: {
+            fontSize: 9,
+            lineHeight: 1.5,
+            textAlign: 'justify',
+        },
+        location: {
+            // Adaptado de educationGPA que parecía ser la ubicación de texto en la derecha
+            fontSize: 9,
+            lineHeight: 1.5,
+            textAlign: 'right',
+        }
+    },
+
+    project: {
+        container: {
+            marginTop: 5,
+        },
+        item: {
+            marginBottom: 12,
+            padding: 8,
+            backgroundColor: 'white',
+            borderRadius: 5,
+            borderLeftWidth: 3,
+            borderLeftColor: theme.primary,
+        },
+        name: {
+            fontSize: 11,
+            fontWeight: 'bold',
+            color: '#333333',
+            marginBottom: 3,
+        },
+        link: {
+            fontSize: 8,
+            color: theme.primary,
+            marginBottom: 4,
+        },
+        description: {
+            fontSize: 9,
+            color: '#444444',
+            lineHeight: 1.4,
+        }
+    },
+
+    skill: {
+        container: {
+            marginTop: 5,
+        },
+        item: {
+            marginBottom: 8,
+        },
+        name: {
+            fontSize: 10,
+            color: '#333333',
+            marginBottom: 3,
+        },
+        bar: {
+            container: {
+                height: 4,
+                backgroundColor: lightenHexColor(theme.primary, 70),
+                borderRadius: 2,
+                overflow: 'hidden',
+            },
+            fill: {
+                height: '100%',
+                backgroundColor: theme.primary,
+                borderRadius: 2,
+            }
+        }
+    },
+
+    language: {
+        container: {
+            marginTop: 5,
+        },
+        item: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingVertical: 6,
+            borderBottomWidth: 1,
+            borderBottomColor: lightenHexColor(theme.primary, 80),
+        },
+        name: {
+            fontSize: 10,
+            color: '#333333',
+        },
+        proficiency: {
+            fontSize: 9,
+            color: theme.primary,
+            fontWeight: 'medium',
+        }
+    },
+
+    footer: {
+        container: {
+            padding: 10,
+            backgroundColor: lightenHexColor(theme.primary, 95),
+            alignItems: 'center',
+        },
+        text: {
+            fontSize: 8,
+            color: '#666666',
+        }
+    }
+});
 
 export default styleBuilder;

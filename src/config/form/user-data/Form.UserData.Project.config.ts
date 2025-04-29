@@ -13,6 +13,11 @@ const projects: FormConfig<Project> = {
         name: "",
         link: "",
         description: "",
+        startDate: "",
+        endDate: "",
+        role: "",
+        technologies: "",
+        imageUrl: ""
     })
 };
 
