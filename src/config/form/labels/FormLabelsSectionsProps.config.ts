@@ -21,18 +21,18 @@ export const FieldsLabelsHeader: FormLabelsProps = {
             label: "form.labels.field.location",
             suggestions: "form.labels.field.location.suggestions"
         },
-        {
-            type: "text",
-            name: "profileSummary",
-            label: "form.labels.field.profileSummary",
-            suggestions: "form.labels.field.profileSummary.suggestions"
-        },
     ]
 };
 
 export const FieldsLabelsSections: FormLabelsProps = {
     title: "form.labels.section.sections",
     fields: [
+        {
+            type: "text",
+            name: "profileSummary",
+            label: "form.labels.field.profileSummary",
+            suggestions: "form.labels.field.profileSummary.suggestions"
+        },
         {
             type: "text",
             name: "workExperiences",

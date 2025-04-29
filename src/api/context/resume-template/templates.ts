@@ -6,12 +6,21 @@ import TemplateModern from "../../templates/structure/Modern.template";
 import TemplateProfessional from "../../templates/structure/Professional.template";
 import { Template } from "../../types";
 
+export const asyncTemplates: Record<string, () => Promise<any>> = {
+    modern: () => import('@resume-api/templates/structure/Modern.template'),
+    minimalist: () => import('@resume-api/templates/structure/Minimalist.template'),
+    corporate: () => import('@resume-api/templates/structure/Corporate.template'),
+    elegant: () => import('@resume-api/templates/structure/Elegant.template'),
+    creative: () => import('@resume-api/templates/structure/Creative.template'),
+    professional: () => import('@resume-api/templates/structure/Professional.template')
+};
+
 const templates: Template[] = [
-    {
+    /*{
         id: "modern",
         name: "Modern",
         PDF: TemplateModern,
-    },
+    },*/
     {
         id: "minimalist",
         name: "Minimalist",

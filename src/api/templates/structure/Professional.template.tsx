@@ -1,7 +1,7 @@
 import { Document, Page, View } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
-import { MainColumn, ProfileHeader, SideColumn } from '../sections/Professional.sections';
+import { MainColumn, ProfileHeader, SideColumn } from '../layout/Professional.layout';
 import styleBuilder from '../styles/Professional.styles';
 
 const TemplateProfessional: React.FC<TemplateProps> = (props: TemplateProps) => {

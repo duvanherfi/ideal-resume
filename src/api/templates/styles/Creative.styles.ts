@@ -116,7 +116,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         container: {
             backgroundColor: theme.primary,
             color: getContrastingTextColor(theme.primary),
-            padding: 20,
+            padding: 10,
             flexDirection: 'column',
         },
         main: {

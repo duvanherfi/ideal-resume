@@ -30,7 +30,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
     const currentBlobUrlRef = useRef<string>();
     const hasGeneratedOnceRef = useRef<boolean>(false);
 
-    // Inicializa / termina el worker una sola vez
     useEffect(() => {
         workerRef.current = new Worker(
             new URL('../workers/PDFWorker.ts', import.meta.url),
@@ -41,7 +40,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
         };
     }, []);
 
-    // Función que envía el mensaje al Worker
     const generatePdf = useCallback(
         (templateId: string, props: TemplateProps) =>
             new Promise<Blob>((resolve, reject) => {

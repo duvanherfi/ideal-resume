@@ -5,6 +5,18 @@ import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
 Font.register(FontRoboto);
 
+const defaultTheme = {
+    white: "#FFFFFF",
+    black: "#000000",
+    gray900: "#333333",
+    gray700: "#4A5568",
+    gray600: "#718096",
+    gray500: "#A0AEC0",
+    gray300: "#E2E8F0",
+    gray100: "#F7FAFC",
+    gray200: "#EDF2F7",
+};
+
 const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Roboto',
@@ -12,13 +24,13 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         fontSize: 11,
         padding: 20,
         backgroundColor: '#FFFFFF',
-        color: '#333333',
+        color: defaultTheme.gray900,
     },
 
     common: {
         divider: {
             height: 1,
-            backgroundColor: '#E2E8F0', // Light gray
+            backgroundColor: defaultTheme.gray300,
             marginVertical: 10,
         },
         techContainer: {
@@ -33,12 +45,12 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             },
             text: {
                 fontSize: 9,
-                color: '#718096', // Cool gray
+                color: defaultTheme.gray600,
             }
         },
         badge: {
             container: {
-                backgroundColor: '#EDF2F7',
+                backgroundColor: defaultTheme.gray200,
                 paddingVertical: 2,
                 paddingHorizontal: 4,
                 borderRadius: 2,
@@ -68,8 +80,8 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
                 width: '35%',
                 paddingLeft: 10,
                 borderLeftWidth: 1,
-                borderLeftColor: '#E2E8F0', // Light gray
-                backgroundColor: '#F7FAFC', // Very light gray
+                borderLeftColor: defaultTheme.gray300,
+                backgroundColor: defaultTheme.gray100,
             }
         }
     },
@@ -84,7 +96,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginBottom: 8,
             paddingBottom: 4,
             borderBottomWidth: 1,
-            borderBottomColor: '#E2E8F0', // Light gray
+            borderBottomColor: defaultTheme.gray300,
         },
         title: {
             fontSize: 14,
@@ -93,7 +105,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         headerLine: {
             borderBottomWidth: 1,
-            borderBottomColor: '#E2E8F0', // Light gray
+            borderBottomColor: defaultTheme.gray300,
         },
         side: {
             container: {
@@ -106,7 +118,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
                 marginBottom: 8,
                 paddingBottom: 4,
                 borderBottomWidth: 1,
-                borderBottomColor: '#E2E8F0', // Light gray
+                borderBottomColor: defaultTheme.gray300,
             },
             title: {
                 fontSize: 14,
@@ -138,7 +150,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         role: {
             fontSize: 12,
-            color: '#718096', // Cool gray
+            color: defaultTheme.gray600,
         },
         photo: {
             width: 60,
@@ -157,16 +169,16 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
                 alignItems: 'center',
             },
             label: {
-                fontSize: 12,
-                marginRight: 5,
+                fontSize: 9,
+                color: defaultTheme.gray700,
             },
             value: {
-                fontSize: 9,
-                color: '#4A5568', // Gray
+                fontSize: 11,
+                marginRight: 5,
             },
             divider: {
                 height: 1,
-                backgroundColor: '#E2E8F0', // Light gray
+                backgroundColor: defaultTheme.gray300,
             }
         }
     },
@@ -175,7 +187,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         text: {
             fontSize: 10,
             lineHeight: 1.5,
-            color: '#4A5568', // Gray
+            color: defaultTheme.gray700,
         }
     },
 
@@ -185,7 +197,6 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginBottom: 10,
         },
         header: {
-            // No hay un header específico en el original
         },
         role: {
             fontSize: 11,
@@ -198,19 +209,17 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginBottom: 3,
         },
         contractType: {
-            // No está presente en el original pero se incluye para mantener la estructura
             fontSize: 9,
-            color: '#718096',
+            color: defaultTheme.gray600,
         },
         location: {
-            // No está presente en el original pero se incluye para mantener la estructura
             fontSize: 9,
-            color: '#718096',
+            color: defaultTheme.gray600,
         },
         description: {
             fontSize: 9,
             lineHeight: 1.4,
-            color: '#4A5568', // Gray
+            color: defaultTheme.gray700,
         }
     },
 
@@ -220,7 +229,6 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginBottom: 8,
         },
         header: {
-            // No hay un header específico en el original
         },
         degree: {
             fontSize: 11,
@@ -232,15 +240,13 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             color: theme.primary,
         },
         description: {
-            // No está explícitamente en el original pero se incluye para mantener la estructura
             fontSize: 9,
             lineHeight: 1.4,
-            color: '#4A5568',
+            color: defaultTheme.gray700,
         },
         location: {
-            // No está explícitamente en el original pero se incluye para mantener la estructura
             fontSize: 9,
-            color: '#718096',
+            color: defaultTheme.gray600,
         }
     },
 
@@ -251,7 +257,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         item: {
             marginBottom: 8,
             padding: 5,
-            backgroundColor: '#EDF2F7', // Very light cool gray
+            backgroundColor: defaultTheme.gray200,
             borderRadius: 3,
         },
         name: {
@@ -268,7 +274,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         description: {
             fontSize: 8,
             lineHeight: 1.4,
-            color: '#4A5568', // Gray
+            color: defaultTheme.gray700,
         }
     },
 
@@ -289,8 +295,6 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
                 flexDirection: 'row',
             },
             fill: {
-                // Nota: Esta implementación es diferente a las anteriores ya que usa un sistema de puntos
-                // en lugar de una barra de progreso continua
                 width: 6,
                 height: 6,
                 borderRadius: 3,
@@ -323,12 +327,12 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginTop: 20,
             padding: 5,
             borderTopWidth: 1,
-            borderTopColor: '#E2E8F0', // Light gray
+            borderTopColor: defaultTheme.gray300,
             alignItems: 'center',
         },
         text: {
             fontSize: 8,
-            color: '#A0AEC0', // Gray
+            color: defaultTheme.gray500,
         }
     }
 });

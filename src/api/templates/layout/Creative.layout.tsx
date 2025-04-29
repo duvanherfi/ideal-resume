@@ -6,10 +6,12 @@ import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectIte
 
 export const ProfileContainer: React.FC<SectionTemplateProps> = ({ data, styles }) => (
     <View style={styles.header.container}>
-        {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.header.photo} />) : null}
-        <View style={styles.header.name.container}>
-            <Text style={styles.header.name.text}>{`${data.firstName} ${data.lastName}`}</Text>
-            <Text style={styles.header.role}>{data.role}</Text>
+        <View style={styles.header.main}>
+            {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.header.photo} />) : null}
+            <View style={styles.header.name.container}>
+                <Text style={styles.header.name.text}>{`${data.firstName} ${data.lastName}`}</Text>
+                <Text style={styles.header.role}>{data.role}</Text>
+            </View>
         </View>
     </View>
 );

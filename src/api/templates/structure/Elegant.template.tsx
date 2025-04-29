@@ -1,7 +1,7 @@
 import { Document, Page, View } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
-import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../sections/Elegant.sections';
+import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../layout/Elegant.layout';
 import styleBuilder from '../styles/Elegant.styles';
 
 const TemplateElegant: React.FC<TemplateProps> = (props: TemplateProps) => {

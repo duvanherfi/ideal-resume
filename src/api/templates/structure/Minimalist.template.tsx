@@ -1,7 +1,7 @@
 import { Document, Page, View } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
-import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../sections/Minimalist.sections';
+import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../layout/Minimalist.layout';
 import styleBuilder from '../styles/Minimalist.styles';
 
 const TemplateMinimalist: React.FC<TemplateProps> = (props: TemplateProps) => {
