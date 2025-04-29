@@ -2,9 +2,9 @@ import { Image, Text, View } from "@react-pdf/renderer";
 import { SectionTemplateProps } from "../../common/TemplateProps";
 import Contact from "../common/Contact";
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "../common/sections/TemplateSections";
-import { EducationItem, ExperienceItem, LanguageItem, ProjectItem, SkillItem } from "../items/TemplateModern.items";
+import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Creative.items";
 
-const ProfileContainer: React.FC<SectionTemplateProps> = ({ data, styles }) => (
+export const ProfileContainer: React.FC<SectionTemplateProps> = ({ data, styles }) => (
     <View style={styles.header.container}>
         {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.header.photo} />) : null}
         <View style={styles.header.name.container}>
@@ -14,44 +14,33 @@ const ProfileContainer: React.FC<SectionTemplateProps> = ({ data, styles }) => (
     </View>
 );
 
-const ContactSection: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
-    <View style={styles.header.contact.item}>
+export const ContactSection: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+    <View style={styles.header.contact.container}>
         <Contact label={labels.email} value={data.email} styles={styles} />
         <Contact label={labels.phone} value={data.phone} styles={styles} />
         <Contact label={labels.location} value={data.address} styles={styles} />
     </View>
 );
 
-const ProfileSummary: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
-    <View style={styles.section.container}>
-        <Text style={styles.section.title}>{labels.profileSummary}</Text>
-        <Text style={styles.experience.description}>{data.profileSummary}</Text>
-    </View>
-);
-
-export const ProfileHeader: React.FC<SectionTemplateProps> = (props) => (
+export const ProfileHeader: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
     <View style={props.styles.header.container}>
-        <View style={props.styles.header.main}>
-            <ProfileContainer {...props} />
-            <ContactSection {...props} />
-        </View>
+        <ProfileContainer {...props} />
+        <ContactSection {...props} />
     </View>
 );
 
-export const MainSection: React.FC<SectionTemplateProps> = (props) => (
-    <>
+export const MainColumn: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
+    <View style={props.styles.layout.column.main}>
         {props.data.profileSummary ? <ProfileSummary {...props} /> : null}
         {props.data.workExperiences.length > 0 ? <WorkExperienceSection  {...props} ItemComponent={ExperienceItem} /> : null}
         {props.data.education.length > 0 ? <EducationSection  {...props} ItemComponent={EducationItem} /> : null}
-    </>
+    </View>
 );
 
-export const TwoColumnsSection: React.FC<SectionTemplateProps> = (props) => (
-    <View style={props.styles.layout.row}>
+export const SideColumn: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
+    <View style={props.styles.layout.column.side}>
+        {props.data.languages.length > 0 ? <LanguagesSection  {...props} ItemComponent={LanguageItem} /> : null}
+        {props.data.skills.length > 0 ? <SkillsSection  {...props} ItemComponent={SkillItem} /> : null}
         {props.data.projects.length > 0 ? <ProjectsSection  {...props} ItemComponent={ProjectItem} /> : null}
-        <View style={props.styles.layout.column}>
-            {props.data.skills.length > 0 ? <SkillsSection  {...props} ItemComponent={SkillItem} /> : null}
-            {props.data.languages.length > 0 ? <LanguagesSection  {...props} ItemComponent={LanguageItem} /> : null}
-        </View>
     </View>
 );

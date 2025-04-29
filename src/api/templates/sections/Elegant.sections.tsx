@@ -2,7 +2,7 @@ import { Image, Text, View } from "@react-pdf/renderer";
 import { SectionTemplateProps } from "../../common/TemplateProps";
 import Contact from "../common/Contact";
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "../common/sections/TemplateSections";
-import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/TemplateElegant.items";
+import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Elegant.items";
 
 export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles }) => (
     <View style={styles.header.container}>

@@ -1,6 +1,13 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { ItemProps } from "../../common/TemplateProps";
+import { ItemProps, SectionTemplateProps } from "../../common/TemplateProps";
 import { Education, Language, Project, Skill, WorkExperience } from "../../types";
+
+export const ProfileSummary: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+    <View style={styles.section.container}>
+        <Text style={styles.section.title}>{labels.profileSummary}</Text>
+        <Text style={styles.experience.description}>{data.profileSummary}</Text>
+    </View>
+);
 
 export const ExperienceItem = ({ styles, item }: ItemProps<WorkExperience>) => (
     <View style={styles.experience.item}>

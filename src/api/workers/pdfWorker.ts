@@ -13,22 +13,22 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
         let PDFComponent: React.FC<TemplateProps>;
         switch (templateId) {
             case 'modern':
-                PDFComponent = (await import('../templates/structure/TemplateModern')).default;
+                PDFComponent = (await import('../templates/structure/Modern.template')).default;
                 break;
             case 'minimalist':
-                PDFComponent = (await import('../templates/structure/TemplateMinimalist')).default;
+                PDFComponent = (await import('../templates/structure/Minimalist.template')).default;
                 break;
             case 'corporate':
-                PDFComponent = (await import('../templates/structure/TemplateCorporate')).default;
+                PDFComponent = (await import('../templates/structure/Corporate.template')).default;
                 break;
             case 'elegant':
-                PDFComponent = (await import('../templates/structure/TemplateElegant')).default;
+                PDFComponent = (await import('../templates/structure/Elegant.template')).default;
                 break;
             case 'creative':
-                PDFComponent = (await import('../templates/structure/TemplateCreative')).default;
+                PDFComponent = (await import('../templates/structure/Creative.template')).default;
                 break;
             case 'professional':
-                PDFComponent = (await import('../templates/structure/TemplateProfessional')).default;
+                PDFComponent = (await import('../templates/structure/Professional.template')).default;
                 break;
             default:
                 throw new Error(`Template with id "${templateId}" not found`);

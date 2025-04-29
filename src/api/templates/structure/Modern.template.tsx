@@ -1,8 +1,8 @@
 import { Document, Page } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
-import { MainSection, ProfileHeader, TwoColumnsSection } from '../sections/TemplateModern.sections';
-import styleBuilder from '../styles/TemplateModern.styles';
+import { MainSection, ProfileHeader, TwoColumnsSection } from '../sections/Modern.sections';
+import styleBuilder from '../styles/Modern.styles';
 
 const TemplateModern: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
