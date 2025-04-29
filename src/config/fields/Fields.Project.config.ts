@@ -8,7 +8,7 @@ const FieldsProject: FormField<Project>[] = [
   { type: "date", name: "endDate", label: "form.project.field.endDate" },
   { type: "text", name: "role", label: "form.project.field.role" },
   { type: "textarea", name: "description", label: "form.project.field.description" },
-  { type: "text", name: "technologies", label: "form.project.field.technologies", placeholder: "Comma-separated" },
+  { type: "text", name: "tags", label: "form.project.field.tags", placeholder: "form.project.field.tags.placeholder" },
   { type: "file", name: "imageUrl", label: "form.project.field.image" },
 ];
 

@@ -1,7 +1,5 @@
 import TemplateProps from "../common/TemplateProps";
 
-export type ContractType = "Full-time" | "Part-time" | "Freelance" | "Internship";
-
 export interface Certification {
   id: string;
   name: string;
@@ -24,9 +22,9 @@ export interface WorkExperience {
   startDate: string;
   endDate?: string;
   present?: boolean;
-  contractType?: ContractType;
+  contractType?: string;
   description: string;
-  technologies?: string;
+  tags?: string;
   link?: string;
 }
 
@@ -38,7 +36,7 @@ export interface Project {
   startDate?: string;
   endDate?: string;
   role?: string;
-  technologies?: string;
+  tags?: string;
   imageUrl?: string;
 }
 
@@ -67,7 +65,7 @@ export interface Skill {
 export interface Language {
   id: string;
   name: string;
-  proficiency: "Beginner" | "Intermediate" | "Advanced" | "Fluent" | "Native";
+  proficiency: string;
   certification?: Certification;
   comment?: string;
 }
@@ -112,7 +110,7 @@ export interface ResumeLabels {
   link?: string;
   certification?: string;
   contractType?: string;
-  technologies?: string;
+  tags?: string;
 }
 
 export interface Template {

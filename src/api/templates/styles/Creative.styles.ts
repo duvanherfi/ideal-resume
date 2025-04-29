@@ -36,21 +36,18 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         badge: {
             container: {
-                display: "flex",
-                borderRadius: '4px',
-                textAlign: "center",
-                height: 13,
-                fontSize: '0.75rem',
-                fontWeight: 500,
-                backgroundColor: `${theme.primary}20`,
-                color: theme.primary,
-                border: `1px solid ${theme.primary}`,
-                lineHeight: 1,
+                paddingVertical: 2,
+                paddingHorizontal: 6,
+                borderRadius: 4,
+                backgroundColor: `${theme.primary}33`, // 20% opacity
+                alignSelf: 'flex-start' as const,
+                marginBottom: 4,
             },
             text: {
-                padding: 1,
-                alignSelf: "flex-start"
-            }
+                fontSize: 8,
+                color: theme.primary,
+                fontWeight: 600 as const,
+            },
         },
     },
 

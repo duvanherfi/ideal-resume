@@ -42,26 +42,19 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         text: {}
     },
 
-    // Badge component
     badge: {
         container: {
-            display: "flex" as const,
-            justifyContent: "center" as const,
-            alignItems: 'center' as const,
-            borderRadius: 3,
-            textAlign: "center" as const,
-            height: 13,
-            fontSize: 8, // Converted from rem
-            fontWeight: 500,
-            backgroundColor: `${theme.primary}20`,
-            color: theme.primary,
-            borderWidth: 1,
-            borderColor: theme.primary,
-            lineHeight: 1,
+            paddingVertical: 2,
+            paddingHorizontal: 6,
+            borderRadius: 4,
+            backgroundColor: `${theme.primary}33`, // 20% opacity
+            alignSelf: 'flex-start' as const,
+            marginBottom: 4,
         },
         text: {
-            padding: 1,
-            alignSelf: "flex-start" as const,
+            fontSize: 8,
+            color: theme.primary,
+            fontWeight: 600 as const,
         },
     },
 });

@@ -7,14 +7,9 @@ const FieldsExperience: FormField<WorkExperience>[] = [
     { type: "text", name: "location", label: "form.experience.field.location" },
     { type: "date", name: "startDate", label: "form.experience.field.startDate", required: true },
     { type: "date", name: "endDate", label: "form.experience.field.endDate", placeholder: "Leave blank for current position" },
-    {
-        type: "select",
-        name: "contractType",
-        label: "form.experience.field.contractType",
-        options: [/*"Full-time", "Part-time", "Freelance", "Internship"*/],
-    },
+    { type: "text", name: "contractType", label: "form.experience.field.contractType", suggestions: "form.experience.field.contractType.suggestions", },
     { type: "textarea", name: "description", label: "form.experience.field.description" },
-    { type: "text", name: "technologies", label: "form.experience.field.technologies", placeholder: "Comma-separated" },
+    { type: "text", name: "tags", label: "form.experience.field.tags", placeholder: "form.experience.field.tags.placeholder" },
     { type: "url", name: "link", label: "form.experience.field.link" },
 ];
 

@@ -4,10 +4,10 @@ import { FormField } from "@components/view/common/form/field/GenericField";
 const FieldsLanguage: FormField<Language>[] = [
     { type: "text", name: "name", label: "form.language.field.name", required: true },
     {
-        type: "select",
+        type: "text",
         name: "proficiency",
         label: "form.language.field.proficiency",
-        options: [/*"Beginner", "Intermediate", "Advanced", "Fluent", "Native"*/],
+        suggestions: "form.language.field.proficiency.suggestions",
     },
     //{ type: "textarea", name: "comment", label: "form.language.field.comment" },
     //{ type: "text", name: "certification.name", label: "form.language.field.certificationName" },

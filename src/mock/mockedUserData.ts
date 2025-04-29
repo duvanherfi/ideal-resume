@@ -28,7 +28,7 @@ const mockUserData: UserData = {
       startDate: "2015-01-15",
       endDate: "2018-07-31",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut purus vel libero tincidunt dictum. Maecenas at quam nec purus vulputate malesuada.`,
-      technologies: `React, TypeScript, Redux`,
+      tags: `React, TypeScript, Redux`,
       link: "https://acme-corp.example.com"
     },
     {
@@ -40,7 +40,7 @@ const mockUserData: UserData = {
       present: true,
       contractType: "Full-time",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.`,
-      technologies: `Next.js, Tailwind CSS, Jest`,
+      tags: `Next.js, Tailwind CSS, Jest`,
       link: "https://globex.example.com"
     }
   ],
@@ -78,14 +78,14 @@ const mockUserData: UserData = {
       endDate: "2021-04-30",
       role: "Fullstack Developer",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.`,
-      technologies: "React, Node.js, MongoDB",
+      tags: "React, Node.js, MongoDB",
       imageUrl: "https://example.com/project-resume-builder.png"
     },
     {
       id: "pr2",
       name: "E-commerce Platform",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem mi. Proin in lobortis ipsum.`,
-      technologies: "Next.js, GraphQL, PostgreSQL"
+      tags: "Next.js, GraphQL, PostgreSQL"
     }
   ],
 

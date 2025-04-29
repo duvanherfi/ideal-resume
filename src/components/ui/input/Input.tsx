@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import InputSuggestions from "./InputSuggestions";
+import useTranslations from "@hooks/useTranslations";
 
 interface InputProps {
   label: string;
@@ -29,6 +30,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     suggestions = [],
     onSuggestionClick,
   } = props;
+  const { t } = useTranslations();
   const [isFocused, setIsFocused] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -109,7 +111,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
         type={type}
         value={value}
         onChange={onChange}
-        placeholder={placeholder}
+        placeholder={t(placeholder)}
         required={required}
         onFocus={handleFocus}
         onBlur={handleBlur}

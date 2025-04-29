@@ -16,7 +16,7 @@ const projects: FormConfig<Project> = {
         startDate: "",
         endDate: "",
         role: "",
-        technologies: "",
+        tags: "",
         imageUrl: ""
     })
 };
