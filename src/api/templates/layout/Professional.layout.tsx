@@ -1,10 +1,10 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import { SectionTemplateProps } from "../../common/TemplateProps";
+import { TemplateSectionProps } from "../../common/TemplateProps";
 import Contact from "../common/Contact";
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "../common/sections/TemplateSections";
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Professional.items";
 
-export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+export const ProfileHeader: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.header.container}>
         <View style={styles.header.main}>
             <View style={styles.header.name.container}>
@@ -23,7 +23,7 @@ export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles, la
     </View>
 );
 
-export const MainColumn: React.FC<SectionTemplateProps> = (props) => (
+export const MainColumn: React.FC<TemplateSectionProps> = (props) => (
     <View style={props.styles.layout.column.main}>
         {props.data.profileSummary ? <ProfileSummary {...props} /> : null}
         {props.data.workExperiences.length > 0 ? <WorkExperienceSection  {...props} ItemComponent={ExperienceItem} /> : null}
@@ -31,7 +31,7 @@ export const MainColumn: React.FC<SectionTemplateProps> = (props) => (
     </View>
 );
 
-export const SideColumn: React.FC<SectionTemplateProps> = (props) => (
+export const SideColumn: React.FC<TemplateSectionProps> = (props) => (
     <View style={props.styles.layout.column.side}>
         {props.data.skills.length > 0 ? <SkillsSection  {...props} ItemComponent={SkillItem} /> : null}
         {props.data.languages.length > 0 ? <LanguagesSection  {...props} ItemComponent={LanguageItem} /> : null}

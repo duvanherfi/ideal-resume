@@ -243,10 +243,12 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         institution: {
             fontSize: 11,
             fontWeight: 500,
+            marginBottom: 4,
             color: theme.primary,
         },
         description: {
             fontSize: 10,
+            lineHeight: 1.5,
             color: '#334155', // Slate-700
         },
         location: {

@@ -9,16 +9,17 @@ interface TemplateProps {
 }
 
 export type StyleTemplateProps<T> = { styles: T };
-export type ItemTemplateProps<T, K> = StyleTemplateProps<K> & { item: T } & { labels: ResumeLabels };
+export type TemplateItemGenericStyleProps<T, K> = StyleTemplateProps<K> & { item: T } & { labels: ResumeLabels };
 export type SimpleItemProps<T> = StyleTemplateProps<TemplateStyleSheet> & { item: T };
-export type ItemProps<T> = ItemTemplateProps<T, TemplateStyleSheet>;
-export type SectionTemplateProps = TemplateProps & StyleTemplateProps<TemplateStyleSheet>;
-export type MultiItemSectionProps<T> = SectionTemplateProps & { ItemComponent: React.FC<ItemProps<T>>; };
 
-export type ExperienceItemProps = ItemTemplateProps<WorkExperience, ExperienceStyles>;
-export type EducationItemProps = ItemTemplateProps<Education, EducationStyles>;
-export type ProjectItemProps = ItemTemplateProps<Project, ProjectStyles>;
-export type SkillItemProps = ItemTemplateProps<Skill, SkillStyles>;
-export type LanguageItemProps = ItemTemplateProps<Language, LanguageStyles>;
+export type TemplateItemProps<T> = TemplateItemGenericStyleProps<T, TemplateStyleSheet>;
+export type TemplateSectionProps = TemplateProps & StyleTemplateProps<TemplateStyleSheet>;
+export type MultiItemSectionProps<T> = TemplateSectionProps & { ItemComponent: React.FC<TemplateItemProps<T>>; };
+
+export type ExperienceItemProps = TemplateItemGenericStyleProps<WorkExperience, ExperienceStyles>;
+export type EducationItemProps = TemplateItemGenericStyleProps<Education, EducationStyles>;
+export type ProjectItemProps = TemplateItemGenericStyleProps<Project, ProjectStyles>;
+export type SkillItemProps = TemplateItemGenericStyleProps<Skill, SkillStyles>;
+export type LanguageItemProps = TemplateItemGenericStyleProps<Language, LanguageStyles>;
 
 export default TemplateProps;

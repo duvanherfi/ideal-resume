@@ -7,7 +7,7 @@ const ViewTemplatePreview = () => {
     return (
         <div className="space-y-2 h-full w-full bg-white/20 dark:bg-black/10 backdrop-blur-xl p-4 2xl:w-full">
             <ViewTitle className="xl:hidden" title="screen.preview.title" />
-            <div className="flex w-full justify-end">
+            <div className="flex w-full justify-end px-8">
                 <DownloadResumeLink />
             </div>
             <div className="mx-auto w-1/2 xl:w-full px-8">

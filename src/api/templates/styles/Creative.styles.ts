@@ -281,6 +281,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             fontSize: 9,
             color: '#444444',
             lineHeight: 1.4,
+            marginBottom: 12,
         }
     },
 

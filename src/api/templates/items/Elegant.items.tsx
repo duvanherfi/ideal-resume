@@ -1,11 +1,11 @@
 import { Link, Text, View } from '@react-pdf/renderer';
-import { ItemProps, SectionTemplateProps } from '../../common/TemplateProps';
+import { TemplateItemProps, TemplateSectionProps } from '../../common/TemplateProps';
 import { Education, Language, Project, Skill, WorkExperience } from '../../types';
 import TechList from '../common/TechList';
 import TextEmptySafe from '../common/TextEmptySafe';
 import { getTimeRange } from '../helper/templateDataHelper';
 
-export const ProfileSummary: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>
         <View style={styles.section.header}>
             <Text style={styles.section.title}>{labels.profileSummary}</Text>
@@ -14,7 +14,7 @@ export const ProfileSummary: React.FC<SectionTemplateProps> = ({ data, styles, l
     </View>
 );
 
-export const ExperienceItem = ({ styles, item, labels }: ItemProps<WorkExperience>) => (
+export const ExperienceItem = ({ styles, item, labels }: TemplateItemProps<WorkExperience>) => (
     <View style={styles.experience.item}>
         <View style={styles.experience.header}>
             <Text style={styles.experience.role}>{item.role}</Text>
@@ -26,7 +26,7 @@ export const ExperienceItem = ({ styles, item, labels }: ItemProps<WorkExperienc
     </View>
 );
 
-export const EducationItem = ({ styles, item, labels }: ItemProps<Education>) => (
+export const EducationItem = ({ styles, item, labels }: TemplateItemProps<Education>) => (
     <View style={styles.education.item}>
         <Text style={styles.education.degree}>{item.degree}</Text>
         <Text style={styles.education.institution}>{item.institution}</Text>
@@ -35,7 +35,7 @@ export const EducationItem = ({ styles, item, labels }: ItemProps<Education>) =>
     </View>
 );
 
-export const ProjectItem = ({ styles, item, labels }: ItemProps<Project>) => (
+export const ProjectItem = ({ styles, item, labels }: TemplateItemProps<Project>) => (
     <View style={styles.project.item}>
         <Text style={styles.project.name}>{item.name}</Text>
         <TextEmptySafe style={styles.common.date.container} condition={!!item.startDate}>{getTimeRange(item, labels)}</TextEmptySafe>
@@ -45,13 +45,13 @@ export const ProjectItem = ({ styles, item, labels }: ItemProps<Project>) => (
     </View>
 );
 
-export const SkillItem = ({ styles, item }: ItemProps<Skill>) => (
+export const SkillItem = ({ styles, item }: TemplateItemProps<Skill>) => (
     <View style={styles.skill.item}>
         <Text style={styles.skill.name}>{item.name}</Text>
     </View>
 );
 
-export const LanguageItem = ({ styles, item }: ItemProps<Language>) => (
+export const LanguageItem = ({ styles, item }: TemplateItemProps<Language>) => (
     <View style={styles.language.container}>
         <Text style={styles.language.name}>{item.name}</Text>
         <Text style={styles.language.proficiency}>{item.proficiency}</Text>

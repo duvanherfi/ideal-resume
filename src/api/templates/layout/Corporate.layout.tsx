@@ -1,10 +1,10 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import { SectionTemplateProps } from "../../common/TemplateProps";
+import { TemplateSectionProps } from "../../common/TemplateProps";
 import Contact from "../common/Contact";
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "../common/sections/TemplateSections";
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Corporate.items";
 
-export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles }) => (
+export const ProfileHeader: React.FC<TemplateSectionProps> = ({ data, styles }) => (
     <View style={styles.header.container}>
         <View style={styles.header.main}>
             <View style={styles.header.name.container}>
@@ -16,7 +16,7 @@ export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles }) 
     </View>
 );
 
-export const ContactSection: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+export const ContactSection: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.header.contact.container}>
         <Contact label={labels.email} value={data.email} styles={styles} />
         <View style={styles.header.contact.divider} />
@@ -26,7 +26,7 @@ export const ContactSection: React.FC<SectionTemplateProps> = ({ data, styles, l
     </View>
 );
 
-export const MainColumn: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
+export const MainColumn: React.FC<TemplateSectionProps> = (props: TemplateSectionProps) => (
     <View style={props.styles.layout.column.main}>
         {props.data.profileSummary ? <ProfileSummary {...props} /> : null}
         {props.data.workExperiences.length > 0 ? <WorkExperienceSection  {...props} ItemComponent={ExperienceItem} /> : null}
@@ -34,7 +34,7 @@ export const MainColumn: React.FC<SectionTemplateProps> = (props: SectionTemplat
     </View>
 )
 
-export const SideColumn: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
+export const SideColumn: React.FC<TemplateSectionProps> = (props: TemplateSectionProps) => (
     <View style={props.styles.layout.column.side}>
         <View style={props.styles.section.side.container}>
             {props.data.languages.length > 0 ? <LanguagesSection  {...props} ItemComponent={LanguageItem} /> : null}

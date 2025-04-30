@@ -1,15 +1,15 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { ItemProps, SectionTemplateProps } from "../../common/TemplateProps";
+import { TemplateItemProps, TemplateSectionProps } from "../../common/TemplateProps";
 import { Education, Language, Project, Skill, WorkExperience } from "../../types";
 
-export const ProfileSummary: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>
         <Text style={styles.section.title}>{labels.profileSummary}</Text>
         <Text style={styles.experience.description}>{data.profileSummary}</Text>
     </View>
 );
 
-export const ExperienceItem = ({ styles, item }: ItemProps<WorkExperience>) => (
+export const ExperienceItem = ({ styles, item }: TemplateItemProps<WorkExperience>) => (
     <View style={styles.experience.item}>
         <View style={styles.experience.header}>
             <Text style={styles.experience.role}>
@@ -21,7 +21,7 @@ export const ExperienceItem = ({ styles, item }: ItemProps<WorkExperience>) => (
     </View>
 );
 
-export const EducationItem = ({ styles, item }: ItemProps<Education>) => (
+export const EducationItem = ({ styles, item }: TemplateItemProps<Education>) => (
     <View style={styles.education.item}>
         <View style={styles.education.header}>
             <Text style={styles.education.degree}>{item.degree}</Text>
@@ -31,7 +31,7 @@ export const EducationItem = ({ styles, item }: ItemProps<Education>) => (
     </View>
 );
 
-export const ProjectItem = ({ styles, item }: ItemProps<Project>) => (
+export const ProjectItem = ({ styles, item }: TemplateItemProps<Project>) => (
     <View style={styles.project.item}>
         <Text style={styles.project.name}>{item.name}</Text>
         <Link src={item.link} style={styles.project.link}>
@@ -41,7 +41,7 @@ export const ProjectItem = ({ styles, item }: ItemProps<Project>) => (
     </View>
 );
 
-export const SkillItem = ({ styles, item }: ItemProps<Skill>) => (
+export const SkillItem = ({ styles, item }: TemplateItemProps<Skill>) => (
     <View style={styles.skill.item}>
         <Text style={styles.skill.name}>
             {item.name} (
@@ -53,7 +53,7 @@ export const SkillItem = ({ styles, item }: ItemProps<Skill>) => (
     </View>
 );
 
-export const LanguageItem = ({ styles, item }: ItemProps<Language>) => (
+export const LanguageItem = ({ styles, item }: TemplateItemProps<Language>) => (
     <View style={styles.skill.item}>
         <Text style={styles.skill.name}>
             {item.name} ({item.proficiency})

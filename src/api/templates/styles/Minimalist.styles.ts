@@ -46,6 +46,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             text: {
                 fontSize: 9,
                 color: defaultTheme.gray600,
+                textAlign: "center"
             }
         },
         badge: {
@@ -65,7 +66,8 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     layout: {
         row: {
             flexDirection: 'row',
-            marginTop: 10,
+            justifyContent: 'space-between' as const,
+            paddingBottom: 5
         },
         mainContent: {
             flexDirection: 'row',
@@ -79,6 +81,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             side: {
                 width: '35%',
                 paddingLeft: 10,
+                paddingTop: 8,
                 borderLeftWidth: 1,
                 borderLeftColor: defaultTheme.gray300,
                 backgroundColor: defaultTheme.gray100,
@@ -190,13 +193,15 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             color: defaultTheme.gray700,
         }
     },
-
     experience: {
         item: {
             flexDirection: 'row',
-            marginBottom: 10,
+            marginBottom: 15,
         },
         header: {
+            justifyContent: 'space-between' as const,
+            marginBottom: 3,
+            width: '80%',
         },
         role: {
             fontSize: 11,
@@ -220,6 +225,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             fontSize: 9,
             lineHeight: 1.4,
             color: defaultTheme.gray700,
+            textAlign: 'justify' as const,
         }
     },
 
@@ -229,6 +235,9 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginBottom: 8,
         },
         header: {
+            justifyContent: 'space-between' as const,
+            marginBottom: 3,
+            width: '80%',
         },
         degree: {
             fontSize: 11,

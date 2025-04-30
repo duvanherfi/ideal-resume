@@ -1,10 +1,10 @@
 import { Image, Text, View } from '@react-pdf/renderer';
-import { SectionTemplateProps } from '../../common/TemplateProps';
+import { TemplateSectionProps } from '../../common/TemplateProps';
 import Contact from '../common/Contact';
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from '../common/sections/TemplateSections';
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from '../items/Elegant.items';
 
-export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles, labels }) => (
+export const ProfileHeader: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.header.container}>
         {data.profilePhoto && <Image src={data.profilePhoto} style={styles.header.photo} />}
         <Text style={styles.header.name.text}>{`${data.firstName} ${data.lastName}`}</Text>
@@ -17,7 +17,7 @@ export const ProfileHeader: React.FC<SectionTemplateProps> = ({ data, styles, la
     </View>
 );
 
-export const MainSection: React.FC<SectionTemplateProps> = props => (
+export const MainSection: React.FC<TemplateSectionProps> = props => (
     <View style={props.styles.layout.mainContent}>
         {props.data.profileSummary && <ProfileSummary {...props} />}
         <View style={props.styles.layout.row}>
@@ -28,7 +28,7 @@ export const MainSection: React.FC<SectionTemplateProps> = props => (
     </View>
 );
 
-export const MainColumn: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
+export const MainColumn: React.FC<TemplateSectionProps> = (props: TemplateSectionProps) => (
     <View style={props.styles.layout.column.main}>
         {props.data.workExperiences.length > 0 && (
             <WorkExperienceSection {...props} ItemComponent={ExperienceItem} />
@@ -39,7 +39,7 @@ export const MainColumn: React.FC<SectionTemplateProps> = (props: SectionTemplat
     </View>
 )
 
-export const SideColumn: React.FC<SectionTemplateProps> = (props: SectionTemplateProps) => (
+export const SideColumn: React.FC<TemplateSectionProps> = (props: TemplateSectionProps) => (
     <View style={props.styles.layout.column.side}>
         {props.data.projects.length > 0 && (
             <ProjectsSection {...props} ItemComponent={ProjectItem} />

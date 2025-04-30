@@ -11,7 +11,7 @@ interface InputSuggestionsProps {
 const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestionsProps, 'ref'>>((props, ref) => {
   const { suggestions = [], showSuggestions, handleMouseDown } = props;
 
-  const listClassName = `flex flex-col absolute z-10 w-full mt-1 bg-white dark:bg-gray-800 border border-primary-500/50 dark:border-primary-500/50 rounded-lg shadow-lg overflow-hidden transition-all duration-300`;
+  const listClassName = `flex flex-col absolute z-10 w-full bg-white/80 dark:bg-secondary-900/80 border border-primary-500/50 dark:border-primary-500/50 rounded-md shadow-lg overflow-y-auto scrollbar transition-all duration-300`;
   const listStatusClassName = showSuggestions ? "max-h-60 opacity-100 scale-y-100 origin-top" : "max-h-0 opacity-0 scale-y-0 origin-top";
 
   return (
@@ -22,7 +22,7 @@ const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestion
           {suggestions.map((suggestion, index) => (
             <button
               key={suggestion + index}
-              className="w-full text-left px-3 py-2 text-sm cursor-pointer hover:bg-primary-100 dark:hover:bg-accent-900/80 dark:text-secondary-100 transition-colors duration-150"
+              className="w-full text-left px-3 py-2 text-sm cursor-pointer hover:bg-accent-200/80 dark:hover:bg-accent-900/80 dark:text-secondary-100 transition-colors duration-150"
               onMouseDown={(e) => handleMouseDown(e, suggestion)}
             >
               {suggestion}

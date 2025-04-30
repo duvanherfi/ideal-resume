@@ -5,7 +5,7 @@ import FormConfig from "./Form.UserData.types";
 
 const projects: FormConfig<Project> = {
     dataKey: "projects",
-    title: "form.projects.title",
+    title: "form.project.title",
     fields: FieldsProject,
     isValid: (project: Project) => Boolean(project.name),
     empty: () => ({

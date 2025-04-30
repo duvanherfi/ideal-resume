@@ -27,7 +27,8 @@ const defaultThemeColors: TemplateTheme = {
 const page = (): Style => ({
     fontFamily: 'Roboto',
     fontSize: 10,
-    padding: 30,
+    paddingHorizontal: 30,
+    paddingVertical: 20,
     flexDirection: 'column',
     backgroundColor: '#FFFFFF',
 });
@@ -238,6 +239,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         fontSize: 9,
         lineHeight: 1.4,
         marginTop: 2,
+        marginBottom: 8,
     },
 });
 
@@ -298,6 +300,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     description: {
         fontSize: 8,
         lineHeight: 1.4,
+        marginBottom: 8,
     },
 });
 
@@ -327,19 +330,19 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
 
 const language = (theme: TemplateTheme): LanguageStyles => ({
     container: {
-        flexDirection: 'row' as const,
-        justifyContent: 'space-between' as const,
-        marginBottom: 4,
     },
-    item: {},
+    item: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 5,
+    },
     name: {
-        fontSize: 9,
-        fontWeight: 600 as const,
+        fontSize: 10,
     },
     proficiency: {
         fontSize: 9,
         color: theme.primary,
-    },
+    }
 });
 
 const footer = (): FooterStyles => ({

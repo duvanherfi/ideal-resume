@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     "px-4 py-2 rounded-lg font-medium transition-all duration-300 focus:outline-none";
 
   const variantStyles = {
-    primary: "bg-primary-600 hover:bg-primary-700 text-white shadow-lg",
+    primary: "bg-accent-600 hover:bg-accent-700 text-white shadow-lg",
     secondary: "bg-green-700 text-white dark:bg-green-900 dark:text-white  shadow-lg",
     danger: "bg-red-700 text-white dark:bg-red-900 dark:text-white  shadow-lg",
     outline:

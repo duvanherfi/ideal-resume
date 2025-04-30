@@ -704,6 +704,10 @@ video {
   margin-top: 1rem;
 }
 
+.-mt-1{
+  margin-top: -0.25rem;
+}
+
 .block{
   display: block;
 }
@@ -838,6 +842,10 @@ video {
 
 .w-max{
   width: max-content;
+}
+
+.w-2\/3{
+  width: 66.666667%;
 }
 
 .min-w-min{
@@ -1880,6 +1888,20 @@ body {
   background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-accent-200:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 210 254 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-accent-200\/80:hover{
+  background-color: rgb(199 210 254 / 0.8);
+}
+
+.hover\:bg-accent-700:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 56 202 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:from-blue-100:hover{
   --tw-gradient-from: #dbeafe var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(219 234 254 / 0) var(--tw-gradient-to-position);
@@ -2078,6 +2100,10 @@ body {
 .dark\:bg-secondary-800:is(.dark *){
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:bg-secondary-900\/80:is(.dark *){
+  background-color: rgb(15 23 42 / 0.8);
 }
 
 .dark\:from-accent-950:is(.dark *){
@@ -2390,6 +2416,10 @@ body {
 
   .xl\:w-full{
     width: 100%;
+  }
+
+  .xl\:w-96{
+    width: 24rem;
   }
 
   .xl\:grid-cols-2{

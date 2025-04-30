@@ -13,7 +13,8 @@ const defaultThemeColors: TemplateTheme = {
 const page = (): Style => ({
     fontFamily: 'Roboto',
     fontSize: 10,
-    padding: 30,
+    paddingHorizontal: 30,
+    paddingVertical: 20,
     backgroundColor: '#FFFFFF',
     color: '#333333',
 });
