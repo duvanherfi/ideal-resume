@@ -1,3 +1,4 @@
+import TemplateTechnical from "@resume-api/templates/structure/Technical.template";
 import TemplateCorporate from "../../templates/structure/Corporate.template";
 import TemplateCreative from "../../templates/structure/Creative.template";
 import TemplateElegant from "../../templates/structure/Elegant.template";
@@ -12,7 +13,8 @@ export const asyncTemplates: Record<string, () => Promise<any>> = {
     corporate: () => import('@resume-api/templates/structure/Corporate.template'),
     elegant: () => import('@resume-api/templates/structure/Elegant.template'),
     creative: () => import('@resume-api/templates/structure/Creative.template'),
-    professional: () => import('@resume-api/templates/structure/Professional.template')
+    professional: () => import('@resume-api/templates/structure/Professional.template'),
+    technical: () => import('@resume-api/templates/structure/Technical.template'),
 };
 
 const templates: Template[] = [
@@ -45,7 +47,12 @@ const templates: Template[] = [
         id: "professional",
         name: "Professional",
         PDF: TemplateProfessional
-    }
+    },
+    {
+        id: "technical",
+        name: "Technical",
+        PDF: TemplateTechnical
+    },
 ];
 
 export default templates;
