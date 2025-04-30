@@ -2,11 +2,11 @@ import { Document, Page, View } from '@react-pdf/renderer';
 import React from 'react';
 import TemplateProps from '../../common/TemplateProps';
 import { MainColumn, ProfileHeader, SideColumn } from '../layout/Creative.layout';
-import styleBuilder from '../styles/Creative.styles';
+import templateStyle from '../styles/Creative.styles';
 
 const TemplateCreative: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;
-    const styles = styleBuilder(theme);
+    const styles = templateStyle(theme);
 
     return (
         <Document>

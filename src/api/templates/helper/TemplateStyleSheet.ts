@@ -1,9 +1,13 @@
 import { Style } from '@react-pdf/types';
 
 interface ContainerProps { container: Style; }
+
 interface TextProps { text: Style; }
+
 interface ItemProps { item: Style; }
+
 interface DateProps extends ContainerProps, TextProps { }
+
 export interface BadgeStyles extends ContainerProps, TextProps { }
 
 export interface CommonStyles {

@@ -1,7 +1,7 @@
 import { Font } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
 import TemplateTheme from '../../common/TemplateTheme';
-import { FontRoboto } from '../helper/TemplateFonts';
+import { FontRoboto } from '../helper/templateFonts';
 import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from '../helper/TemplateStyleSheet';
 
 Font.register(FontRoboto);
@@ -10,14 +10,14 @@ const colors = {
     white: "#FFFFFF",
     black: "#000000",
     gray: {
-        100: "#F9FAFB",  
-        200: "#F3F4F6", 
-        300: "#E5E7EB", 
-        400: "#D1D5DB",  
-        500: "#9CA3AF", 
-        600: "#6B7280",  
-        700: "#4B5563",  
-        900: "#111827", 
+        100: "#F9FAFB",
+        200: "#F3F4F6",
+        300: "#E5E7EB",
+        400: "#D1D5DB",
+        500: "#9CA3AF",
+        600: "#6B7280",
+        700: "#4B5563",
+        900: "#111827",
     }
 };
 
@@ -40,7 +40,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         display: 'flex' as const,
         flexDirection: 'row' as const,
         flexWrap: 'wrap' as const,
-        gap: 4, // Converted from rem
+        gap: 4,
         alignSelf: "flex-end" as const,
         justifySelf: "center" as const,
     },
@@ -368,7 +368,7 @@ const footer = (): FooterStyles => ({
     },
 });
 
-const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
+const templateStyle = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: page(),
     common: common(theme),
     layout: layout(),
@@ -383,4 +383,4 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     footer: footer(),
 });
 
-export default styleBuilder;
+export default templateStyle;

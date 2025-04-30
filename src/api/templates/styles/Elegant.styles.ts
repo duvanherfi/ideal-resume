@@ -1,7 +1,7 @@
 import { Font } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
 import TemplateTheme from '../../common/TemplateTheme';
-import { FontRoboto } from '../helper/TemplateFonts';
+import { FontRoboto } from '../helper/templateFonts';
 import TemplateStyleSheet,
 {
     CommonStyles,
@@ -365,7 +365,7 @@ const footer = (): FooterStyles => ({
     },
 });
 
-const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
+const templateStyle = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: page(),
     common: common(theme),
     layout: layout(),
@@ -380,4 +380,4 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     footer: footer(),
 });
 
-export default styleBuilder;
+export default templateStyle;
