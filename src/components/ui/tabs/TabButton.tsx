@@ -21,7 +21,7 @@ const TabButton = (props: TabButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`${getTabClassName()} flex flex-col items-center justify-between`}
+      className={`${getTabClassName()} flex flex-col items-center justify-between group`}
     >
       {children}
       <span>{t(text)}</span>

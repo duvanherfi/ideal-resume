@@ -7,19 +7,19 @@ import ViewUserDataForm from "../../../presentation/ViewUserDataForm";
 const desktopScreenTabs: Tab[] = [
   {
     id: "userData",
-    name: "screen.form.data.title",
+    text: "screen.form.data.title",
     component: <ViewUserDataForm />,
     children: <Icons.Person />
   },
   {
     id: "templates",
-    name: "gallery.templates.title",
+    text: "gallery.templates.title",
     component: <ViewThumbGallery />,
     children: <Icons.Sheet />
   },
   {
     id: "labels",
-    name: "screen.customize.title",
+    text: "screen.customize.title",
     component: <ViewCustomizeTemplate />,
     children: <Icons.Draw />
   },

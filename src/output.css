@@ -1807,6 +1807,10 @@ body {
   cursor: pointer;
 }
 
+.hover\:block:hover{
+  display: block;
+}
+
 .hover\:border-2:hover{
   border-width: 2px;
 }
@@ -1968,6 +1972,10 @@ body {
 .focus\:ring-secondary-500:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(100 116 139 / var(--tw-ring-opacity, 1));
+}
+
+.group:hover .group-hover\:block{
+  display: block;
 }
 
 .group:hover .group-hover\:opacity-100{
