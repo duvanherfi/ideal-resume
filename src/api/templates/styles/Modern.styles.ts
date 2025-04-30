@@ -6,11 +6,19 @@ import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
 Font.register(FontOpenSans);
 
-const defaultThemeColors: TemplateTheme = {
-    primary: '#4F46E5',
+const colors = {
+    white: "#FFFFFF",
+    black: "#000000",
+    gray: {
+        50: "#F9FAFB",
+        100: "#F3F4F6",
+        200: "#E5E7EB",
+        500: "#6B7280",
+        700: "#4B5563",
+    }
 };
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
+const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Open Sans',
         padding: 0,
@@ -21,7 +29,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
     common: {
         divider: {
             borderBottomWidth: 1,
-            borderBottomColor: '#E5E7EB', // gray-200
+            borderBottomColor: colors.gray[200],
         },
         techContainer: {
             flexDirection: 'row',
@@ -34,12 +42,12 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             },
             text: {
                 fontSize: 10,
-                color: '#6B7280', // gray-500
+                color: colors.gray[500],
             },
         },
         badge: {
             container: {
-                backgroundColor: lightenHexColor(theme.primary, 90), // indigo-100
+                backgroundColor: lightenHexColor(theme.primary, 90),
                 borderRadius: 10,
                 paddingVertical: 3,
                 paddingHorizontal: 8,
@@ -48,7 +56,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             },
             text: {
                 fontSize: 9,
-                color: darkenHexColor(theme.primary, 20), // indigo-800
+                color: darkenHexColor(theme.primary, 20),
             },
         },
     },
@@ -70,7 +78,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
                 flex: 1,
                 padding: 20,
                 borderRightWidth: 1,
-                borderRightColor: '#E5E7EB', // gray-200
+                borderRightColor: colors.gray[200],
             },
         },
     },
@@ -83,7 +91,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             paddingTop: 10,
             paddingBottom: 10,
             borderBottomWidth: 1,
-            borderBottomColor: '#E5E7EB', // gray-200
+            borderBottomColor: colors.gray[200],
         },
         header: {
             marginBottom: 10,
@@ -91,12 +99,12 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         title: {
             fontSize: 16,
             fontWeight: 'bold',
-            color: darkenHexColor(theme.primary), // indigo-700
+            color: darkenHexColor(theme.primary),
             marginBottom: 10,
         },
         headerLine: {
             borderBottomWidth: 1,
-            borderBottomColor: '#E5E7EB', // gray-200
+            borderBottomColor: colors.gray[200],
         },
         side: {
             container: {
@@ -111,7 +119,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             title: {
                 fontSize: 16,
                 fontWeight: 'bold',
-                color: darkenHexColor(theme.primary), // indigo-700
+                color: darkenHexColor(theme.primary),
                 marginBottom: 10,
             },
         },
@@ -144,7 +152,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         },
         role: {
             fontSize: 14,
-            color: '#F9FAFB', // indigo-200
+            color: colors.gray[50],
         },
         photo: {
             width: 80,
@@ -179,7 +187,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
     summary: {
         text: {
             fontSize: 10,
-            color: '#4B5563', // gray-700
+            color: colors.gray[700],
             lineHeight: 1.5,
         },
     },
@@ -199,20 +207,20 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             fontWeight: 'bold',
         },
         company: {
-            color: theme.primary, // indigo-600
+            color: theme.primary,
         },
         contractType: {
             fontSize: 10,
-            color: '#6B7280', // gray-500
+            color: colors.gray[500],
         },
         location: {
             fontSize: 10,
             fontStyle: 'italic',
-            color: '#6B7280', // gray-500
+            color: colors.gray[500],
         },
         description: {
             fontSize: 10,
-            color: '#4B5563', // gray-700
+            color: colors.gray[700],
             lineHeight: 1.5,
         },
     },
@@ -233,16 +241,16 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         },
         institution: {
             fontSize: 11,
-            color: theme.primary, // indigo-600
+            color: theme.primary,
         },
         description: {
             fontSize: 10,
-            color: '#4B5563', // gray-700
+            color: colors.gray[700],
         },
         location: {
             fontSize: 10,
             fontStyle: 'italic',
-            color: '#6B7280', // gray-500
+            color: colors.gray[500],
         },
     },
 
@@ -257,7 +265,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             marginBottom: 10,
             marginRight: '2%',
             padding: 8,
-            backgroundColor: '#F9FAFB', // gray-50
+            backgroundColor: colors.gray[50],
             borderRadius: 4,
         },
         name: {
@@ -267,12 +275,12 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         },
         link: {
             fontSize: 9,
-            color: theme.primary, // indigo-600
+            color: theme.primary,
             marginBottom: 4,
         },
         description: {
             fontSize: 9,
-            color: '#4B5563', // gray-700
+            color: colors.gray[700],
         },
     },
 
@@ -284,7 +292,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             marginBottom: 15,
         },
         item: {
-            backgroundColor: lightenHexColor(theme.primary, 90), // indigo-100
+            backgroundColor: lightenHexColor(theme.primary, 90),
             borderRadius: 10,
             paddingVertical: 3,
             paddingHorizontal: 8,
@@ -293,7 +301,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         },
         name: {
             fontSize: 9,
-            color: darkenHexColor(theme.primary, 20), // indigo-800
+            color: darkenHexColor(theme.primary, 20),
         },
         bar: {
             container: {
@@ -336,12 +344,12 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
     footer: {
         container: {
             padding: 10,
-            backgroundColor: '#F9FAFB', // gray-100
+            backgroundColor: colors.gray[50],
             alignItems: 'center',
         },
         text: {
             fontSize: 8,
-            color: '#6B7280', // gray-500
+            color: colors.gray[500],
         },
     },
 });

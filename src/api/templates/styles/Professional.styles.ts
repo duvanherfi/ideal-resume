@@ -6,15 +6,28 @@ import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
 Font.register(FontRoboto);
 
-const defaultThemeColors: TemplateTheme = {
-    primary: '#2563EB', // A professional blue color
+const colors = {
+    white: "#FFFFFF",
+    black: "#000000",
+    gray: {
+        50: "#F8FAFC",
+        100: "#F1F5F9",
+        200: "#E2E8F0",
+        300: "#CBD5E1",
+        400: "#94A3B8",
+        500: "#64748B",
+        600: "#475569",
+        700: "#334155",
+        800: "#1E293B",
+        900: "#0F172A",
+    },
 };
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
+const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Roboto',
         padding: 0,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: colors.white,
     },
 
     // Common styles
@@ -35,7 +48,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             },
             text: {
                 fontSize: 10,
-                color: '#64748B', // Slate-500
+                color: colors.gray[500],
             },
         },
         badge: {
@@ -70,7 +83,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             },
             side: {
                 width: '35%',
-                backgroundColor: '#F8FAFC', // Very light slate
+                backgroundColor: colors.gray[50],
                 padding: 20,
                 paddingLeft: 15,
             },
@@ -117,7 +130,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
     // Header styles
     header: {
         container: {
-            backgroundColor: '#F8FAFC', // Very light slate
+            backgroundColor: colors.gray[50],
             borderBottomWidth: 3,
             borderBottomColor: theme.primary,
             padding: 20,
@@ -142,7 +155,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         role: {
             fontSize: 14,
             fontWeight: 500,
-            color: '#64748B', // Slate-500
+            color: colors.gray[500],
         },
         photo: {
             width: 70,
@@ -170,7 +183,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
             },
             value: {
                 fontSize: 10,
-                color: '#334155', // Slate-700
+                color: colors.gray[700],
             },
             divider: {
                 marginVertical: 1,
@@ -183,7 +196,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         text: {
             fontSize: 10,
             lineHeight: 1.5,
-            color: '#334155', // Slate-700
+            color: colors.gray[700],
         },
     },
 
@@ -201,7 +214,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         role: {
             fontSize: 12,
             fontWeight: 700,
-            color: '#0F172A', // Slate-900
+            color: colors.gray[900],
         },
         company: {
             fontSize: 11,
@@ -211,16 +224,16 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         },
         contractType: {
             fontSize: 10,
-            color: '#64748B', // Slate-500
+            color: colors.gray[500],
         },
         location: {
             fontSize: 10,
-            color: '#64748B', // Slate-500
+            color: colors.gray[500],
         },
         description: {
             fontSize: 10,
             lineHeight: 1.5,
-            color: '#334155', // Slate-700
+            color: colors.gray[700],
         },
     },
 
@@ -238,7 +251,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         degree: {
             fontSize: 12,
             fontWeight: 700,
-            color: '#0F172A', // Slate-900
+            color: colors.gray[900],
         },
         institution: {
             fontSize: 11,
@@ -249,11 +262,11 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         description: {
             fontSize: 10,
             lineHeight: 1.5,
-            color: '#334155', // Slate-700
+            color: colors.gray[700],
         },
         location: {
             fontSize: 10,
-            color: '#64748B', // Slate-500
+            color: colors.gray[500],
         },
     },
 
@@ -271,7 +284,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         name: {
             fontSize: 11,
             fontWeight: 700,
-            color: '#0F172A', // Slate-900
+            color: colors.gray[900],
             marginBottom: 2,
         },
         link: {
@@ -283,7 +296,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         description: {
             fontSize: 9,
             lineHeight: 1.4,
-            color: '#334155', // Slate-700
+            color: colors.gray[700],
         },
     },
 
@@ -301,16 +314,13 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         name: {
             fontSize: 10,
             fontWeight: 500,
-            color: '#0F172A', // Slate-900
+            color: colors.gray[900],
         },
         bar: {
             container: {
                 flexDirection: 'row',
             },
             fill: {
-                // Adaptado para el sistema de puntos
-                // El original usa un sistema de puntos en lugar de barras
-                // Se mantiene la estructura pero se adapta al contexto
                 width: 6,
                 height: 6,
                 borderRadius: 3,
@@ -334,7 +344,7 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
         name: {
             fontSize: 10,
             fontWeight: 500,
-            color: '#0F172A', // Slate-900
+            color: colors.gray[900],
         },
         proficiency: {
             fontSize: 10,
@@ -347,14 +357,14 @@ const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleS
     footer: {
         container: {
             padding: 10,
-            backgroundColor: '#F8FAFC', // Very light slate
+            backgroundColor: colors.gray[50],
             borderTopWidth: 1,
             borderTopColor: lightenHexColor(theme.primary, 75),
             alignItems: 'center',
         },
         text: {
             fontSize: 8,
-            color: '#64748B', // Slate-500
+            color: colors.gray[500],
         },
     },
 });

@@ -5,16 +5,18 @@ import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
 Font.register(FontRoboto);
 
-const defaultTheme = {
+const colors = {
     white: "#FFFFFF",
     black: "#000000",
-    gray900: "#333333",
-    gray700: "#4A5568",
-    gray600: "#718096",
-    gray500: "#A0AEC0",
-    gray300: "#E2E8F0",
-    gray100: "#F7FAFC",
-    gray200: "#EDF2F7",
+    gray: {
+        100: "#F7FAFC",
+        200: "#EDF2F7",
+        300: "#E2E8F0",
+        500: "#A0AEC0",
+        600: "#718096",
+        700: "#4A5568",
+        900: "#333333"
+    }
 };
 
 const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
@@ -23,14 +25,14 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         minHeight: "100%",
         fontSize: 11,
         padding: 20,
-        backgroundColor: '#FFFFFF',
-        color: defaultTheme.gray900,
+        backgroundColor: colors.white,
+        color: colors.gray[900],
     },
 
     common: {
         divider: {
             height: 1,
-            backgroundColor: defaultTheme.gray300,
+            backgroundColor: colors.gray[300],
             marginVertical: 10,
         },
         techContainer: {
@@ -38,6 +40,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             flexDirection: 'row',
             flexWrap: 'wrap',
             gap: '0.5rem',
+            marginTop: 5
         },
         date: {
             container: {
@@ -45,29 +48,32 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             },
             text: {
                 fontSize: 9,
-                color: defaultTheme.gray600,
+                color: colors.gray[600],
                 textAlign: "center"
             }
         },
         badge: {
             container: {
-                backgroundColor: defaultTheme.gray200,
                 paddingVertical: 2,
-                paddingHorizontal: 4,
-                borderRadius: 2,
+                paddingHorizontal: 6,
+                borderRadius: 4,
+                backgroundColor: `${theme.primary}33`, // 20% opacity
+                alignSelf: 'flex-start' as const,
+                marginBottom: 4,
             },
             text: {
                 fontSize: 8,
                 color: theme.primary,
-            }
-        }
+                fontWeight: 600 as const,
+            },
+        },
     },
 
     layout: {
         row: {
             flexDirection: 'row',
             justifyContent: 'space-between' as const,
-            paddingBottom: 5
+            paddingBottom: 2
         },
         mainContent: {
             flexDirection: 'row',
@@ -83,8 +89,8 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
                 paddingLeft: 10,
                 paddingTop: 8,
                 borderLeftWidth: 1,
-                borderLeftColor: defaultTheme.gray300,
-                backgroundColor: defaultTheme.gray100,
+                borderLeftColor: colors.gray[300],
+                backgroundColor: colors.gray[100],
             }
         }
     },
@@ -99,7 +105,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginBottom: 8,
             paddingBottom: 4,
             borderBottomWidth: 1,
-            borderBottomColor: defaultTheme.gray300,
+            borderBottomColor: colors.gray[300],
         },
         title: {
             fontSize: 14,
@@ -108,7 +114,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         headerLine: {
             borderBottomWidth: 1,
-            borderBottomColor: defaultTheme.gray300,
+            borderBottomColor: colors.gray[300],
         },
         side: {
             container: {
@@ -121,7 +127,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
                 marginBottom: 8,
                 paddingBottom: 4,
                 borderBottomWidth: 1,
-                borderBottomColor: defaultTheme.gray300,
+                borderBottomColor: colors.gray[300],
             },
             title: {
                 fontSize: 14,
@@ -153,7 +159,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         role: {
             fontSize: 12,
-            color: defaultTheme.gray600,
+            color: colors.gray[600],
         },
         photo: {
             width: 60,
@@ -173,7 +179,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             },
             label: {
                 fontSize: 9,
-                color: defaultTheme.gray700,
+                color: colors.gray[700],
             },
             value: {
                 fontSize: 11,
@@ -181,7 +187,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             },
             divider: {
                 height: 1,
-                backgroundColor: defaultTheme.gray300,
+                backgroundColor: colors.gray[300],
             }
         }
     },
@@ -190,7 +196,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         text: {
             fontSize: 10,
             lineHeight: 1.5,
-            color: defaultTheme.gray700,
+            color: colors.gray[700],
         }
     },
     experience: {
@@ -215,16 +221,16 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         contractType: {
             fontSize: 9,
-            color: defaultTheme.gray600,
+            color: colors.gray[600],
         },
         location: {
             fontSize: 9,
-            color: defaultTheme.gray600,
+            color: colors.gray[600],
         },
         description: {
             fontSize: 9,
             lineHeight: 1.4,
-            color: defaultTheme.gray700,
+            color: colors.gray[700],
             textAlign: 'justify' as const,
         }
     },
@@ -251,11 +257,11 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         description: {
             fontSize: 9,
             lineHeight: 1.4,
-            color: defaultTheme.gray700,
+            color: colors.gray[700],
         },
         location: {
             fontSize: 9,
-            color: defaultTheme.gray600,
+            color: colors.gray[600],
         }
     },
 
@@ -266,7 +272,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         item: {
             marginBottom: 8,
             padding: 5,
-            backgroundColor: defaultTheme.gray200,
+            backgroundColor: colors.gray[200],
             borderRadius: 3,
         },
         name: {
@@ -283,7 +289,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         description: {
             fontSize: 8,
             lineHeight: 1.4,
-            color: defaultTheme.gray700,
+            color: colors.gray[700],
         }
     },
 
@@ -336,12 +342,12 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             marginTop: 20,
             padding: 5,
             borderTopWidth: 1,
-            borderTopColor: defaultTheme.gray300,
+            borderTopColor: colors.gray[300],
             alignItems: 'center',
         },
         text: {
             fontSize: 8,
-            color: defaultTheme.gray500,
+            color: colors.gray[500],
         }
     }
 });

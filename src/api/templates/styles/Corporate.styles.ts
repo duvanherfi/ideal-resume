@@ -6,8 +6,19 @@ import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, Fo
 
 Font.register(FontRoboto);
 
-const defaultThemeColors: TemplateTheme = {
-    primary: '#1E40AF',
+const colors = {
+    white: "#FFFFFF",
+    black: "#000000",
+    gray: {
+        100: "#F9FAFB",  
+        200: "#F3F4F6", 
+        300: "#E5E7EB", 
+        400: "#D1D5DB",  
+        500: "#9CA3AF", 
+        600: "#6B7280",  
+        700: "#4B5563",  
+        900: "#111827", 
+    }
 };
 
 const page = (): Style => ({
@@ -38,7 +49,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         container: {
             fontSize: 9,
             marginBottom: 4,
-            color: '#6B7280',
+            color: colors.gray[600],
         },
         text: {}
     },
@@ -78,7 +89,7 @@ const layout = (): LayoutStyles => ({
             width: '35%',
             paddingLeft: 15,
             borderLeftWidth: 1,
-            borderLeftColor: '#E5E7EB',
+            borderLeftColor: colors.gray[300],
         },
     },
 });
@@ -102,7 +113,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     headerLine: {
         flex: 1,
         height: 1,
-        backgroundColor: '#E5E7EB',
+        backgroundColor: colors.gray[300],
     },
     side: {
         container: {
@@ -111,7 +122,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         header: {
             paddingBottom: 5,
             borderBottomWidth: 1,
-            borderBottomColor: '#E5E7EB',
+            borderBottomColor: colors.gray[300],
             marginBottom: 8,
         },
         title: {
@@ -147,7 +158,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
     },
     role: {
         fontSize: 14,
-        color: '#4B5563',
+        color: colors.gray[700],
     },
     photo: {
         width: 70,
@@ -159,7 +170,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
     contact: {
         container: {
             flexDirection: 'row' as const,
-            backgroundColor: '#F3F4F6',
+            backgroundColor: colors.gray[200],
             padding: 10,
             borderRadius: 5,
             justifyContent: 'space-between' as const,
@@ -181,7 +192,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         divider: {
             height: 15,
             width: 1,
-            backgroundColor: '#D1D5DB',
+            backgroundColor: colors.gray[400],
         },
     },
 });
@@ -208,7 +219,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         fontFamily: 'Roboto',
         fontSize: 12,
         fontWeight: 600,
-        color: '#111827',
+        color: colors.gray[900],
     },
     role: {
         fontSize: 11,
@@ -219,11 +230,11 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     contractType: {
         fontSize: 9,
         fontWeight: 400,
-        color: '#111827',
+        color: colors.gray[900],
     },
     location: {
         fontSize: 9,
-        color: '#111827',
+        color: colors.gray[900],
         alignSelf: "flex-end" as const,
     },
     description: {
@@ -253,7 +264,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         fontFamily: 'Roboto',
         fontSize: 12,
         fontWeight: 600,
-        color: '#111827',
+        color: colors.gray[900],
     },
     description: {
         fontSize: 9,
@@ -262,7 +273,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     location: {
         fontSize: 9,
-        color: '#111827',
+        color: colors.gray[900],
         alignSelf: "flex-end" as const,
     },
 });
@@ -274,7 +285,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     item: {
         marginBottom: 8,
         padding: 6,
-        backgroundColor: '#F9FAFB',
+        backgroundColor: colors.gray[100],
         borderRadius: 4,
         borderLeftWidth: 2,
         borderLeftColor: theme.primary,
@@ -312,7 +323,7 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
     bar: {
         container: {
             height: 4,
-            backgroundColor: '#E5E7EB',
+            backgroundColor: colors.gray[300],
             borderRadius: 2,
             width: '100%',
         },
@@ -346,18 +357,18 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
 const footer = (): FooterStyles => ({
     container: {
         borderTopWidth: 1,
-        borderTopColor: '#E5E7EB',
+        borderTopColor: colors.gray[300],
         paddingTop: 10,
         marginTop: 20,
         alignItems: 'center' as const,
     },
     text: {
         fontSize: 8,
-        color: '#9CA3AF',
+        color: colors.gray[500],
     },
 });
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
+const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: page(),
     common: common(theme),
     layout: layout(),

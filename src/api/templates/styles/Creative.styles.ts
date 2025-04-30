@@ -6,6 +6,17 @@ import TemplateStyleSheet from '../helper/TemplateStyleSheet';
 
 Font.register(FontRoboto);
 
+const colors = {
+    white: "#FFFFFF",
+    black: "#000000",
+    gray: {
+        200: "#666666",  // date text
+        300: "#444444",  // summary text, description text
+        400: "#333333",  // headers, names
+        500: "#111827",  // contract type, location
+    }
+};
+
 const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: {
         fontFamily: 'Roboto',
@@ -27,11 +38,11 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         date: {
             container: {
                 fontSize: 9,
-                color: '#666666',
+                color: colors.gray[200],
             },
             text: {
                 fontSize: 9,
-                color: '#666666',
+                color: colors.gray[200],
             }
         },
         badge: {
@@ -180,7 +191,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         text: {
             fontSize: 10,
             lineHeight: 1.6,
-            color: '#444444',
+            color: colors.gray[300],
         }
     },
 
@@ -196,7 +207,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         role: {
             fontSize: 12,
             fontWeight: 'bold',
-            color: '#333333',
+            color: colors.gray[400],
         },
         company: {
             fontSize: 11,
@@ -207,16 +218,16 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         contractType: {
             fontSize: 9,
             fontWeight: 400,
-            color: '#111827',
+            color: colors.gray[500],
         },
         location: {
             fontSize: 9,
-            color: '#111827',
+            color: colors.gray[500],
             alignSelf: "flex-end"
         },
         description: {
             fontSize: 10,
-            color: '#444444',
+            color: colors.gray[300],
             lineHeight: 1.6,
         }
     },
@@ -234,7 +245,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         degree: {
             fontSize: 12,
             fontWeight: 'bold',
-            color: '#333333',
+            color: colors.gray[400],
         },
         institution: {
             fontSize: 11,
@@ -247,7 +258,6 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
             textAlign: 'justify',
         },
         location: {
-            // Adaptado de educationGPA que parecía ser la ubicación de texto en la derecha
             fontSize: 9,
             lineHeight: 1.5,
             textAlign: 'right',
@@ -269,7 +279,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         name: {
             fontSize: 11,
             fontWeight: 'bold',
-            color: '#333333',
+            color: colors.gray[400],
             marginBottom: 3,
         },
         link: {
@@ -279,7 +289,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         description: {
             fontSize: 9,
-            color: '#444444',
+            color: colors.gray[300],
             lineHeight: 1.4,
             marginBottom: 12,
         }
@@ -294,7 +304,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         name: {
             fontSize: 10,
-            color: '#333333',
+            color: colors.gray[400],
             marginBottom: 3,
         },
         bar: {
@@ -326,7 +336,7 @@ const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
         },
         name: {
             fontSize: 10,
-            color: '#333333',
+            color: colors.gray[400],
         },
         proficiency: {
             fontSize: 9,

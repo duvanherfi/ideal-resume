@@ -19,9 +19,18 @@ import TemplateStyleSheet,
 
 Font.register(FontRoboto);
 
-// Elegant purple primary with soft accent
-const defaultThemeColors: TemplateTheme = {
-    primary: '#8E44AD',
+const colors = {
+    white: "#FFFFFF",
+    black: "#000000",
+    gray: {
+        100: "#F3F4F6",
+        200: "#E5E7EB",
+        300: "#E0E0E0",
+        400: "#9CA3AF",
+        500: "#6B7280",
+        600: "#4B5563",
+        900: "#111827"
+    }
 };
 
 const page = (): Style => ({
@@ -36,7 +45,7 @@ const page = (): Style => ({
 const common = (theme: TemplateTheme): CommonStyles => ({
     divider: {
         height: 1,
-        backgroundColor: '#E0E0E0',
+        backgroundColor: colors.gray[300],
         marginVertical: 12,
     },
     techContainer: {
@@ -48,7 +57,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
     date: {
         container: {
             fontSize: 8,
-            color: '#6B7280',
+            color: colors.gray[500],
             marginBottom: 2,
         },
         text: {},
@@ -88,7 +97,7 @@ const layout = (): LayoutStyles => ({
             width: '35%',
             paddingLeft: 15,
             borderLeftWidth: 1,
-            borderLeftColor: '#E5E7EB',
+            borderLeftColor: colors.gray[200],
         },
     },
 });
@@ -120,7 +129,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         header: {
             paddingBottom: 5,
             borderBottomWidth: 1,
-            borderBottomColor: '#E5E7EB',
+            borderBottomColor: colors.gray[200],
             marginBottom: 8,
         },
         title: {
@@ -154,7 +163,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
     },
     role: {
         fontSize: 12,
-        color: '#4B5563',
+        color: colors.gray[600],
         marginBottom: 6,
     },
     photo: {
@@ -186,7 +195,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         divider: {
             height: 12,
             width: 1,
-            backgroundColor: '#E0E0E0',
+            backgroundColor: colors.gray[300],
         },
     },
 });
@@ -198,7 +207,7 @@ const summary = (): SummaryStyles => ({
         margin: 4,
         padding: 6,
         borderWidth: 1,
-        borderColor: '#E0E0E0',
+        borderColor: colors.gray[300],
         borderRadius: 4,
         textAlign: 'justify' as const,
     },
@@ -220,7 +229,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     company: {
         fontSize: 12,
         fontWeight: 600,
-        color: '#111827',
+        color: colors.gray[900],
     },
     role: {
         fontSize: 10,
@@ -229,11 +238,11 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     },
     contractType: {
         fontSize: 8,
-        color: '#6B7280',
+        color: colors.gray[500],
     },
     location: {
         fontSize: 8,
-        color: '#6B7280',
+        color: colors.gray[500],
     },
     description: {
         fontSize: 9,
@@ -264,7 +273,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     institution: {
         fontSize: 10,
         fontWeight: 600,
-        color: '#111827',
+        color: colors.gray[900],
     },
     description: {
         fontSize: 8,
@@ -273,7 +282,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     location: {
         fontSize: 8,
-        color: '#6B7280',
+        color: colors.gray[500],
     },
 });
 
@@ -352,11 +361,11 @@ const footer = (): FooterStyles => ({
     },
     text: {
         fontSize: 7,
-        color: '#9CA3AF',
+        color: colors.gray[400],
     },
 });
 
-const styleBuilder = (theme: TemplateTheme = defaultThemeColors): TemplateStyleSheet => ({
+const styleBuilder = (theme: TemplateTheme): TemplateStyleSheet => ({
     page: page(),
     common: common(theme),
     layout: layout(),

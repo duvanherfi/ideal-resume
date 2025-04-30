@@ -30,9 +30,9 @@ export const ExperienceItem = ({ styles, item, labels }: TemplateItemProps<WorkE
             </View>
             <View style={styles.layout.row}>
                 <Text style={styles.experience.company}>{item.company}</Text>
-                <TechList item={item} styles={styles} />
             </View>
             <Text style={styles.experience.description}>{item.description}</Text>
+            <TechList item={item} styles={styles} />
         </View>
     </View>
 );
