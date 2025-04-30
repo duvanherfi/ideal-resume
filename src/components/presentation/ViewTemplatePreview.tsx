@@ -1,6 +1,6 @@
-import ViewTitle from "../view/common/ViewTitle";
-import DownloadResumeLink from "../view/preview/DownloadResumeLink";
-import SelectedTemplatePreview from "../view/preview/SelectedTemplatePreview";
+import ViewTitle from "@components/view/common/ViewTitle";
+import DownloadResumeLink from "@components/view/preview/DownloadResumeLink";
+import SelectedTemplatePreview from "@components/view/preview/SelectedTemplatePreview";
 import ViewCustomizeTemplate from "./ViewCustomizeTemplate";
 
 const ViewTemplatePreview = () => {
@@ -10,12 +10,8 @@ const ViewTemplatePreview = () => {
                 <ViewCustomizeTemplate />
             </div>
             <ViewTitle simple className="pb-4" title="screen.preview.title" subtitle="screen.preview.subtitle" />
-            <div className="mx-auto w-1/2 xl:w-full xl:px-8">
-                <SelectedTemplatePreview />
-            </div>
-            <div className="flex w-full justify-end xl:px-8">
-                <DownloadResumeLink />
-            </div>
+            <SelectedTemplatePreview />
+            <DownloadResumeLink />
         </div>
     )
 };

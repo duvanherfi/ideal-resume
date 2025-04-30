@@ -6,7 +6,7 @@ const ViewCustomizeTemplate = () => {
     return (
         <div className="my-auto">
             <ViewTitle title="screen.customize.title" />
-            <TabsContainer className="" items={customizeTabs} slideDirection="bottom" inline />
+            <TabsContainer items={customizeTabs} slideDirection="bottom" inline />
         </div>
     );
 };

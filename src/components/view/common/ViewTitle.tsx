@@ -13,7 +13,7 @@ const ViewTitle = (props: ViewTitleProps) => {
     return (
         <div className={`px-4 ${props.className}`}>
             {!props.simple && <Icons.LineSeparator />}
-            <Title className="">{props.title}</Title>
+            <Title>{props.title}</Title>
             {props.subtitle && <Text className="text-secondary-600 dark:text-secondary-400">{props.subtitle}</Text>}
             {!props.simple && <Icons.LineSeparator />}
         </div>
