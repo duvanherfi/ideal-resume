@@ -1,7 +1,7 @@
 import { SimpleItemProps } from "../../common/TemplateProps";
 import { Project, WorkExperience } from "../../types";
-import Badge from "../common/Badge";
-import ViewEmptySafe from "../common/ViewEmptySafe";
+import Badge from "./Badge";
+import ViewEmptySafe from "./ViewEmptySafe";
 
 const TechList = ({ styles, item }: SimpleItemProps<WorkExperience | Project>) => (
     <ViewEmptySafe style={styles.common.techContainer} condition={item.tags}>

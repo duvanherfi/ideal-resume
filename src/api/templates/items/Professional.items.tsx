@@ -1,6 +1,7 @@
 import { Link, Text, View } from "@react-pdf/renderer";
 import { TemplateItemProps, TemplateSectionProps } from "../../common/TemplateProps";
 import { Education, Language, Project, Skill, WorkExperience } from "../../types";
+import { getTimeRange } from "../helper/templateDataHelper";
 
 export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>
@@ -12,11 +13,11 @@ export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, l
     </View>
 );
 
-export const ExperienceItem = ({ styles, item }: TemplateItemProps<WorkExperience>) => (
+export const ExperienceItem = ({ styles, item, labels }: TemplateItemProps<WorkExperience>) => (
     <View style={styles.experience.item}>
         <View style={styles.experience.header}>
             <Text style={styles.experience.role}>{item.role}</Text>
-            <Text style={styles.common.date.text}>{`${item.startDate} - ${item.endDate}`}</Text>
+            <Text style={styles.common.date.text}>{getTimeRange(item, labels)}</Text>
         </View>
         <Text style={styles.experience.company}>{item.company}</Text>
         <Text style={styles.experience.description}>{item.description}</Text>

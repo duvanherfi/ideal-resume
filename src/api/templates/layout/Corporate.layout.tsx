@@ -1,7 +1,7 @@
 import { Image, Text, View } from "@react-pdf/renderer";
 import { TemplateSectionProps } from "../../common/TemplateProps";
-import Contact from "../common/Contact";
-import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "../common/sections/TemplateSections";
+import Contact from "../../components/common/Contact";
+import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "../../components/sections/TemplateSections";
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Corporate.items";
 
 export const ProfileHeader: React.FC<TemplateSectionProps> = ({ data, styles }) => (
