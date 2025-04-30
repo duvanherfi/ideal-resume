@@ -4,12 +4,21 @@ import { useState } from "react";
 import GalleryNavigation from "./GalleryNavigation";
 import ScrollButton from "./ScrollButton";
 import TemplateThumb from "./TemplateThumb";
+import GlassCard from "@components/ui/GlassCard";
 
-const TemplateThumbGrid = () => {
-    const template = useResumeTemplate();
+interface TemplateThumbGridProps {
+    className?: string;
+}
+
+const TemplateThumbGrid = (props: TemplateThumbGridProps) => {
+    const { className = "" } = props;
     const [currentPage, setCurrentPage] = useState(0);
-    const templatesPerPage = 4;
+    const template = useResumeTemplate();
+
+    const templatesPerPage = 6;
     const totalPages = Math.ceil(template.getAll.length / templatesPerPage);
+    const canScrollLeft = currentPage !== 0;
+    const canScrollRight = currentPage !== totalPages - 1;
 
     const getCurrentPageTemplates = () => {
         const startIdx = currentPage * templatesPerPage;
@@ -29,28 +38,30 @@ const TemplateThumbGrid = () => {
     };
 
     return (
-        <div className="px-8 space-y-4">
-            <GalleryNavigation currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
-            <div className="grid grid-cols-2 gap-4">
-                {getCurrentPageTemplates().map((templateToPreview) => (
-                    <TemplateThumb
-                        key={templateToPreview.id}
-                        selectCurrentTemplate={() => template.select(templateToPreview)}
-                        templateToPreview={templateToPreview}
-                        isActive={templateToPreview.id === template.active?.id}
-                    />
-                ))}
-            </div>
-
-            {totalPages > 1 && (
-                <div className="mt-6">
-                    <div className="flex justify-between items-center">
-                        <ScrollButton direction={ScrollDirection.LEFT} canScroll={currentPage !== 0} onScroll={goToPrevPage} />
-                        <ScrollButton direction={ScrollDirection.RIGHT} canScroll={currentPage !== totalPages - 1} onScroll={goToNextPage} />
-                    </div>
+        <GlassCard className={className}>
+            <div className="space-y-4 overflow-hidden">
+                <GalleryNavigation currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
+                <div className="grid xl:grid-cols-2 gap-4 max-h-[80vh] overflow-y-auto scrollbar">
+                    {getCurrentPageTemplates().map((templateToPreview) => (
+                        <TemplateThumb
+                            key={templateToPreview.id}
+                            selectCurrentTemplate={() => template.select(templateToPreview)}
+                            templateToPreview={templateToPreview}
+                            isActive={templateToPreview.id === template.active?.id}
+                        />
+                    ))}
                 </div>
-            )}
-        </div>
+
+                {totalPages > 1 && (
+                    <div className="mt-6">
+                        <div className="flex justify-between items-center">
+                            <ScrollButton direction={ScrollDirection.LEFT} canScroll={canScrollLeft} onScroll={goToPrevPage} />
+                            <ScrollButton direction={ScrollDirection.RIGHT} canScroll={canScrollRight} onScroll={goToNextPage} />
+                        </div>
+                    </div>
+                )}
+            </div>
+        </GlassCard>
     );
 };
 

@@ -1,11 +1,12 @@
-import ViewLabelsForm from "./ViewLabelsForm";
-import ViewThemeColorSelector from "./ViewThemeColorSelector";
+import customizeTabs from "@components/tabs/customizeTabs";
+import TabsContainer from "@components/ui/tabs/TabsContainer";
+import ViewTitle from "@components/view/common/ViewTitle";
 
 const ViewCustomizeTemplate = () => {
     return (
-        <div className="space-y-8 my-4">
-            <ViewThemeColorSelector />
-            <ViewLabelsForm />
+        <div className="my-auto">
+            <ViewTitle title="screen.customize.title" />
+            <TabsContainer className="" items={customizeTabs} slideDirection="bottom" inline />
         </div>
     );
 };

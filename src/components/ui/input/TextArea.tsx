@@ -19,7 +19,7 @@ const TextArea = (props: TextAreaProps) => {
                 value={props.value}
                 onChange={props.onChange}
                 rows={3}
-                className="transition-all duration-200 w-full px-3 py-2 dark:text-white bg-white/50 dark:bg-black/50 border dark:border-primary-500/50 border-primary-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                className="transition-all duration-200 w-full px-3 py-2 bg-white/70 dark:bg-black/50 dark:text-white border dark:border-primary-300/50 border-primary-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-300 dark:focus:border-primary-300"
                 placeholder={props.placeholder}
                 required={props.required}
             />

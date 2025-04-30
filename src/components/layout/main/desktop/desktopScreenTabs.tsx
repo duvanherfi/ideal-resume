@@ -21,7 +21,7 @@ const desktopScreenTabs: Tab[] = [
     id: "labels",
     text: "screen.customize.title",
     component: <ViewCustomizeTemplate />,
-    children: <Icons.Draw />
+    children: <Icons.Customize />
   },
 ];
 

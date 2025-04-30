@@ -1,20 +1,15 @@
-import GlassCard from "@components/ui/GlassCard";
+import thumbGalleryTabs from "@components/tabs/thumbGalleryTabs";
+import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/view/common/ViewTitle";
-import GalleryModeToggle, { ViewMode } from "@components/view/gallery/GalleryModeToggle";
-import TemplateThumbCarousel from "@components/view/gallery/TemplateThumbCarousel";
 import TemplateThumbGrid from "@components/view/gallery/TemplateThumbGrid";
-import React, { useState } from "react";
+import React from "react";
 
 const ViewThumbGallery: React.FC = () => {
-  const [viewMode, setViewMode] = useState<ViewMode>("carousel");
-
   return (
     <div className="2xl:w-full xl:px-4">
       <ViewTitle title="gallery.templates.title" subtitle="gallery.templates.subtitle" />
-      <GalleryModeToggle viewMode={viewMode} onChange={setViewMode} />
-      <GlassCard>
-        {viewMode === "carousel" ? <TemplateThumbCarousel /> : <TemplateThumbGrid />}
-      </GlassCard>
+      <TabsContainer className="hidden xl:block" items={thumbGalleryTabs} slideDirection="left" tabsClassName="flex align-end items-center w-64" inline />
+      <TemplateThumbGrid className="block xl:hidden" />
     </div>
   );
 };

@@ -12,12 +12,8 @@ interface ScrollButtonProps {
     className?: string;
 }
 
-const ScrollButton: React.FC<ScrollButtonProps> = ({
-    direction,
-    canScroll,
-    onScroll,
-    className = "",
-}) => {
+const ScrollButton: React.FC<ScrollButtonProps> = (props) => {
+    const { direction, canScroll, onScroll, className = "" } = props;
     const isLeft = direction === ScrollDirection.LEFT;
     const positionClass = isLeft ? "-left-4" : "-right-4";
     const ariaLabel = isLeft ? "Scroll left" : "Scroll right";
@@ -38,12 +34,7 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({
     };
 
     return (
-        <button
-            onClick={handleClick}
-            className={buttonClasses}
-            aria-label={ariaLabel}
-            disabled={!canScroll}
-        >
+        <button onClick={handleClick} className={buttonClasses} aria-label={ariaLabel} disabled={!canScroll}>
             <div className="w-6 h-6 flex items-center justify-center">
                 <Icons.Chevron direction={chevronDirection} />
             </div>

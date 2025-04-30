@@ -6,11 +6,10 @@ const MobileLayout = () => {
         <div className="min-h-screen xl:hidden py-12 overflow-x-hidden">
             <TabsContainer
                 items={mobileScreenTabs}
-                defaultIndex={0}
-                contentClassName="sm:px-4 md:px-8 w-full"
+                contentClassName="w-full"
                 animationDuration={300}
                 slideDirection="right"
-                tabsClassName="fixed bottom-0 z-50 h-16"
+                tabsClassName="fixed bottom-0 z-50 h-16 w-full"
             />
         </div>
     );
