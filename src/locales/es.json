@@ -11,6 +11,8 @@
   "viewer.loading": "Generando...",
   "gallery.templates.title": "Plantillas",
   "gallery.templates.subtitle": "Elige la plantilla que más te agrade. Podrás cambiar el color en la pestaña Personalizar.",
+  "gallery.mode.carousel": "Carrusel",
+  "gallery.mode.grid": "Grilla",
   "form.basic.title": "Información básica",
   "form.basic.field.firstName": "Nombre(s)",
   "form.basic.field.lastName": "Apellido(s)",

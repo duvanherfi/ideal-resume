@@ -10,11 +10,9 @@ export const HeaderSection: React.FC<TemplateSectionProps> = ({ data, styles, la
             <View style={styles.header.name.container}>
                 <Text style={styles.header.name.text}>{`${data.firstName} ${data.lastName}`}</Text>
                 <Text style={styles.header.role}>{data.role}</Text>
-                <View style={styles.header.contact.container}>
-                    <Contact label={labels.email} value={data.email} styles={styles} />
-                    <View style={styles.header.contact.divider} />
-                    <Contact label={labels.phone} value={data.phone} styles={styles} />
-                </View>
+                <Contact label={labels.email} value={data.email} styles={styles} />
+                <View style={styles.header.contact.divider} />
+                <Contact label={labels.phone} value={data.phone} styles={styles} />
                 <View style={styles.header.contact.divider} />
                 <Contact label={labels.location} value={data.address} styles={styles} />
             </View>

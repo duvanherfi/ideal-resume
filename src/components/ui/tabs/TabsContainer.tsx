@@ -19,6 +19,7 @@ interface TabsContainerProps {
     animationDuration?: number;
     slideDirection?: 'left' | 'right' | 'top' | 'bottom' | 'none';
     showTabList?: boolean;
+    inline?: boolean;
 }
 
 const TabsContainer: React.FC<TabsContainerProps> = ({
@@ -31,7 +32,8 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
     contentClassName = "",
     animationDuration = 200,
     slideDirection = 'left',
-    showTabList = true
+    showTabList = true,
+    inline
 }) => {
     const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex);
     const [transitioning, setTransitioning] = useState(false);
@@ -89,7 +91,7 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
     return (
         <div className={className}>
             {showTabList && (
-                <TabList items={items} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} />
+                <TabList inline={inline} items={items} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} />
             )}
 
             <div className="min-h-[100px]">

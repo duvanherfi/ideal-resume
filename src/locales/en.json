@@ -11,6 +11,8 @@
   "viewer.loading": "Loading...",
   "gallery.templates.title": "Templates",
   "gallery.templates.subtitle": "Choose the template you like the most. You can change the color in the Customize tab.",
+  "gallery.mode.carousel": "Carousel",
+  "gallery.mode.grid": "Grid",
   "form.basic.title": "Basic Information",
   "form.basic.field.firstName": "First Name(s)",
   "form.basic.field.lastName": "Last Name(s)",
