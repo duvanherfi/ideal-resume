@@ -12,7 +12,7 @@ const ResumeLabelProvider: React.FC<ResumeLabelProviderProps> = ({ children, ini
     const { t } = useTranslations();
     const translatedLabels = (Object.entries(defaultLabels) as [keyof ResumeLabels, string][]).reduce((acc, [key, val]) => ({ ...acc, [key]: t(val) }), {} as ResumeLabels);
     const [resumeLabels, setResumeLabels] = useState<ResumeLabels>(initialLabels ?? translatedLabels);
-    
+
     const updateLabels = (data: Partial<ResumeLabels>) => {
         setResumeLabels((prevLabels: ResumeLabels) => ({
             ...prevLabels,

@@ -2,8 +2,8 @@ import { Font } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
 import TemplateTheme from '@resume-api/common/TemplateTheme';
 import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../helper/colorHelper';
-import { FontRoboto } from '../helper/templateFonts';
-import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from '../helper/TemplateStyleSheet';
+import { FontRoboto } from './common/templateFonts';
+import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from './common/TemplateStyleSheet';
 
 Font.register(FontRoboto);
 

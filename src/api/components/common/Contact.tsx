@@ -1,6 +1,6 @@
 import { Text } from "@react-pdf/renderer";
 import ViewEmptySafe from "./ViewEmptySafe";
-import TemplateStyleSheet from "../../templates/helper/TemplateStyleSheet";
+import TemplateStyleSheet from "../../templates/styles/common/TemplateStyleSheet";
 
 type ContactProps = { label?: string, value?: string, styles: TemplateStyleSheet };
 

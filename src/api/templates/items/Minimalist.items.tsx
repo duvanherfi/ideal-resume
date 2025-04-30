@@ -1,8 +1,8 @@
 import { Link, Text, View } from "@react-pdf/renderer";
 import { TemplateItemProps, TemplateSectionProps } from "../../common/TemplateProps";
-import { Education, Language, Project, Skill, WorkExperience } from "../../types";
 import TechList from "../../components/common/TechList";
 import TextEmptySafe from "../../components/common/TextEmptySafe";
+import { Education, Language, Project, Skill, WorkExperience } from "../../types";
 
 export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>
@@ -76,7 +76,7 @@ export const SkillItem = ({ styles, item }: TemplateItemProps<Skill>) => (
             {[...Array(5)].map((_, i) => (
                 <View
                     key={item.level + i}
-                    style={i < item.level ? styles.skill.bar.fill : {}/*`styles.skill.bar.empty`*/}
+                    style={i < item.level ? styles.skill.bar.fill : {}}
                 />
             ))}
         </View>

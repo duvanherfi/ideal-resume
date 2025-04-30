@@ -1,4 +1,4 @@
-import TemplateStyleSheet, { EducationStyles, ExperienceStyles, LanguageStyles, ProjectStyles, SkillStyles } from "@resume-api/templates/helper/TemplateStyleSheet";
+import TemplateStyleSheet, { EducationStyles, ExperienceStyles, LanguageStyles, ProjectStyles, SkillStyles } from "@resume-api/templates/styles/common/TemplateStyleSheet";
 import { Education, Language, Project, ResumeLabels, Skill, UserData, WorkExperience } from "../types";
 import TemplateTheme from "./TemplateTheme";
 

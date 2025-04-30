@@ -1,7 +1,7 @@
 import { Font } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
 import TemplateTheme from '../../common/TemplateTheme';
-import { FontRoboto } from '../helper/templateFonts';
+import { FontRoboto } from './common/templateFonts';
 import TemplateStyleSheet,
 {
     CommonStyles,
@@ -15,7 +15,7 @@ import TemplateStyleSheet,
     SectionStyles,
     SkillStyles,
     SummaryStyles,
-} from '../helper/TemplateStyleSheet';
+} from './common/TemplateStyleSheet';
 
 Font.register(FontRoboto);
 

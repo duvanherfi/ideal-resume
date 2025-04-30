@@ -1,8 +1,8 @@
 import { Link, Text, View } from "@react-pdf/renderer";
 import { TemplateItemProps, TemplateSectionProps } from "../../common/TemplateProps";
-import { Education, Language, Project, Skill, WorkExperience } from "../../types";
 import TechList from "../../components/common/TechList";
 import TextEmptySafe from "../../components/common/TextEmptySafe";
+import { Education, Language, Project, Skill, WorkExperience } from "../../types";
 import { getTimeRange } from "../helper/templateDataHelper";
 
 export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (

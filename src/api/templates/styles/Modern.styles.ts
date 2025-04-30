@@ -2,8 +2,8 @@ import { Font } from '@react-pdf/renderer';
 import { Style } from '@react-pdf/types';
 import TemplateTheme from '../../common/TemplateTheme';
 import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../helper/colorHelper';
-import { FontOpenSans } from '../helper/templateFonts';
-import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from '../helper/TemplateStyleSheet';
+import { FontOpenSans } from './common/templateFonts';
+import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from './common/TemplateStyleSheet';
 
 Font.register(FontOpenSans);
 
