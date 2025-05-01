@@ -1,4 +1,4 @@
-import ViewTemplatePreview from "@components/presentation/ViewTemplatePreview";
+import ViewTemplatePreview from "@components/view/ViewTemplatePreview";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import desktopLayoutTabs from "./desktopLayoutTabs";
 

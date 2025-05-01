@@ -1,6 +1,6 @@
-import ViewTemplatePreview from "@components/presentation/ViewTemplatePreview";
-import ViewThumbGallery from "@components/presentation/ViewThumbGallery";
-import ViewUserDataForm from "@components/presentation/ViewUserDataForm";
+import ViewTemplatePreview from "@components/view/ViewTemplatePreview";
+import ViewThumbGallery from "@components/view/ViewThumbGallery";
+import ViewUserDataForm from "@components/view/ViewUserDataForm";
 import Icons from "@components/ui/icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import I18nKeys from "src/locales/I18nKeys";
