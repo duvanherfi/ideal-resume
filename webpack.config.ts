@@ -32,7 +32,6 @@ const config: Configuration = {
         ],
     },
     resolve: {
-        // lee automáticamente los paths de tsconfig
         plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },

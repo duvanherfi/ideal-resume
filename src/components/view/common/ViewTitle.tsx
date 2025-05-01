@@ -1,6 +1,6 @@
-import Icons from "../../ui/icons/Icons";
-import Title from "../../ui/text/Title";
-import Text from "../../ui/text/Text";
+import Icons from "@components/ui/icons/Icons";
+import Text from "@components/ui/text/Text";
+import Title from "@components/ui/text/Title";
 
 interface ViewTitleProps {
     title: string;

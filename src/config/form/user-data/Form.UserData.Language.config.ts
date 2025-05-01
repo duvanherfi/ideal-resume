@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { Language } from "@resume-api/types";
-import FieldsLanguage from "../../fields/Fields.Language.config";
+import FieldsLanguage from "@config/fields/Fields.Language.config";
 import FormConfig from "./Form.UserData.types";
 
 const languages: FormConfig<Language> = {

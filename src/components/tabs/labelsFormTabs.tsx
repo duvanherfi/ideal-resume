@@ -1,9 +1,9 @@
-import Icons from "../ui/icons/Icons";
-import { Tab } from "../ui/tabs/TabsContainer";
 import { FieldsLabelsHeader, FieldsLabelsOthers, FieldsLabelsSections } from "../../config/form/labels/FormLabelsSectionsProps.config";
+import Icons from "../ui/icons/Icons";
+import { Tab, TabsContainerProps } from "../ui/tabs/TabsContainer";
 import FormLabels from "../view/labels/FormLabels";
 
-const labelsFormTabs: Tab[] = [
+const tabs: Tab[] = [
     {
         id: "header",
         component: <FormLabels {...FieldsLabelsHeader} />,
@@ -20,5 +20,10 @@ const labelsFormTabs: Tab[] = [
         children: <Icons.Other />
     },
 ];
+
+const labelsFormTabs: TabsContainerProps = {
+    tabs,
+    slideDirection: "bottom"
+}
 
 export default labelsFormTabs;

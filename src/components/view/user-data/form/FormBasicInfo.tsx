@@ -1,11 +1,11 @@
 import useUserData from "@api-hooks/useUserData";
+import GlassCard from "@components/ui/GlassCard";
+import InputImage from "@components/ui/input/InputImage";
+import Subtitle from "@components/ui/text/Subtitle";
+import GenericField from "@components/view/common/form/field/GenericField";
+import FieldsBasicInfo from "@config/fields/Fields.BasicInfo.config";
 import { UserData } from "@resume-api/types";
 import React from "react";
-import FieldsBasicInfo from "../../../../config/fields/Fields.BasicInfo.config";
-import GlassCard from "../../../ui/GlassCard";
-import InputImage from "../../../ui/input/InputImage";
-import Subtitle from "../../../ui/text/Subtitle";
-import GenericField from "../../common/form/field/GenericField";
 
 const FormBasicInfo: React.FC = () => {
   const data = useUserData();

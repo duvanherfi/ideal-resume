@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { Education } from "@resume-api/types";
-import FieldsEducation from "../../fields/Fields.Education.config";
+import FieldsEducation from "@config/fields/Fields.Education.config";
 import FormConfig from "./Form.UserData.types";
 
 const education: FormConfig<Education> = {

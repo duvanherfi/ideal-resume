@@ -1,9 +1,9 @@
 import Button from "@components/ui/buttons/Button";
 import Icons from "@components/ui/icons/Icons";
 import Subtitle from "@components/ui/text/Subtitle";
+import GenericField from "@components/view/common/form/field/GenericField";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
 import useTranslations from "@hooks/useTranslations";
-import GenericField from "../../../common/form/field/GenericField";
 
 interface FormFieldsContainerProps<T extends { id: string }> {
     form: MultiItemFormType<T & Record<string, any>>;

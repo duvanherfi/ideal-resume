@@ -7,7 +7,7 @@ const ViewUserDataForm: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-8 2xl:px-16">
       <ViewTitle title="form.data.title" subtitle="form.data.subtitle" />
-      <TabsContainer items={userDataFormTabs} slideDirection="left" />
+      <TabsContainer {...userDataFormTabs} />
     </div>
   );
 };

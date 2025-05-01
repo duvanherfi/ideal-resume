@@ -1,8 +1,8 @@
 import useTranslations from "@hooks/useTranslations";
-import InputImage from "../../../../ui/input/InputImage";
-import Input from "../../../../ui/input/Input";
-import Select, { SelectOption } from "../../../../ui/input/Select";
-import TextArea from "../../../../ui/input/TextArea";
+import InputImage from "@components/ui/input/InputImage";
+import Input from "@components/ui/input/Input";
+import Select, { SelectOption } from "@components/ui/input/Select";
+import TextArea from "@components/ui/input/TextArea";
 
 export interface FormField<T> {
     name: keyof T;

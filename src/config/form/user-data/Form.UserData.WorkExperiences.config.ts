@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { WorkExperience } from "@resume-api/types";
-import FieldsExperience from "../../fields/Fields.Experience.config";
+import FieldsExperience from "@config/fields/Fields.Experience.config";
 import FormConfig from "./Form.UserData.types";
 
 const workExperiences: FormConfig<WorkExperience> = {

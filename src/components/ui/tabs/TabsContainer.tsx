@@ -10,8 +10,8 @@ export interface Tab {
     children?: ReactNode;
 }
 
-interface TabsContainerProps {
-    items: Tab[];
+export interface TabsContainerProps {
+    tabs: Tab[];
     defaultIndex?: number;
     onChange?: (index: number) => void;
     className?: string;
@@ -25,7 +25,7 @@ interface TabsContainerProps {
 }
 
 const TabsContainer: React.FC<TabsContainerProps> = ({
-    items,
+    tabs,
     defaultIndex = 0,
     onChange,
     className = "",
@@ -59,7 +59,7 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
     };
 
     const displayIndex = transitioning ? previousIndexRef.current : currentIndex;
-    const activeTab = items[displayIndex];
+    const activeTab = tabs[displayIndex];
     let activeContent = activeTab.component;
 
     const animationClasses = getAnimationClasses(slideDirection, transitioning);
@@ -68,7 +68,7 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
     return (
         <div className={className}>
             {showTabList && (
-                <Tabs inline={inline} items={items} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} Button={Button} />
+                <Tabs inline={inline} tabs={tabs} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} Button={Button} />
             )}
 
             <div className={contentClasses}>
