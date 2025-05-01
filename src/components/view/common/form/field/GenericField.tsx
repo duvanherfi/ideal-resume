@@ -1,4 +1,4 @@
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 import InputImage from "@components/ui/input/InputImage";
 import Input from "@components/ui/input/Input";
 import Select, { SelectOption } from "@components/ui/input/Select";
@@ -15,7 +15,7 @@ export interface FormField<T> {
 }
 
 const GenericField = (props: any) => {
-    const { t, list } = useTranslations();
+    const { t, tlist: list } = useI18N();
 
     switch (props.type) {
         case "text": case "date": case "email": case "number": case "url":

@@ -1,6 +1,7 @@
 import ViewTitle from "@components/view/common/ViewTitle";
 import DownloadResumeLink from "@components/view/preview/DownloadResumeLink";
 import SelectedTemplatePreview from "@components/view/preview/SelectedTemplatePreview";
+import I18nKeys from "src/locales/I18nKeys";
 import ViewCustomizeTemplate from "./ViewCustomizeTemplate";
 
 const ViewTemplatePreview = () => {
@@ -9,7 +10,7 @@ const ViewTemplatePreview = () => {
             <div className="xl:hidden">
                 <ViewCustomizeTemplate />
             </div>
-            <ViewTitle simple className="pb-4" title="preview.title" subtitle="preview.subtitle" />
+            <ViewTitle simple className="pb-4" title={I18nKeys.PREVIEW.TITLE} subtitle={I18nKeys.PREVIEW.SUBTITLE} />
             <SelectedTemplatePreview />
             <DownloadResumeLink />
         </div>

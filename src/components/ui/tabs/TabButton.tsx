@@ -1,4 +1,4 @@
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 import { getButtonClassName } from "./tabHelper";
 
 export interface TabButtonProps {
@@ -10,7 +10,7 @@ export interface TabButtonProps {
 }
 
 const TabButton = (props: TabButtonProps) => {
-  const { t } = useTranslations();
+  const { t } = useI18N();
   const { onClick, active, text = "", children, inline = false } = props;
 
   return (

@@ -1,15 +1,16 @@
 import useResumeTheme from "@api-hooks/useResumeTheme";
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
+import I18nKeys from "src/locales/I18nKeys";
 import ThemeColorBadge from "./ThemeColorBadge";
 
 const ThemeCustom = () => {
-    const { t } = useTranslations();
+    const { t } = useI18N();
     const theme = useResumeTheme();
 
     return (
         <div className="flex flex-col">
             <label className="text-xs font-medium text-secondary-600 dark:text-secondary-200 mb-2" htmlFor="primary-color">
-                {t("themes.customize.label")}
+                {t(I18nKeys.THEMES.CUSTOMIZE.LABEL)}
             </label>
             <div className="flex items-center relative">
                 <input

@@ -1,4 +1,4 @@
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 
 interface TextProps {
     children: string;
@@ -6,10 +6,10 @@ interface TextProps {
 }
 
 const Text = (props: TextProps) => {
-    const { t } = useTranslations();
+    const { t } = useI18N();
 
     return (
-        <h2 className={`${props.className}`}>
+        <h2 className={props.className}>
             {t(props.children)}
         </h2>
     );

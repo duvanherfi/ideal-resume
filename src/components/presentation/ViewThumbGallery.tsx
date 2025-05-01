@@ -3,11 +3,12 @@ import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/view/common/ViewTitle";
 import TemplateThumbGrid from "@components/view/gallery/TemplateThumbGrid";
 import React from "react";
+import I18nKeys from "src/locales/I18nKeys";
 
 const ViewThumbGallery: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-4">
-      <ViewTitle title="gallery.title" subtitle="gallery.subtitle" />
+      <ViewTitle title={I18nKeys.GALLERY.TITLE} subtitle={I18nKeys.GALLERY.SUBTITLE} />
       <TabsContainer {...thumbGalleryTabs} />
       <TemplateThumbGrid className="block xl:hidden" />
     </div>

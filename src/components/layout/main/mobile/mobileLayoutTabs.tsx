@@ -3,23 +3,24 @@ import ViewThumbGallery from "@components/presentation/ViewThumbGallery";
 import ViewUserDataForm from "@components/presentation/ViewUserDataForm";
 import Icons from "@components/ui/icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import I18nKeys from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [
   {
     id: "form",
-    text: "app.tab.form",
+    text: I18nKeys.APP.TAB.FORM,
     component: <ViewUserDataForm />,
     children: <Icons.Person />
   },
   {
     id: "gallery",
-    text: "app.tab.gallery",
+    text: I18nKeys.APP.TAB.GALLERY,
     component: <ViewThumbGallery />,
     children: <Icons.Sheet />
   },
   {
     id: "preview",
-    text: "app.tab.preview",
+    text: I18nKeys.APP.TAB.PREVIEW,
     component: <ViewTemplatePreview />,
     children: <Icons.View />
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   disabled = false,
 }) => {
-  const { t } = useTranslations();
+  const { t } = useI18N();
   const baseStyles =
     "px-4 py-2 rounded-lg font-medium transition-all duration-300 focus:outline-none";
 

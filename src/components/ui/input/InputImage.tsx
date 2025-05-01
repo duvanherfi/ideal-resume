@@ -1,4 +1,4 @@
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 import React, { useState } from "react";
 
 interface InputImageProps {
@@ -10,7 +10,7 @@ interface InputImageProps {
 
 const InputImage: React.FC<InputImageProps> = (props: InputImageProps) => {
   const { label, name, value = "", onChange } = props;
-  const { t } = useTranslations();
+  const { t } = useI18N();
   const [previewUrl, setPreviewUrl] = useState<string>(value);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

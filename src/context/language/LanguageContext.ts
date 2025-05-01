@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Locale } from "../../locales/translations";
+import { Locale } from "../../locales/wordings";
 
 export interface LanguageContextType {
   lang: Locale;

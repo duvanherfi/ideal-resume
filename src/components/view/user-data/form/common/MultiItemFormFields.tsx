@@ -3,7 +3,7 @@ import Icons from "@components/ui/icons/Icons";
 import Subtitle from "@components/ui/text/Subtitle";
 import GenericField from "@components/view/common/form/field/GenericField";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 
 interface FormFieldsContainerProps<T extends { id: string }> {
     form: MultiItemFormType<T & Record<string, any>>;
@@ -11,7 +11,7 @@ interface FormFieldsContainerProps<T extends { id: string }> {
 
 const MultiItemFormFields = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
     const { form } = props;
-    const { t } = useTranslations();
+    const { t } = useI18N();
 
     return (
         <div className={"w-full space-y-2"}>

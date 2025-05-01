@@ -1,11 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
-import { Skill } from "@resume-api/types";
 import FieldsSkills from "@config/fields/Fields.Skills.config";
+import { Skill } from "@resume-api/types";
+import I18nKeys from "src/locales/I18nKeys";
+import { v4 as uuidv4 } from "uuid";
 import FormConfig from "./Form.UserData.types";
 
 const skills: FormConfig<Skill> = {
     dataKey: "skills",
-    title: "form.data.skills.title",
+    title: I18nKeys.FORM.DATA.SKILLS.TITLE,
     fields: FieldsSkills,
     isValid: (skill: Skill) => Boolean(skill.name),
     empty: () => ({

@@ -1,15 +1,16 @@
-import { Education } from "@resume-api/types";
 import { FormField } from "@components/view/common/form/field/GenericField";
+import { Education } from "@resume-api/types";
+import I18nKeys from "src/locales/I18nKeys";
 
 const FieldsEducation: FormField<Education>[] = [
-    { type: "text", name: "institution", label: "form.data.education.field.institution", required: true },
-    { type: "text", name: "degree", label: "form.data.education.field.degree", required: true },
-    { type: "date", name: "startDate", label: "form.data.education.field.startDate", required: true },
-    { type: "date", name: "endDate", label: "form.data.education.field.endDate", placeholder: "Leave blank for current education" },
-    { type: "text", name: "location", label: "form.data.education.field.location" },
-    { type: "text", name: "gpa", label: "form.data.education.field.gpa" },
-    { type: "checkbox", name: "present", label: "form.data.education.field.present" },
-    { type: "textarea", name: "description", label: "form.data.education.field.description" },
+    { type: "text", name: "institution", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.INSTITUTION, required: true },
+    { type: "text", name: "degree", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.DEGREE, required: true },
+    { type: "date", name: "startDate", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.START_DATE, required: true },
+    { type: "date", name: "endDate", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.END_DATE, placeholder: "Leave blank for current education" },
+    { type: "text", name: "location", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.LOCATION },
+    { type: "text", name: "gpa", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.GPA },
+    { type: "checkbox", name: "present", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.PRESENT },
+    { type: "textarea", name: "description", label: I18nKeys.FORM.DATA.EDUCATION.FIELD.DESCRIPTION },
 ];
 
 export default FieldsEducation;

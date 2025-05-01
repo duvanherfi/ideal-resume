@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import InputSuggestions from "./InputSuggestions";
-import useTranslations from "@hooks/useTranslations";
+import useI18N from "@hooks/useI18N";
 
 interface InputProps {
   label: string;
@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     suggestions = [],
     onSuggestionClick,
   } = props;
-  const { t } = useTranslations();
+  const { t } = useI18N();
   const [isFocused, setIsFocused] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);

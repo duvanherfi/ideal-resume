@@ -1,11 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
-import { Language } from "@resume-api/types";
 import FieldsLanguage from "@config/fields/Fields.Language.config";
+import { Language } from "@resume-api/types";
+import I18nKeys from "src/locales/I18nKeys";
+import { v4 as uuidv4 } from "uuid";
 import FormConfig from "./Form.UserData.types";
 
 const languages: FormConfig<Language> = {
     dataKey: "languages",
-    title: "form.data.language.title",
+    title: I18nKeys.FORM.DATA.LANGUAGE.TITLE,
     fields: FieldsLanguage,
     isValid: (language: Language) => Boolean(language.name),
     empty: () => ({

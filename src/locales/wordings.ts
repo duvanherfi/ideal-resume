@@ -3,15 +3,15 @@ import en from "./en.json";
 
 export type Locale = "en" | "es";
 
-export type Translations = {
+export type Wordings = {
     [K in Locale]: {
         [prop: string]: string | string[];
     };
 };
 
-const translations: Translations = {
+const wordings: Wordings = {
     en,
     es,
 };
 
-export default translations;
+export default wordings;

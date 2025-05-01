@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { ResumeLabels } from '../../types';
 import ResumeLabelContext, { defaultLabels } from './ResumeLabelsContext';
-import useTranslations from '@hooks/useTranslations';
+import useI18N from '@hooks/useI18N';
 
 interface ResumeLabelProviderProps {
     children: React.ReactNode;
@@ -9,7 +9,7 @@ interface ResumeLabelProviderProps {
 }
 
 const ResumeLabelProvider: React.FC<ResumeLabelProviderProps> = ({ children, initialLabels }) => {
-    const { t } = useTranslations();
+    const { t } = useI18N();
     const translatedLabels = (Object.entries(defaultLabels) as [keyof ResumeLabels, string][]).reduce((acc, [key, val]) => ({ ...acc, [key]: t(val) }), {} as ResumeLabels);
     const [resumeLabels, setResumeLabels] = useState<ResumeLabels>(initialLabels ?? translatedLabels);
 
