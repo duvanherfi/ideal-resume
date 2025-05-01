@@ -7,13 +7,13 @@ const thumbGalleryTabs: Tab[] = [
     {
         id: "carousel",
         component: <TemplateThumbCarousel />,
-        text: "gallery.mode.carousel",
+        text: "gallery.viewMode.carousel",
         children: <Icons.Carousel />
     },
     {
         id: "grid",
         component: <TemplateThumbGrid />,
-        text: "gallery.mode.grid",
+        text: "gallery.viewMode.grid",
         children: <Icons.Grid />
     },
 ];

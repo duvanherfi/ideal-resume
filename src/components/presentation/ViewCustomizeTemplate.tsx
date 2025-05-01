@@ -5,7 +5,7 @@ import ViewTitle from "@components/view/common/ViewTitle";
 const ViewCustomizeTemplate = () => {
     return (
         <div className="my-auto">
-            <ViewTitle title="screen.customize.title" />
+            <ViewTitle title="customize.title" />
             <TabsContainer items={customizeTabs} slideDirection="bottom" inline />
         </div>
     );

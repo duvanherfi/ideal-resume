@@ -13,7 +13,7 @@ const customizeTabs: Tab[] = [
     {
         id: "grid",
         component: <ViewLabelsForm />,
-        text: "screen.form.labels.title",
+        text: "form.labels.title",
         children: <Icons.Header />
     },
 ];

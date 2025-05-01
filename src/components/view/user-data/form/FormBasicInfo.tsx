@@ -21,12 +21,12 @@ const FormBasicInfo: React.FC = () => {
 
   return (
     <GlassCard>
-      <Subtitle>form.basic.title</Subtitle>
+      <Subtitle>form.basicInfo.title</Subtitle>
       <div className="md:grid md:grid-cols-2 xl:grid-cols-3 gap-4">
         {FieldsBasicInfo.map(field => <GenericField key={field.name} {...field} onChange={handleChange} label={field.label} value={data.get[field.name] ?? ""} />)}
       </div>
       <div className="mt-4">
-        <InputImage name="profilePhoto" onChange={handleImageChange} value={data.get.profilePhoto} label="form.basic.field.photo" />
+        <InputImage name="profilePhoto" onChange={handleImageChange} value={data.get.profilePhoto} label="form.basicInfo.field.photo" />
       </div>
     </GlassCard>
   );

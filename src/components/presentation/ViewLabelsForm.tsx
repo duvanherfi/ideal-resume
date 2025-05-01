@@ -8,7 +8,7 @@ const ViewLabelsForm: React.FC = () => {
   return (
     <GlassCard>
       <div className="2xl:w-full">
-        <ViewTitle simple title="screen.form.labels.title" subtitle="screen.form.labels.subtitle" className="pb-4" />
+        <ViewTitle simple title="form.labels.title" subtitle="form.labels.subtitle" className="pb-4" />
         <TabsContainer items={labelsFormTabs} slideDirection="bottom" />
       </div>
     </GlassCard>

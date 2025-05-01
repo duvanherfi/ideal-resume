@@ -7,7 +7,7 @@ import React from "react";
 const ViewThumbGallery: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-4">
-      <ViewTitle title="gallery.templates.title" subtitle="gallery.templates.subtitle" />
+      <ViewTitle title="gallery.title" subtitle="gallery.subtitle" />
       <TabsContainer className="hidden xl:block" items={thumbGalleryTabs} slideDirection="left" tabsClassName="flex align-end items-center w-64" inline />
       <TemplateThumbGrid className="block xl:hidden" />
     </div>

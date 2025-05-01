@@ -9,7 +9,7 @@ const ViewTemplatePreview = () => {
             <div className="xl:hidden">
                 <ViewCustomizeTemplate />
             </div>
-            <ViewTitle simple className="pb-4" title="screen.preview.title" subtitle="screen.preview.subtitle" />
+            <ViewTitle simple className="pb-4" title="preview.title" subtitle="preview.subtitle" />
             <SelectedTemplatePreview />
             <DownloadResumeLink />
         </div>
