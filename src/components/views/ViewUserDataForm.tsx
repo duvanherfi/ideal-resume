@@ -1,5 +1,5 @@
 import React from "react";
-import I18nKeys from "src/locales/I18nKeys";
+import I18n from "src/locales/I18nKeys";
 import userDataFormTabs from "../tabs/userDataFormTabs";
 import TabsContainer from "../ui/tabs/TabsContainer";
 import ViewTitle from "../widgets/common/ViewTitle";
@@ -7,7 +7,7 @@ import ViewTitle from "../widgets/common/ViewTitle";
 const ViewUserDataForm: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-8 2xl:px-16">
-      <ViewTitle title={I18nKeys.FORM.DATA.TITLE} subtitle={I18nKeys.FORM.DATA.SUBTITLE} />
+      <ViewTitle title={I18n.FORM.DATA.TITLE} subtitle={I18n.FORM.DATA.SUBTITLE} />
       <TabsContainer {...userDataFormTabs} />
     </div>
   );

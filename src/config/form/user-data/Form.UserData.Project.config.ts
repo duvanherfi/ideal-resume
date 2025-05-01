@@ -1,12 +1,12 @@
 import FieldsProject from "@config/fields/Fields.Project.config";
 import { Project } from "@resume-api/types";
-import I18nKeys from "src/locales/I18nKeys";
+import I18n from "src/locales/I18nKeys";
 import { v4 as uuidv4 } from "uuid";
 import FormConfig from "./Form.UserData.types";
 
 const projects: FormConfig<Project> = {
     dataKey: "projects",
-    title: I18nKeys.FORM.DATA.PROJECT.TITLE,
+    title: I18n.FORM.DATA.PROJECT.TITLE,
     fields: FieldsProject,
     isValid: (project: Project) => Boolean(project.name),
     empty: () => ({

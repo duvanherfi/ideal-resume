@@ -1,26 +1,26 @@
-import ViewCustomizeTemplate from "@components/view/ViewCustomizeTemplate";
-import ViewThumbGallery from "@components/view/ViewThumbGallery";
-import ViewUserDataForm from "@components/view/ViewUserDataForm";
+import ViewCustomizeTemplate from "@components/views/ViewCustomizeTemplate";
+import ViewThumbGallery from "@components/views/ViewThumbGallery";
+import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@components/ui/icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import I18nKeys from "src/locales/I18nKeys";
+import I18n from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [
   {
     id: "userData",
-    text: I18nKeys.APP.TAB.FORM,
+    text: I18n.APP.TAB.FORM,
     component: <ViewUserDataForm />,
     children: <Icons.Person />
   },
   {
     id: "templates",
-    text: I18nKeys.APP.TAB.GALLERY,
+    text: I18n.APP.TAB.GALLERY,
     component: <ViewThumbGallery />,
     children: <Icons.Sheet />
   },
   {
     id: "labels",
-    text: I18nKeys.APP.TAB.CUSTOMIZE,
+    text: I18n.APP.TAB.CUSTOMIZE,
     component: <ViewCustomizeTemplate />,
     children: <Icons.Customize />
   },

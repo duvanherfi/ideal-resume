@@ -2,19 +2,19 @@ import Icons from "@components/ui/icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import TemplateThumbCarousel from "@components/widgets/gallery/TemplateThumbCarousel";
 import TemplateThumbGrid from "@components/widgets/gallery/TemplateThumbGrid";
-import I18nKeys from "src/locales/I18nKeys";
+import I18n from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [
     {
         id: "carousel",
         component: <TemplateThumbCarousel />,
-        text: I18nKeys.GALLERY.VIEW_MODE.CAROUSEL,
+        text: I18n.GALLERY.VIEW_MODE.CAROUSEL,
         children: <Icons.Carousel />
     },
     {
         id: "grid",
         component: <TemplateThumbGrid />,
-        text: I18nKeys.GALLERY.VIEW_MODE.GRID,
+        text: I18n.GALLERY.VIEW_MODE.GRID,
         children: <Icons.Grid />
     },
 ];

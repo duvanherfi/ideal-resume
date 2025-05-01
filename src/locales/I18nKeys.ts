@@ -1,4 +1,4 @@
-const I18nKeys = {
+const I18n = {
     APP: {
         TAB: {
             FORM: 'app.tab.form',
@@ -208,4 +208,4 @@ const I18nKeys = {
     }
 };
 
-export default I18nKeys;
+export default I18n;

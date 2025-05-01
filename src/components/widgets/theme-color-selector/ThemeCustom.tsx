@@ -1,6 +1,6 @@
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import useI18N from "@hooks/useI18N";
-import I18nKeys from "src/locales/I18nKeys";
+import I18n from "src/locales/I18nKeys";
 import ThemeColorBadge from "./ThemeColorBadge";
 
 const ThemeCustom = () => {
@@ -10,7 +10,7 @@ const ThemeCustom = () => {
     return (
         <div className="flex flex-col">
             <label className="text-xs font-medium text-secondary-600 dark:text-secondary-200 mb-2" htmlFor="primary-color">
-                {t(I18nKeys.THEMES.CUSTOMIZE.LABEL)}
+                {t(I18n.THEMES.CUSTOMIZE.LABEL)}
             </label>
             <div className="flex items-center relative">
                 <input

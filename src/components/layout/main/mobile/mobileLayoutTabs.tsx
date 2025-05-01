@@ -1,26 +1,26 @@
-import ViewTemplatePreview from "@components/view/ViewTemplatePreview";
-import ViewThumbGallery from "@components/view/ViewThumbGallery";
-import ViewUserDataForm from "@components/view/ViewUserDataForm";
+import ViewTemplatePreview from "@components/views/ViewTemplatePreview";
+import ViewThumbGallery from "@components/views/ViewThumbGallery";
+import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@components/ui/icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import I18nKeys from "src/locales/I18nKeys";
+import I18n from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [
   {
     id: "form",
-    text: I18nKeys.APP.TAB.FORM,
+    text: I18n.APP.TAB.FORM,
     component: <ViewUserDataForm />,
     children: <Icons.Person />
   },
   {
     id: "gallery",
-    text: I18nKeys.APP.TAB.GALLERY,
+    text: I18n.APP.TAB.GALLERY,
     component: <ViewThumbGallery />,
     children: <Icons.Sheet />
   },
   {
     id: "preview",
-    text: I18nKeys.APP.TAB.PREVIEW,
+    text: I18n.APP.TAB.PREVIEW,
     component: <ViewTemplatePreview />,
     children: <Icons.View />
   }
