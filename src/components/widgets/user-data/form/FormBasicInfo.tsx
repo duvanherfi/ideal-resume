@@ -2,7 +2,7 @@ import useUserData from "@api-hooks/useUserData";
 import GlassCard from "@components/ui/GlassCard";
 import InputImage from "@components/ui/input/InputImage";
 import Subtitle from "@components/ui/text/Subtitle";
-import GenericField from "@components/view/common/form/GenericField";
+import GenericField from "@components/widgets/common/form/GenericField";
 import FieldsBasicInfo from "@config/fields/Fields.BasicInfo.config";
 import { UserData } from "@resume-api/types";
 import React from "react";

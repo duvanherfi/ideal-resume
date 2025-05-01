@@ -2,7 +2,7 @@ import React from "react";
 import I18nKeys from "src/locales/I18nKeys";
 import userDataFormTabs from "../tabs/userDataFormTabs";
 import TabsContainer from "../ui/tabs/TabsContainer";
-import ViewTitle from "../view/common/ViewTitle";
+import ViewTitle from "../widgets/common/ViewTitle";
 
 const ViewUserDataForm: React.FC = () => {
   return (

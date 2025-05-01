@@ -26,8 +26,8 @@ const FormLabels = (props: FormLabelsProps) => {
             <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {fields.map(field => (
                     <GenericField
-                        key={field.name as string}
-                        name={field.name as string}
+                        key={field.name}
+                        name={field.name}
                         type={field.type}
                         label={field.label}
                         required={field.required}

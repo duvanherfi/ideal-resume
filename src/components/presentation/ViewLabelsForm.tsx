@@ -2,7 +2,7 @@ import GlassCard from "@components/ui/GlassCard";
 import React from "react";
 import labelsFormTabs from "../tabs/labelsFormTabs";
 import TabsContainer from "../ui/tabs/TabsContainer";
-import ViewTitle from "../view/common/ViewTitle";
+import ViewTitle from "../widgets/common/ViewTitle";
 
 const ViewLabelsForm: React.FC = () => {
   return (

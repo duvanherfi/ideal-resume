@@ -1,7 +1,7 @@
 import Icons from "@components/ui/icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import TemplateThumbCarousel from "@components/view/gallery/TemplateThumbCarousel";
-import TemplateThumbGrid from "@components/view/gallery/TemplateThumbGrid";
+import TemplateThumbCarousel from "@components/widgets/gallery/TemplateThumbCarousel";
+import TemplateThumbGrid from "@components/widgets/gallery/TemplateThumbGrid";
 import I18nKeys from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [

@@ -1,6 +1,6 @@
-import ViewTitle from "@components/view/common/ViewTitle";
-import DownloadResumeLink from "@components/view/preview/DownloadResumeLink";
-import SelectedTemplatePreview from "@components/view/preview/SelectedTemplatePreview";
+import ViewTitle from "@components/widgets/common/ViewTitle";
+import DownloadResumeLink from "@components/widgets/preview/DownloadResumeLink";
+import SelectedTemplatePreview from "@components/widgets/preview/SelectedTemplatePreview";
 import I18nKeys from "src/locales/I18nKeys";
 import ViewCustomizeTemplate from "./ViewCustomizeTemplate";
 

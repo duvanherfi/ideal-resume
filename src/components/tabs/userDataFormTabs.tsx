@@ -1,8 +1,8 @@
 import { Education, Language, Project, Skill, WorkExperience } from "@resume-api/types";
 import Icons from "../ui/icons/Icons";
 import { Tab, TabsContainerProps } from "../ui/tabs/TabsContainer";
-import MultiItemForm from "../view/user-data/form/common/MultiItemForm";
-import FormBasicInfo from "../view/user-data/form/FormBasicInfo";
+import MultiItemForm from "../widgets/user-data/form/common/MultiItemForm";
+import FormBasicInfo from "../widgets/user-data/form/FormBasicInfo";
 
 const tabs: Tab[] = [
     {

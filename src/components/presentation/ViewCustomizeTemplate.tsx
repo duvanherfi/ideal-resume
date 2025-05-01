@@ -1,6 +1,6 @@
 import customizeTabs from "@components/tabs/customizeTabs";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
-import ViewTitle from "@components/view/common/ViewTitle";
+import ViewTitle from "@components/widgets/common/ViewTitle";
 import I18nKeys from "src/locales/I18nKeys";
 
 const ViewCustomizeTemplate = () => {
