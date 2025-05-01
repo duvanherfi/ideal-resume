@@ -5,7 +5,7 @@ import FormConfig from "./Form.UserData.types";
 
 const education: FormConfig<Education> = {
     dataKey: "education",
-    title: "form.education.title",
+    title: "form.data.education.title",
     fields: FieldsEducation,
     isValid: (education: Education) => Boolean(education.institution && education.degree && education.startDate),
     empty: () => ({

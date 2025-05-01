@@ -5,7 +5,7 @@ import FormConfig from "./Form.UserData.types";
 
 const skills: FormConfig<Skill> = {
     dataKey: "skills",
-    title: "form.skills.title",
+    title: "form.data.skills.title",
     fields: FieldsSkills,
     isValid: (skill: Skill) => Boolean(skill.name),
     empty: () => ({

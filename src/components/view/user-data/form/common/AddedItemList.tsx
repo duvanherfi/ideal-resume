@@ -18,7 +18,7 @@ const AddedItemList = <T extends { id: string }>(props: AddedItemsListProps<T>) 
         <>
             <Icons.LineSeparator />
             {form.items.length === 0 ? (
-                <Text className="text-secondary-500 italic p-4">{`items.empty.${dataKey}`}</Text>
+                <Text className="text-secondary-500 italic p-4">{`form.data.${dataKey}.empty`}</Text>
             ) : (
                 <DndProvider backend={HTML5Backend}>
                     <div className="space-y-2 bg-accent-500/10 dark:bg-accent-900/50 rounded-md lg:p-2">

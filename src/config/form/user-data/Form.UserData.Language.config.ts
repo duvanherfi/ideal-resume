@@ -5,7 +5,7 @@ import FormConfig from "./Form.UserData.types";
 
 const languages: FormConfig<Language> = {
     dataKey: "languages",
-    title: "form.language.title",
+    title: "form.data.language.title",
     fields: FieldsLanguage,
     isValid: (language: Language) => Boolean(language.name),
     empty: () => ({

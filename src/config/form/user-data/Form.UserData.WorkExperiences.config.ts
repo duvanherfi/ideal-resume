@@ -5,7 +5,7 @@ import FormConfig from "./Form.UserData.types";
 
 const workExperiences: FormConfig<WorkExperience> = {
     dataKey: "workExperiences",
-    title: "form.experience.title",
+    title: "form.data.experience.title",
     fields: FieldsExperience,
     isValid: (experience: WorkExperience) => Boolean(experience.company && experience.role && experience.startDate),
     empty: () => ({
