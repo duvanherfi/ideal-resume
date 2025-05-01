@@ -1,11 +1,11 @@
 import { Education } from "@resume-api/types";
-import ItemTitle from "../../common/form/items/common/ItemTitle";
-import AddedItem, { AddedItemGenericProps } from "../../common/form/items/AddedItem";
+import ItemTitle from "./common/ItemTitle";
+import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 
 const EducationItem = (props: AddedItemGenericProps<Education>) => {
   const { item } = props;
   return (
-    <AddedItem {...props}>
+    <ItemForm {...props}>
       <div>
         <ItemTitle>{item.degree}</ItemTitle>
         <p className="text-xs md:text-sm text-secondary-600 dark:text-secondary-200">{item.institution}</p>
@@ -16,7 +16,7 @@ const EducationItem = (props: AddedItemGenericProps<Education>) => {
             : " Present"}
         </p>
       </div>
-    </AddedItem>
+    </ItemForm>
   );
 }
 

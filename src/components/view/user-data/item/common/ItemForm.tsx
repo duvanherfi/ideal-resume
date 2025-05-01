@@ -1,6 +1,6 @@
+import Icons from "@components/ui/icons/Icons";
 import { ReactNode, useRef } from "react";
 import { DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
-import Icons from "../../../../ui/icons/Icons";
 
 export interface AddedItemGenericProps<T> {
     item: T;
@@ -24,7 +24,7 @@ const ItemType = {
     ITEM: 'ITEM',
 };
 
-const AddedItem = <T extends { id: string; }>(props: AddedItemProps<T>) => {
+const ItemForm = <T extends { id: string; }>(props: AddedItemProps<T>) => {
     const { item, index, handleSwap } = props;
     const ref = useRef<HTMLDivElement>(null);
 
@@ -79,7 +79,6 @@ const AddedItem = <T extends { id: string; }>(props: AddedItemProps<T>) => {
             // Realizar la acción de reordenamiento
             handleSwap(dragIndex, hoverIndex);
 
-            // Nota: cambiamos el índice del monitor
             draggedItem.index = hoverIndex;
         },
     });
@@ -108,4 +107,4 @@ const AddedItem = <T extends { id: string; }>(props: AddedItemProps<T>) => {
     );
 };
 
-export default AddedItem;
+export default ItemForm;

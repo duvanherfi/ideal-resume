@@ -1,10 +1,10 @@
 import useResumeTemplate from "@api-hooks/useResumeTemplate";
+import GlassCard from "@components/ui/GlassCard";
 import { ScrollDirection } from "@hooks/useCarousel";
 import { useState } from "react";
 import GalleryNavigation from "./GalleryNavigation";
 import ScrollButton from "./ScrollButton";
 import TemplateThumb from "./TemplateThumb";
-import GlassCard from "@components/ui/GlassCard";
 
 interface TemplateThumbGridProps {
     className?: string;

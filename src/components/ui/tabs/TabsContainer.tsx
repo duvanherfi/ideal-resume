@@ -1,5 +1,7 @@
-import React, { useState, useRef, ReactNode } from "react";
-import TabList from "./TabList";
+import React, { ReactNode, useRef, useState } from "react";
+import { TabButtonProps } from "./TabButton";
+import Tabs from "./Tabs";
+import { getAnimationClasses, SlideDirection } from "./tabHelper";
 
 export interface Tab {
     id: string;
@@ -11,48 +13,33 @@ export interface Tab {
 interface TabsContainerProps {
     items: Tab[];
     defaultIndex?: number;
-    renderContent?: (activeTabId: string) => ReactNode;
     onChange?: (index: number) => void;
     className?: string;
     tabsClassName?: string;
     contentClassName?: string;
     animationDuration?: number;
-    slideDirection?: 'left' | 'right' | 'top' | 'bottom' | 'none';
+    slideDirection?: SlideDirection;
     showTabList?: boolean;
     inline?: boolean;
+    Button?: React.FC<TabButtonProps>;
 }
 
 const TabsContainer: React.FC<TabsContainerProps> = ({
     items,
     defaultIndex = 0,
-    renderContent,
     onChange,
     className = "",
     tabsClassName = "",
     contentClassName = "",
     animationDuration = 200,
-    slideDirection = 'left',
+    slideDirection = "left",
     showTabList = true,
-    inline
+    inline,
+    Button
 }) => {
     const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex);
     const [transitioning, setTransitioning] = useState(false);
     const previousIndexRef = useRef<number>(currentIndex);
-
-    const getAnimationClasses = () => {
-        if (slideDirection === 'none') {
-            return transitioning ? "opacity-0" : "opacity-100";
-        }
-
-        const translations = {
-            left: transitioning ? "opacity-0 -translate-x-16" : "opacity-100 translate-x-0",
-            right: transitioning ? "opacity-0 translate-x-16" : "opacity-100 translate-x-0",
-            top: transitioning ? "opacity-0 -translate-y-16" : "opacity-100 translate-y-0",
-            bottom: transitioning ? "opacity-0 translate-y-16" : "opacity-100 translate-y-0"
-        };
-
-        return translations[slideDirection];
-    };
 
     const changeIndex = (index: number) => {
         setCurrentIndex(index);
@@ -63,41 +50,29 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
 
     const handleTabChange = (index: number) => {
         if (index === currentIndex || transitioning) return;
-
         previousIndexRef.current = currentIndex;
-
         if (onChange) {
             onChange(index);
         }
-
         setTransitioning(true);
-
         setTimeout(() => changeIndex(index), animationDuration);
     };
 
     const displayIndex = transitioning ? previousIndexRef.current : currentIndex;
     const activeTab = items[displayIndex];
+    let activeContent = activeTab.component;
 
-    let activeContent;
-    if (renderContent) {
-        activeContent = renderContent(activeTab.id);
-    } else if (activeTab.component) {
-        activeContent = activeTab.component;
-    }
-
-    const animationClasses = getAnimationClasses();
+    const animationClasses = getAnimationClasses(slideDirection, transitioning);
     const contentClasses = `transition-all duration-${animationDuration} ${animationClasses} ${contentClassName}`;
 
     return (
         <div className={className}>
             {showTabList && (
-                <TabList inline={inline} items={items} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} />
+                <Tabs inline={inline} items={items} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} Button={Button} />
             )}
 
-            <div className="min-h-[100px]">
-                <div className={contentClasses}>
-                    {activeContent}
-                </div>
+            <div className={contentClasses}>
+                {activeContent}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { UserDataItems } from "@resume-api/types";
 import useMultiItemForm from "@hooks/useMultiItemForm";
-import GlassCard from "../../../../ui/GlassCard";
-import FormFieldsContainer from "../field/FormFieldsContainer";
+import GlassCard from "@components/ui/GlassCard";
+import MultiItemFormFields from "./MultiItemFormFields";
 import AddedItemList from "./AddedItemList";
 
 export interface MultiItemFormProps<T extends { id: string }> {
@@ -14,7 +14,7 @@ const MultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>) =
 
     return (
         <GlassCard>
-            <FormFieldsContainer form={form} {...props} />
+            <MultiItemFormFields form={form} {...props} />
             <AddedItemList form={form} dataKey={dataKey} />
         </GlassCard>
     );

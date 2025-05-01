@@ -22,7 +22,7 @@ export const ContactSection: React.FC<TemplateSectionProps> = ({ data, styles, l
         <View style={styles.header.contact.divider} />
         <Contact label={labels.phone} value={data.phone} styles={styles} />
         <View style={styles.header.contact.divider} />
-        <Contact label={labels.location} value={data.address} styles={styles} />
+        <Contact label={labels.location} value={data.location} styles={styles} />
     </View>
 );
 

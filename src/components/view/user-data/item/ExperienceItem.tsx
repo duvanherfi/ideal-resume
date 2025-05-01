@@ -1,10 +1,10 @@
 import { WorkExperience } from "@resume-api/types";
-import AddedItem, { AddedItemGenericProps } from "../../common/form/items/AddedItem";
+import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 
 const ExperienceItem = (props: AddedItemGenericProps<WorkExperience>) => {
   const { item } = props;
   return (
-    <AddedItem {...props}>
+    <ItemForm {...props}>
       <h4 className="font-medium text-secondary-900 dark:text-secondary-100 truncate">
         {item.role} at {item.company}
       </h4>
@@ -17,7 +17,7 @@ const ExperienceItem = (props: AddedItemGenericProps<WorkExperience>) => {
       <p className="text-xs md:text-sm mt-1 text-secondary-500 dark:text-secondary-400 break-words">
         {item.description}
       </p>
-    </AddedItem>
+    </ItemForm>
   );
 }
 

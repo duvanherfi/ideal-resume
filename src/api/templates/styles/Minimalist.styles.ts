@@ -179,10 +179,10 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         },
         label: {
             fontSize: 9,
-            color: colors.gray[700],
+            color: theme.primary,
         },
         value: {
-            fontSize: 11,
+            fontSize: 10,
             marginRight: 5,
         },
         divider: {

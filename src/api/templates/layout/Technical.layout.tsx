@@ -14,7 +14,7 @@ export const HeaderSection: React.FC<TemplateSectionProps> = ({ data, styles, la
                 <View style={styles.header.contact.divider} />
                 <Contact label={labels.phone} value={data.phone} styles={styles} />
                 <View style={styles.header.contact.divider} />
-                <Contact label={labels.location} value={data.address} styles={styles} />
+                <Contact label={labels.location} value={data.location} styles={styles} />
             </View>
             {data.profilePhoto ? (<Image src={data.profilePhoto} style={styles.header.photo} />) : null}
         </View>

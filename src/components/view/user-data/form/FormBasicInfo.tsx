@@ -22,7 +22,7 @@ const FormBasicInfo: React.FC = () => {
   return (
     <GlassCard>
       <Subtitle>form.basicInfo.title</Subtitle>
-      <div className="md:grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="md:grid md:grid-cols-2 gap-4">
         {FieldsBasicInfo.map(field => <GenericField key={field.name} {...field} onChange={handleChange} label={field.label} value={data.get[field.name] ?? ""} />)}
       </div>
       <div className="mt-4">

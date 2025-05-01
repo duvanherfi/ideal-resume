@@ -1,15 +1,15 @@
+import Button from "@components/ui/buttons/Button";
+import Icons from "@components/ui/icons/Icons";
+import Subtitle from "@components/ui/text/Subtitle";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
 import useTranslations from "@hooks/useTranslations";
-import Button from "../../../../ui/buttons/Button";
-import Icons from "../../../../ui/icons/Icons";
-import Subtitle from "../../../../ui/text/Subtitle";
-import GenericField from "./GenericField";
+import GenericField from "../../../common/form/field/GenericField";
 
 interface FormFieldsContainerProps<T extends { id: string }> {
     form: MultiItemFormType<T & Record<string, any>>;
 }
 
-const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
+const MultiItemFormFields = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
     const { form } = props;
     const { t } = useTranslations();
 
@@ -19,12 +19,7 @@ const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContaine
 
             <div className="md:grid md:grid-cols-2 xl:grid-cols-2 gap-4">
                 {form.fields.map((field) => (
-                    <GenericField
-                        key={field.name}
-                        {...field}
-                        value={form.current[field.name as keyof typeof form.current]}
-                        onChange={form.change}
-                    />
+                    <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />
                 ))}
             </div>
 
@@ -48,4 +43,4 @@ const FormFieldsContainer = <T extends { id: string }>(props: FormFieldsContaine
     );
 };
 
-export default FormFieldsContainer;
+export default MultiItemFormFields;

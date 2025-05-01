@@ -1,12 +1,12 @@
 import { Project } from "@resume-api/types";
-import ItemDescription from "../../common/form/items/common/ItemDescription";
-import ItemTitle from "../../common/form/items/common/ItemTitle";
-import AddedItem, { AddedItemGenericProps } from "../../common/form/items/AddedItem";
+import ItemDescription from "./common/ItemDescription";
+import ItemTitle from "./common/ItemTitle";
+import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 
 const ProjectItem = (props: AddedItemGenericProps<Project>) => {
   const { item } = props;
   return (
-    <AddedItem {...props}>
+    <ItemForm {...props}>
       <div>
         <ItemTitle>{item.name}</ItemTitle>
         {item.link && (
@@ -21,7 +21,7 @@ const ProjectItem = (props: AddedItemGenericProps<Project>) => {
         )}
         <ItemDescription>{item.description}</ItemDescription>
       </div>
-    </AddedItem>
+    </ItemForm>
   );
 }
 

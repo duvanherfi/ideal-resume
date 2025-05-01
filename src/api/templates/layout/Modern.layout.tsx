@@ -18,7 +18,7 @@ const ContactSection: React.FC<TemplateSectionProps> = ({ data, styles, labels }
     <View style={styles.header.contact.item}>
         <Contact label={labels.email} value={data.email} styles={styles} />
         <Contact label={labels.phone} value={data.phone} styles={styles} />
-        <Contact label={labels.location} value={data.address} styles={styles} />
+        <Contact label={labels.location} value={data.location} styles={styles} />
     </View>
 );
 

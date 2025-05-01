@@ -1,11 +1,11 @@
 import { Skill } from "@resume-api/types";
-import ItemTitle from "../../common/form/items/common/ItemTitle";
-import AddedItem, { AddedItemGenericProps } from "../../common/form/items/AddedItem";
+import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
+import ItemTitle from "./common/ItemTitle";
 
 const SkillItem = (props: AddedItemGenericProps<Skill>) => {
   const { item } = props;
   return (
-    <AddedItem key={item.id} {...props}>
+    <ItemForm key={item.id} {...props}>
       <ItemTitle>{item.name}</ItemTitle>
       <div className="flex items-center space-x-1 mt-2">
         {Array.from({ length: 5 }).map((_, index) => (
@@ -14,7 +14,7 @@ const SkillItem = (props: AddedItemGenericProps<Skill>) => {
           />
         ))}
       </div>
-    </AddedItem>
+    </ItemForm>
   );
 }
 export default SkillItem;

@@ -1,8 +1,8 @@
-import TemplateProps from '@resume-api/common/TemplateProps';
 import usePDFWorker from '@api-hooks/usePDFWorker';
+import Icons from '@components/ui/icons/Icons';
+import TemplateProps from '@resume-api/common/TemplateProps';
 import type { Template } from '@resume-api/types';
 import React from 'react';
-import Icons from '../../ui/icons/Icons';
 
 interface TemplateViewerProps extends TemplateProps {
     template?: Template | null;
