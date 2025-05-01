@@ -1,4 +1,4 @@
-import { FormField } from "@components/view/common/form/field/GenericField";
+import { FormField } from "@config/form/user-data/Form.UserData.types";
 import { Project } from "@resume-api/types";
 import I18nKeys from "src/locales/I18nKeys";
 

@@ -4,16 +4,6 @@ import Input from "@components/ui/input/Input";
 import Select, { SelectOption } from "@components/ui/input/Select";
 import TextArea from "@components/ui/input/TextArea";
 
-export interface FormField<T> {
-    name: keyof T;
-    label: string;
-    type?: string;
-    placeholder?: string;
-    required?: boolean;
-    options?: SelectOption[];
-    suggestions?: string;
-}
-
 const GenericField = (props: any) => {
     const { t, tlist: list } = useI18N();
 

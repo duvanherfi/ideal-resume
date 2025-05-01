@@ -1,7 +1,7 @@
 import Button from "@components/ui/buttons/Button";
 import Icons from "@components/ui/icons/Icons";
 import Subtitle from "@components/ui/text/Subtitle";
-import GenericField from "@components/view/common/form/field/GenericField";
+import GenericField from "@components/view/common/form/GenericField";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
 import useI18N from "@hooks/useI18N";
 
