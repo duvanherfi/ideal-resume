@@ -1,6 +1,6 @@
 import ViewLabelsForm from "@components/views/ViewLabelsForm";
 import ViewThemeColorSelector from "@components/views/ViewThemeColorSelector";
-import Icons from "@components/ui/icons/Icons";
+import Icons from "@icons/Icons";
 import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import I18n from "src/locales/I18nKeys";
 

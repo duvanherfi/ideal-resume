@@ -1,4 +1,4 @@
-import Icons, { ChevronDirection } from "@components/ui/icons/Icons";
+import Icons, { ChevronDirection } from "@icons/Icons";
 
 enum ScrollDirection {
     LEFT = 'left',

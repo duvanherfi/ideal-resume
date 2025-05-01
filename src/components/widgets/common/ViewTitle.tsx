@@ -1,4 +1,4 @@
-import Icons from "@components/ui/icons/Icons";
+import Icons from "@icons/Icons";
 import Text from "@components/ui/text/Text";
 import Title from "@components/ui/text/Title";
 

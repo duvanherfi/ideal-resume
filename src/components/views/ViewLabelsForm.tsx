@@ -1,13 +1,14 @@
+import labelsFormTabs from "@components/tabs/labelsFormTabs";
 import GlassCard from "@components/ui/GlassCard";
+import TabsContainer from "@components/ui/tabs/TabsContainer";
+import ViewTitle from "@components/widgets/common/ViewTitle";
 import React from "react";
-import labelsFormTabs from "../tabs/labelsFormTabs";
-import TabsContainer from "../ui/tabs/TabsContainer";
-import ViewTitle from "../widgets/common/ViewTitle";
+import I18n from "src/locales/I18nKeys";
 
 const ViewLabelsForm: React.FC = () => {
   return (
     <GlassCard>
-      <ViewTitle simple title="form.labels.title" subtitle="form.labels.subtitle" className="pb-4" />
+      <ViewTitle simple title={I18n.FORM.LABELS.TITLE} subtitle={I18n.FORM.LABELS.SUBTITLE} className="pb-4" />
       <TabsContainer {...labelsFormTabs} />
     </GlassCard>
   );

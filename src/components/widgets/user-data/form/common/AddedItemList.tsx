@@ -1,4 +1,4 @@
-import Icons from "@components/ui/icons/Icons";
+import Icons from "@icons/Icons";
 import Text from "@components/ui/text/Text";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
 import { UserData } from "@resume-api/types";

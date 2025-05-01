@@ -84,10 +84,10 @@ export const FieldsLabelsOthers: FormLabelsProps = {
     ]
 };
 
-const FormLabelsSectionsProps: FormLabelsProps[] = [
+const FormLabelsSections: FormLabelsProps[] = [
     FieldsLabelsHeader,
     FieldsLabelsSections,
     FieldsLabelsOthers
 ];
 
-export default FormLabelsSectionsProps;
+export default FormLabelsSections;

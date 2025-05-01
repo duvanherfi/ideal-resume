@@ -1,7 +1,7 @@
-import { FieldsLabelsHeader, FieldsLabelsOthers, FieldsLabelsSections } from "../../config/form/labels/FormLabelsSectionsProps.config";
-import Icons from "../ui/icons/Icons";
-import { Tab, TabsContainerProps } from "../ui/tabs/TabsContainer";
-import FormLabels from "../widgets/labels/FormLabels";
+import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import FormLabels from "@components/widgets/labels/FormLabels";
+import Icons from "@icons/Icons";
+import { FieldsLabelsHeader, FieldsLabelsOthers, FieldsLabelsSections } from "@config/form/labels/FormLabelsSections.config";
 
 const tabs: Tab[] = [
     {

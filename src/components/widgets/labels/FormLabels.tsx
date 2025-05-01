@@ -1,6 +1,6 @@
 import useResumeLabels from "@api-hooks/useResumeLabels";
 import GlassCard from "@components/ui/GlassCard";
-import Icons from "@components/ui/icons/Icons";
+import Icons from "@icons/Icons";
 import Subtitle from "@components/ui/text/Subtitle";
 import { FormField } from "@config/form/user-data/Form.UserData.types";
 import { ResumeLabels } from "@resume-api/types";

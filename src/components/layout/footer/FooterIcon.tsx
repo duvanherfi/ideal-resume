@@ -1,4 +1,4 @@
-import Icons from "../../ui/icons/Icons";
+import Icons from "@icons/Icons";
 
 const getSocialIcon = (icon: string) => {
     switch (icon) {

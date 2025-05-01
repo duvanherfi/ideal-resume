@@ -3,7 +3,7 @@ import useResumeTemplate from "@api-hooks/useResumeTemplate";
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import useUserData from "@api-hooks/useUserData";
 import Button from "@components/ui/buttons/Button";
-import Icons from "@components/ui/icons/Icons";
+import Icons from "@icons/Icons";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
 const DownloadResumeLink = () => {

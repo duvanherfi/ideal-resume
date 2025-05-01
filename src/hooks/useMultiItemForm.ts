@@ -1,8 +1,8 @@
 import useUserData from "@api-hooks/useUserData";
+import getConfig from "@config/form/user-data/Form.UserData.config";
+import FormConfig, { FormField } from "@config/form/user-data/Form.UserData.types";
 import { UserDataItems } from "@resume-api/types";
 import { useState } from "react";
-import getConfig from "../config/form/user-data/Form.UserData.config";
-import FormConfig, { FormField } from "../config/form/user-data/Form.UserData.types";
 
 export type MultiItemFormType<T> = {
     title: string;

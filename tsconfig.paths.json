@@ -11,6 +11,9 @@
             "@components/*": [
                 "src/components/*"
             ],
+            "@icons/*": [
+                "src/components/ui/icons/*"
+            ],
             "@hooks/*": [
                 "src/hooks/*"
             ],

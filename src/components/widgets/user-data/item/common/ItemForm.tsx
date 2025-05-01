@@ -1,4 +1,4 @@
-import Icons from "@components/ui/icons/Icons";
+import Icons from "@icons/Icons";
 import { ReactNode, useRef } from "react";
 import { DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
 

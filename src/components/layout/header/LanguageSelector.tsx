@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import useLanguage from "@hooks/useLanguage";
 import { Locale } from "../../../locales/wordings";
-import Icons, { ChevronDirection } from "../../ui/icons/Icons";
+import Icons, { ChevronDirection } from "@icons/Icons";
 
 const LANGUAGES: { code: Locale; label: string; flag: string }[] = [
     { code: "en", label: "English", flag: "🇺🇸" },
