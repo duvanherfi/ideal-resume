@@ -1,7 +1,6 @@
 import ResumeProvider from "@resume-api/context/ResumeProvider";
 import React from "react";
 import LanguageProvider from "../language/LanguageProvider";
-//import mockedUserData from "src/mock/mockedUserData";
 
 interface AppProviderProps {
     children: React.ReactNode
