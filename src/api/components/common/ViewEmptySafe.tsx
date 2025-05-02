@@ -1,4 +1,4 @@
-import { View, ViewProps } from "@react-pdf/renderer";
+import { View, type ViewProps } from "@react-pdf/renderer";
 
 interface ViewEmptySafeProps extends ViewProps {
     children?: any;

@@ -1,4 +1,4 @@
-import { Template } from "@resume-api/types/template/Template";
+import type { Template } from "@resume-api/types/template/Template";
 import TemplateModern from "@resume-api/templates/structure/Modern.template";
 import TemplateTechnical from "@resume-api/templates/structure/Technical.template";
 import TemplateCorporate from "@resume-api/templates/structure/Corporate.template";

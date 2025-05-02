@@ -1,9 +1,10 @@
-import { Font } from '@react-pdf/renderer';
-import { Style } from '@react-pdf/types';
-import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '@resume-api/common/colorHelper';
-import TemplateTheme from '@resume-api/types/template/TemplateTheme';
-import { FontOpenSans } from './common/templateFonts';
-import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from './common/TemplateStyleSheet';
+import { Font } from "@react-pdf/renderer";
+import type { Style } from "@react-pdf/types";
+import { darkenHexColor, getContrastingTextColor, lightenHexColor } from "@resume-api/common/colorHelper";
+import type TemplateTheme from "@resume-api/types/template/TemplateTheme";
+import { FontOpenSans } from "./common/templateFonts";
+import type TemplateStyleSheet from "./common/TemplateStyleSheet";
+import type { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from "./common/TemplateStyleSheet";
 
 Font.register(FontOpenSans);
 
@@ -20,7 +21,7 @@ const colors = {
 };
 
 const page = (): Style => ({
-    fontFamily: 'Open Sans',
+    fontFamily: "Open Sans",
     padding: 0,
     backgroundColor: colors.white,
 });
@@ -31,13 +32,13 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         borderBottomColor: colors.gray[200],
     },
     techContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexDirection: "row",
+        flexWrap: "wrap",
         marginBottom: 15,
     },
     date: {
         container: {
-            alignItems: 'flex-end',
+            alignItems: "flex-end",
         },
         text: {
             fontSize: 10,
@@ -51,7 +52,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
             paddingVertical: 3,
             paddingHorizontal: 8,
             margin: 3,
-            flexDirection: 'row',
+            flexDirection: "row",
         },
         text: {
             fontSize: 9,
@@ -62,7 +63,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
 
 const layout = (): LayoutStyles => ({
     row: {
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     mainContent: {
         flex: 1,
@@ -95,7 +96,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     },
     title: {
         fontSize: 16,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: darkenHexColor(theme.primary),
         marginBottom: 10,
     },
@@ -115,7 +116,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         },
         title: {
             fontSize: 16,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             color: darkenHexColor(theme.primary),
             marginBottom: 10,
         },
@@ -131,9 +132,9 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         padding: 16,
     },
     main: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         color: getContrastingTextColor(theme.primary),
     },
     name: {
@@ -142,7 +143,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         },
         text: {
             fontSize: 24,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginBottom: 3,
         },
     },
@@ -155,18 +156,18 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         height: 80,
         borderRadius: 40,
         borderWidth: 3,
-        borderColor: 'white',
+        borderColor: "white",
         marginRight: 15,
     },
     contact: {
         container: {
-            alignItems: 'flex-end',
+            alignItems: "flex-end",
         },
         item: {
-            alignItems: 'flex-end',
+            alignItems: "flex-end",
         },
         label: {
-            fontWeight: 'bold',
+            fontWeight: "bold",
             fontSize: 12,
         },
         value: {
@@ -192,13 +193,13 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         marginBottom: 15,
     },
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        justifyContent: "space-between",
         marginBottom: 5,
     },
     role: {
         fontSize: 12,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
     company: {
         color: theme.primary,
@@ -209,7 +210,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     },
     location: {
         fontSize: 10,
-        fontStyle: 'italic',
+        fontStyle: "italic",
         color: colors.gray[500],
     },
     description: {
@@ -224,13 +225,13 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         marginBottom: 12,
     },
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        justifyContent: "space-between",
         marginBottom: 2,
     },
     degree: {
         fontSize: 12,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
     institution: {
         fontSize: 11,
@@ -242,27 +243,27 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     location: {
         fontSize: 10,
-        fontStyle: 'italic',
+        fontStyle: "italic",
         color: colors.gray[500],
     },
 });
 
 const project = (theme: TemplateTheme): ProjectStyles => ({
     container: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexDirection: "row",
+        flexWrap: "wrap",
     },
     item: {
-        width: '48%',
+        width: "48%",
         marginBottom: 10,
-        marginRight: '2%',
+        marginRight: "2%",
         padding: 8,
         backgroundColor: colors.gray[50],
         borderRadius: 4,
     },
     name: {
         fontSize: 12,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         marginBottom: 2,
     },
     link: {
@@ -278,8 +279,8 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
 
 const skill = (theme: TemplateTheme): SkillStyles => ({
     container: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexDirection: "row",
+        flexWrap: "wrap",
         marginBottom: 15,
     },
     item: {
@@ -288,7 +289,7 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
         paddingVertical: 3,
         paddingHorizontal: 8,
         margin: 3,
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     name: {
         fontSize: 9,
@@ -298,12 +299,12 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
         container: {
             marginTop: 4,
             height: 6,
-            width: '100%',
+            width: "100%",
             backgroundColor: lightenHexColor(theme.primary, 90),
             borderRadius: 3,
         },
         fill: {
-            height: '100%',
+            height: "100%",
             backgroundColor: theme.primary,
             borderRadius: 3,
         },
@@ -315,14 +316,14 @@ const language = (): LanguageStyles => ({
         marginBottom: 8,
     },
     item: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         marginBottom: 5,
     },
     name: {
         fontSize: 10,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
     proficiency: {
         fontSize: 9,
@@ -334,7 +335,7 @@ const footer = (): FooterStyles => ({
     container: {
         padding: 10,
         backgroundColor: colors.gray[50],
-        alignItems: 'center',
+        alignItems: "center",
     },
     text: {
         fontSize: 8,

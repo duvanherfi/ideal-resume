@@ -1,4 +1,4 @@
-import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import TemplateThumbCarousel from "@components/widgets/gallery/carousel/TemplateThumbCarousel";
 import TemplateThumbGrid from "@components/widgets/gallery/grid/TemplateThumbGrid";
 import Icons from "@icons/Icons";

@@ -1,5 +1,5 @@
-import React, { ReactNode, useState, useEffect } from "react";
-import { Locale } from "../../locales/wordings";
+import React, { ReactNode, useEffect, useState } from "react";
+import type { Locale } from "src/locales/wordings";
 import LanguageContext from "./LanguageContext";
 
 interface LanguageProviderProps {

@@ -1,6 +1,6 @@
-import { Education } from "@resume-api/types/items/Education";
+import type { Education } from "@resume-api/types/items/Education";
 import ItemTitle from "./common/ItemTitle";
-import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
+import ItemForm, { type AddedItemGenericProps } from "./common/ItemForm";
 
 const EducationItem: React.FC<AddedItemGenericProps<Education>> = (props) => {
   const { item } = props;

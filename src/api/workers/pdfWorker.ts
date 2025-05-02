@@ -1,6 +1,6 @@
-import { DocumentProps, pdf } from "@react-pdf/renderer";
-import TemplateProps from "@resume-api/types/template/TemplateProps";
+import { type DocumentProps, pdf } from "@react-pdf/renderer";
 import { asyncTemplates } from "@resume-api/context/resume-template/templates";
+import type TemplateProps from "@resume-api/types/template/TemplateProps";
 import React, { ReactElement } from "react";
 
 interface WorkerMessage {

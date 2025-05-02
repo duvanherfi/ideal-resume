@@ -1,4 +1,4 @@
-import ResumeThemeContext, { ResumeThemeContextType } from "@resume-api/context/resume-theme/ResumeThemeContext";
+import ResumeThemeContext, { type ResumeThemeContextType } from "@resume-api/context/resume-theme/ResumeThemeContext";
 import { useContext } from "react";
 
 const useResumeTheme = (): ResumeThemeContextType => {

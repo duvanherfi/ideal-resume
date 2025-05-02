@@ -1,4 +1,4 @@
-import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import ViewLabelsForm from "@components/views/ViewLabelsForm";
 import ViewThemeColorSelector from "@components/views/ViewThemeColorSelector";
 import Icons from "@icons/Icons";

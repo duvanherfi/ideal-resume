@@ -1,7 +1,7 @@
-import TemplateStyleSheet from "@resume-api/templates/styles/common/TemplateStyleSheet";
-import { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
-import { UserData } from "@resume-api/types/UserData";
-import TemplateTheme from "./TemplateTheme";
+import type TemplateStyleSheet from "@resume-api/templates/styles/common/TemplateStyleSheet";
+import type { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
+import { type UserData } from "@resume-api/types/UserData";
+import type TemplateTheme from "./TemplateTheme";
 
 interface TemplateProps {
     data: UserData;

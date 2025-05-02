@@ -1,9 +1,8 @@
-import { Education } from "./Education";
-import { Language } from "./Language";
-import { Project } from "./Project";
-import { Skill } from "./Skill";
-import { WorkExperience } from "./WorkExperience";
-
+import type { Education } from "./Education";
+import type { Language } from "./Language";
+import type { Project } from "./Project";
+import type { Skill } from "./Skill";
+import type { WorkExperience } from "./WorkExperience";
 
 export interface UserDataItems {
   workExperiences: WorkExperience[];

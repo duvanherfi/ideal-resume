@@ -1,4 +1,4 @@
-import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import FormLabels from "@components/widgets/labels/FormLabels";
 import { FieldsLabelsHeader, FieldsLabelsOthers, FieldsLabelsSections } from "@config/form/labels/Form.Labels.Sections.config";
 import Icons from "@icons/Icons";

@@ -1,5 +1,5 @@
-import { WorkExperience } from "@resume-api/types/items/WorkExperience";
-import { FormField } from "@hooks/useMultiItemForm";
+import type { WorkExperience } from "@resume-api/types/items/WorkExperience";
+import type { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 
 const FieldsExperience: FormField<WorkExperience>[] = [

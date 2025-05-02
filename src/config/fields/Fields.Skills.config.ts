@@ -1,5 +1,5 @@
-import { Skill } from "@resume-api/types/items/Skill";
-import { FormField } from "@hooks/useMultiItemForm";
+import type { Skill } from "@resume-api/types/items/Skill";
+import type { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 
 const FieldsSkills: FormField<Skill>[] = [

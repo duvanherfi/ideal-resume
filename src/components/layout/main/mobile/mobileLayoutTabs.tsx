@@ -1,8 +1,8 @@
+import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import ViewTemplatePreview from "@components/views/ViewTemplatePreview";
 import ViewThumbGallery from "@components/views/ViewThumbGallery";
 import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@icons/Icons";
-import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import I18n from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [

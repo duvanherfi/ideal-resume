@@ -1,4 +1,4 @@
-import UserDataContext, { UserDataContextType } from "@resume-api/context/user-data/UserDataContext";
+import UserDataContext, { type UserDataContextType } from "@resume-api/context/user-data/UserDataContext";
 import { useContext } from "react";
 
 const useUserData = (): UserDataContextType => {

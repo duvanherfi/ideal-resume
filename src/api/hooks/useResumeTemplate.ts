@@ -1,4 +1,4 @@
-import ResumeTemplateContext, { ResumeTemplateContextType } from "@resume-api/context/resume-template/ResumeTemplateContext";
+import ResumeTemplateContext, { type ResumeTemplateContextType } from "@resume-api/context/resume-template/ResumeTemplateContext";
 import { useContext } from "react";
 
 const useResumeTemplate = (): ResumeTemplateContextType => {

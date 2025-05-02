@@ -1,5 +1,5 @@
-import { UserBasicInfo } from "@resume-api/types/basicInfo/UserBasicInfo";
-import { FormField } from "@hooks/useMultiItemForm";
+import type { FormField } from "@hooks/useMultiItemForm";
+import type { UserBasicInfo } from "@resume-api/types/basicInfo/UserBasicInfo";
 import I18n from "src/locales/I18nKeys";
 
 const FieldsBasicInfo: FormField<UserBasicInfo>[] = [

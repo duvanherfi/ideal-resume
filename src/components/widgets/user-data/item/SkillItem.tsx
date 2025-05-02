@@ -1,5 +1,5 @@
-import { Skill } from "@resume-api/types/items/Skill";
-import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
+import type { Skill } from "@resume-api/types/items/Skill";
+import ItemForm, { type AddedItemGenericProps } from "./common/ItemForm";
 import ItemTitle from "./common/ItemTitle";
 
 const SkillItem: React.FC<AddedItemGenericProps<Skill>> = (props) => {

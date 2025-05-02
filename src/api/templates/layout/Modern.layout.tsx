@@ -1,8 +1,8 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import { TemplateSectionProps } from "@resume-api/types/template/TemplateProps";
 import Contact from "@resume-api/components/common/Contact";
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "@resume-api/components/sections/TemplateSections";
-import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Modern.items";
+import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "@resume-api/templates/items/Modern.items";
+import type { TemplateSectionProps } from "@resume-api/types/template/TemplateProps";
 
 const ProfileContainer: React.FC<TemplateSectionProps> = ({ data, styles }) => (
     <View style={styles.header.container}>

@@ -1,6 +1,5 @@
 import { Certification } from "./Certification";
 
-
 export interface Education {
   id: string;
   institution: string;

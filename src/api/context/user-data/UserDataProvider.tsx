@@ -1,7 +1,7 @@
-import { UserData } from "@resume-api/types/UserData";
+import { type UserData } from "@resume-api/types/UserData";
 import React, { ReactNode, useMemo, useState } from "react";
 import initialUserData from "./initialUserData";
-import UserDataContext, { UserDataContextType } from "./UserDataContext";
+import UserDataContext, { type UserDataContextType } from "./UserDataContext";
 
 export interface UserDataProviderProps {
   children: ReactNode;

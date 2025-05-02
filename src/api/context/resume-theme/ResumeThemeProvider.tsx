@@ -1,6 +1,6 @@
-import TemplateTheme from "@resume-api/types/template/TemplateTheme";
+import type TemplateTheme from "@resume-api/types/template/TemplateTheme";
 import React, { ReactNode, useMemo, useState } from "react";
-import ResumeThemeContext, { ResumeThemeContextType } from "./ResumeThemeContext";
+import ResumeThemeContext, { type ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";
 
 interface ResumeThemeProviderProps {

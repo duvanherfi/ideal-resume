@@ -1,6 +1,5 @@
 import { Certification } from "./Certification";
 
-
 export interface Language {
   id: string;
   name: string;

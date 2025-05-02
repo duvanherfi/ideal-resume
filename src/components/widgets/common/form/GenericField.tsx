@@ -1,6 +1,6 @@
 import Input from "@components/ui/input/Input";
 import InputImage from "@components/ui/input/InputImage";
-import Select, { SelectOption } from "@components/ui/input/Select";
+import Select, { type SelectOption } from "@components/ui/input/Select";
 import TextArea from "@components/ui/input/TextArea";
 import useI18N from "@hooks/useI18N";
 

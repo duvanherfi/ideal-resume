@@ -1,7 +1,7 @@
-import { Project } from "@resume-api/types/items/Project";
+import type { Project } from "@resume-api/types/items/Project";
 import ItemDescription from "./common/ItemDescription";
 import ItemTitle from "./common/ItemTitle";
-import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
+import ItemForm, { type AddedItemGenericProps } from "./common/ItemForm";
 
 const ProjectItem: React.FC<AddedItemGenericProps<Project>> = (props) => {
   const { item } = props;

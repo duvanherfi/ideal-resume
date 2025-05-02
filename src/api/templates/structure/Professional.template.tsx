@@ -1,7 +1,7 @@
 import { Document, Page, View } from "@react-pdf/renderer";
-import TemplateProps from "@resume-api/types/template/TemplateProps";
 import { MainColumn, ProfileHeader, SideColumn } from "@resume-api/templates/layout/Professional.layout";
 import templateStyle from "@resume-api/templates/styles/Professional.styles";
+import type TemplateProps from "@resume-api/types/template/TemplateProps";
 import React from "react";
 
 const TemplateProfessional: React.FC<TemplateProps> = (props: TemplateProps) => {

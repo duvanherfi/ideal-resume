@@ -1,4 +1,4 @@
-import ResumeLabelsContext, { ResumeLabelsContextType } from "@resume-api/context/resume-labels/ResumeLabelsContext";
+import ResumeLabelsContext, { type ResumeLabelsContextType } from "@resume-api/context/resume-labels/ResumeLabelsContext";
 import { useContext } from "react";
 
 const useResumeLabels = (): ResumeLabelsContextType => {

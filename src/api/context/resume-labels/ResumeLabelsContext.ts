@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import I18n from 'src/locales/I18nKeys';
-import { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
+import type { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
 
 export const defaultLabels: ResumeLabels = {
     profileSummary: I18n.FORM.LABELS.FIELD.PROFILE_SUMMARY,

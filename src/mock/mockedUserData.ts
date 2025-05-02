@@ -1,4 +1,4 @@
-import { UserData } from "@resume-api/types/UserData";
+import { type UserData } from "@resume-api/types/UserData";
 
 const mockUserData: UserData = {
   // Basic Info

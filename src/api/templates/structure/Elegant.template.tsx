@@ -1,7 +1,7 @@
 import { Document, Page, View } from "@react-pdf/renderer";
-import TemplateProps from "@resume-api/types/template/TemplateProps";
 import { MainSection, ProfileHeader } from "@resume-api/templates/layout/Elegant.layout";
 import templateStyle from "@resume-api/templates/styles/Elegant.styles";
+import type TemplateProps from "@resume-api/types/template/TemplateProps";
 import React from "react";
 
 const TemplateElegant: React.FC<TemplateProps> = (props) => {

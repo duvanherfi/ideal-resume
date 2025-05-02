@@ -1,7 +1,7 @@
 import FieldsExperience from "@config/fields/Fields.Experience.config";
-import { UserDataItems } from "@resume-api/types/items/UserDataItems";
-import { WorkExperience } from "@resume-api/types/items/WorkExperience";
-import { FormConfig } from "@hooks/useMultiItemForm";
+import type { UserDataItems } from "@resume-api/types/items/UserDataItems";
+import type { WorkExperience } from "@resume-api/types/items/WorkExperience";
+import type { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 import { v4 as uuidv4 } from "uuid";
 

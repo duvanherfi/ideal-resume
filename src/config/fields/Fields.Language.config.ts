@@ -1,5 +1,5 @@
-import { Language } from "@resume-api/types/items/Language";
-import { FormField } from "@hooks/useMultiItemForm";
+import type { Language } from "@resume-api/types/items/Language";
+import type { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 
 const FieldsLanguage: FormField<Language>[] = [
