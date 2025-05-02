@@ -4,7 +4,7 @@ import useResumeTheme from "@api-hooks/useResumeTheme";
 import useUserData from "@api-hooks/useUserData";
 import TemplateViewer from "../common/TemplateViewer";
 
-const SelectedTemplatePreview = () => {
+const SelectedTemplatePreview: React.FC = () => {
     const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();

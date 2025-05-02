@@ -11,11 +11,10 @@ export interface TabListProps {
   Button?: React.FC<TabButtonProps>;
 }
 
-const Tabs: React.FC<TabListProps> = (props: TabListProps) => {
-  const { tabs, currentIndex, onChange, className = "", inline, Button = TabButton } = props;
+const Tabs: React.FC<TabListProps> = ({ tabs, currentIndex, onChange, className = "", inline, Button = TabButton }) => {
 
   return (
-    <div className={`flex justify-start md:justify-between ${className} bg-white/50 backdrop-blur-xl dark:bg-black/50 rounded-tr-lg rounded-tl-lg overflow-x-auto scrollbar`}>
+    <div className={`${className} flex justify-start md:justify-between bg-white/50 backdrop-blur-xl dark:bg-black/50 rounded-tr-lg rounded-tl-lg overflow-x-auto scrollbar`}>
       <div className="flex space-x-1 md:space-x-2 w-full justify-stretch">
         {tabs.map((item, index) => (
           <Button inline={inline} onClick={() => onChange(index)} text={item.text} key={item.id} active={index === currentIndex}>

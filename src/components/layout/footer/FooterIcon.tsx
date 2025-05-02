@@ -1,6 +1,6 @@
 import Icons from "@icons/Icons";
 
-const getSocialIcon = (icon: string) => {
+const SocialIcon = (icon: string) => {
     switch (icon) {
         case "linkedin":
             return <Icons.Linkedin />;
@@ -19,16 +19,11 @@ interface FooterIconProps {
     url: string;
 }
 
-const FooterIcon = (props: FooterIconProps) => {
+const FooterIcon: React.FC<FooterIconProps> = ({id, name, url}) => {
+    const className = "text-secondary-600 hover:text-primary-600 dark:text-secondary-200 dark:hover:text-primary-400 transition-colors";
     return (
-        <a
-            key={props.name}
-            href={props.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary-600 hover:text-primary-600 dark:text-secondary-200 dark:hover:text-primary-400 transition-colors"
-            aria-label={props.name}
-        >           {getSocialIcon(props.id)}
+        <a key={name} href={url} target="_blank" rel="noopener noreferrer" className={className} aria-label={name}>
+            {SocialIcon(id)}
         </a>
     );
 };

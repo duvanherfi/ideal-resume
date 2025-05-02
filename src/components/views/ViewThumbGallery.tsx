@@ -1,7 +1,7 @@
-import thumbGalleryTabs from "@components/tabs/thumbGalleryTabs";
+import thumbGalleryTabs from "@config/tabs/thumbGalleryTabs";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
-import TemplateThumbGrid from "@components/widgets/gallery/TemplateThumbGrid";
+import TemplateThumbGrid from "@components/widgets/gallery/grid/TemplateThumbGrid";
 import React from "react";
 import I18n from "src/locales/I18nKeys";
 

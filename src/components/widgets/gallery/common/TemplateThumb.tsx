@@ -1,8 +1,8 @@
 import useResumeLabels from "@api-hooks/useResumeLabels";
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import { Template } from "@resume-api/types";
-import mockedResume from "../../../mock/mockedUserData";
-import TemplateViewer from "../common/TemplateViewer";
+import mockedResume from "../../../../mock/mockedUserData";
+import TemplateViewer from "../../common/TemplateViewer";
 
 interface TemplateThumbProps {
     selectCurrentTemplate: () => void;
@@ -10,8 +10,7 @@ interface TemplateThumbProps {
     isActive?: boolean;
 }
 
-const TemplateThumb = (props: TemplateThumbProps) => {
-    const { templateToPreview, selectCurrentTemplate, isActive } = props;
+const TemplateThumb: React.FC<TemplateThumbProps> = ({ templateToPreview, selectCurrentTemplate, isActive }) => {
     const theme = useResumeTheme();
     const { defaultLabels } = useResumeLabels();
     const templateCardClasses = `${isActive

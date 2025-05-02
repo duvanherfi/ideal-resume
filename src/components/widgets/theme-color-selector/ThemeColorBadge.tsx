@@ -7,8 +7,7 @@ export interface ThemeColorBadgeProps {
     };
 }
 
-const ThemeColorBadge = (props: ThemeColorBadgeProps) => {
-    const { name, value } = props;
+const ThemeColorBadge: React.FC<ThemeColorBadgeProps> = ({ name, value }) => {
     const theme = useResumeTheme();
 
     const style = {

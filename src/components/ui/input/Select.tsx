@@ -11,26 +11,19 @@ interface SelectProps {
     options: SelectOption[];
 }
 
-const Select = (props: SelectProps) => {
-
+const Select: React.FC<SelectProps> = ({ label, name, value, onChange, options }) => {
+    const labelClassName = "block text-sm font-medium text-secondary-700 dark:text-white mb-1";
+    const selectClassName = "transition-all duration-200 w-full px-3 py-2 dark:text-white bg-white/50 dark:bg-black/50 border dark:border-secondary-700 border-secondary-300 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500";
+    const optionClassName = "transition-all duration-200 w-full px-3 py-2 dark:text-white bg-white/50 dark:bg-black/50 border dark:border-secondary-700 border-secondary-300 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500";
+    
     return (
         <div>
-            <label htmlFor={props.name} className="block text-sm font-medium text-secondary-700 dark:text-white mb-1">
-                {props.label}
+            <label htmlFor={name} className={labelClassName}>
+                {label}
             </label>
-            <select
-                id={props.name}
-                name={props.name}
-                value={props.value}
-                onChange={props.onChange}
-                className="transition-all duration-200 w-full px-3 py-2 dark:text-white bg-white/50 dark:bg-black/50 border dark:border-secondary-700 border-secondary-300 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-            >
-                {props.options.map((option: any) => (
-                    <option
-                        className="transition-all duration-200 w-full px-3 py-2 dark:text-white bg-white/50 dark:bg-black/50 border dark:border-secondary-700 border-secondary-300 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                        key={option.value}
-                        value={option.value}
-                    >
+            <select id={name} name={name} value={value} onChange={onChange} className={selectClassName}>
+                {options.map((option: any) => (
+                    <option key={option.value} value={option.value} className={optionClassName}>
                         {option.label}
                     </option>
                 ))}

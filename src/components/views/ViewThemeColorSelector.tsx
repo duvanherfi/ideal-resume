@@ -4,7 +4,7 @@ import SuggestedThemes from "@components/widgets/theme-color-selector/SuggestedT
 import ThemeCustom from "@components/widgets/theme-color-selector/ThemeCustom";
 import I18n from "src/locales/I18nKeys";
 
-const ViewThemeColorSelector = () => {
+const ViewThemeColorSelector: React.FC = () => {
     return (
         <GlassCard>
             <ViewTitle simple title={I18n.THEMES.TITLE} subtitle={I18n.THEMES.SUBTITLE} className="pb-4" />

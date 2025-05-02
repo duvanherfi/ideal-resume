@@ -3,15 +3,14 @@ import GlassCard from "@components/ui/GlassCard";
 import { ScrollDirection } from "@hooks/useCarousel";
 import { useState } from "react";
 import GalleryNavigation from "./GalleryNavigation";
-import ScrollButton from "./ScrollButton";
-import TemplateThumb from "./TemplateThumb";
+import ScrollButton from "../common/ScrollButton";
+import TemplateThumb from "../common/TemplateThumb";
 
 interface TemplateThumbGridProps {
     className?: string;
 }
 
-const TemplateThumbGrid = (props: TemplateThumbGridProps) => {
-    const { className = "" } = props;
+const TemplateThumbGrid: React.FC<TemplateThumbGridProps> = ({ className = "" }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const template = useResumeTemplate();
 

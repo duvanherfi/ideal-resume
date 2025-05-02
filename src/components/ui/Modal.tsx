@@ -26,11 +26,7 @@ const Modal: React.FC<ModalButtonProps> = ({
 
     return (
         <>
-            <Button
-                variant={buttonVariant}
-                onClick={openModal}
-                className={buttonClassName}
-            >
+            <Button variant={buttonVariant} onClick={openModal} className={buttonClassName}>
                 {buttonText}
             </Button>
 

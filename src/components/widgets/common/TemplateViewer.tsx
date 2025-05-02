@@ -9,8 +9,7 @@ interface TemplateViewerProps extends TemplateProps {
     isStatic?: boolean;
 }
 
-const TemplateViewer: React.FC<TemplateViewerProps> = (props: TemplateViewerProps) => {
-    const { data, theme, labels, template, isStatic } = props;
+const TemplateViewer: React.FC<TemplateViewerProps> = ({ data, theme, labels, template, isStatic }) => {
     const { blobUrl, loading } = usePDFWorker({ template, data, theme, labels, isStatic });
 
     if (!template) return null;

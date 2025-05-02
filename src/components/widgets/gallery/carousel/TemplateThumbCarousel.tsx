@@ -1,10 +1,10 @@
 import useResumeTemplate from "@api-hooks/useResumeTemplate";
-import { ScrollDirection, useCarousel } from "@hooks/useCarousel";
-import ScrollButton from "./ScrollButton";
-import TemplateThumb from "./TemplateThumb";
 import GlassCard from "@components/ui/GlassCard";
+import { ScrollDirection, useCarousel } from "@hooks/useCarousel";
+import ScrollButton from "../common/ScrollButton";
+import TemplateThumb from "../common/TemplateThumb";
 
-const TemplateThumbCarousel = () => {
+const TemplateThumbCarousel: React.FC = () => {
     const template = useResumeTemplate();
     const { scrollContainerRef, canScrollLeft, canScrollRight, scroll, checkScrollability } = useCarousel();
 

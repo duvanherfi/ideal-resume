@@ -5,12 +5,12 @@ interface TextProps {
     className?: string;
 }
 
-const Text = (props: TextProps) => {
+const Text: React.FC<TextProps> = ({ children, className }) => {
     const { t } = useI18N();
 
     return (
-        <h2 className={props.className}>
-            {t(props.children)}
+        <h2 className={className}>
+            {t(children)}
         </h2>
     );
 }

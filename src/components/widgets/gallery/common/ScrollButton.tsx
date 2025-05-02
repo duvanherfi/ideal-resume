@@ -12,8 +12,7 @@ interface ScrollButtonProps {
     className?: string;
 }
 
-const ScrollButton: React.FC<ScrollButtonProps> = (props) => {
-    const { direction, canScroll, onScroll, className = "" } = props;
+const ScrollButton: React.FC<ScrollButtonProps> = ({ direction, canScroll, onScroll, className = "" }) => {
     const isLeft = direction === ScrollDirection.LEFT;
     const positionClass = isLeft ? "-left-4" : "-right-4";
     const ariaLabel = isLeft ? "Scroll left" : "Scroll right";

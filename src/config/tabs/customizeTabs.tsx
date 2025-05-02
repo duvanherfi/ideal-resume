@@ -1,21 +1,21 @@
+import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import ViewLabelsForm from "@components/views/ViewLabelsForm";
 import ViewThemeColorSelector from "@components/views/ViewThemeColorSelector";
 import Icons from "@icons/Icons";
-import { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import I18n from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [
     {
         id: "carousel",
         component: <ViewThemeColorSelector />,
+        children: <Icons.Draw />,
         text: I18n.THEMES.TITLE,
-        children: <Icons.Draw />
     },
     {
         id: "grid",
         component: <ViewLabelsForm />,
+        children: <Icons.Header />,
         text: I18n.FORM.LABELS.TITLE,
-        children: <Icons.Header />
     },
 ];
 

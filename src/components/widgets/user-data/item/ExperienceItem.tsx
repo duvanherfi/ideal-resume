@@ -1,7 +1,7 @@
 import { WorkExperience } from "@resume-api/types";
 import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 
-const ExperienceItem = (props: AddedItemGenericProps<WorkExperience>) => {
+const ExperienceItem: React.FC<AddedItemGenericProps<WorkExperience>> = (props) => {
   const { item } = props;
   return (
     <ItemForm {...props}>

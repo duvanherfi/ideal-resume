@@ -1,6 +1,6 @@
-import Icons from "@icons/Icons";
 import Text from "@components/ui/text/Text";
 import Title from "@components/ui/text/Title";
+import Icons from "@icons/Icons";
 
 interface ViewTitleProps {
     title: string;
@@ -9,13 +9,14 @@ interface ViewTitleProps {
     simple?: boolean;
 }
 
-const ViewTitle = (props: ViewTitleProps) => {
+const ViewTitle: React.FC<ViewTitleProps> = ({ title, subtitle, className, simple }) => {
+    
     return (
-        <div className={`px-4 ${props.className}`}>
-            {!props.simple && <Icons.LineSeparator />}
-            <Title>{props.title}</Title>
-            {props.subtitle && <Text className="text-secondary-600 dark:text-secondary-400">{props.subtitle}</Text>}
-            {!props.simple && <Icons.LineSeparator />}
+        <div className={`px-4 ${className}`}>
+            {!simple && <Icons.LineSeparator />}
+            <Title>{title}</Title>
+            {subtitle && <Text className="text-secondary-600 dark:text-secondary-400">{subtitle}</Text>}
+            {!simple && <Icons.LineSeparator />}
         </div>
     );
 };

@@ -1,15 +1,15 @@
 import useI18N from "@hooks/useI18N";
 
-interface TitleProps {
+interface SubtitleProps {
     children: string;
 }
 
-const Subtitle = (props: TitleProps) => {
+const Subtitle: React.FC<SubtitleProps> = ({ children }) => {
     const { t } = useI18N();
 
     return (
         <h2 className="text-2xl font-semibold mb-8 text-accent-900 dark:text-accent-100">
-            {t(props.children)}
+            {t(children)}
         </h2>
     );
 }

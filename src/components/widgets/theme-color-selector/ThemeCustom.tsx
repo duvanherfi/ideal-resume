@@ -3,7 +3,7 @@ import useI18N from "@hooks/useI18N";
 import I18n from "src/locales/I18nKeys";
 import ThemeColorBadge from "./ThemeColorBadge";
 
-const ThemeCustom = () => {
+const ThemeCustom: React.FC = () => {
     const { t } = useI18N();
     const theme = useResumeTheme();
 

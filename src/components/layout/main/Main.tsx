@@ -1,7 +1,7 @@
 import DesktopLayout from "./desktop/DesktopLayout";
 import MobileLayout from "./mobile/MobileLayout";
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <>
       <MobileLayout />

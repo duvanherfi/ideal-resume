@@ -18,8 +18,7 @@ const Accordion = (props: AccordionProps) => {
         <div className="border rounded-md">
             <button onClick={toggleIsOpen} className={togglerClasses}>
                 {props.label}
-                <Icons.Chevron direction={isOpen ? ChevronDirection.UP : ChevronDirection.DOWN}
-                />
+                <Icons.Chevron direction={isOpen ? ChevronDirection.UP : ChevronDirection.DOWN} />
             </button>
             <div className={containerClasses}>
                 {props.children}

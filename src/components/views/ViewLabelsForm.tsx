@@ -1,4 +1,4 @@
-import labelsFormTabs from "@components/tabs/labelsFormTabs";
+import labelsFormTabs from "@config/tabs/labelsFormTabs";
 import GlassCard from "@components/ui/GlassCard";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";

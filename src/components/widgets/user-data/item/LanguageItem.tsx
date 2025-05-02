@@ -1,8 +1,8 @@
 import { Language } from "@resume-api/types";
-import ItemTitle from "./common/ItemTitle";
 import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
+import ItemTitle from "./common/ItemTitle";
 
-const LanguageItem = (props: AddedItemGenericProps<Language>) => {
+const LanguageItem: React.FC<AddedItemGenericProps<Language>> = (props) => {
   const { item } = props;
 
   return (

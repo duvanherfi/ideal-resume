@@ -1,5 +1,5 @@
-import React from "react";
 import useI18N from "@hooks/useI18N";
+import React from "react";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -9,6 +9,13 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
 }
+
+const variantStyles = {
+  primary: "bg-accent-600 hover:bg-accent-700 text-white shadow-lg",
+  secondary: "bg-green-700 text-white dark:bg-green-900 dark:text-white  shadow-lg",
+  danger: "bg-red-700 text-white dark:bg-red-900 dark:text-white  shadow-lg",
+  outline: "bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-50",
+};
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -22,13 +29,6 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles =
     "px-4 py-2 rounded-lg font-medium transition-all duration-300 focus:outline-none";
 
-  const variantStyles = {
-    primary: "bg-accent-600 hover:bg-accent-700 text-white shadow-lg",
-    secondary: "bg-green-700 text-white dark:bg-green-900 dark:text-white  shadow-lg",
-    danger: "bg-red-700 text-white dark:bg-red-900 dark:text-white  shadow-lg",
-    outline:
-      "bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-50",
-  };
   const content = typeof children === "string" ? t(children) : children;
 
   return (

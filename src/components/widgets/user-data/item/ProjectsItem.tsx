@@ -3,8 +3,9 @@ import ItemDescription from "./common/ItemDescription";
 import ItemTitle from "./common/ItemTitle";
 import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 
-const ProjectItem = (props: AddedItemGenericProps<Project>) => {
+const ProjectItem: React.FC<AddedItemGenericProps<Project>> = (props) => {
   const { item } = props;
+
   return (
     <ItemForm {...props}>
       <div>

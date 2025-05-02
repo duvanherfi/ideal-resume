@@ -1,6 +1,6 @@
-import Icons from "@icons/Icons";
 import Text from "@components/ui/text/Text";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
+import Icons from "@icons/Icons";
 import { UserData } from "@resume-api/types";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';

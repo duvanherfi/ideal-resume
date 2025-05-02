@@ -9,9 +9,8 @@ export interface TabButtonProps {
   inline?: boolean;
 }
 
-const TabButton = (props: TabButtonProps) => {
+const TabButton: React.FC<TabButtonProps> = ({ onClick, active, text = "", children, inline = false }) => {
   const { t } = useI18N();
-  const { onClick, active, text = "", children, inline = false } = props;
 
   return (
     <button onClick={onClick} className={`${getButtonClassName(active, inline)}`}>

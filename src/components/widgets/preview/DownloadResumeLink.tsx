@@ -6,7 +6,7 @@ import Button from "@components/ui/buttons/Button";
 import Icons from "@icons/Icons";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
-const DownloadResumeLink = () => {
+const DownloadResumeLink: React.FC = () => {
     const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();

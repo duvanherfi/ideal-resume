@@ -9,6 +9,7 @@ interface CarouselProps {
 const Carousel = (props: CarouselProps) => {
     const { handlePrevious, handleNext, children } = props;
     const controllerClassName = (extra?: string) => `${extra} absolute top-1/2 transform -translate-y-1/2 z-10 bg-primary-600 text-white rounded-full p-2 shadow-lg hover:bg-primary-700 focus:outline-none`
+    
     return (
         <div className="carousel-container relative w-1/3 mx-auto">
             <button onClick={handlePrevious} className={controllerClassName("left-0")} aria-label="Previous template">

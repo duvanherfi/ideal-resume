@@ -1,8 +1,8 @@
 import useResumeLabels from "@api-hooks/useResumeLabels";
 import GlassCard from "@components/ui/GlassCard";
-import Icons from "@icons/Icons";
 import Subtitle from "@components/ui/text/Subtitle";
 import { FormField } from "@config/form/user-data/Form.UserData.types";
+import Icons from "@icons/Icons";
 import { ResumeLabels } from "@resume-api/types";
 import GenericField from "../common/form/GenericField";
 
@@ -11,8 +11,7 @@ export interface FormLabelsProps {
     fields: FormField<ResumeLabels>[];
 }
 
-const FormLabels = (props: FormLabelsProps) => {
-    const { title, fields } = props;
+const FormLabels: React.FC<FormLabelsProps> = ({ title, fields }) => {
     const { labels, updateLabel } = useResumeLabels();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,16 +24,7 @@ const FormLabels = (props: FormLabelsProps) => {
             <Subtitle>{title}</Subtitle>
             <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {fields.map(field => (
-                    <GenericField
-                        key={field.name}
-                        name={field.name}
-                        type={field.type}
-                        label={field.label}
-                        required={field.required}
-                        suggestions={field.suggestions}
-                        value={labels[field.name] ?? ""}
-                        onChange={handleChange}
-                    />
+                    <GenericField key={field.name} value={labels[field.name] ?? ""} onChange={handleChange} {...field} />
                 ))}
             </div>
             <Icons.LineSeparator />

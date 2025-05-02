@@ -1,4 +1,4 @@
-import userDataFormTabs from "@components/tabs/userDataFormTabs";
+import userDataFormTabs from "@config/tabs/userDataFormTabs";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import React from "react";
