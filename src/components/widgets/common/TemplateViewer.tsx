@@ -1,7 +1,7 @@
 import usePDFWorker from '@api-hooks/usePDFWorker';
 import Icons from '@icons/Icons';
 import TemplateProps from '@resume-api/common/TemplateProps';
-import type { Template } from '@resume-api/types';
+import type { Template } from '@resume-api/types/template/Template';
 import React from 'react';
 
 interface TemplateViewerProps extends TemplateProps {

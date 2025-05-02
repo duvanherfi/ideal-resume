@@ -1,4 +1,4 @@
-import { Project } from "@resume-api/types";
+import { Project } from "@resume-api/types/items/Project";
 import { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 

@@ -1,4 +1,4 @@
-import { Template } from "@resume-api/types";
+import { Template } from "@resume-api/types/template/Template";
 import { createContext } from "react";
 
 export interface ResumeTemplateContextType {

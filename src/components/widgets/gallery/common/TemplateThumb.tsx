@@ -1,6 +1,6 @@
 import useResumeLabels from "@api-hooks/useResumeLabels";
 import useResumeTheme from "@api-hooks/useResumeTheme";
-import { Template } from "@resume-api/types";
+import { Template } from "@resume-api/types/template/Template";
 import mockedResume from "../../../../mock/mockedUserData";
 import TemplateViewer from "../../common/TemplateViewer";
 

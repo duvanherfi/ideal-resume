@@ -1,4 +1,4 @@
-import { Education } from "@resume-api/types";
+import { Education } from "@resume-api/types/items/Education";
 import ItemTitle from "./common/ItemTitle";
 import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 

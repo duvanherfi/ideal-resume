@@ -1,6 +1,6 @@
 import useUserData from "@api-hooks/useUserData";
 import getConfig from "@config/form/user-data/Form.UserData.config";
-import { UserDataItems } from "@resume-api/types";
+import { UserDataItems } from "@resume-api/types/items/UserDataItems";
 import useMultiItemForm, { FormConfig, MultiItemFormType } from "@hooks/useMultiItemForm";
 
 interface UserDataFormProps {
@@ -9,7 +9,6 @@ interface UserDataFormProps {
 
 const useUserDataForm = <T extends { id: string }>(props: UserDataFormProps): MultiItemFormType<T> => {
     const { dataKey } = props;
-
     const config = getConfig(dataKey);
     const userDataHook = useUserData();
 

@@ -1,5 +1,6 @@
 import FieldsEducation from "@config/fields/Fields.Education.config";
-import { Education, UserDataItems } from "@resume-api/types";
+import { UserDataItems } from "@resume-api/types/items/UserDataItems";
+import { Education } from "@resume-api/types/items/Education";
 import { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 import { v4 as uuidv4 } from "uuid";

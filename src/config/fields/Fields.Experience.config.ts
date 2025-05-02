@@ -1,4 +1,4 @@
-import { WorkExperience } from "@resume-api/types";
+import { WorkExperience } from "@resume-api/types/items/WorkExperience";
 import { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 

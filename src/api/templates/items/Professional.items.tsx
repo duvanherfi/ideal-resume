@@ -1,7 +1,11 @@
 import { Link, Text, View } from "@react-pdf/renderer";
 import { getTimeRange } from "@resume-api/common/helper/templateDataHelper";
 import { TemplateItemProps, TemplateSectionProps } from "@resume-api/common/TemplateProps";
-import { Education, Language, Project, Skill, WorkExperience } from "@resume-api/types";
+import { WorkExperience } from "@resume-api/types/items/WorkExperience";
+import { Project } from "@resume-api/types/items/Project";
+import { Language } from "@resume-api/types/items/Language";
+import { Skill } from "@resume-api/types/items/Skill";
+import { Education } from "@resume-api/types/items/Education";
 
 export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>

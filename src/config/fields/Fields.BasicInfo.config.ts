@@ -1,4 +1,4 @@
-import { UserBasicInfo } from "@resume-api/types";
+import { UserBasicInfo } from "@resume-api/types/basicInfo/UserBasicInfo";
 import { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 

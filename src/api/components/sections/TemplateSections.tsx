@@ -1,6 +1,10 @@
 import { Text, View } from "@react-pdf/renderer";
 import { MultiItemSectionProps } from "@resume-api/common/TemplateProps";
-import { Education, Language, Project, Skill, WorkExperience } from "@resume-api/types";
+import { WorkExperience } from "@resume-api/types/items/WorkExperience";
+import { Project } from "@resume-api/types/items/Project";
+import { Language } from "@resume-api/types/items/Language";
+import { Skill } from "@resume-api/types/items/Skill";
+import { Education } from "@resume-api/types/items/Education";
 
 export const WorkExperienceSection: React.FC<MultiItemSectionProps<WorkExperience>> = ({
     data,

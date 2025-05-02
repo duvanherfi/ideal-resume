@@ -1,4 +1,4 @@
-import { Language } from "@resume-api/types";
+import { Language } from "@resume-api/types/items/Language";
 import { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 

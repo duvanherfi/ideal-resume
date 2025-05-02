@@ -1,4 +1,4 @@
-import { Template } from "@resume-api/types";
+import { Template } from "@resume-api/types/template/Template";
 import React, { ReactNode, useMemo, useState } from "react";
 import ResumeTemplateContext, { ResumeTemplateContextType } from "./ResumeTemplateContext";
 import templates from "./templates";

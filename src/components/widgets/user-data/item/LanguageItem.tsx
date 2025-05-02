@@ -1,4 +1,4 @@
-import { Language } from "@resume-api/types";
+import { Language } from "@resume-api/types/items/Language";
 import ItemForm, { AddedItemGenericProps } from "./common/ItemForm";
 import ItemTitle from "./common/ItemTitle";
 

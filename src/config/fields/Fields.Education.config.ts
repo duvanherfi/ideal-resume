@@ -1,4 +1,4 @@
-import { Education } from "@resume-api/types";
+import { Education } from "@resume-api/types/items/Education";
 import { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 

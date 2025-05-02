@@ -1,4 +1,4 @@
-import { UserData } from "@resume-api/types";
+import { UserData } from "@resume-api/types/UserData";
 import React, { ReactNode, useMemo, useState } from "react";
 import initialUserData from "./initialUserData";
 import UserDataContext, { UserDataContextType } from "./UserDataContext";
