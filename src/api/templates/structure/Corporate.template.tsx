@@ -1,8 +1,8 @@
-import { Document, Page, View } from '@react-pdf/renderer';
-import React from 'react';
-import TemplateProps from '../../common/TemplateProps';
-import { ContactSection, MainColumn, ProfileHeader, SideColumn } from '../layout/Corporate.layout';
-import templateStyle from '../styles/Corporate.styles';
+import { Document, Page, View } from "@react-pdf/renderer";
+import TemplateProps from "@resume-api/common/TemplateProps";
+import { ContactSection, MainColumn, ProfileHeader, SideColumn } from "@resume-api/templates/layout/Corporate.layout";
+import templateStyle from "@resume-api/templates/styles/Corporate.styles";
+import React from "react";
 
 const TemplateCorporate: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;

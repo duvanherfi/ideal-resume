@@ -1,8 +1,8 @@
-import { Document, Page } from '@react-pdf/renderer';
-import React from 'react';
-import TemplateProps from '../../common/TemplateProps';
-import { MainSection, ProfileHeader, TwoColumnsSection } from '../layout/Modern.layout';
-import templateStyle from '../styles/Modern.styles';
+import { Document, Page } from "@react-pdf/renderer";
+import TemplateProps from "@resume-api/common/TemplateProps";
+import { MainSection, ProfileHeader, TwoColumnsSection } from "@resume-api/templates/layout/Modern.layout";
+import templateStyle from "@resume-api/templates/styles/Modern.styles";
+import React from "react";
 
 const TemplateModern: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;

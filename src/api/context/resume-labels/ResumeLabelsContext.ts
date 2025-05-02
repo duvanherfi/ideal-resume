@@ -1,18 +1,19 @@
 import { createContext } from 'react';
+import I18n from 'src/locales/I18nKeys';
 import { ResumeLabels } from '../../types';
 
 export const defaultLabels: ResumeLabels = {
-    profileSummary: "form.labels.field.profileSummary",
-    workExperiences: "form.labels.field.workExperiences",
-    education: "form.labels.field.education",
-    projects: "form.labels.field.projects",
-    skills: "form.labels.field.skills",
-    languages: "form.labels.field.languages",
-    email: "form.labels.field.email",
-    phone: "form.labels.field.phone",
-    location: "form.labels.field.location",
-    lastUpdated: "form.labels.field.lastUpdated",
-    present: "form.labels.field.present"
+    profileSummary: I18n.FORM.LABELS.FIELD.PROFILE_SUMMARY,
+    workExperiences: I18n.FORM.LABELS.FIELD.WORK_EXPERIENCES,
+    education: I18n.FORM.LABELS.FIELD.EDUCATION,
+    projects: I18n.FORM.LABELS.FIELD.PROJECTS,
+    skills: I18n.FORM.LABELS.FIELD.SKILLS,
+    languages: I18n.FORM.LABELS.FIELD.LANGUAGES,
+    email: I18n.FORM.LABELS.FIELD.EMAIL,
+    phone: I18n.FORM.LABELS.FIELD.PHONE,
+    location: I18n.FORM.LABELS.FIELD.LOCATION,
+    lastUpdated: I18n.FORM.LABELS.FIELD.LAST_UPDATED,
+    present: I18n.FORM.LABELS.FIELD.PRESENT
 };
 
 export interface ResumeLabelsContextType {

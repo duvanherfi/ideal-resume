@@ -1,9 +1,9 @@
-import { Font } from '@react-pdf/renderer';
-import { Style } from '@react-pdf/types';
-import TemplateTheme from '@resume-api/common/TemplateTheme';
-import { darkenHexColor, getContrastingTextColor, lightenHexColor } from '../../common/helper/colorHelper';
-import { FontRoboto } from './common/templateFonts';
-import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from './common/TemplateStyleSheet';
+import { Font } from "@react-pdf/renderer";
+import { Style } from "@react-pdf/types";
+import { darkenHexColor, getContrastingTextColor, lightenHexColor } from "@resume-api/common/helper/colorHelper";
+import TemplateTheme from "@resume-api/common/TemplateTheme";
+import { FontRoboto } from "./common/templateFonts";
+import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from "./common/TemplateStyleSheet";
 
 Font.register(FontRoboto);
 
@@ -19,7 +19,7 @@ const colors = {
 };
 
 const page = (): Style => ({
-    fontFamily: 'Roboto',
+    fontFamily: "Roboto",
     padding: 0,
     backgroundColor: colors.white,
 });
@@ -30,10 +30,10 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         borderBottomColor: lightenHexColor(theme.primary, 80),
     },
     techContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: '0.5rem',
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        gap: "0.5rem",
     },
     date: {
         container: {
@@ -51,7 +51,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
             paddingHorizontal: 6,
             borderRadius: 4,
             backgroundColor: `${theme.primary}33`,
-            alignSelf: 'flex-start' as const,
+            alignSelf: "flex-start" as const,
             marginBottom: 4,
         },
         text: {
@@ -64,21 +64,21 @@ const common = (theme: TemplateTheme): CommonStyles => ({
 
 const layout = (theme: TemplateTheme): LayoutStyles => ({
     row: {
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     mainContent: {
-        flexDirection: 'column',
-        height: '100%',
+        flexDirection: "column",
+        height: "100%",
     },
     column: {
         main: {
-            width: '65%',
+            width: "65%",
             paddingHorizontal: 20,
             paddingTop: 20,
             paddingBottom: 30,
         },
         side: {
-            width: '35%',
+            width: "35%",
             backgroundColor: lightenHexColor(theme.primary, 95),
             paddingHorizontal: 15,
             paddingTop: 20,
@@ -97,7 +97,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     },
     title: {
         fontSize: 14,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: darkenHexColor(theme.primary, 15),
     },
     headerLine: {
@@ -114,7 +114,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         },
         title: {
             fontSize: 14,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             color: darkenHexColor(theme.primary, 15),
         }
     }
@@ -125,11 +125,11 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         backgroundColor: theme.primary,
         color: getContrastingTextColor(theme.primary),
         padding: 10,
-        flexDirection: 'column',
+        flexDirection: "column",
     },
     main: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: "row",
+        alignItems: "center",
         marginBottom: 15,
     },
     name: {
@@ -138,47 +138,47 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         },
         text: {
             fontSize: 22,
-            fontWeight: 'bold',
-            color: 'white',
+            fontWeight: "bold",
+            color: "white",
             marginBottom: 5,
         }
     },
     role: {
         fontSize: 12,
         color: lightenHexColor(theme.primary, 85),
-        fontWeight: 'medium',
+        fontWeight: "medium",
     },
     photo: {
         width: 85,
         height: 85,
         borderRadius: 42.5,
-        overflow: 'hidden',
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
+        overflow: "hidden",
+        backgroundColor: "white",
+        justifyContent: "center",
+        alignItems: "center",
     },
     contact: {
         container: {
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
             borderTopWidth: 1,
             borderTopColor: lightenHexColor(theme.primary, 30),
             paddingTop: 10,
         },
         item: {
-            width: '32%',
+            width: "32%",
             marginBottom: 5,
         },
         label: {
             fontSize: 8,
             color: lightenHexColor(theme.primary, 85),
-            fontWeight: 'medium',
+            fontWeight: "medium",
             marginBottom: 2,
         },
         value: {
             fontSize: 9,
-            color: 'white',
+            color: "white",
         },
         divider: {
             borderTopWidth: 1,
@@ -200,19 +200,19 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         marginBottom: 15,
     },
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
     },
     role: {
         fontSize: 12,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: colors.gray[400],
     },
     company: {
         fontSize: 11,
         color: theme.primary,
-        fontWeight: 'medium',
+        fontWeight: "medium",
         marginBottom: 5,
     },
     contractType: {
@@ -237,14 +237,14 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         marginBottom: 12,
     },
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         paddingBottom: 4
     },
     degree: {
         fontSize: 12,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: colors.gray[400],
     },
     institution: {
@@ -255,12 +255,12 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     description: {
         fontSize: 9,
         lineHeight: 1.5,
-        textAlign: 'justify',
+        textAlign: "justify",
     },
     location: {
         fontSize: 9,
         lineHeight: 1.5,
-        textAlign: 'right',
+        textAlign: "right",
     }
 });
 
@@ -271,14 +271,14 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     item: {
         marginBottom: 12,
         padding: 8,
-        backgroundColor: 'white',
+        backgroundColor: "white",
         borderRadius: 5,
         borderLeftWidth: 3,
         borderLeftColor: theme.primary,
     },
     name: {
         fontSize: 11,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         color: colors.gray[400],
         marginBottom: 3,
     },
@@ -312,10 +312,10 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
             height: 4,
             backgroundColor: lightenHexColor(theme.primary, 70),
             borderRadius: 2,
-            overflow: 'hidden',
+            overflow: "hidden",
         },
         fill: {
-            height: '100%',
+            height: "100%",
             backgroundColor: theme.primary,
             borderRadius: 2,
         }
@@ -327,9 +327,9 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
         marginTop: 5,
     },
     item: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
         paddingVertical: 6,
         borderBottomWidth: 1,
         borderBottomColor: lightenHexColor(theme.primary, 80),
@@ -341,7 +341,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
     proficiency: {
         fontSize: 9,
         color: theme.primary,
-        fontWeight: 'medium',
+        fontWeight: "medium",
     }
 });
 
@@ -349,7 +349,7 @@ const footer = (theme: TemplateTheme): FooterStyles => ({
     container: {
         padding: 10,
         backgroundColor: lightenHexColor(theme.primary, 95),
-        alignItems: 'center',
+        alignItems: "center",
     },
     text: {
         fontSize: 8,

@@ -1,6 +1,6 @@
+import TemplateProps from "@resume-api/common/TemplateProps";
+import type { Template } from "@resume-api/types";
 import { useCallback, useEffect, useRef, useState } from "react";
-import TemplateProps from "../common/TemplateProps";
-import type { Template } from "../types";
 
 interface WorkerMessage {
     templateId: string;

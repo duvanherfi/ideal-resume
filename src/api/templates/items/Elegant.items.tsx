@@ -1,9 +1,9 @@
-import { Link, Text, View } from '@react-pdf/renderer';
-import { TemplateItemProps, TemplateSectionProps } from '../../common/TemplateProps';
-import TechList from '../../components/common/TechList';
-import TextEmptySafe from '../../components/common/TextEmptySafe';
-import { Education, Language, Project, Skill, WorkExperience } from '../../types';
-import { getTimeRange } from '../../common/helper/templateDataHelper';
+import { Link, Text, View } from "@react-pdf/renderer";
+import { getTimeRange } from "@resume-api/common/helper/templateDataHelper";
+import { TemplateItemProps, TemplateSectionProps } from "@resume-api/common/TemplateProps";
+import TechList from "@resume-api/components/common/TechList";
+import TextEmptySafe from "@resume-api/components/common/TextEmptySafe";
+import { Education, Language, Project, Skill, WorkExperience } from "@resume-api/types";
 
 export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>

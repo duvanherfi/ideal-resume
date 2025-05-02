@@ -6,9 +6,9 @@
  * @returns Color hexadecimal ajustado
  */
 export const adjustHexBrightness = (hex: string, percent = 10, isDarken = true) => {
-  hex = hex.replace('#', '');
+  hex = hex.replace("#", "");
   if (hex.length === 3) {
-    hex = hex.split('').map(c => c + c).join('');
+    hex = hex.split("").map(c => c + c).join("");
   }
 
   const num = parseInt(hex, 16);
@@ -28,9 +28,9 @@ export const adjustHexBrightness = (hex: string, percent = 10, isDarken = true) 
     b = Math.min(255, Math.floor(b + (255 - b) * factor));
   }
 
-  const newHex = '#' + [r, g, b].map(x =>
-    x.toString(16).padStart(2, '0')
-  ).join('');
+  const newHex = "#" + [r, g, b].map(x =>
+    x.toString(16).padStart(2, "0")
+  ).join("");
 
   return newHex;
 };
@@ -48,12 +48,12 @@ export const lightenHexColor = (hex: string, percent = 10) => {
  * devuelve "white" o "#333" para que el texto contraste correctamente.
  */
 export function getContrastingTextColor(hex: string): string {
-  let cleanHex = hex.replace('#', '');
+  let cleanHex = hex.replace("#", "");
   if (cleanHex.length === 3) {
     cleanHex = cleanHex
-      .split('')
+      .split("")
       .map(ch => ch + ch)
-      .join('');
+      .join("");
   }
   if (cleanHex.length !== 6) {
     throw new Error(`Invalid HEX color: "${hex}"`);
@@ -65,5 +65,5 @@ export function getContrastingTextColor(hex: string): string {
 
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
 
-  return yiq >= 128 ? '#333' : 'white';
+  return yiq >= 128 ? "#333" : "white";
 }

@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from 'react';
-import { ResumeLabels } from '../../types';
-import ResumeLabelContext, { defaultLabels } from './ResumeLabelsContext';
-import useI18N from '@hooks/useI18N';
+import useI18N from "@hooks/useI18N";
+import { ResumeLabels } from "@resume-api/types";
+import React, { useMemo, useState } from "react";
+import ResumeLabelContext, { defaultLabels } from "./ResumeLabelsContext";
 
 interface ResumeLabelProviderProps {
     children: React.ReactNode;

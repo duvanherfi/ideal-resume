@@ -1,5 +1,5 @@
+import TemplateTheme from "@resume-api/common/TemplateTheme";
 import React, { createContext } from "react";
-import TemplateTheme from "../../common/TemplateTheme";
 
 export interface ResumeThemeContextType {
     get: TemplateTheme;

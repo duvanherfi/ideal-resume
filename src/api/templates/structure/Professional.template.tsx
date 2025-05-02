@@ -1,8 +1,8 @@
-import { Document, Page, View } from '@react-pdf/renderer';
-import React from 'react';
-import TemplateProps from '../../common/TemplateProps';
-import { MainColumn, ProfileHeader, SideColumn } from '../layout/Professional.layout';
-import templateStyle from '../styles/Professional.styles';
+import { Document, Page, View } from "@react-pdf/renderer";
+import TemplateProps from "@resume-api/common/TemplateProps";
+import { MainColumn, ProfileHeader, SideColumn } from "@resume-api/templates/layout/Professional.layout";
+import templateStyle from "@resume-api/templates/styles/Professional.styles";
+import React from "react";
 
 const TemplateProfessional: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;

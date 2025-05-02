@@ -1,5 +1,5 @@
+import { UserData } from "@resume-api/types";
 import { createContext } from "react";
-import { UserData } from "../../types";
 
 export interface UserDataContextType {
   get: UserData;

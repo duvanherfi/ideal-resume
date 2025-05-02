@@ -1,6 +1,6 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { TemplateItemProps, TemplateSectionProps } from "../../common/TemplateProps";
-import { Education, Language, Project, Skill, WorkExperience } from "../../types";
+import { TemplateItemProps, TemplateSectionProps } from "@resume-api/common/TemplateProps";
+import { Education, Language, Project, Skill, WorkExperience } from "@resume-api/types";
 
 export const ProfileSummary: React.FC<TemplateSectionProps> = ({ data, styles, labels }) => (
     <View style={styles.section.container}>

@@ -1,5 +1,5 @@
+import { Template } from "@resume-api/types";
 import { createContext } from "react";
-import { Template } from "../../types";
 
 export interface ResumeTemplateContextType {
   active: Template | null;

@@ -1,7 +1,7 @@
-import { DocumentProps, pdf } from '@react-pdf/renderer';
-import { asyncTemplates } from '@resume-api/context/resume-template/templates';
-import React, { ReactElement } from 'react';
-import TemplateProps from '../common/TemplateProps';
+import { DocumentProps, pdf } from "@react-pdf/renderer";
+import TemplateProps from "@resume-api/common/TemplateProps";
+import { asyncTemplates } from "@resume-api/context/resume-template/templates";
+import React, { ReactElement } from "react";
 
 interface WorkerMessage {
     templateId: string;

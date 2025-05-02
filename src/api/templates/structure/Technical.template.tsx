@@ -1,8 +1,8 @@
-import { Document, Page, View } from '@react-pdf/renderer';
-import React from 'react';
-import TemplateProps from '../../common/TemplateProps';
-import { HeaderSection, MainContent, SidebarSection } from '../layout/Technical.layout';
-import templateStyle from '../styles/Technical.styles';
+import { Document, Page, View } from "@react-pdf/renderer";
+import TemplateProps from "@resume-api/common/TemplateProps";
+import { HeaderSection, MainContent, SidebarSection } from "@resume-api/templates/layout/Technical.layout";
+import templateStyle from "@resume-api/templates/styles/Technical.styles";
+import React from "react";
 
 const TemplateTechnical: React.FC<TemplateProps> = (props: TemplateProps) => {
     const { theme } = props;

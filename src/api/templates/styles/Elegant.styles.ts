@@ -1,9 +1,8 @@
-import { Font } from '@react-pdf/renderer';
-import { Style } from '@react-pdf/types';
-import TemplateTheme from '../../common/TemplateTheme';
-import { FontRoboto } from './common/templateFonts';
-import TemplateStyleSheet,
-{
+import { Font } from "@react-pdf/renderer";
+import { Style } from "@react-pdf/types";
+import TemplateTheme from "@resume-api/common/TemplateTheme";
+import { FontRoboto } from "./common/templateFonts";
+import TemplateStyleSheet, {
     CommonStyles,
     EducationStyles,
     ExperienceStyles,
@@ -15,7 +14,7 @@ import TemplateStyleSheet,
     SectionStyles,
     SkillStyles,
     SummaryStyles,
-} from './common/TemplateStyleSheet';
+} from "./common/TemplateStyleSheet";
 
 Font.register(FontRoboto);
 
@@ -34,12 +33,12 @@ const colors = {
 };
 
 const page = (): Style => ({
-    fontFamily: 'Roboto',
+    fontFamily: "Roboto",
     fontSize: 10,
     paddingHorizontal: 30,
     paddingVertical: 20,
-    flexDirection: 'column',
-    backgroundColor: '#FFFFFF',
+    flexDirection: "column",
+    backgroundColor: "#FFFFFF",
 });
 
 const common = (theme: TemplateTheme): CommonStyles => ({
@@ -49,9 +48,9 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         marginVertical: 12,
     },
     techContainer: {
-        display: 'flex' as const,
-        flexDirection: 'row' as const,
-        flexWrap: 'wrap' as const,
+        display: "flex" as const,
+        flexDirection: "row" as const,
+        flexWrap: "wrap" as const,
         gap: 4,
     },
     date: {
@@ -68,7 +67,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
             paddingHorizontal: 6,
             borderRadius: 4,
             backgroundColor: `${theme.primary}33`, // 20% opacity
-            alignSelf: 'flex-start' as const,
+            alignSelf: "flex-start" as const,
             marginBottom: 4,
         },
         text: {
@@ -81,20 +80,20 @@ const common = (theme: TemplateTheme): CommonStyles => ({
 
 const layout = (): LayoutStyles => ({
     row: {
-        flexDirection: 'row' as const,
+        flexDirection: "row" as const,
         marginTop: 8,
     },
     mainContent: {
-        flexDirection: 'column' as const,
+        flexDirection: "column" as const,
         flex: 1,
     },
     column: {
         main: {
-            width: '65%',
+            width: "65%",
             paddingRight: 15,
         },
         side: {
-            width: '35%',
+            width: "35%",
             paddingLeft: 15,
             borderLeftWidth: 1,
             borderLeftColor: colors.gray[200],
@@ -107,15 +106,15 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         marginBottom: 18,
     },
     header: {
-        flexDirection: 'row' as const,
-        alignItems: 'center' as const,
+        flexDirection: "row" as const,
+        alignItems: "center" as const,
         marginBottom: 6,
     },
     title: {
         fontSize: 14,
         fontWeight: 700,
         color: theme.primary,
-        textTransform: 'uppercase' as const,
+        textTransform: "uppercase" as const,
         letterSpacing: 1,
         paddingBottom: 2,
         borderBottomWidth: 2,
@@ -133,7 +132,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
             marginBottom: 8,
         },
         title: {
-            fontFamily: 'Roboto',
+            fontFamily: "Roboto",
             fontSize: 11,
             fontWeight: 600,
             color: theme.primary,
@@ -143,13 +142,13 @@ const section = (theme: TemplateTheme): SectionStyles => ({
 
 const header = (theme: TemplateTheme): HeaderStyles => ({
     container: {
-        flexDirection: 'column' as const,
-        alignItems: 'center' as const,
+        flexDirection: "column" as const,
+        alignItems: "center" as const,
         marginBottom: 20,
     },
     main: {
-        flexDirection: 'column' as const,
-        alignItems: 'center' as const,
+        flexDirection: "column" as const,
+        alignItems: "center" as const,
         marginBottom: 8,
     },
     name: {
@@ -176,12 +175,12 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
     },
     contact: {
         container: {
-            flexDirection: 'row' as const,
+            flexDirection: "row" as const,
             gap: 8,
         },
         item: {
-            flexDirection: 'row' as const,
-            alignItems: 'center' as const,
+            flexDirection: "row" as const,
+            alignItems: "center" as const,
         },
         label: {
             fontSize: 8,
@@ -209,7 +208,7 @@ const summary = (): SummaryStyles => ({
         borderWidth: 1,
         borderColor: colors.gray[300],
         borderRadius: 4,
-        textAlign: 'justify' as const,
+        textAlign: "justify" as const,
     },
 });
 
@@ -221,9 +220,9 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         borderLeftColor: theme.primary,
     },
     header: {
-        flexDirection: 'row' as const,
-        justifyContent: 'space-between' as const,
-        alignItems: 'center' as const,
+        flexDirection: "row" as const,
+        justifyContent: "space-between" as const,
+        alignItems: "center" as const,
         marginBottom: 4,
     },
     company: {
@@ -260,9 +259,9 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         borderLeftColor: theme.primary,
     },
     header: {
-        flexDirection: 'row' as const,
-        justifyContent: 'space-between' as const,
-        alignItems: 'center' as const,
+        flexDirection: "row" as const,
+        justifyContent: "space-between" as const,
+        alignItems: "center" as const,
         marginBottom: 2,
     },
     degree: {
@@ -303,7 +302,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     },
     link: {
         fontSize: 8,
-        textDecoration: 'underline' as const,
+        textDecoration: "underline" as const,
         marginBottom: 2,
     },
     description: {
@@ -315,8 +314,8 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
 
 const skill = (theme: TemplateTheme): SkillStyles => ({
     container: {
-        flexDirection: 'row' as const,
-        flexWrap: 'wrap' as const,
+        flexDirection: "row" as const,
+        flexWrap: "wrap" as const,
         gap: 4,
         marginBottom: 10,
     },
@@ -341,8 +340,8 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
     container: {
     },
     item: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexDirection: "row",
+        justifyContent: "space-between",
         marginBottom: 5,
     },
     name: {
@@ -357,7 +356,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
 const footer = (): FooterStyles => ({
     container: {
         marginTop: 20,
-        alignItems: 'center' as const,
+        alignItems: "center" as const,
     },
     text: {
         fontSize: 7,

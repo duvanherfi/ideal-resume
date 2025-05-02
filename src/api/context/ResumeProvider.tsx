@@ -1,9 +1,12 @@
 import { UserData } from "@resume-api/types";
 import React from "react";
+import { pdfjs } from 'react-pdf';
 import ResumeLabelProvider from "./resume-labels/ResumeLabelsProvider";
 import ResumeTemplateProvider from "./resume-template/ResumeTemplateProvider";
 import ResumeThemeProvider from "./resume-theme/ResumeThemeProvider";
 import UserDataProvider from "./user-data/UserDataProvider";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
 
 interface ResumeProviderProps {
     children: React.ReactNode
