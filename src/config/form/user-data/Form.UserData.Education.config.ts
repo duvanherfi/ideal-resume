@@ -1,10 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
-import { Education } from "@resume-api/types";
 import FieldsEducation from "@config/fields/Fields.Education.config";
-import FormConfig from "./Form.UserData.types";
+import { Education, UserDataItems } from "@resume-api/types";
+import { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
+import { v4 as uuidv4 } from "uuid";
 
-const education: FormConfig<Education> = {
+const education: FormConfig<UserDataItems, Education> = {
     dataKey: "education",
     title: I18n.FORM.DATA.EDUCATION.TITLE,
     fields: FieldsEducation,

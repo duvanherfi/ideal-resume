@@ -1,10 +1,10 @@
 import FieldsExperience from "@config/fields/Fields.Experience.config";
-import { WorkExperience } from "@resume-api/types";
+import { UserDataItems, WorkExperience } from "@resume-api/types";
+import { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 import { v4 as uuidv4 } from "uuid";
-import FormConfig from "./Form.UserData.types";
 
-const workExperiences: FormConfig<WorkExperience> = {
+const workExperiences: FormConfig<UserDataItems, WorkExperience> = {
     dataKey: "workExperiences",
     title: I18n.FORM.DATA.EXPERIENCE.TITLE,
     fields: FieldsExperience,

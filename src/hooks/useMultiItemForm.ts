@@ -1,8 +1,23 @@
-import useUserData from "@api-hooks/useUserData";
-import getConfig from "@config/form/user-data/Form.UserData.config";
-import FormConfig, { FormField } from "@config/form/user-data/Form.UserData.types";
-import { UserDataItems } from "@resume-api/types";
+import { SelectOption } from "@components/ui/input/Select";
 import { useState } from "react";
+
+export interface FormField<T> {
+    name: keyof T;
+    label: string;
+    type?: string;
+    placeholder?: string;
+    required?: boolean;
+    options?: SelectOption[];
+    suggestions?: string;
+}
+
+export interface FormConfig<P, T> {
+    dataKey: keyof P;
+    title: string;
+    fields: FormField<T>[];
+    empty: () => T;
+    isValid: (item: T) => boolean;
+}
 
 export type MultiItemFormType<T> = {
     title: string;
@@ -10,7 +25,7 @@ export type MultiItemFormType<T> = {
     current: T;
     items: T[];
     isEditing: boolean;
-    change: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+    change: (e: React.ChangeEvent<HTMLInputElement>) => void;
     add: () => void;
     update: () => void;
     reset: () => void;
@@ -20,27 +35,33 @@ export type MultiItemFormType<T> = {
     isValid: (item: T) => boolean;
 };
 
-interface MultiItemFormProps<T extends { id: string }> {
-    dataKey: keyof UserDataItems;
+export interface DataHook<P> {
+    get: P;
+    updateField: <K extends keyof P>(field: K, value: P[K]) => void;
+    update: (values: Partial<P>) => void;
 }
 
-const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>): MultiItemFormType<T> => {
-    const { dataKey } = props;
-    const config = getConfig(dataKey) as unknown as FormConfig<T>;
+interface MultiItemFormProps<T, P> {
+    dataKey: keyof P;
+    config: FormConfig<P, T>;
+    dataHook: DataHook<P>;
+}
+
+const useMultiItemForm = <T extends { id: string }, P extends Record<string, any>>(props: MultiItemFormProps<T, P>): MultiItemFormType<T> => {
+    const { dataKey, config, dataHook } = props;
     const [currentItem, setCurrentItem] = useState<T>(config.empty());
     const [isEditing, setIsEditing] = useState(false);
-    const data = useUserData();
 
-    const items = data.get[dataKey] as unknown as T[];
+    const items = dataHook.get[dataKey] as unknown as T[];
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setCurrentItem((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleAdd = () => {
         const newItems = [...items, currentItem];
-        data.updateField(dataKey, newItems);
+        dataHook.updateField(dataKey, newItems as any);
         setCurrentItem(config.empty());
     };
 
@@ -48,7 +69,7 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
         const updatedItems = items.map((item) =>
             item.id === currentItem.id ? currentItem : item
         );
-        data.updateField(dataKey, updatedItems);
+        dataHook.updateField(dataKey, updatedItems as any);
         setCurrentItem(config.empty());
         setIsEditing(false);
     };
@@ -65,7 +86,7 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
 
     const handleDelete = (id: string) => {
         const filteredItems = items.filter((item) => item.id !== id);
-        data.update({ [dataKey]: filteredItems });
+        dataHook.update({ [dataKey]: filteredItems } as Partial<P>);
     };
 
     const handleSwap = (dragIndex: number, hoverIndex: number) => {
@@ -73,7 +94,7 @@ const useMultiItemForm = <T extends { id: string }>(props: MultiItemFormProps<T>
         const draggedItem = newItems[dragIndex];
         newItems.splice(dragIndex, 1);
         newItems.splice(hoverIndex, 0, draggedItem);
-        data.updateField(dataKey, newItems);
+        dataHook.updateField(dataKey, newItems as any);
     };
 
     return {

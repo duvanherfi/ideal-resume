@@ -1,5 +1,5 @@
-import { FormField } from "@config/form/user-data/Form.UserData.types";
 import { Education } from "@resume-api/types";
+import { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 
 const FieldsEducation: FormField<Education>[] = [

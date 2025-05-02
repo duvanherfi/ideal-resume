@@ -1,5 +1,5 @@
 import GlassCard from "@components/ui/GlassCard";
-import useMultiItemForm from "@hooks/useMultiItemForm";
+import useUserDataForm from "@hooks/useUserDataForm";
 import { UserDataItems } from "@resume-api/types";
 import AddedItemList from "./AddedItemList";
 import MultiItemFormControls from "./MultiItemFormControls";
@@ -11,7 +11,7 @@ export interface MultiItemFormProps {
 
 const MultiItemForm = <T extends { id: string }>(props: MultiItemFormProps) => {
     const { dataKey } = props;
-    const form = useMultiItemForm<T>({ dataKey });
+    const form = useUserDataForm<T>({ dataKey });
 
     return (
         <GlassCard>

@@ -1,10 +1,10 @@
 import FieldsProject from "@config/fields/Fields.Project.config";
-import { Project } from "@resume-api/types";
+import { Project, UserDataItems } from "@resume-api/types";
+import { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 import { v4 as uuidv4 } from "uuid";
-import FormConfig from "./Form.UserData.types";
 
-const projects: FormConfig<Project> = {
+const projects: FormConfig<UserDataItems, Project> = {
     dataKey: "projects",
     title: I18n.FORM.DATA.PROJECT.TITLE,
     fields: FieldsProject,

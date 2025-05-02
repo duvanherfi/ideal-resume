@@ -1,9 +1,9 @@
 import useResumeLabels from "@api-hooks/useResumeLabels";
 import GlassCard from "@components/ui/GlassCard";
 import Subtitle from "@components/ui/text/Subtitle";
-import { FormField } from "@config/form/user-data/Form.UserData.types";
 import Icons from "@icons/Icons";
 import { ResumeLabels } from "@resume-api/types";
+import { FormField } from "@hooks/useMultiItemForm";
 import GenericField from "../common/form/GenericField";
 
 export interface FormLabelsProps {

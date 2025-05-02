@@ -1,13 +1,13 @@
 import Text from "@components/ui/text/Text";
-import { MultiItemFormType } from "@hooks/useMultiItemForm";
 import Icons from "@icons/Icons";
-import { UserData } from "@resume-api/types";
+import { UserDataItems } from "@resume-api/types";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { MultiItemFormType } from "@hooks/useMultiItemForm";
 import GenericItem from "../../item/GenericItem";
 
 interface AddedItemsListProps<T extends { id: string }> {
-    dataKey: keyof UserData;
+    dataKey: keyof UserDataItems;
     form: MultiItemFormType<T>;
 }
 

@@ -4,7 +4,7 @@ import useI18N from "@hooks/useI18N";
 import { MultiItemFormType } from "@hooks/useMultiItemForm";
 
 interface FormFieldsContainerProps<T extends { id: string }> {
-    form: MultiItemFormType<T & Record<string, any>>;
+    form: MultiItemFormType<T>;
 }
 
 const MultiItemFormFields = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
