@@ -1,4 +1,3 @@
-
 export interface ResumeLabels {
   profileSummary?: string;
   workExperiences?: string;

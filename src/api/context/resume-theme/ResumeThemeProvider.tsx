@@ -1,4 +1,4 @@
-import TemplateTheme from "@resume-api/common/TemplateTheme";
+import TemplateTheme from "@resume-api/types/template/TemplateTheme";
 import React, { ReactNode, useMemo, useState } from "react";
 import ResumeThemeContext, { ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";

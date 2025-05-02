@@ -1,4 +1,4 @@
-import TemplateProps from "../../common/TemplateProps";
+import TemplateProps from "./TemplateProps";
 
 export interface Template {
   id: string;

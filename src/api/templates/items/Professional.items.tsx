@@ -1,6 +1,6 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { getTimeRange } from "@resume-api/common/helper/templateDataHelper";
-import { TemplateItemProps, TemplateSectionProps } from "@resume-api/common/TemplateProps";
+import { getTimeRange } from "@resume-api/common/templateDataHelper";
+import { TemplateItemProps, TemplateSectionProps } from "@resume-api/types/template/TemplateProps";
 import { WorkExperience } from "@resume-api/types/items/WorkExperience";
 import { Project } from "@resume-api/types/items/Project";
 import { Language } from "@resume-api/types/items/Language";

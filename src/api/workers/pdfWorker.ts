@@ -1,5 +1,5 @@
 import { DocumentProps, pdf } from "@react-pdf/renderer";
-import TemplateProps from "@resume-api/common/TemplateProps";
+import TemplateProps from "@resume-api/types/template/TemplateProps";
 import { asyncTemplates } from "@resume-api/context/resume-template/templates";
 import React, { ReactElement } from "react";
 

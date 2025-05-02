@@ -1,4 +1,4 @@
-import TemplateProps from "@resume-api/common/TemplateProps";
+import TemplateProps from "@resume-api/types/template/TemplateProps";
 import type { Template } from "@resume-api/types/template/Template";
 import { useCallback, useEffect, useRef, useState } from "react";
 

@@ -1,5 +1,5 @@
 import { Document, Page, View } from '@react-pdf/renderer';
-import TemplateProps from '@resume-api/common/TemplateProps';
+import TemplateProps from '@resume-api/types/template/TemplateProps';
 import { MainColumn, ProfileHeader, SideColumn } from '@resume-api/templates/layout/Creative.layout';
 import templateStyle from '@resume-api/templates/styles/Creative.styles';
 import React from 'react';

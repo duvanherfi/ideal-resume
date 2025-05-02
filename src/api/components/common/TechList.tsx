@@ -1,4 +1,4 @@
-import { SimpleItemProps } from "../../common/TemplateProps";
+import { SimpleItemProps } from "../../types/template/TemplateProps";
 import { WorkExperience } from "@resume-api/types/items/WorkExperience";
 import { Project } from "@resume-api/types/items/Project";
 import Badge from "./Badge";

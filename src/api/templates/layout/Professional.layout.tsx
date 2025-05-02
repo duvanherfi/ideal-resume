@@ -1,5 +1,5 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import { TemplateSectionProps } from "@resume-api/common/TemplateProps";
+import { TemplateSectionProps } from "@resume-api/types/template/TemplateProps";
 import Contact from "@resume-api/components/common/Contact";
 import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "@resume-api/components/sections/TemplateSections";
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "../items/Professional.items";

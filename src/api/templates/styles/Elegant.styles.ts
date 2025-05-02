@@ -1,6 +1,6 @@
 import { Font } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
-import TemplateTheme from "@resume-api/common/TemplateTheme";
+import TemplateTheme from "@resume-api/types/template/TemplateTheme";
 import { FontRoboto } from "./common/templateFonts";
 import TemplateStyleSheet, {
     CommonStyles,
