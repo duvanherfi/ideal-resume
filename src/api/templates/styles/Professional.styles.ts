@@ -1,7 +1,7 @@
 import { Font } from '@react-pdf/renderer';
 import TemplateTheme from '../../common/TemplateTheme';
 import { FontRoboto } from './common/templateFonts';
-import { lightenHexColor } from '../helper/colorHelper';
+import { lightenHexColor } from '../../common/helper/colorHelper';
 import TemplateStyleSheet, { CommonStyles, EducationStyles, ExperienceStyles, FooterStyles, HeaderStyles, LanguageStyles, LayoutStyles, ProjectStyles, SectionStyles, SkillStyles, SummaryStyles } from './common/TemplateStyleSheet';
 import { Style } from '@react-pdf/types';
 
