@@ -1,5 +1,9 @@
-import { SelectOption } from "@components/ui/input/Select";
 import { useState } from "react";
+
+interface SelectOption {
+    label: string;
+    value: string | number;
+}
 
 export interface FormField<T> {
     name: keyof T;

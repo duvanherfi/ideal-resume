@@ -118,7 +118,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     header: {
         flexDirection: "row" as const,
         alignItems: "center" as const,
-        marginBottom: 8,
+        marginBottom: 16,
     },
     title: {
         fontFamily: "Roboto",
@@ -156,7 +156,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
 
 const header = (theme: TemplateTheme): HeaderStyles => ({
     container: {
-        marginBottom: 10,
+        marginBottom: 2,
     },
     main: {
         flexDirection: "row" as const,
@@ -181,6 +181,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         fontWeight: 500,
         color: colors.gray[700],
         marginTop: 2,
+        marginBottom: 6
     },
     photo: {
         width: 65,

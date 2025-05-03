@@ -1,5 +1,5 @@
 import { Text } from "@react-pdf/renderer";
-import TemplateStyleSheet from "../../templates/styles/common/TemplateStyleSheet";
+import TemplateStyleSheet from "@resume-api/templates/styles/common/TemplateStyleSheet";
 import ViewEmptySafe from "./ViewEmptySafe";
 
 interface ContactProps { 
