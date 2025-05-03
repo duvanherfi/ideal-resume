@@ -11,10 +11,10 @@ const ViewThemeColorSelector: React.FC = () => {
 
     return (
         <GlassCard>
-            <ViewTitle simple title={I18n.THEMES.TITLE} subtitle={I18n.THEMES.SUBTITLE} className="pb-4" />
+            <ViewTitle simple title={I18n.THEME.COLOR.TITLE} subtitle={I18n.THEME.COLOR.SUBTITLE} className="pb-4" />
             {theme.getAllPropertyColors().map(property => (
                 <GlassCard key={property}>
-                    <Subtitle>{I18n.THEMES.COLOR_SCHEME(property)}</Subtitle>
+                    <Subtitle>{I18n.THEME.COLOR.SCHEME(property)}</Subtitle>
                     <div className="flex flex-col space-y-8 lg:space-y-0 lg:space-x-8 lg:flex-row">
                         <ThemeCustom property={property} />
                         <SuggestedThemes property={property} />

@@ -7,13 +7,13 @@ export interface ThemeColorBadgeProps {
     color: string;
 }
 
-const ThemeColorBadge: React.FC<ThemeColorBadgeProps> = ({ name, property,color }) => {
+const ThemeColorBadge: React.FC<ThemeColorBadgeProps> = ({ name, property, color }) => {
     const theme = useResumeTheme();
 
     const style = {
         backgroundColor: `${color}20`,
         color: color,
-        border: theme.get?.color[property] === color ? `2px solid ${color}` : "1px solid transparent"
+        border: theme.getColor(property) === color ? `2px solid ${color}` : "1px solid transparent"
     }
 
     return (

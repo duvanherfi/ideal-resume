@@ -31,29 +31,31 @@ const I18n = {
         }
     },
 
-    THEMES: {
-        TITLE: 'themes.title',
-        SUBTITLE: 'themes.subtitle',
-        CUSTOMIZE: {
-            LABEL: 'themes.customize.label'
-        },
-        COLOR_SCHEME: (type: string): string => "themes.color." + type + ".title",
-        SUGGESTED: {
-            LABEL: 'themes.suggested.label',
-            OPTION: {
-                BLUE: 'themes.suggested.option.blue',
-                GREEN: 'themes.suggested.option.green',
-                PURPLE: 'themes.suggested.option.purple',
-                RED: 'themes.suggested.option.red',
-                ORANGE: 'themes.suggested.option.orange',
-                YELLOW: 'themes.suggested.option.yellow',
-                TEAL: 'themes.suggested.option.teal',
-                CYAN: 'themes.suggested.option.cyan',
-                INDIGO: 'themes.suggested.option.indigo',
-                PINK: 'themes.suggested.option.pink',
-                GRAY: 'themes.suggested.option.gray'
+    THEME: {
+        COLOR: {
+            TITLE: 'theme.color.title',
+            SUBTITLE: 'theme.color.subtitle',
+            CUSTOMIZE: {
+                LABEL: 'theme.color.customize.label'
+            },
+            SCHEME: (type: string): string => "theme.color.scheme." + type + ".title",
+            SUGGESTED: {
+                LABEL: 'theme.color.suggested.label',
+                OPTION: {
+                    BLUE: 'theme.color.suggested.option.blue',
+                    GREEN: 'theme.color.suggested.option.green',
+                    PURPLE: 'theme.color.suggested.option.purple',
+                    RED: 'theme.color.suggested.option.red',
+                    ORANGE: 'theme.color.suggested.option.orange',
+                    YELLOW: 'theme.color.suggested.option.yellow',
+                    TEAL: 'theme.color.suggested.option.teal',
+                    CYAN: 'theme.color.suggested.option.cyan',
+                    INDIGO: 'theme.color.suggested.option.indigo',
+                    PINK: 'theme.color.suggested.option.pink',
+                    GRAY: 'theme.color.suggested.option.gray'
+                }
             }
-        }
+        },
     },
 
     FORM: {

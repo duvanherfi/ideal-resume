@@ -13,24 +13,24 @@
   "gallery.subtitle": "Elige la plantilla que más te agrade. Podrás cambiar el color en la pestaña Personalizar.",
   "gallery.viewMode.carousel": "Carrusel",
   "gallery.viewMode.grid": "Grilla",
-  "themes.title": "Temas",
-  "themes.subtitle": "Elige uno de los temas sugeridos o utiliza el selector de color para crear uno personalizado.",
-  "themes.color.primary.title": "Principal",
-  "themes.color.badge.title": "Etiquetas",
-  "themes.color.skill.title": "Habilidades",
-  "themes.customize.label": "Personalizar tema",
-  "themes.suggested.label": "Sugeridos",
-  "themes.suggested.option.blue": "Azul",
-  "themes.suggested.option.green": "Verde",
-  "themes.suggested.option.purple": "Violeta",
-  "themes.suggested.option.red": "Rojo",
-  "themes.suggested.option.orange": "Naranja",
-  "themes.suggested.option.yellow": "Amarillo",
-  "themes.suggested.option.teal": "Verde azulado",
-  "themes.suggested.option.cyan": "Cian",
-  "themes.suggested.option.indigo": "Índigo",
-  "themes.suggested.option.pink": "Rosa",
-  "themes.suggested.option.gray": "Gris",
+  "theme.color.title": "Temas",
+  "theme.color.subtitle": "Elige uno de los temas sugeridos o utiliza el selector de color para crear uno personalizado.",
+  "theme.color.scheme.primary.title": "Principal",
+  "theme.color.scheme.badge.title": "Etiquetas",
+  "theme.color.scheme.skill.title": "Habilidades",
+  "theme.color.customize.label": "Personalizar tema",
+  "theme.color.suggested.label": "Sugeridos",
+  "theme.color.suggested.option.blue": "Azul",
+  "theme.color.suggested.option.green": "Verde",
+  "theme.color.suggested.option.purple": "Violeta",
+  "theme.color.suggested.option.red": "Rojo",
+  "theme.color.suggested.option.orange": "Naranja",
+  "theme.color.suggested.option.yellow": "Amarillo",
+  "theme.color.suggested.option.teal": "Verde azulado",
+  "theme.color.suggested.option.cyan": "Cian",
+  "theme.color.suggested.option.indigo": "Índigo",
+  "theme.color.suggested.option.pink": "Rosa",
+  "theme.color.suggested.option.gray": "Gris",
   "form.data.title": "Tu información",
   "form.data.subtitle": "Completa los campos que quieras mostrar. Los vacíos no aparecerán.",
   "form.data.basicInfo.title": "Información básica",
@@ -115,34 +115,77 @@
   "form.data.workExperiences.empty": "Aún no hay experiencia profesional agregada.",
   "form.data.skills.empty": "Aún no hay habilidades agregadas.",
   "form.data.projects.empty": "Aún no hay proyectos agregados.",
-
   "form.labels.title": "Títulos",
   "form.labels.subtitle": "Modifica los títulos que se muestran en el documento.",
   "form.labels.section.header": "Encabezado",
   "form.labels.section.sections": "Secciones",
   "form.labels.section.others": "Otros",
   "form.labels.field.profileSummary": "Resumen profesional",
-  "form.labels.field.profileSummary.suggestions": ["Resumen profesional", "Perfil", "Sobre mí"],
+  "form.labels.field.profileSummary.suggestions": [
+    "Resumen profesional",
+    "Perfil",
+    "Sobre mí"
+  ],
   "form.labels.field.workExperiences": "Experiencia profesional",
-  "form.labels.field.workExperiences.suggestions": ["Experiencia profesional", "Mi experiencia laboral", "Experiencia"],
+  "form.labels.field.workExperiences.suggestions": [
+    "Experiencia profesional",
+    "Mi experiencia laboral",
+    "Experiencia"
+  ],
   "form.labels.field.education": "Educación",
-  "form.labels.field.education.suggestions": ["Educación", "Formación académica", "Estudios"],
+  "form.labels.field.education.suggestions": [
+    "Educación",
+    "Formación académica",
+    "Estudios"
+  ],
   "form.labels.field.projects": "Proyectos",
-  "form.labels.field.projects.suggestions": ["Proyectos", "Portafolio", "Trabajos"],
+  "form.labels.field.projects.suggestions": [
+    "Proyectos",
+    "Portafolio",
+    "Trabajos"
+  ],
   "form.labels.field.skills": "Habilidades",
-  "form.labels.field.skills.suggestions": ["Habilidades", "Competencias", "Aptitudes"],
+  "form.labels.field.skills.suggestions": [
+    "Habilidades",
+    "Competencias",
+    "Aptitudes"
+  ],
   "form.labels.field.languages": "Idiomas",
-  "form.labels.field.languages.suggestions": ["Idiomas", "Lenguas", "Competencias lingüísticas"],
+  "form.labels.field.languages.suggestions": [
+    "Idiomas",
+    "Lenguas",
+    "Competencias lingüísticas"
+  ],
   "form.labels.field.email": "Email",
-  "form.labels.field.email.suggestions": ["Email", "Correo electrónico", "Correo"],
+  "form.labels.field.email.suggestions": [
+    "Email",
+    "Correo electrónico",
+    "Correo"
+  ],
   "form.labels.field.phone": "Celular",
-  "form.labels.field.phone.suggestions": ["Teléfono móvil", "Celular", "Teléfono"],
+  "form.labels.field.phone.suggestions": [
+    "Teléfono móvil",
+    "Celular",
+    "Teléfono"
+  ],
   "form.labels.field.location": "Ubicación",
-  "form.labels.field.location.suggestions": ["Ubicación", "Localización", "Domicilio"],
+  "form.labels.field.location.suggestions": [
+    "Ubicación",
+    "Localización",
+    "Domicilio"
+  ],
   "form.labels.field.lastUpdated": "Última actualización",
-  "form.labels.field.lastUpdated.suggestions": ["Última actualización", "Actualizado", "Fecha de actualización"],
+  "form.labels.field.lastUpdated.suggestions": [
+    "Última actualización",
+    "Actualizado",
+    "Fecha de actualización"
+  ],
   "form.labels.field.present": "Presente",
-  "form.labels.field.present.suggestions": ["Presente", "Actual", "Actualmente"],
+  "form.labels.field.present.suggestions": [
+    "Presente",
+    "Actual",
+    "Actualmente"
+  ],
   "input.image.load": "Cargar",
   "input.image.empty": "Sin imagen",
   "input.suggestions.title": "Sugerido"

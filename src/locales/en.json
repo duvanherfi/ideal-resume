@@ -13,24 +13,24 @@
   "gallery.subtitle": "Choose the template you like best. You can change its color in the Customize tab.",
   "gallery.viewMode.carousel": "Carousel",
   "gallery.viewMode.grid": "Grid",
-  "themes.title": "Themes",
-  "themes.subtitle": "Pick one of the suggested themes or use the color picker to create a custom one.",
-  "themes.color.primary.title": "Primary",
-  "themes.color.badge.title": "Badges",
-  "themes.color.skill.title": "Skills",
-  "themes.customize.label": "Customize theme",
-  "themes.suggested.label": "Suggested",
-  "themes.suggested.option.blue": "Blue",
-  "themes.suggested.option.green": "Green",
-  "themes.suggested.option.purple": "Purple",
-  "themes.suggested.option.red": "Red",
-  "themes.suggested.option.orange": "Orange",
-  "themes.suggested.option.yellow": "Yellow",
-  "themes.suggested.option.teal": "Teal",
-  "themes.suggested.option.cyan": "Cyan",
-  "themes.suggested.option.indigo": "Indigo",
-  "themes.suggested.option.pink": "Pink",
-  "themes.suggested.option.gray": "Gray",
+  "theme.color.title": "Themes",
+  "theme.color.subtitle": "Pick one of the suggested themes or use the color picker to create a custom one.",
+  "theme.color.scheme.primary.title": "Primary",
+  "theme.color.scheme.badge.title": "Badges",
+  "theme.color.scheme.skill.title": "Skills",
+  "theme.color.customize.label": "Customize theme",
+  "theme.color.suggested.label": "Suggested",
+  "theme.color.suggested.option.blue": "Blue",
+  "theme.color.suggested.option.green": "Green",
+  "theme.color.suggested.option.purple": "Purple",
+  "theme.color.suggested.option.red": "Red",
+  "theme.color.suggested.option.orange": "Orange",
+  "theme.color.suggested.option.yellow": "Yellow",
+  "theme.color.suggested.option.teal": "Teal",
+  "theme.color.suggested.option.cyan": "Cyan",
+  "theme.color.suggested.option.indigo": "Indigo",
+  "theme.color.suggested.option.pink": "Pink",
+  "theme.color.suggested.option.gray": "Gray",
   "form.data.title": "Your information",
   "form.data.subtitle": "Fill out the fields you want to show. Empty ones won’t appear.",
   "form.data.basicInfo.title": "Basic information",
@@ -121,27 +121,71 @@
   "form.labels.section.sections": "Sections",
   "form.labels.section.others": "Others",
   "form.labels.field.profileSummary": "Professional summary",
-  "form.labels.field.profileSummary.suggestions": ["Professional summary", "Profile", "About me"],
+  "form.labels.field.profileSummary.suggestions": [
+    "Professional summary",
+    "Profile",
+    "About me"
+  ],
   "form.labels.field.workExperiences": "Work experience",
-  "form.labels.field.workExperiences.suggestions": ["Work experience", "My work history", "Experience"],
+  "form.labels.field.workExperiences.suggestions": [
+    "Work experience",
+    "My work history",
+    "Experience"
+  ],
   "form.labels.field.education": "Education",
-  "form.labels.field.education.suggestions": ["Education", "Academic background", "Studies"],
+  "form.labels.field.education.suggestions": [
+    "Education",
+    "Academic background",
+    "Studies"
+  ],
   "form.labels.field.projects": "Projects",
-  "form.labels.field.projects.suggestions": ["Projects", "Portfolio", "Works"],
+  "form.labels.field.projects.suggestions": [
+    "Projects",
+    "Portfolio",
+    "Works"
+  ],
   "form.labels.field.skills": "Skills",
-  "form.labels.field.skills.suggestions": ["Skills", "Competencies", "Aptitudes"],
+  "form.labels.field.skills.suggestions": [
+    "Skills",
+    "Competencies",
+    "Aptitudes"
+  ],
   "form.labels.field.languages": "Languages",
-  "form.labels.field.languages.suggestions": ["Languages", "Tongues", "Language skills"],
+  "form.labels.field.languages.suggestions": [
+    "Languages",
+    "Tongues",
+    "Language skills"
+  ],
   "form.labels.field.email": "Email",
-  "form.labels.field.email.suggestions": ["Email", "Email address", "E-mail"],
+  "form.labels.field.email.suggestions": [
+    "Email",
+    "Email address",
+    "E-mail"
+  ],
   "form.labels.field.phone": "Phone",
-  "form.labels.field.phone.suggestions": ["Mobile phone", "Phone", "Cell"],
+  "form.labels.field.phone.suggestions": [
+    "Mobile phone",
+    "Phone",
+    "Cell"
+  ],
   "form.labels.field.location": "Location",
-  "form.labels.field.location.suggestions": ["Location", "Address", "Residence"],
+  "form.labels.field.location.suggestions": [
+    "Location",
+    "Address",
+    "Residence"
+  ],
   "form.labels.field.lastUpdated": "Last updated",
-  "form.labels.field.lastUpdated.suggestions": ["Last updated", "Updated", "Update date"],
+  "form.labels.field.lastUpdated.suggestions": [
+    "Last updated",
+    "Updated",
+    "Update date"
+  ],
   "form.labels.field.present": "Present",
-  "form.labels.field.present.suggestions": ["Present", "Current", "Currently"],
+  "form.labels.field.present.suggestions": [
+    "Present",
+    "Current",
+    "Currently"
+  ],
   "input.image.load": "Upload",
   "input.image.empty": "No image",
   "input.suggestions.title": "Suggested"

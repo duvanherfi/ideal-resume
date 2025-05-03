@@ -9,7 +9,7 @@ const tabs: Tab[] = [
         id: "carousel",
         component: <ViewThemeColorSelector />,
         children: <Icons.Draw />,
-        text: I18n.THEMES.TITLE,
+        text: I18n.THEME.COLOR.TITLE,
     },
     {
         id: "grid",

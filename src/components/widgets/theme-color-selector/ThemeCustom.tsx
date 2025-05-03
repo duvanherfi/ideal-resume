@@ -16,7 +16,7 @@ const ThemeCustom: React.FC<ThemeColorBadgeProps> = ({ property }) => {
     return (
         <div className="flex flex-col">
             <label className="text-xs font-medium text-secondary-600 dark:text-secondary-200 mb-2" htmlFor={`color-${property}`}>
-                {t(I18n.THEMES.CUSTOMIZE.LABEL)}
+                {t(I18n.THEME.COLOR.CUSTOMIZE.LABEL)}
             </label>
             <div className="flex items-center relative">
                 <input
