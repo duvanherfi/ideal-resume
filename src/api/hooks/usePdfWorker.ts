@@ -56,16 +56,12 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
         []
     );
 
-    // Efecto que dispara la generación cada vez que cambian template/data/…
-    // A menos que isStatic sea true y ya hayamos generado una vez
     useEffect(() => {
-        // Si no hay template, no hay nada que generar
         if (!template) {
             setBlobUrl(undefined);
             return;
         }
 
-        // Si es estático y ya hemos generado una vez, no hacemos nada
         if (isStatic && hasGeneratedOnceRef.current && currentBlobUrlRef.current) {
             return;
         }
@@ -75,7 +71,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
 
         generatePdf(template.id, { data, theme, labels })
             .then(blob => {
-                // Si había una URL previa y estamos generando una nueva, revocamos la anterior
                 if (currentBlobUrlRef.current && !isStatic) {
                     URL.revokeObjectURL(currentBlobUrlRef.current);
                 }
@@ -92,7 +87,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
                 setLoading(false);
             });
 
-        // Solo limpiamos si no es estático o si estamos desmontando el componente
         return () => {
             if (!isStatic && url) {
                 URL.revokeObjectURL(url);
@@ -101,7 +95,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
         };
     }, [template, data, theme, labels, generatePdf, isStatic]);
 
-    // Garantizar que se limpian los recursos cuando se desmonta el componente
     useEffect(() => {
         return () => {
             if (currentBlobUrlRef.current) {

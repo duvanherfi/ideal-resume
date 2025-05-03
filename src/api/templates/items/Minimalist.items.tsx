@@ -1,6 +1,6 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import TechList from "@resume-api/components/common/TechList";
-import TextEmptySafe from "@resume-api/components/common/TextEmptySafe";
+import TechList from "@resume-api/templates/components/common/TechList";
+import TextEmptySafe from "@resume-api/templates/components/common/TextEmptySafe";
 import type { Education } from "@resume-api/types/items/Education";
 import type { Language } from "@resume-api/types/items/Language";
 import type { Project } from "@resume-api/types/items/Project";

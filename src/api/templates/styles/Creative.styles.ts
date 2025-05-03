@@ -28,7 +28,7 @@ const page = (): Style => ({
 const common = (theme: TemplateTheme): CommonStyles => ({
     divider: {
         borderBottomWidth: 1,
-        borderBottomColor: lightenHexColor(theme.primary, 80),
+        borderBottomColor: lightenHexColor(theme.color.primary, 80),
     },
     techContainer: {
         display: "flex",
@@ -51,13 +51,13 @@ const common = (theme: TemplateTheme): CommonStyles => ({
             paddingVertical: 2,
             paddingHorizontal: 6,
             borderRadius: 4,
-            backgroundColor: `${theme.primary}33`,
+            backgroundColor: `${theme.color.badge}33`,
             alignSelf: "flex-start" as const,
             marginBottom: 4,
         },
         text: {
             fontSize: 8,
-            color: theme.primary,
+            color: theme.color.badge,
             fontWeight: 600 as const,
         },
     },
@@ -80,7 +80,7 @@ const layout = (theme: TemplateTheme): LayoutStyles => ({
         },
         side: {
             width: "35%",
-            backgroundColor: lightenHexColor(theme.primary, 95),
+            backgroundColor: lightenHexColor(theme.color.primary, 95),
             paddingHorizontal: 15,
             paddingTop: 20,
             paddingBottom: 30,
@@ -99,11 +99,11 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 14,
         fontWeight: "bold",
-        color: darkenHexColor(theme.primary, 15),
+        color: darkenHexColor(theme.color.primary, 15),
     },
     headerLine: {
         borderBottomWidth: 2,
-        borderBottomColor: theme.primary,
+        borderBottomColor: theme.color.primary,
         paddingBottom: 3,
     },
     side: {
@@ -116,15 +116,15 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         title: {
             fontSize: 14,
             fontWeight: "bold",
-            color: darkenHexColor(theme.primary, 15),
+            color: darkenHexColor(theme.color.primary, 15),
         }
     }
 });
 
 const header = (theme: TemplateTheme): HeaderStyles => ({
     container: {
-        backgroundColor: theme.primary,
-        color: getContrastingTextColor(theme.primary),
+        backgroundColor: theme.color.primary,
+        color: getContrastingTextColor(theme.color.primary),
         padding: 10,
         flexDirection: "column",
     },
@@ -146,7 +146,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
     },
     role: {
         fontSize: 12,
-        color: lightenHexColor(theme.primary, 85),
+        color: lightenHexColor(theme.color.primary, 85),
         fontWeight: "medium",
     },
     photo: {
@@ -164,7 +164,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
             flexWrap: "wrap",
             justifyContent: "space-between",
             borderTopWidth: 1,
-            borderTopColor: lightenHexColor(theme.primary, 30),
+            borderTopColor: lightenHexColor(theme.color.primary, 30),
             paddingTop: 10,
         },
         item: {
@@ -173,7 +173,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         },
         label: {
             fontSize: 8,
-            color: lightenHexColor(theme.primary, 85),
+            color: lightenHexColor(theme.color.primary, 85),
             fontWeight: "medium",
             marginBottom: 2,
         },
@@ -183,7 +183,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         },
         divider: {
             borderTopWidth: 1,
-            borderTopColor: lightenHexColor(theme.primary, 30),
+            borderTopColor: lightenHexColor(theme.color.primary, 30),
         }
     }
 });
@@ -212,7 +212,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     },
     company: {
         fontSize: 11,
-        color: theme.primary,
+        color: theme.color.primary,
         fontWeight: "medium",
         marginBottom: 5,
     },
@@ -250,7 +250,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     institution: {
         fontSize: 11,
-        color: theme.primary,
+        color: theme.color.primary,
         marginTop: 3,
     },
     description: {
@@ -275,7 +275,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
         backgroundColor: "white",
         borderRadius: 5,
         borderLeftWidth: 3,
-        borderLeftColor: theme.primary,
+        borderLeftColor: theme.color.primary,
     },
     name: {
         fontSize: 11,
@@ -285,7 +285,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     },
     link: {
         fontSize: 8,
-        color: theme.primary,
+        color: theme.color.primary,
         marginBottom: 4,
     },
     description: {
@@ -311,13 +311,13 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
     bar: {
         container: {
             height: 4,
-            backgroundColor: lightenHexColor(theme.primary, 70),
+            backgroundColor: lightenHexColor(theme.color.skill, 70),
             borderRadius: 2,
             overflow: "hidden",
         },
         fill: {
             height: "100%",
-            backgroundColor: theme.primary,
+            backgroundColor: theme.color.skill,
             borderRadius: 2,
         }
     }
@@ -333,7 +333,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
         alignItems: "center",
         paddingVertical: 6,
         borderBottomWidth: 1,
-        borderBottomColor: lightenHexColor(theme.primary, 80),
+        borderBottomColor: lightenHexColor(theme.color.primary, 80),
     },
     name: {
         fontSize: 10,
@@ -341,7 +341,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
     },
     proficiency: {
         fontSize: 9,
-        color: theme.primary,
+        color: theme.color.primary,
         fontWeight: "medium",
     }
 });
@@ -349,7 +349,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
 const footer = (theme: TemplateTheme): FooterStyles => ({
     container: {
         padding: 10,
-        backgroundColor: lightenHexColor(theme.primary, 95),
+        backgroundColor: lightenHexColor(theme.color.primary, 95),
         alignItems: "center",
     },
     text: {

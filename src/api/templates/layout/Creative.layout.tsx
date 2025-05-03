@@ -1,6 +1,6 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import Contact from "@resume-api/components/common/Contact";
-import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "@resume-api/components/sections/TemplateSections";
+import Contact from "@resume-api/templates/components/common/Contact";
+import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "@resume-api/templates/components/sections/TemplateSections";
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "@resume-api/templates/items/Creative.items";
 import type { TemplateSectionProps } from "@resume-api/types/template/TemplateProps";
 

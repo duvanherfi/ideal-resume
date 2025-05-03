@@ -1,22 +1,27 @@
 import useI18N from "@hooks/useI18N";
+import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
 import I18n from "src/locales/I18nKeys";
-import ThemeColorBadge, { ThemeColorBadgeProps } from "./ThemeColorBadge";
+import ThemeColorBadge from "./ThemeColorBadge";
 
-const SuggestedThemes = () => {
+interface SuggestedThemesProps {
+    property: keyof TemplateColorScheme;
+}
+
+const SuggestedThemes: React.FC<SuggestedThemesProps> = ({ property }) => {
     const { t } = useI18N();
 
-    const suggestions: ThemeColorBadgeProps[] = [
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.BLUE), value: { primary: "#3B82F6" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.GREEN), value: { primary: "#10B981" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.PURPLE), value: { primary: "#8B5CF6" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.RED), value: { primary: "#EF4444" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.ORANGE), value: { primary: "#F59E0B" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.YELLOW), value: { primary: "#FACC15" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.TEAL), value: { primary: "#14B8A6" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.CYAN), value: { primary: "#06B6D4" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.INDIGO), value: { primary: "#6366F1" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.PINK), value: { primary: "#EC4899" } },
-        { name: t(I18n.THEMES.SUGGESTED.OPTION.GRAY), value: { primary: "#6B7280" } },
+    const suggestions = [
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.BLUE), color: "#3B82F6" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.GREEN), color: "#10B981" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.PURPLE), color: "#8B5CF6" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.RED), color: "#EF4444" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.ORANGE), color: "#F59E0B" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.YELLOW), color: "#FACC15" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.TEAL), color: "#14B8A6" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.CYAN), color: "#06B6D4" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.INDIGO), color: "#6366F1" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.PINK), color: "#EC4899" },
+        { name: t(I18n.THEMES.SUGGESTED.OPTION.GRAY), color: "#6B7280" },
     ];
 
     return (
@@ -26,7 +31,7 @@ const SuggestedThemes = () => {
             </span>
             <div className="flex flex-wrap gap-2">
                 {suggestions.map((theme) => (
-                    <ThemeColorBadge key={theme.name} {...theme} />
+                    <ThemeColorBadge key={theme.name} property={property} {...theme} />
                 ))}
             </div>
         </div>

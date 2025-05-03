@@ -37,6 +37,7 @@ const I18n = {
         CUSTOMIZE: {
             LABEL: 'themes.customize.label'
         },
+        COLOR_SCHEME: (type: string): string => "themes.color." + type + ".title",
         SUGGESTED: {
             LABEL: 'themes.suggested.label',
             OPTION: {

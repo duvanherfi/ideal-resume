@@ -60,13 +60,13 @@ const common = (theme: TemplateTheme): CommonStyles => ({
             paddingVertical: 2,
             paddingHorizontal: 6,
             borderRadius: 4,
-            backgroundColor: `${theme.primary}33`, // 20% opacity
+            backgroundColor: `${theme.color.badge}33`, // 20% opacity
             alignSelf: "flex-start" as const,
             marginBottom: 4,
         },
         text: {
             fontSize: 8,
-            color: theme.primary,
+            color: theme.color.badge,
             fontWeight: 600 as const,
         },
     },
@@ -108,7 +108,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         fontFamily: "Roboto",
         fontSize: 16,
         fontWeight: 600,
-        color: theme.primary,
+        color: theme.color.primary,
         marginRight: 10,
     },
     headerLine: {
@@ -130,7 +130,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
             fontFamily: "Roboto",
             fontSize: 14,
             fontWeight: 600,
-            color: theme.primary,
+            color: theme.color.primary,
         },
     },
 });
@@ -153,7 +153,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
             fontFamily: "Roboto",
             fontSize: 24,
             fontWeight: 700,
-            color: theme.primary,
+            color: theme.color.primary,
             marginBottom: 5,
         },
     },
@@ -166,7 +166,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         height: 70,
         borderRadius: 35,
         borderWidth: 2,
-        borderColor: theme.primary,
+        borderColor: theme.color.primary,
     },
     contact: {
         container: {
@@ -184,7 +184,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         label: {
             fontWeight: 600,
             fontSize: 9,
-            color: theme.primary,
+            color: theme.color.primary,
             marginRight: 5,
         },
         value: {
@@ -225,7 +225,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     role: {
         fontSize: 11,
         fontWeight: 600,
-        color: theme.primary,
+        color: theme.color.primary,
         marginBottom: 4,
     },
     contractType: {
@@ -259,7 +259,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         fontFamily: "Roboto",
         fontSize: 11,
         fontWeight: 600,
-        color: theme.primary,
+        color: theme.color.primary,
     },
     institution: {
         fontFamily: "Roboto",
@@ -289,7 +289,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
         backgroundColor: colors.gray[100],
         borderRadius: 4,
         borderLeftWidth: 2,
-        borderLeftColor: theme.primary,
+        borderLeftColor: theme.color.primary,
     },
     name: {
         fontFamily: "Roboto",
@@ -299,7 +299,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     },
     link: {
         fontSize: 8,
-        color: theme.primary,
+        color: theme.color.primary,
         textDecoration: "none" as const,
         marginBottom: 3,
     },
@@ -330,7 +330,7 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
         },
         fill: {
             height: 4,
-            backgroundColor: theme.primary,
+            backgroundColor: theme.color.skill,
             borderRadius: 2,
         },
     },
@@ -351,7 +351,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
     },
     proficiency: {
         fontSize: 9,
-        color: theme.primary,
+        color: theme.color.primary,
     },
 });
 

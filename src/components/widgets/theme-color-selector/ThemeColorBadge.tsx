@@ -1,24 +1,24 @@
 import useResumeTheme from "@api-hooks/useResumeTheme";
+import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
 
 export interface ThemeColorBadgeProps {
-    name: string;
-    value: {
-        primary: string;
-    };
+    name?: string;
+    property: keyof TemplateColorScheme;
+    color: string;
 }
 
-const ThemeColorBadge: React.FC<ThemeColorBadgeProps> = ({ name, value }) => {
+const ThemeColorBadge: React.FC<ThemeColorBadgeProps> = ({ name, property,color }) => {
     const theme = useResumeTheme();
 
     const style = {
-        backgroundColor: `${value.primary}20`,
-        color: value.primary,
-        border: theme.get?.primary === value.primary ? `2px solid ${value.primary}` : "1px solid transparent"
+        backgroundColor: `${color}20`,
+        color: color,
+        border: theme.get?.color[property] === color ? `2px solid ${color}` : "1px solid transparent"
     }
 
     return (
-        <button key={value.primary} onClick={() => theme.setTheme(value)} className="flex flex-col items-center gap-x-1 px-3 py-1 rounded-full text-xs transition-all" style={style}>
-            <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: value.primary }}></span>
+        <button key={color} onClick={() => theme.changeColor(property, color)} className="flex flex-col items-center gap-x-1 px-3 py-1 rounded-full text-xs transition-all" style={style}>
+            <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: color }}></span>
             <span className="hidden xl:block">{name}</span>
         </button>
     );

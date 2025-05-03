@@ -1,4 +1,5 @@
 import type TemplateTheme from "@resume-api/types/template/TemplateTheme";
+import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
 import React, { ReactNode, useMemo, useState } from "react";
 import ResumeThemeContext, { type ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";
@@ -18,10 +19,31 @@ const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, def
     }));
   };
 
+  const changeColor = (propertyColor: keyof TemplateColorScheme, value: string) => {
+    setTheme(prevTheme => ({
+      ...prevTheme,
+      color: {
+        ...prevTheme.color,
+        [propertyColor]: value
+      }
+    }));
+  };
+
+  const getColor = (property: keyof TemplateColorScheme) => theme.color[property];
+
+  const getAllColors = (): { property: keyof TemplateColorScheme, color: string }[] =>
+    Object.entries(theme.color).map(([key, color]) => ({ property: key as keyof TemplateColorScheme, color }));
+
+  const getAllPropertyColors = (): (keyof TemplateColorScheme)[] => Object.keys(theme.color) as (keyof TemplateColorScheme)[];
+
   const value = useMemo<ResumeThemeContextType>(() => ({
     get: theme,
     setTheme,
-    changeProperty
+    changeProperty,
+    changeColor,
+    getColor,
+    getAllColors,
+    getAllPropertyColors
   }), [theme]);
 
   return (

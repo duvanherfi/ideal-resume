@@ -1,6 +1,6 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import Contact from "@resume-api/components/common/Contact";
-import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "@resume-api/components/sections/TemplateSections";
+import Contact from "@resume-api/templates/components/common/Contact";
+import { EducationSection, LanguagesSection, ProjectsSection, SkillsSection, WorkExperienceSection } from "@resume-api/templates/components/sections/TemplateSections";
 import { EducationItem, ExperienceItem, LanguageItem, ProfileSummary, ProjectItem, SkillItem } from "@resume-api/templates/items/Technical.items";
 import type { TemplateSectionProps } from "@resume-api/types/template/TemplateProps";
 
@@ -25,13 +25,13 @@ export const MainContent: React.FC<TemplateSectionProps> = (props: TemplateSecti
     <View style={props.styles.layout.column.main}>
         {props.data.profileSummary ? <ProfileSummary {...props} /> : null}
         {props.data.workExperiences.length > 0 ? <WorkExperienceSection  {...props} ItemComponent={ExperienceItem} /> : null}
-        {props.data.projects.length > 0 ? <ProjectsSection  {...props} ItemComponent={ProjectItem} /> : null}
+        {props.data.education.length > 0 ? <EducationSection  {...props} ItemComponent={EducationItem} /> : null}
     </View>
 );
 
 export const SidebarSection: React.FC<TemplateSectionProps> = (props: TemplateSectionProps) => (
     <View style={props.styles.layout.column.side}>
-        {props.data.education.length > 0 ? <EducationSection  {...props} ItemComponent={EducationItem} /> : null}
+        {props.data.projects.length > 0 ? <ProjectsSection  {...props} ItemComponent={ProjectItem} /> : null}
         {props.data.skills.length > 0 ? <SkillsSection  {...props} ItemComponent={SkillItem} /> : null}
         {props.data.languages.length > 0 ? <LanguagesSection  {...props} ItemComponent={LanguageItem} /> : null}
     </View>
