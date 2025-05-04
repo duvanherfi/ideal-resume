@@ -19,7 +19,7 @@ const DownloadResumeLink: React.FC = () => {
             <div className="flex self-center">
                 <PDFDownloadLink
                     document={<template.active.PDF data={data.get} theme={theme.get} labels={labels} />}
-                    fileName={`${data.get.firstName ?? 'Resume'}-${data.get.lastName ?? 'PDF'}.pdf`}
+                    fileName={`${data.get.firstName ?? "Resume"}-${data.get.lastName ?? "PDF"}.pdf`}
                     className="inline-flex"
                 >
                     {({ blob, url, loading, error }) => (

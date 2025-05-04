@@ -8,13 +8,13 @@ import TemplateMinimalist from "@resume-api/templates/structure/Minimalist.templ
 import TemplateProfessional from "@resume-api/templates/structure/Professional.template";
 
 export const asyncTemplates: Record<string, () => Promise<any>> = {
-    //modern: () => import('@resume-api/templates/structure/Modern.template'),
-    minimalist: () => import('@resume-api/templates/structure/Minimalist.template'),
-    corporate: () => import('@resume-api/templates/structure/Corporate.template'),
-    elegant: () => import('@resume-api/templates/structure/Elegant.template'),
-    creative: () => import('@resume-api/templates/structure/Creative.template'),
-    professional: () => import('@resume-api/templates/structure/Professional.template'),
-    technical: () => import('@resume-api/templates/structure/Technical.template'),
+    //modern: () => import("@resume-api/templates/structure/Modern.template"),
+    minimalist: () => import("@resume-api/templates/structure/Minimalist.template"),
+    corporate: () => import("@resume-api/templates/structure/Corporate.template"),
+    elegant: () => import("@resume-api/templates/structure/Elegant.template"),
+    creative: () => import("@resume-api/templates/structure/Creative.template"),
+    professional: () => import("@resume-api/templates/structure/Professional.template"),
+    technical: () => import("@resume-api/templates/structure/Technical.template"),
 };
 
 const templates: Template[] = [

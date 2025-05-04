@@ -32,8 +32,8 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
 
     useEffect(() => {
         workerRef.current = new Worker(
-            new URL('../workers/PDFWorker.ts', import.meta.url),
-            { type: 'module' }
+            new URL("../workers/PDFWorker.ts", import.meta.url),
+            { type: "module" }
         );
         return () => {
             workerRef.current?.terminate();

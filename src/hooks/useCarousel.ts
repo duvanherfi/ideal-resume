@@ -41,8 +41,8 @@ export function useCarousel(options?: UseCarouselOptions): UseCarouselReturn {
 
     useEffect(() => {
         checkScrollability();
-        window.addEventListener('resize', checkScrollability);
-        return () => window.removeEventListener('resize', checkScrollability);
+        window.addEventListener("resize", checkScrollability);
+        return () => window.removeEventListener("resize", checkScrollability);
     }, []);
 
     const scroll = (direction: ScrollDirection) => {
@@ -52,7 +52,7 @@ export function useCarousel(options?: UseCarouselOptions): UseCarouselReturn {
 
             scrollContainerRef.current.scrollBy({
                 left: direction === ScrollDirection.LEFT ? -scrollAmount : scrollAmount,
-                behavior: 'smooth'
+                behavior: "smooth"
             });
 
             setTimeout(checkScrollability, scrollDelay);

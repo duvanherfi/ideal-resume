@@ -15,7 +15,7 @@ const ViewTitle: React.FC<ViewTitleProps> = ({ title, subtitle, className, simpl
         <div className={`px-4 ${className}`}>
             {!simple && <Icons.LineSeparator />}
             <Title>{title}</Title>
-            {subtitle && <Text className="text-secondary-600 dark:text-secondary-400 text-xs md:text-md">{subtitle}</Text>}
+            {subtitle && <Text className="text-secondary-600 dark:text-secondary-400 text-xs md:text-lg">{subtitle}</Text>}
             {!simple && <Icons.LineSeparator />}
         </div>
     );

@@ -1,8 +1,8 @@
 import Icons, { ChevronDirection } from "@icons/Icons";
 
 enum ScrollDirection {
-    LEFT = 'left',
-    RIGHT = 'right'
+    LEFT = "left",
+    RIGHT = "right"
 }
 
 interface ScrollButtonProps {

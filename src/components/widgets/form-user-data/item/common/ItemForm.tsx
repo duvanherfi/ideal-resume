@@ -1,6 +1,6 @@
 import Icons from "@icons/Icons";
 import { ReactNode, useRef } from "react";
-import { DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
+import { DropTargetMonitor, useDrag, useDrop } from "react-dnd";
 
 export interface AddedItemGenericProps<T> {
     item: T;
@@ -21,7 +21,7 @@ interface DragItem {
 }
 
 const ItemType = {
-    ITEM: 'ITEM',
+    ITEM: "ITEM",
 };
 
 const ItemForm = <T extends { id: string; }>(props: AddedItemProps<T>) => {

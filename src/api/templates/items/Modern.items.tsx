@@ -50,7 +50,7 @@ export const SkillItem = ({ styles, item }: TemplateItemProps<Skill>) => (
         <Text style={styles.skill.name}>
             {item.name} (
             <Text style={styles.skill.bar.container}>
-                {item.level ? '★'.repeat(item.level) + '☆'.repeat(5 - item.level) : ''}
+                {item.level ? "★".repeat(item.level) + "☆".repeat(5 - item.level) : ""}
             </Text>
             )
         </Text>

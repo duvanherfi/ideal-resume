@@ -1242,6 +1242,11 @@ video {
   border-top-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
 }
 
+.border-l-primary-300{
+  --tw-border-opacity: 1;
+  border-left-color: rgb(147 197 253 / var(--tw-border-opacity, 1));
+}
+
 .bg-accent-200\/20{
   background-color: rgb(199 210 254 / 0.2);
 }
@@ -1355,9 +1360,20 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-primary-100\/60{
+  --tw-gradient-from: rgb(219 234 254 / 0.6) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(219 234 254 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-accent-200\/50{
   --tw-gradient-to: rgb(199 210 254 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(199 210 254 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.via-primary-200\/50{
+  --tw-gradient-to: rgb(191 219 254 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(191 219 254 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .to-white\/50{
@@ -1596,6 +1612,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-primary-500{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
 }
 
 .underline{
@@ -2041,6 +2062,26 @@ body {
   border-top-color: rgb(99 102 241 / var(--tw-border-opacity, 1));
 }
 
+.dark\:border-b-primary-700:is(.dark *){
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(29 78 216 / var(--tw-border-opacity, 1));
+}
+
+.dark\:border-l-primary-400:is(.dark *){
+  --tw-border-opacity: 1;
+  border-left-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
+}
+
+.dark\:border-r-primary-600:is(.dark *){
+  --tw-border-opacity: 1;
+  border-right-color: rgb(37 99 235 / var(--tw-border-opacity, 1));
+}
+
+.dark\:border-t-primary-500:is(.dark *){
+  --tw-border-opacity: 1;
+  border-top-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
+}
+
 .dark\:bg-accent-800:is(.dark *){
   --tw-bg-opacity: 1;
   background-color: rgb(55 48 163 / var(--tw-bg-opacity, 1));
@@ -2102,6 +2143,12 @@ body {
 .dark\:from-accent-950:is(.dark *){
   --tw-gradient-from: #1e1b4b var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(30 27 75 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.dark\:from-primary-950:is(.dark *){
+  --tw-gradient-from: #172554 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(23 37 84 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -2174,6 +2221,11 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.dark\:text-primary-400:is(.dark *){
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+}
+
 .dark\:hover\:border-2:hover:is(.dark *){
   border-width: 2px;
 }
@@ -2201,6 +2253,26 @@ body {
 .dark\:hover\:border-t-accent-500:hover:is(.dark *){
   --tw-border-opacity: 1;
   border-top-color: rgb(99 102 241 / var(--tw-border-opacity, 1));
+}
+
+.dark\:hover\:border-b-primary-700:hover:is(.dark *){
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(29 78 216 / var(--tw-border-opacity, 1));
+}
+
+.dark\:hover\:border-l-primary-400:hover:is(.dark *){
+  --tw-border-opacity: 1;
+  border-left-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
+}
+
+.dark\:hover\:border-r-primary-600:hover:is(.dark *){
+  --tw-border-opacity: 1;
+  border-right-color: rgb(37 99 235 / var(--tw-border-opacity, 1));
+}
+
+.dark\:hover\:border-t-primary-500:hover:is(.dark *){
+  --tw-border-opacity: 1;
+  border-top-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
 }
 
 .dark\:hover\:bg-accent-700:hover:is(.dark *){
@@ -2342,6 +2414,11 @@ body {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 1024px){
@@ -2438,6 +2515,10 @@ body {
     background-color: rgb(255 255 255 / 0.2);
   }
 
+  .xl\:bg-white\/40{
+    background-color: rgb(255 255 255 / 0.4);
+  }
+
   .xl\:px-4{
     padding-left: 1rem;
     padding-right: 1rem;
@@ -2459,6 +2540,10 @@ body {
 
   .xl\:dark\:bg-black\/10:is(.dark *){
     background-color: rgb(0 0 0 / 0.1);
+  }
+
+  .xl\:dark\:bg-black\/40:is(.dark *){
+    background-color: rgb(0 0 0 / 0.4);
   }
 }
 

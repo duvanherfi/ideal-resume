@@ -8,7 +8,7 @@ interface InputSuggestionsProps {
   ref: React.RefObject<HTMLUListElement>;
 }
 
-const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestionsProps, 'ref'>>((props, ref) => {
+const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestionsProps, "ref">>((props, ref) => {
   const { suggestions = [], showSuggestions, handleMouseDown } = props;
 
   const listClassName = `flex flex-col absolute z-10 w-full bg-white/80 dark:bg-secondary-900/80 border border-primary-500/50 dark:border-primary-500/50 rounded-md shadow-lg overflow-y-auto scrollbar transition-all duration-300`;
