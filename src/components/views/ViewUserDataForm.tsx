@@ -1,4 +1,4 @@
-import userDataFormTabs from "@config/tabs/userDataFormTabs";
+import formUserDataTabs from "@config/tabs/formUserDataTabs";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import React from "react";
@@ -8,7 +8,7 @@ const ViewUserDataForm: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-8 2xl:px-16">
       <ViewTitle title={I18n.FORM.DATA.TITLE} subtitle={I18n.FORM.DATA.SUBTITLE} />
-      <TabsContainer {...userDataFormTabs} />
+      <TabsContainer {...formUserDataTabs} />
     </div>
   );
 };

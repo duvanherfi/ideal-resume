@@ -1,5 +1,5 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import ViewCustomizeTemplate from "@components/views/ViewCustomizeTemplate";
+import ViewCustomization from "@components/views/ViewCustomization";
 import ViewThumbGallery from "@components/views/ViewThumbGallery";
 import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@icons/Icons";
@@ -21,7 +21,7 @@ const tabs: Tab[] = [
   {
     id: "labels",
     text: I18n.APP.TAB.CUSTOMIZE,
-    component: <ViewCustomizeTemplate />,
+    component: <ViewCustomization />,
     children: <Icons.Customize />
   },
 ];

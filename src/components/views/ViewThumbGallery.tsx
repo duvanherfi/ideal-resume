@@ -1,7 +1,7 @@
 import thumbGalleryTabs from "@config/tabs/thumbGalleryTabs";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
-import TemplateThumbGrid from "@components/widgets/gallery/grid/TemplateThumbGrid";
+import TemplateGridGallery from "@components/widgets/gallery/grid/TemplateGridGallery";
 import React from "react";
 import I18n from "src/locales/I18nKeys";
 
@@ -10,7 +10,7 @@ const ViewThumbGallery: React.FC = () => {
     <div className="2xl:w-full xl:px-4">
       <ViewTitle title={I18n.GALLERY.TITLE} subtitle={I18n.GALLERY.SUBTITLE} />
       <TabsContainer {...thumbGalleryTabs} />
-      <TemplateThumbGrid className="block xl:hidden" />
+      <TemplateGridGallery className="block xl:hidden" />
     </div>
   );
 };

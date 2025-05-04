@@ -19,10 +19,10 @@ const tabs: Tab[] = [
     },
 ];
 
-const customizeTabs: TabsContainerProps ={
+const customizationTabs: TabsContainerProps = {
     tabs,
-    slideDirection:"bottom",
+    slideDirection: "bottom",
     inline: true
 }
 
-export default customizeTabs;
+export default customizationTabs;

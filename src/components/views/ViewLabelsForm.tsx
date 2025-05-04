@@ -1,4 +1,4 @@
-import labelsFormTabs from "@config/tabs/labelsFormTabs";
+import formLabelsTabs from "@config/tabs/formLabelsTabs";
 import GlassCard from "@components/ui/GlassCard";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
@@ -9,7 +9,7 @@ const ViewLabelsForm: React.FC = () => {
   return (
     <GlassCard>
       <ViewTitle simple title={I18n.FORM.LABELS.TITLE} subtitle={I18n.FORM.LABELS.SUBTITLE} className="pb-4" />
-      <TabsContainer {...labelsFormTabs} />
+      <TabsContainer {...formLabelsTabs} />
     </GlassCard>
   );
 };

@@ -2,15 +2,15 @@ import useResumeTemplate from "@api-hooks/useResumeTemplate";
 import GlassCard from "@components/ui/GlassCard";
 import { ScrollDirection } from "@hooks/useCarousel";
 import { useState } from "react";
-import GalleryNavigation from "./GalleryNavigation";
 import ScrollButton from "../common/ScrollButton";
 import TemplateThumb from "../common/TemplateThumb";
+import GalleryNavigation from "./GalleryNavigation";
 
-interface TemplateThumbGridProps {
+interface TemplateGridGalleryProps {
     className?: string;
 }
 
-const TemplateThumbGrid: React.FC<TemplateThumbGridProps> = ({ className = "" }) => {
+const TemplateGridGallery: React.FC<TemplateGridGalleryProps> = ({ className = "" }) => {
     const [currentPage, setCurrentPage] = useState(0);
     const template = useResumeTemplate();
 
@@ -64,4 +64,4 @@ const TemplateThumbGrid: React.FC<TemplateThumbGridProps> = ({ className = "" })
     );
 };
 
-export default TemplateThumbGrid;
+export default TemplateGridGallery;

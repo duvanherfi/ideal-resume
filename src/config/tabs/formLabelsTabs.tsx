@@ -21,9 +21,9 @@ const tabs: Tab[] = [
     },
 ];
 
-const labelsFormTabs: TabsContainerProps = {
+const formLabelsTabs: TabsContainerProps = {
     tabs,
     slideDirection: "bottom"
 }
 
-export default labelsFormTabs;
+export default formLabelsTabs;

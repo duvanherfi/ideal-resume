@@ -4,7 +4,7 @@ import { ScrollDirection, useCarousel } from "@hooks/useCarousel";
 import ScrollButton from "../common/ScrollButton";
 import TemplateThumb from "../common/TemplateThumb";
 
-const TemplateThumbCarousel: React.FC = () => {
+const TemplateCarouselGallery: React.FC = () => {
     const template = useResumeTemplate();
     const { scrollContainerRef, canScrollLeft, canScrollRight, scroll, checkScrollability } = useCarousel();
 
@@ -31,4 +31,4 @@ const TemplateThumbCarousel: React.FC = () => {
     );
 };
 
-export default TemplateThumbCarousel;
+export default TemplateCarouselGallery;

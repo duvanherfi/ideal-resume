@@ -15,7 +15,7 @@ const tabs: Tab[] = [
         children: <Icons.Person />
     },
     {
-        id: "experience",
+        id: "workExperiences",
         component: <MultiItemForm<WorkExperience> dataKey="workExperiences" />,
         children: <Icons.Briefcase />
     },
@@ -41,9 +41,9 @@ const tabs: Tab[] = [
     },
 ];
 
-const userDataFormTabs: TabsContainerProps = {
+const formUserDataTabs: TabsContainerProps = {
     tabs,
     slideDirection: "left"
 }
 
-export default userDataFormTabs;
+export default formUserDataTabs;
