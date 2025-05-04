@@ -1,6 +1,6 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import ViewCustomization from "@components/views/ViewCustomization";
-import ViewThumbGallery from "@components/views/ViewThumbGallery";
+import ViewTemplateGallery from "@components/views/ViewTemplateGallery";
 import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@icons/Icons";
 import I18n from "src/locales/I18nKeys";
@@ -15,7 +15,7 @@ const tabs: Tab[] = [
   {
     id: "templates",
     text: I18n.APP.TAB.GALLERY,
-    component: <ViewThumbGallery />,
+    component: <ViewTemplateGallery />,
     children: <Icons.Sheet />
   },
   {

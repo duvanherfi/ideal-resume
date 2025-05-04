@@ -3,6 +3,7 @@ import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
 import React, { ReactNode, useMemo, useState } from "react";
 import ResumeThemeContext, { type ResumeThemeContextType } from "./ResumeThemeContext";
 import initialTheme from "./initialTheme";
+import { availableFonts } from "./availableFonts";
 
 interface ResumeThemeProviderProps {
   children: ReactNode;
@@ -12,38 +13,38 @@ interface ResumeThemeProviderProps {
 const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, defaultTheme = initialTheme }) => {
   const [theme, setTheme] = useState<TemplateTheme>(defaultTheme);
 
-  const changeProperty = (property: keyof TemplateTheme, value: string) => {
-    setTheme(prevTheme => ({
-      ...prevTheme,
-      [property]: value
-    }));
-  };
-
-  const changeColor = (propertyColor: keyof TemplateColorScheme, value: string) => {
+  const changeColor = (key: keyof TemplateColorScheme, value: string) => {
     setTheme(prevTheme => ({
       ...prevTheme,
       color: {
         ...prevTheme.color,
-        [propertyColor]: value
+        [key]: value
       }
     }));
   };
 
-  const getColor = (property: keyof TemplateColorScheme) => theme.color[property];
+  const getColor = (key: keyof TemplateColorScheme) => theme.color[key];
 
-  const getAllColors = (): { property: keyof TemplateColorScheme, color: string }[] =>
-    Object.entries(theme.color).map(([key, color]) => ({ property: key as keyof TemplateColorScheme, color }));
+  const getColorKeys = (): (keyof TemplateColorScheme)[] => Object.keys(theme.color) as (keyof TemplateColorScheme)[];
 
-  const getAllPropertyColors = (): (keyof TemplateColorScheme)[] => Object.keys(theme.color) as (keyof TemplateColorScheme)[];
+  const getFont = () => theme.font;
+
+  const changeFont = (newFont: string) => {
+    setTheme(prevTheme => ({
+      ...prevTheme,
+      font: newFont
+    }));
+  };
 
   const value = useMemo<ResumeThemeContextType>(() => ({
     get: theme,
     setTheme,
-    changeProperty,
     changeColor,
     getColor,
-    getAllColors,
-    getAllPropertyColors
+    getColorKeys,
+    getFont,
+    changeFont,
+    availableFonts
   }), [theme]);
 
   return (

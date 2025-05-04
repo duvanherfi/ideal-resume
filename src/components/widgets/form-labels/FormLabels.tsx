@@ -1,35 +1,17 @@
-import useResumeLabels from "@api-hooks/useResumeLabels";
+import formLabelsTabs from "@config/tabs/formLabelsTabs";
 import GlassCard from "@components/ui/GlassCard";
-import Subtitle from "@components/ui/text/Subtitle";
-import type { FormField } from "@hooks/useMultiItemForm";
-import Icons from "@icons/Icons";
-import type { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
-import GenericField from "../common/form/GenericField";
+import TabsContainer from "@components/ui/tabs/TabsContainer";
+import ViewTitle from "@components/widgets/common/ViewTitle";
+import React from "react";
+import I18n from "src/locales/I18nKeys";
 
-export interface FormLabelsProps {
-    title: string;
-    fields: FormField<ResumeLabels>[];
-}
-
-const FormLabels: React.FC<FormLabelsProps> = ({ title, fields }) => {
-    const { labels, updateLabel } = useResumeLabels();
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        updateLabel(name as keyof ResumeLabels, value);
-    };
-
-    return (
-        <GlassCard>
-            <Subtitle>{title}</Subtitle>
-            <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {fields.map(field => (
-                    <GenericField key={field.name} value={labels[field.name] ?? ""} onChange={handleChange} {...field} />
-                ))}
-            </div>
-            <Icons.LineSeparator />
-        </GlassCard>
-    );
+const FormLabels: React.FC = () => {
+  return (
+    <GlassCard>
+      <ViewTitle simple title={I18n.FORM.LABELS.TITLE} subtitle={I18n.FORM.LABELS.SUBTITLE} className="pb-4" />
+      <TabsContainer {...formLabelsTabs} />
+    </GlassCard>
+  );
 };
 
 export default FormLabels;

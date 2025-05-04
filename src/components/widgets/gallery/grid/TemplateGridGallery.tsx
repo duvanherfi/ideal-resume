@@ -40,7 +40,7 @@ const TemplateGridGallery: React.FC<TemplateGridGalleryProps> = ({ className = "
         <GlassCard className={className}>
             <div className="space-y-4 overflow-hidden">
                 <GalleryNavigation currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
-                <div className="grid xl:grid-cols-2 gap-4 max-h-[80vh] overflow-y-auto scrollbar">
+                <div className="grid md:grid-cols-2 gap-4 max-h-[80vh] overflow-y-auto scrollbar">
                     {getCurrentPageTemplates().map((templateToPreview) => (
                         <TemplateThumb
                             key={templateToPreview.id}

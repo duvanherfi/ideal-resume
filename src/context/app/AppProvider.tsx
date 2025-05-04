@@ -1,6 +1,5 @@
 import ResumeProvider from "@resume-api/context/ResumeProvider";
 import React from "react";
-import mockUserData from "src/mock/mockedUserData";
 import LanguageProvider from "../language/LanguageProvider";
 
 interface AppProviderProps {
@@ -10,7 +9,7 @@ interface AppProviderProps {
 const AppProvider = (props: AppProviderProps) => {
     return (
         <LanguageProvider>
-            <ResumeProvider defaultData={mockUserData}>
+            <ResumeProvider>
                 {props.children}
             </ResumeProvider>
         </LanguageProvider>

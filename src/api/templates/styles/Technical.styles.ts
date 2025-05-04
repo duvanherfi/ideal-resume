@@ -36,8 +36,8 @@ const colors = {
     }
 };
 
-const page = (): Style => ({
-    fontFamily: "Roboto",
+const page = (theme: TemplateTheme): Style => ({
+    fontFamily:  theme.font,
     fontSize: 10,
     paddingHorizontal: 35,
     paddingVertical: 30,
@@ -121,7 +121,6 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         marginBottom: 16,
     },
     title: {
-        fontFamily: "Roboto",
         fontSize: 14,
         fontWeight: 600,
         color: theme.color.titles,
@@ -145,7 +144,6 @@ const section = (theme: TemplateTheme): SectionStyles => ({
             borderBottomColor: theme.color.primary,
         },
         title: {
-            fontFamily: "Roboto",
             fontSize: 12,
             fontWeight: 600,
             color: theme.color.titles,
@@ -169,7 +167,6 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
             flex: 1,
         },
         text: {
-            fontFamily: "Roboto",
             fontSize: 22,
             fontWeight: 700,
             color: theme.color.primary,
@@ -245,7 +242,6 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         marginBottom: 3,
     },
     company: {
-        fontFamily: "Roboto",
         fontSize: 11,
         fontWeight: 700,
         color: colors.gray[800],
@@ -285,13 +281,11 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         marginBottom: 3,
     },
     degree: {
-        fontFamily: "Roboto",
         fontSize: 10,
         fontWeight: 600,
         color: theme.color.subtitles,
     },
     institution: {
-        fontFamily: "Roboto",
         fontSize: 11,
         fontWeight: 700,
         color: colors.gray[800],
@@ -323,7 +317,6 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
         borderBottomColor: colors.gray[200],
     },
     name: {
-        fontFamily: "Roboto",
         fontSize: 10,
         fontWeight: 700,
         marginBottom: 3,
@@ -408,7 +401,7 @@ const footer = (): FooterStyles => ({
 });
 
 const templateStyle = (theme: TemplateTheme): TemplateStyleSheet => ({
-    page: page(),
+    page: page(theme),
     common: common(theme),
     layout: layout(),
     section: section(theme),

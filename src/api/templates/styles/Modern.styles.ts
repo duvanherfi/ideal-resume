@@ -20,8 +20,8 @@ const colors = {
     }
 };
 
-const page = (): Style => ({
-    fontFamily: "Open Sans",
+const page = (theme: TemplateTheme): Style => ({
+    fontFamily: theme.font,
     padding: 0,
     backgroundColor: colors.white,
 });
@@ -344,7 +344,7 @@ const footer = (): FooterStyles => ({
 });
 
 const templateStyle = (theme: TemplateTheme): TemplateStyleSheet => ({
-    page: page(),
+    page: page(theme),
     common: common(theme),
     layout: layout(),
     section: section(theme),

@@ -10,7 +10,7 @@
   "preview.download.label": "Descargar PDF",
   "preview.download.loading": "Generando PDF...",
   "gallery.title": "Plantillas",
-  "gallery.subtitle": "Elige la plantilla que más te agrade. Podrás cambiar el color en la pestaña Personalizar.",
+  "gallery.subtitle": "Elige la plantilla que más te agrade. Podrás personalizarla en el próximo paso.",
   "gallery.viewMode.carousel": "Carrusel",
   "gallery.viewMode.grid": "Grilla",
   "theme.color.title": "Temas",
@@ -20,7 +20,7 @@
   "theme.color.scheme.subtitles.title": "Subtítulos",
   "theme.color.scheme.badge.title": "Etiquetas",
   "theme.color.scheme.skill.title": "Habilidades",
-  "theme.color.customize.label": "Personalizar tema",
+  "theme.color.customize.label": "Elegir color",
   "theme.color.suggested.label": "Sugeridos",
   "theme.color.suggested.option.blue": "Azul",
   "theme.color.suggested.option.green": "Verde",
@@ -188,6 +188,8 @@
     "Actual",
     "Actualmente"
   ],
+  "form.font.title": "Fuente",
+  "form.font.subtitle":  "Selecciona la fuente y estilo que prefieras.",
   "input.image.load": "Cargar",
   "input.image.empty": "Sin imagen",
   "input.suggestions.title": "Sugerido"

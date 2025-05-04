@@ -10,7 +10,7 @@
   "preview.download.label": "Download PDF",
   "preview.download.loading": "Generating PDF...",
   "gallery.title": "Templates",
-  "gallery.subtitle": "Choose the template you like best. You can change its color in the Customize tab.",
+  "gallery.subtitle": "Choose the template you like best. You can customize it in the next step.",
   "gallery.viewMode.carousel": "Carousel",
   "gallery.viewMode.grid": "Grid",
   "theme.color.title": "Themes",
@@ -20,7 +20,7 @@
   "theme.color.scheme.subtitles.title": "Subtitles",
   "theme.color.scheme.badge.title": "Badges",
   "theme.color.scheme.skill.title": "Skills",
-  "theme.color.customize.label": "Customize theme",
+  "theme.color.customize.label": "Choose",
   "theme.color.suggested.label": "Suggested",
   "theme.color.suggested.option.blue": "Blue",
   "theme.color.suggested.option.green": "Green",
@@ -188,6 +188,8 @@
     "Current",
     "Currently"
   ],
+  "form.font.title": "Font",
+  "form.font.subtitle": "Choose the font you like best.",
   "input.image.load": "Upload",
   "input.image.empty": "No image",
   "input.suggestions.title": "Suggested"

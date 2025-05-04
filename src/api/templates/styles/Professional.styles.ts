@@ -25,8 +25,8 @@ const colors = {
     },
 };
 
-const page = (): Style => ({
-    fontFamily: "Roboto",
+const page = (theme: TemplateTheme): Style => ({
+    fontFamily: theme.font,
     padding: 0,
     backgroundColor: colors.white,
 });
@@ -359,7 +359,7 @@ const footer = (theme: TemplateTheme): FooterStyles => ({
 });
 
 const templateStyle = (theme: TemplateTheme): TemplateStyleSheet => ({
-    page: page(),
+    page: page(theme),
     common: common(theme),
     layout: layout(),
     section: section(theme),

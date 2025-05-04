@@ -21,8 +21,8 @@ const colors = {
     }
 };
 
-const page = (): Style => ({
-    fontFamily: "Roboto",
+const page = (theme: TemplateTheme): Style => ({
+    fontFamily: theme.font,
     minHeight: "100%",
     fontSize: 11,
     padding: 20,
@@ -354,7 +354,7 @@ const footer = (): FooterStyles => ({
 });
 
 const templateStyle = (theme: TemplateTheme): TemplateStyleSheet => ({
-    page: page(),
+    page: page(theme),
     common: common(theme),
     layout: layout(),
     section: section(theme),

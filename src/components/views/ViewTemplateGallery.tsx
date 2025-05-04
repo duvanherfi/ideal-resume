@@ -5,14 +5,14 @@ import TemplateGridGallery from "@components/widgets/gallery/grid/TemplateGridGa
 import React from "react";
 import I18n from "src/locales/I18nKeys";
 
-const ViewThumbGallery: React.FC = () => {
+const ViewTemplateGallery: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-4">
       <ViewTitle title={I18n.GALLERY.TITLE} subtitle={I18n.GALLERY.SUBTITLE} />
       <TabsContainer {...thumbGalleryTabs} />
-      <TemplateGridGallery className="block xl:hidden" />
+      <TemplateGridGallery className="block md:hidden" />
     </div>
   );
 };
 
-export default ViewThumbGallery;
+export default ViewTemplateGallery;

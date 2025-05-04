@@ -21,7 +21,7 @@ const tabs: Tab[] = [
 
 const thumbGalleryTabs: TabsContainerProps = {
     tabs,
-    className: "hidden xl:block",
+    className: "hidden md:block",
     slideDirection: "bottom",
     tabsClassName: "flex align-end items-center w-64",
     inline: true

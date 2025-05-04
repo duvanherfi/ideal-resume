@@ -197,6 +197,11 @@ const I18n = {
                 PRESENT: 'form.labels.field.present',
                 PRESENT_SUGGESTIONS: 'form.labels.field.present.suggestions'
             }
+        },
+
+        FONT: {
+            TITLE: 'form.font.title',
+            SUBTITLE: 'form.font.subtitle',
         }
     },
 
