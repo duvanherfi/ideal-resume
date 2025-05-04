@@ -99,7 +99,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 14,
         fontWeight: "bold",
-        color: darkenHexColor(theme.color.primary, 15),
+        color: darkenHexColor(theme.color.titles, 15),
     },
     headerLine: {
         borderBottomWidth: 2,
@@ -116,7 +116,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         title: {
             fontSize: 14,
             fontWeight: "bold",
-            color: darkenHexColor(theme.color.primary, 15),
+            color: darkenHexColor(theme.color.titles, 15),
         }
     }
 });
@@ -146,7 +146,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
     },
     role: {
         fontSize: 12,
-        color: lightenHexColor(theme.color.primary, 85),
+        color: lightenHexColor(theme.color.subtitles, 85),
         fontWeight: "medium",
     },
     photo: {
@@ -212,7 +212,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     },
     company: {
         fontSize: 11,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
         fontWeight: "medium",
         marginBottom: 5,
     },
@@ -250,7 +250,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     institution: {
         fontSize: 11,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
         marginTop: 3,
     },
     description: {

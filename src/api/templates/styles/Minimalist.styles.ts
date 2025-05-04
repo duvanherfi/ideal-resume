@@ -111,7 +111,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 14,
         fontWeight: 500,
-        color: theme.color.primary,
+        color: theme.color.titles,
     },
     headerLine: {
         borderBottomWidth: 1,
@@ -133,7 +133,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         title: {
             fontSize: 14,
             fontWeight: 500,
-            color: theme.color.primary,
+            color: theme.color.titles,
         }
     }
 });
@@ -218,7 +218,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     },
     company: {
         fontSize: 10,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
         marginBottom: 3,
     },
     contractType: {
@@ -254,7 +254,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     institution: {
         fontSize: 10,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
     },
     description: {
         fontSize: 9,

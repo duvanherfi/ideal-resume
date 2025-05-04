@@ -124,7 +124,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         fontFamily: "Roboto",
         fontSize: 14,
         fontWeight: 600,
-        color: theme.color.primary,
+        color: theme.color.titles,
         marginRight: 10,
         textTransform: "uppercase" as const,
     },
@@ -148,7 +148,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
             fontFamily: "Roboto",
             fontSize: 12,
             fontWeight: 600,
-            color: theme.color.primary,
+            color: theme.color.titles,
             textTransform: "uppercase" as const,
         },
     },
@@ -253,7 +253,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     role: {
         fontSize: 10,
         fontWeight: 600,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
         marginBottom: 3,
     },
     contractType: {
@@ -288,7 +288,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
         fontFamily: "Roboto",
         fontSize: 10,
         fontWeight: 600,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
     },
     institution: {
         fontFamily: "Roboto",

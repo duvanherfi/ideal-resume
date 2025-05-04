@@ -97,7 +97,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 16,
         fontWeight: "bold",
-        color: darkenHexColor(theme.color.primary),
+        color: darkenHexColor(theme.color.titles),
         marginBottom: 10,
     },
     headerLine: {
@@ -117,7 +117,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         title: {
             fontSize: 16,
             fontWeight: "bold",
-            color: darkenHexColor(theme.color.primary),
+            color: darkenHexColor(theme.color.titles),
             marginBottom: 10,
         },
     },
@@ -202,7 +202,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         fontWeight: "bold",
     },
     company: {
-        color: theme.color.primary,
+        color: theme.color.subtitles,
     },
     contractType: {
         fontSize: 10,

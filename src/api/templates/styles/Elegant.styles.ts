@@ -102,7 +102,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 14,
         fontWeight: 700,
-        color: theme.color.primary,
+        color: theme.color.titles,
         textTransform: "uppercase" as const,
         letterSpacing: 1,
         paddingBottom: 2,
@@ -124,7 +124,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
             fontFamily: "Roboto",
             fontSize: 11,
             fontWeight: 600,
-            color: theme.color.primary,
+            color: theme.color.titles,
         },
     },
 });
@@ -222,7 +222,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     role: {
         fontSize: 10,
         fontWeight: 700,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
     },
     contractType: {
         fontSize: 8,
@@ -256,7 +256,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     degree: {
         fontSize: 11,
         fontWeight: 600,
-        color: theme.color.primary,
+        color: theme.color.subtitles,
     },
     institution: {
         fontSize: 10,

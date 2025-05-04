@@ -1,6 +1,6 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import MultiItemForm from "@components/widgets/user-data/form/common/MultiItemForm";
-import FormBasicInfo from "@components/widgets/user-data/form/FormBasicInfo";
+import MultiItemForm from "@components/widgets/form-user-data/form/common/MultiItemForm";
+import FormBasicInfo from "@components/widgets/form-user-data/form/FormBasicInfo";
 import Icons from "@icons/Icons";
 import type { Education } from "@resume-api/types/items/Education";
 import type { Language } from "@resume-api/types/items/Language";

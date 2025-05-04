@@ -1,4 +1,4 @@
-import type { FormLabelsProps } from "@components/widgets/labels/FormLabels";
+import type { FormLabelsProps } from "@components/widgets/form-labels/FormLabels";
 
 export const FieldsLabelsHeader: FormLabelsProps = {
     title: "form.labels.section.header",
