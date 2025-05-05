@@ -47,7 +47,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
     },
     badge: {
         container: {
-            backgroundColor: lightenHexColor(theme.color.badge, 90),
+            backgroundColor: lightenHexColor(theme.color.all || theme.color.badge, 90),
             borderRadius: 10,
             paddingVertical: 3,
             paddingHorizontal: 8,
@@ -56,7 +56,7 @@ const common = (theme: TemplateTheme): CommonStyles => ({
         },
         text: {
             fontSize: 9,
-            color: darkenHexColor(theme.color.badge, 20),
+            color: darkenHexColor(theme.color.all || theme.color.badge, 20),
         },
     },
 });
@@ -97,7 +97,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 16,
         fontWeight: "bold",
-        color: darkenHexColor(theme.color.titles),
+        color: darkenHexColor(theme.color.all || theme.color.titles),
         marginBottom: 10,
     },
     headerLine: {
@@ -117,7 +117,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
         title: {
             fontSize: 16,
             fontWeight: "bold",
-            color: darkenHexColor(theme.color.titles),
+            color: darkenHexColor(theme.color.all || theme.color.titles),
             marginBottom: 10,
         },
     },
@@ -125,7 +125,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
 
 const header = (theme: TemplateTheme): HeaderStyles => ({
     container: {
-        backgroundColor: theme.color.primary,
+        backgroundColor: theme.color.all || theme.color.primary,
         display: "flex",
         flexDirection: "row",
         alignContent: "center",
@@ -135,7 +135,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        color: getContrastingTextColor(theme.color.primary),
+        color: getContrastingTextColor(theme.color.all || theme.color.primary),
     },
     name: {
         container: {
@@ -202,7 +202,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
         fontWeight: "bold",
     },
     company: {
-        color: theme.color.subtitles,
+        color: theme.color.all || theme.color.subtitles,
     },
     contractType: {
         fontSize: 10,
@@ -235,7 +235,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     },
     institution: {
         fontSize: 11,
-        color: theme.color.primary,
+        color: theme.color.all || theme.color.primary,
     },
     description: {
         fontSize: 10,
@@ -268,7 +268,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
     },
     link: {
         fontSize: 9,
-        color: theme.color.primary,
+        color: theme.color.all || theme.color.primary,
         marginBottom: 4,
     },
     description: {
@@ -284,7 +284,7 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
         marginBottom: 15,
     },
     item: {
-        backgroundColor: lightenHexColor(theme.color.primary, 90),
+        backgroundColor: lightenHexColor(theme.color.all || theme.color.primary, 90),
         borderRadius: 10,
         paddingVertical: 3,
         paddingHorizontal: 8,
@@ -293,19 +293,19 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
     },
     name: {
         fontSize: 9,
-        color: darkenHexColor(theme.color.primary, 20),
+        color: darkenHexColor(theme.color.all || theme.color.primary, 20),
     },
     bar: {
         container: {
             marginTop: 4,
             height: 6,
             width: "100%",
-            backgroundColor: lightenHexColor(theme.color.skill, 90),
+            backgroundColor: lightenHexColor(theme.color.all || theme.color.skill, 90),
             borderRadius: 3,
         },
         fill: {
             height: "100%",
-            backgroundColor: theme.color.skill,
+            backgroundColor: theme.color.all || theme.color.skill,
             borderRadius: 3,
         },
     }

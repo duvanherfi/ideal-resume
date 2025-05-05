@@ -8,8 +8,10 @@ const ViewColorSettings: React.FC = () => {
     return (
         <GlassCard>
             <ViewTitle simple title={I18n.THEME.COLOR.TITLE} subtitle={I18n.THEME.COLOR.SUBTITLE} className="pb-4" />
-            <ThemeColorSettings />
-            <AdvancedThemeSettings />
+            <div className="space-y-4">
+                <ThemeColorSettings />
+                <AdvancedThemeSettings />
+            </div>
         </GlassCard>
     );
 };

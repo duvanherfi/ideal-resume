@@ -11,14 +11,13 @@ const Accordion = (props: AccordionProps) => {
 
     const toggleIsOpen = () => setIsOpen(!isOpen);
 
-    const togglerClasses = `cursor-pointer flex justify-between items-center w-full ${props.togglerClassName}`;
-    const containerClasses = `shadow-xl rounded-md transition-all duration-500 transform ${isOpen ? "max-h-full scale-y-100 visible" : "max-h-0 scale-y-0 hidden"
-        } origin-top`;
+    const togglerClasses = `cursor-pointer flex justify-between items-center ${props.togglerClassName}`;
+    const containerClasses = `shadow-xl rounded-md overflow-hidden transition-[max-height] duration-500 ease-in-out origin-top ${isOpen ? "max-h-[1000px] visible" : "max-h-0"}`;
 
     return (
         <div>
             <button onClick={toggleIsOpen} className={togglerClasses}>
-                <span>{Array.isArray(props.children) ? props.children[0] : props.children}</span>
+                {Array.isArray(props.children) ? props.children[0] : props.children}
                 <Icons.Chevron direction={isOpen ? ChevronDirection.UP : ChevronDirection.DOWN} />
             </button>
             <div className={containerClasses}>

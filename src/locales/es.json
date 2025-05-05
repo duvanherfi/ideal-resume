@@ -15,6 +15,8 @@
   "gallery.viewMode.grid": "Grilla",
   "theme.color.title": "Colores",
   "theme.color.subtitle": "Elige uno de los temas sugeridos o utiliza el selector de color para crear uno personalizado.",
+  "theme.color.scheme.all.title": "General",
+  "theme.color.advanced.title": "Avanzado",
   "theme.color.scheme.primary.title": "Principal",
   "theme.color.scheme.titles.title": "Títulos",
   "theme.color.scheme.subtitles.title": "Subtítulos",

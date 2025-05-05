@@ -73,12 +73,12 @@ const common = (theme: TemplateTheme): CommonStyles => ({
             borderRadius: 3,
             backgroundColor: colors.gray[200],
             borderWidth: 1,
-            borderColor: theme.color.badge,
+            borderColor: theme.color.all || theme.color.badge,
             alignSelf: "flex-start" as const,
         },
         text: {
             fontSize: 8,
-            color: theme.color.badge,
+            color: theme.color.all || theme.color.badge,
             fontWeight: 500 as const,
         },
     },
@@ -123,7 +123,7 @@ const section = (theme: TemplateTheme): SectionStyles => ({
     title: {
         fontSize: 14,
         fontWeight: 600,
-        color: theme.color.titles,
+        color: theme.color.all || theme.color.titles,
         marginRight: 10,
         textTransform: "uppercase" as const,
     },
@@ -141,12 +141,12 @@ const section = (theme: TemplateTheme): SectionStyles => ({
             marginBottom: 8,
             paddingBottom: 3,
             borderBottomWidth: 1,
-            borderBottomColor: theme.color.primary,
+            borderBottomColor: theme.color.all || theme.color.primary,
         },
         title: {
             fontSize: 12,
             fontWeight: 600,
-            color: theme.color.titles,
+            color: theme.color.all || theme.color.titles,
             textTransform: "uppercase" as const,
         },
     },
@@ -169,7 +169,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         text: {
             fontSize: 22,
             fontWeight: 700,
-            color: theme.color.primary,
+            color: theme.color.all || theme.color.primary,
             textTransform: "uppercase" as const,
         },
     },
@@ -185,7 +185,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         height: 65,
         borderRadius: 4,
         borderWidth: 2,
-        borderColor: theme.color.primary,
+        borderColor: theme.color.all || theme.color.primary,
     },
     contact: {
         container: {
@@ -202,7 +202,7 @@ const header = (theme: TemplateTheme): HeaderStyles => ({
         label: {
             fontWeight: 600,
             fontSize: 9,
-            color: theme.color.primary,
+            color: theme.color.all || theme.color.primary,
             marginRight: 4,
         },
         value: {
@@ -249,7 +249,7 @@ const experience = (theme: TemplateTheme): ExperienceStyles => ({
     role: {
         fontSize: 10,
         fontWeight: 600,
-        color: theme.color.subtitles,
+        color: theme.color.all || theme.color.subtitles,
         marginBottom: 3,
     },
     contractType: {
@@ -283,7 +283,7 @@ const education = (theme: TemplateTheme): EducationStyles => ({
     degree: {
         fontSize: 10,
         fontWeight: 600,
-        color: theme.color.subtitles,
+        color: theme.color.all || theme.color.subtitles,
     },
     institution: {
         fontSize: 11,
@@ -312,7 +312,7 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
         backgroundColor: colors.white,
         borderRadius: 4,
         borderLeftWidth: 2,
-        borderLeftColor: theme.color.primary,
+        borderLeftColor: theme.color.all || theme.color.primary,
         borderBottomWidth: 1,
         borderBottomColor: colors.gray[200],
     },
@@ -320,11 +320,11 @@ const project = (theme: TemplateTheme): ProjectStyles => ({
         fontSize: 10,
         fontWeight: 700,
         marginBottom: 3,
-        color: theme.color.primary,
+        color: theme.color.all || theme.color.primary,
     },
     link: {
         fontSize: 8,
-        color: theme.color.primary,
+        color: theme.color.all || theme.color.primary,
         textDecoration: "underline" as const,
         marginBottom: 3,
     },
@@ -358,7 +358,7 @@ const skill = (theme: TemplateTheme): SkillStyles => ({
         },
         fill: {
             height: 5,
-            backgroundColor: theme.color.skill,
+            backgroundColor: theme.color.all || theme.color.skill,
             borderRadius: 2,
         },
     },
@@ -381,7 +381,7 @@ const language = (theme: TemplateTheme): LanguageStyles => ({
     },
     proficiency: {
         fontSize: 9,
-        color: theme.color.primary,
+        color: theme.color.all || theme.color.primary,
         fontWeight: 500,
     },
 });
