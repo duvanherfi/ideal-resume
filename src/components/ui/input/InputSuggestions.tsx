@@ -1,5 +1,6 @@
 import React from "react";
 import Text from "../text/Text";
+import I18n from "src/locales/I18nKeys";
 
 interface InputSuggestionsProps {
   suggestions?: string[];
@@ -18,7 +19,7 @@ const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestion
     <>
       {suggestions.length > 0 && (
         <ul ref={ref} className={`${listClassName} ${listStatusClassName}`} tabIndex={-1}>
-          <Text className="p-2 text-xs text-secondary-600 dark:text-secondary-400">input.suggestions.title</Text>
+          <Text className="p-2 text-xs text-secondary-600 dark:text-secondary-400">{I18n.INPUT.SUGGESTIONS.TITLE}</Text>
           {suggestions.map((suggestion, index) => (
             <button
               key={suggestion + index}
