@@ -29,7 +29,7 @@ const SuggestedThemes: React.FC<SuggestedThemesProps> = ({ property }) => {
             <span className="text-xs font-medium text-secondary-600 dark:text-secondary-200 mb-2">
                 {t(I18n.THEME.COLOR.SUGGESTED.LABEL)}
             </span>
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap gap-2">
                 {suggestions.map((theme) => (
                     <ThemeColorBadge key={theme.name} property={property} {...theme} />
                 ))}

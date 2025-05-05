@@ -11,6 +11,7 @@
 # production
 /build
 /public/404.html
+/dist
 
 # misc
 .DS_Store
@@ -26,3 +27,5 @@ yarn-error.log*
 *.map
 
 .firebase
+firebase.json
+.firebaserc

@@ -1,5 +1,5 @@
 import useI18N from "@hooks/useI18N";
-import { getButtonClassName } from "./tabHelper";
+import { getButtonClassName } from "./utils/utils";
 
 export interface TabButtonProps {
   text?: string;

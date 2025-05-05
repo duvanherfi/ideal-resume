@@ -28,11 +28,12 @@ ideal-resume/
 │   ├── index.tsx         #  
 │   └── types/            # 
 ├── .gitignore            # 
-├── package.json          #  
-├── tsconfig.json         # 
-├── tsconfig.paths.json   # 
 ├── webpack.config.js     # 
+├── postcss.config.js     # 
 ├── tailwind.config.js    # 
+├── tsconfig.json         # 
+├── package.json          #  
+├── tsconfig.paths.json   # 
 └── README.md             # 
 ```
 

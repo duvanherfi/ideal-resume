@@ -1,7 +1,7 @@
 import GlassCard from "@components/ui/GlassCard";
 import { FontName } from "@resume-api/context/resume-theme/availableFonts";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";
-import { parseFontName } from "@utils/utils";
+import { parseFontName } from "@components/widgets/form-fonts/utils/utils";
 import I18n from "src/locales/I18nKeys";
 import ViewTitle from "../common/ViewTitle";
 

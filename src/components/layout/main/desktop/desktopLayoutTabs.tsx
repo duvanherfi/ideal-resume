@@ -32,7 +32,7 @@ const desktopLayoutTabs: TabsContainerProps = {
   inline: true,
   className: "2xl:col-span-2 w-full overflow-y-auto h-full scrollbar",
   tabsClassName: "",
-  contentClassName: "lg:pb-80 2xl:px-8 2xl:pb-32",
+  contentClassName: "lg:pb-32 2xl:px-8",
 }
 
 export default desktopLayoutTabs;

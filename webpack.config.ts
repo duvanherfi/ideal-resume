@@ -11,8 +11,9 @@ interface Configuration extends WebpackConfiguration {
 const config: Configuration = {
     entry: './src/index.tsx',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'build'),
+        filename: 'assets/[name].[contenthash].js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -36,7 +37,10 @@ const config: Configuration = {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './public/index.html' }),
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html',
+        }),
     ],
     devServer: {
         static: { directory: path.join(__dirname, 'public') },

@@ -1,7 +1,7 @@
 import React, { ReactNode, useRef, useState } from "react";
 import { TabButtonProps } from "./TabButton";
 import Tabs from "./Tabs";
-import { getAnimationClasses, SlideDirection } from "./tabHelper";
+import { getAnimationClasses, SlideDirection } from "./utils/utils";
 
 export interface Tab {
     id: string;
