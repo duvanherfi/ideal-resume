@@ -11,7 +11,7 @@ interface CustomThemeProps {
 const CustomTheme: React.FC<CustomThemeProps> = ({ property }) => {
     const { t } = useI18N();
     const theme = useResumeTheme();
-    const color = theme.getColor(property);
+    const color = theme.color.of(property);
 
     return (
         <div className="flex flex-col">
@@ -23,7 +23,7 @@ const CustomTheme: React.FC<CustomThemeProps> = ({ property }) => {
                     id={`color-${property}`}
                     type="color"
                     value={color}
-                    onChange={(e) => theme.changeColor(property, e.target.value)}
+                    onChange={(e) => theme.color.change(property, e.target.value)}
                     className="h-10 w-10 cursor-pointer p-0 opacity-0 absolute z-10"
                     aria-label={`Select ${property} color`}
                 />

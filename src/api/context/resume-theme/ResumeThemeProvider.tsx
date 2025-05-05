@@ -39,12 +39,16 @@ const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, def
 
   const value = useMemo<ResumeThemeContextType>(() => ({
     get: theme,
-    changeColor,
-    getColor,
-    getColorKeys,
-    getFont,
-    changeFont,
-    availableFonts
+    color: {
+      change: changeColor,
+      of: getColor,
+      getKeys: getColorKeys,
+    },
+    font: {
+      get: getFont,
+      change: changeFont,
+      available: availableFonts
+    },
   }), [theme]);
 
   return (

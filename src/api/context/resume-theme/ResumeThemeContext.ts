@@ -5,12 +5,16 @@ import { FontName } from "./availableFonts";
 
 export interface ResumeThemeContextType {
     get: TemplateTheme;
-    changeColor: (key: keyof TemplateColorScheme, value: string) => void;
-    getColorKeys: () => (keyof TemplateColorScheme)[];
-    getColor: (key: keyof TemplateColorScheme) => string;
-    getFont: () => string;
-    changeFont: (newFont: string) => void;
-    availableFonts: FontName[];
+    color: {
+        change: (key: keyof TemplateColorScheme, value: string) => void;
+        getKeys: () => (keyof TemplateColorScheme)[];
+        of: (key: keyof TemplateColorScheme) => string;
+    },
+    font: {
+        get: () => string;
+        change: (newFont: string) => void;
+        available: FontName[];
+    },
 }
 
 const ResumeThemeContext = createContext<ResumeThemeContextType | undefined>(undefined);
