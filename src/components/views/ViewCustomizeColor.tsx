@@ -13,9 +13,9 @@ const ViewCustomizeColor: React.FC = () => {
         <GlassCard>
             <ViewTitle simple title={I18n.THEME.COLOR.TITLE} subtitle={I18n.THEME.COLOR.SUBTITLE} className="pb-4" />
             {theme.getColorKeys().map(property => (
-                <GlassCard key={property} className="flex flex-col sm:flex-row lg:flex-col 2xl:flex-row justify-between items-center">
+                <GlassCard key={property} className="flex flex-col sm:flex-row xl:flex-col 2xl:flex-row justify-between items-center">
                     <Subtitle>{I18n.THEME.COLOR.SCHEME(property)}</Subtitle>
-                    <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-8 sm:space-y-0">
+                    <div className="flex  flex-row space-x-8 space-y-0">
                         <ThemeCustom property={property} />
                         <SuggestedThemes property={property} />
                     </div>

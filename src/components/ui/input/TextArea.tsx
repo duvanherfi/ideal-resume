@@ -9,7 +9,7 @@ interface TextAreaProps {
 
 const TextArea = (props: TextAreaProps) => {
     const labelClassName = "block text-sm font-medium text-secondary-700 dark:text-white mb-1";
-    const textAreaClassName = "transition-all duration-200 w-full px-3 py-2 bg-white/70 dark:bg-black/50 dark:text-white border dark:border-primary-300/50 border-primary-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-300 dark:focus:border-primary-300"
+    const textAreaClassName = "transition-all duration-200 w-full px-3 py-2 bg-white/70 dark:bg-black/50 dark:text-white border dark:border-accent-300/50 border-accent-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 dark:focus:ring-accent-300 dark:focus:border-accent-300"
     
     return (
         <div className="mt-4 col-span-2">

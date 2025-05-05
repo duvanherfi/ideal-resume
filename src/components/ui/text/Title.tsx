@@ -9,7 +9,7 @@ const Title: React.FC<TitleProps> = ({ children, className }) => {
     const { t } = useI18N();
 
     return (
-        <h1 className={`${className} text-2xl 2xl:text-4xl font-semibold text-accent-900 dark:text-accent-100 py-2`}>
+        <h1 className={`${className} text-2xl 2xl:text-4xl font-semibold text-primary-900 dark:text-primary-100 py-2`}>
             {t(children)}
         </h1>
     );
