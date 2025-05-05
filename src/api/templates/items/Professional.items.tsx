@@ -1,5 +1,5 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { getTimeRange } from "@resume-api/common/templateDataHelper";
+import { getTimeRange } from "@resume-api/utils/templateUtils";
 import type { Education } from "@resume-api/types/items/Education";
 import type { Language } from "@resume-api/types/items/Language";
 import type { Project } from "@resume-api/types/items/Project";

@@ -1,6 +1,6 @@
 import { Font } from "@react-pdf/renderer";
 import type { Style } from "@react-pdf/types";
-import { lightenHexColor } from "@resume-api/common/colorHelper";
+import { lightenHexColor } from "@resume-api/utils/colorUtils";
 import type TemplateTheme from "@resume-api/types/template/TemplateTheme";
 import { FontRoboto } from "./common/templateFonts";
 import type TemplateStyleSheet from "./common/TemplateStyleSheet";

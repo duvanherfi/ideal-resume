@@ -1,13 +1,12 @@
 import { type UserData } from "@resume-api/types/UserData";
 import React from "react";
-import { pdfjs } from "react-pdf";
+import { pdfjs } from 'react-pdf';
 import ResumeLabelProvider from "./resume-labels/ResumeLabelsProvider";
 import ResumeTemplateProvider from "./resume-template/ResumeTemplateProvider";
 import ResumeThemeProvider from "./resume-theme/ResumeThemeProvider";
 import UserDataProvider from "./user-data/UserDataProvider";
 
-const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-pdfjs.GlobalWorkerOptions.workerSrc = isMobile ? "" : "/pdf.worker.js";
+pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
 
 interface ResumeProviderProps {
     children: React.ReactNode
@@ -16,7 +15,7 @@ interface ResumeProviderProps {
 
 const ResumeProvider = (props: ResumeProviderProps) => {
     const { defaultData } = props;
-
+    
     return (
         <UserDataProvider defaultData={defaultData}>
             <ResumeLabelProvider>

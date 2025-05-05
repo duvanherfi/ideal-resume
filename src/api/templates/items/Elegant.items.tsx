@@ -1,5 +1,5 @@
 import { Link, Text, View } from "@react-pdf/renderer";
-import { getTimeRange } from "@resume-api/common/templateDataHelper";
+import { getTimeRange } from "@resume-api/utils/templateUtils";
 import TechList from "@resume-api/templates/components/common/TechList";
 import TextEmptySafe from "@resume-api/templates/components/common/TextEmptySafe";
 import type { Education } from "@resume-api/types/items/Education";
