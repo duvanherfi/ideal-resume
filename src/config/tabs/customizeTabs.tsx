@@ -1,6 +1,6 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import ViewCustomizeColor from "@components/views/ViewCustomizeColor";
-import FormFonts from "@components/widgets/form-fonts/FormFonts";
+import ViewColorSettings from "@components/views/ViewThemeColorSettings";
+import ThemeFontSettings from "@components/widgets/theme-font-settings/ThemeFontSettings";
 import FormLabels from "@components/widgets/form-labels/FormLabels";
 import Icons from "@icons/Icons";
 import I18n from "src/locales/I18nKeys";
@@ -8,7 +8,7 @@ import I18n from "src/locales/I18nKeys";
 const tabs: Tab[] = [
     {
         id: "theme",
-        component: <ViewCustomizeColor />,
+        component: <ViewColorSettings />,
         children: <Icons.Draw />,
         text: I18n.THEME.COLOR.TITLE,
     }, 
@@ -20,7 +20,7 @@ const tabs: Tab[] = [
     },
     {
         id: "font",
-        component: <FormFonts />,
+        component: <ThemeFontSettings />,
         children: <Icons.Text />,
         text: I18n.FORM.FONT.TITLE,
     },

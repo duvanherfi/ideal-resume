@@ -3,10 +3,13 @@ import useResumeTemplate from "@api-hooks/useResumeTemplate";
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import useUserData from "@api-hooks/useUserData";
 import Button from "@components/ui/buttons/Button";
+import useI18N from "@hooks/useI18N";
 import Icons from "@icons/Icons";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import I18n from "src/locales/I18nKeys";
 
 const DownloadResumeLink: React.FC = () => {
+    const { t } = useI18N();
     const data = useUserData();
     const theme = useResumeTheme();
     const template = useResumeTemplate();
@@ -24,7 +27,10 @@ const DownloadResumeLink: React.FC = () => {
                 >
                     {({ blob, url, loading, error }) => (
                         <Button disabled={loading} variant="primary">
-                            {loading ? <Icons.Loading /> : <Icons.Download />}
+                            <div className="flex space-x-2">
+                                <span>{t(I18n.PREVIEW.DOWNLOAD.LABEL)}</span>
+                                {loading ? <Icons.Loading /> : <Icons.Download />}
+                            </div>
                         </Button>
                     )}
                 </PDFDownloadLink>

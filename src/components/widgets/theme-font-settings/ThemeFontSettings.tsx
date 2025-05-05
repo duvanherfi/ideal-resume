@@ -1,11 +1,11 @@
 import GlassCard from "@components/ui/GlassCard";
 import { FontName } from "@resume-api/context/resume-theme/availableFonts";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";
-import { parseFontName } from "@components/widgets/form-fonts/utils/utils";
+import { parseFontName } from "@components/widgets/theme-font-settings/utils/utils";
 import I18n from "src/locales/I18nKeys";
 import ViewTitle from "../common/ViewTitle";
 
-const FormFonts: React.FC = () => {
+const ThemeFontSettings: React.FC = () => {
     const theme = useResumeTheme();
 
     const statusClassName = (font: FontName) => font === theme.getFont() ? "bg-accent-200/50 dark:bg-accent-900/50 text-accent-900 dark:text-accent-300 border-accent-900 dark:border-accent-300" : "bg-accent-200/20 dark:bg-accent-900/20"
@@ -32,4 +32,4 @@ const FormFonts: React.FC = () => {
     );
 };
 
-export default FormFonts;
+export default ThemeFontSettings;

@@ -4,11 +4,11 @@ import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
 import I18n from "src/locales/I18nKeys";
 import ThemeColorBadge from "./ThemeColorBadge";
 
-interface ThemeColorBadgeProps {
+interface CustomThemeProps {
     property: keyof TemplateColorScheme;
 }
 
-const ThemeCustom: React.FC<ThemeColorBadgeProps> = ({ property }) => {
+const CustomTheme: React.FC<CustomThemeProps> = ({ property }) => {
     const { t } = useI18N();
     const theme = useResumeTheme();
     const color = theme.getColor(property);
@@ -33,4 +33,4 @@ const ThemeCustom: React.FC<ThemeColorBadgeProps> = ({ property }) => {
     );
 };
 
-export default ThemeCustom;
+export default CustomTheme;

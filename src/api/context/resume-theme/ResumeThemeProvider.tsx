@@ -1,9 +1,9 @@
 import type TemplateTheme from "@resume-api/types/template/TemplateTheme";
-import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
+import { TemplateColorScheme, TemplateColorSchemeKey } from "@resume-api/types/template/TemplateTheme";
 import React, { ReactNode, useMemo, useState } from "react";
 import ResumeThemeContext, { type ResumeThemeContextType } from "./ResumeThemeContext";
-import initialTheme from "./initialTheme";
 import { availableFonts } from "./availableFonts";
+import initialTheme from "./initialTheme";
 
 interface ResumeThemeProviderProps {
   children: ReactNode;
@@ -13,19 +13,20 @@ interface ResumeThemeProviderProps {
 const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, defaultTheme = initialTheme }) => {
   const [theme, setTheme] = useState<TemplateTheme>(defaultTheme);
 
+  const getColor = (key: keyof TemplateColorScheme) => theme.color[key];
+
+  const getColorKeys = (): (keyof TemplateColorScheme)[] => Object.keys(theme.color).slice(1) as (keyof TemplateColorScheme)[];
+
   const changeColor = (key: keyof TemplateColorScheme, value: string) => {
     setTheme(prevTheme => ({
       ...prevTheme,
       color: {
         ...prevTheme.color,
+        [TemplateColorSchemeKey.ALL]: key !== TemplateColorSchemeKey.ALL ? "" : prevTheme.color.all,
         [key]: value
       }
     }));
   };
-
-  const getColor = (key: keyof TemplateColorScheme) => theme.color[key];
-
-  const getColorKeys = (): (keyof TemplateColorScheme)[] => Object.keys(theme.color) as (keyof TemplateColorScheme)[];
 
   const getFont = () => theme.font;
 
@@ -38,7 +39,6 @@ const ResumeThemeProvider: React.FC<ResumeThemeProviderProps> = ({ children, def
 
   const value = useMemo<ResumeThemeContextType>(() => ({
     get: theme,
-    setTheme,
     changeColor,
     getColor,
     getColorKeys,
