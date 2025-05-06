@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 
-const useIsMobile = (breakpoint: number = 768): boolean => {
+export enum ScreenSize {
+    SM = 640,
+    MD = 768,
+    LG = 1024,
+    XL = 1280,
+    '2XL' = 1536
+}
+
+const useIsMobile = (breakpoint: ScreenSize = ScreenSize.MD): boolean => {
     const query = `(max-width: ${breakpoint}px)`;
     const getMatch = () => typeof window !== "undefined" && window.matchMedia(query).matches;
 

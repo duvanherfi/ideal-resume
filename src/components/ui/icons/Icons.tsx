@@ -115,7 +115,7 @@ const Icons = {
     LineSeparator: () => (
         <div className="flex items-center w-full py-2 mb-2">
             <div className="flex-grow border-t border-secondary-400/50 dark:border-secondary-700/50"></div>
-            <div className="flex-shrink-0 mx-4 w-4 h-4 bg-accent-500/80 rounded-full"></div>
+            <div className="flex-shrink-0 mx-4 w-4 h-4 bg-primary-800/80 dark:dark:bg-primary-500/80 rounded-full"></div>
             <div className="flex-grow border-t border-secondary-400/50 dark:border-secondary-700/50"></div>
         </div>
     ),

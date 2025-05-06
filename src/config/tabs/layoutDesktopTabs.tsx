@@ -1,5 +1,5 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import ViewTemplatePreview from "@components/views/ViewTemplatePreview";
+import ViewCustomization from "@components/views/ViewCustomization";
 import ViewTemplateGallery from "@components/views/ViewTemplateGallery";
 import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@icons/Icons";
@@ -7,7 +7,7 @@ import I18n from "src/locales/I18nKeys";
 
 const tabs: Tab[] = [
   {
-    id: "form",
+    id: "userData",
     text: I18n.APP.TAB.FORM,
     component: <ViewUserDataForm />,
     children: <Icons.Person />
@@ -19,19 +19,20 @@ const tabs: Tab[] = [
     children: <Icons.Sheet />
   },
   {
-    id: "preview",
-    text: I18n.APP.TAB.PREVIEW,
-    component: <ViewTemplatePreview />,
-    children: <Icons.View />
-  }
+    id: "customize",
+    text: I18n.APP.TAB.CUSTOMIZE,
+    component: <ViewCustomization />,
+    children: <Icons.Customize />
+  },
 ];
 
-const mobileLayoutTabs: TabsContainerProps = {
+const layoutDesktopTabs: TabsContainerProps = {
   tabs,
-  animationDuration: 300,
-  slideDirection: "right",
-  tabsClassName: "fixed bottom-0 z-50 h-16 w-full",
-  contentClassName: "w-full lg:px-16",
+  slideDirection: "left",
+  inline: true,
+  className: "2xl:col-span-2 w-full overflow-y-auto h-full scrollbar",
+  tabsClassName: "",
+  contentClassName: "lg:pb-32 2xl:px-8",
 }
 
-export default mobileLayoutTabs;
+export default layoutDesktopTabs;

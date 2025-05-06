@@ -1,9 +1,10 @@
 import GlassCard from "@components/ui/GlassCard";
+import Icons from "@components/ui/icons/Icons";
+import ViewTitle from "@components/widgets/common/ViewTitle";
 import { parseFontName } from "@components/widgets/theme-customization/theme-font-settings/utils/utils";
 import { FontName } from "@resume-api/context/resume-theme/availableFonts";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";
 import I18n from "src/locales/I18nKeys";
-import ViewTitle from "../../common/ViewTitle";
 
 const ThemeFontSettings: React.FC = () => {
     const theme = useResumeTheme();
@@ -28,6 +29,7 @@ const ThemeFontSettings: React.FC = () => {
                     ))}
                 </div>
             </GlassCard>
+            <Icons.LineSeparator />
         </GlassCard>
     );
 };
