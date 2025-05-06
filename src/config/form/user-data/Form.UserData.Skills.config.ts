@@ -1,4 +1,4 @@
-import FieldsSkills from "@config/fields/Fields.Skills.config";
+import FieldsSkills from "@config/fields/user-data/Fields.UserData.Skills.config";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import type { Skill } from "@resume-api/types/user-data/items/Skill";
 import type { FormConfig } from "@hooks/useMultiItemForm";

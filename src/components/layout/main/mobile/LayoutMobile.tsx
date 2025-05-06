@@ -1,5 +1,5 @@
 import TabsContainer from "@components/ui/tabs/TabsContainer";
-import layoutMobileTabs from "../../../../config/tabs/layoutMobileTabs";
+import layoutMobileTabs from "@config/tabs/Tabs.LayoutMobile.config";
 
 const LayoutMobile: React.FC = () => {
     return (

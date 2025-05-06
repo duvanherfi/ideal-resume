@@ -1,4 +1,4 @@
-import FieldsEducation from "@config/fields/Fields.Education.config";
+import FieldsEducation from "@config/fields/user-data/Fields.UserData.Education.config";
 import type { FormConfig } from "@hooks/useMultiItemForm";
 import type { Education } from "@resume-api/types/user-data/items/Education";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";

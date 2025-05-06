@@ -1,4 +1,4 @@
-import FieldsProject from "@config/fields/Fields.Project.config";
+import FieldsProject from "@config/fields/user-data/Fields.UserData.Project.config";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import type { Project } from "@resume-api/types/user-data/items/Project";
 import type { FormConfig } from "@hooks/useMultiItemForm";

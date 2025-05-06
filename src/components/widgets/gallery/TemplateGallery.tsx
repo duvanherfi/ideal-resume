@@ -1,6 +1,6 @@
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
-import galleryTabs from "@config/tabs/galleryTabs";
+import galleryTabs from "@config/tabs/Tabs.Gallery.config";
 import React from "react";
 import I18n from "src/locales/I18nKeys";
 

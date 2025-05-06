@@ -1,6 +1,6 @@
 import ViewTemplatePreview from "@components/views/ViewTemplatePreview";
 import TabsContainer from "@components/ui/tabs/TabsContainer";
-import layoutDesktopTabs from "../../../../config/tabs/layoutDesktopTabs";
+import layoutDesktopTabs from "@config/tabs/TabsLayoutDesktop.config";
 
 const LayoutDesktop: React.FC = () => {
     return (

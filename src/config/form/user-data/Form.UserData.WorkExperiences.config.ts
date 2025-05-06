@@ -1,4 +1,4 @@
-import FieldsExperience from "@config/fields/Fields.Experience.config";
+import FieldsExperience from "@config/fields/user-data/Fields.UserData.Experience.config";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import type { WorkExperience } from "@resume-api/types/user-data/items/WorkExperience";
 import type { FormConfig } from "@hooks/useMultiItemForm";

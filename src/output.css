@@ -1273,6 +1273,10 @@ video {
   background-color: rgb(99 102 241 / 0.1);
 }
 
+.bg-accent-500\/80{
+  background-color: rgb(99 102 241 / 0.8);
+}
+
 .bg-accent-600{
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity, 1));
@@ -1296,10 +1300,6 @@ video {
 .bg-primary-600{
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
-}
-
-.bg-primary-800\/80{
-  background-color: rgb(30 64 175 / 0.8);
 }
 
 .bg-red-700{
@@ -1349,6 +1349,14 @@ video {
 
 .bg-white\/80{
   background-color: rgb(255 255 255 / 0.8);
+}
+
+.bg-primary-500\/80{
+  background-color: rgb(59 130 246 / 0.8);
+}
+
+.bg-primary-800\/80{
+  background-color: rgb(30 64 175 / 0.8);
 }
 
 .bg-gradient-to-b{
@@ -2155,6 +2163,14 @@ body {
 
 .dark\:bg-secondary-900\/80:is(.dark *){
   background-color: rgb(15 23 42 / 0.8);
+}
+
+.dark\:bg-primary-800\/80:is(.dark *){
+  background-color: rgb(30 64 175 / 0.8);
+}
+
+.dark\:dark\:bg-primary-800\/80:is(.dark *):is(.dark *){
+  background-color: rgb(30 64 175 / 0.8);
 }
 
 .dark\:dark\:bg-primary-500\/80:is(.dark *):is(.dark *){
