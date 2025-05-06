@@ -1,5 +1,5 @@
 import useResumeLabels from "@api-hooks/useResumeLabels";
-import GlassCard from "@components/ui/GlassCard";
+import GlassCard from "@components/ui/glass-card/GlassCard";
 import Subtitle from "@components/ui/text/Subtitle";
 import type { FormField } from "@hooks/useMultiItemForm";
 import Icons from "@icons/Icons";

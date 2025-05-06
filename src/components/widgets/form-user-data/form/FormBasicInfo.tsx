@@ -1,5 +1,5 @@
 import useUserData from "@api-hooks/useUserData";
-import GlassCard from "@components/ui/GlassCard";
+import GlassCard from "@components/ui/glass-card/GlassCard";
 import InputImage from "@components/ui/input/InputImage";
 import Subtitle from "@components/ui/text/Subtitle";
 import GenericField from "@components/widgets/common/form/GenericField";

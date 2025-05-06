@@ -1,7 +1,7 @@
 import useResumeTemplate from "@api-hooks/useResumeTemplate";
-import GlassCard from "@components/ui/GlassCard";
-import Icons from "@components/ui/icons/Icons";
+import GlassCard from "@components/ui/glass-card/GlassCard";
 import { ScrollDirection } from "@hooks/useCarousel";
+import Icons from "@icons/Icons";
 import { useState } from "react";
 import ScrollButton from "../common/ScrollButton";
 import TemplateThumb from "../common/TemplateThumb";

@@ -1,5 +1,5 @@
+import Icons, { ChevronDirection } from "@icons/Icons";
 import { ReactNode, useState } from "react";
-import Icons, { ChevronDirection } from "./icons/Icons";
 
 interface AccordionProps {
     togglerClassName?: string;

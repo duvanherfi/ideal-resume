@@ -1,4 +1,4 @@
-import Icons from "./icons/Icons";
+import Icons from "@icons/Icons";
 
 interface CarouselProps {
     handlePrevious: () => void;

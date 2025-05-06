@@ -1,5 +1,5 @@
 import useResumeTemplate from "@api-hooks/useResumeTemplate";
-import GlassCard from "@components/ui/GlassCard";
+import GlassCard from "@components/ui/glass-card/GlassCard";
 import { ScrollDirection, useCarousel } from "@hooks/useCarousel";
 import ScrollButton from "../common/ScrollButton";
 import TemplateThumb from "../common/TemplateThumb";

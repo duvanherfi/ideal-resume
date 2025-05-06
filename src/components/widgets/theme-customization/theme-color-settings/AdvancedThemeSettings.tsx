@@ -1,4 +1,4 @@
-import Accordion from "@components/ui/Accordion";
+import Accordion from "@components/ui/accordion/Accordion";
 import Subtitle from "@components/ui/text/Subtitle";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";
 import I18n from "src/locales/I18nKeys";

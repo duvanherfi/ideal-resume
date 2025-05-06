@@ -1,4 +1,4 @@
-import GlassCard from "@components/ui/GlassCard";
+import GlassCard from "@components/ui/glass-card/GlassCard";
 import Subtitle from "@components/ui/text/Subtitle";
 import Text from "@components/ui/text/Text";
 import CustomTheme from "@components/widgets/theme-customization/theme-color-settings/common/CustomTheme";

@@ -6,8 +6,8 @@ export enum ScrollDirection {
 }
 
 interface UseCarouselOptions {
-    scrollFraction?: number; // Qué fracción del contenedor desplazar (por defecto: 0.75)
-    scrollDelay?: number;    // Retardo en ms para comprobar el estado después del desplazamiento (por defecto: 300)
+    scrollFraction?: number;
+    scrollDelay?: number;
 }
 
 interface UseCarouselReturn {
@@ -18,12 +18,6 @@ interface UseCarouselReturn {
     checkScrollability: () => void;
 }
 
-/**
- * Hook personalizado para manejar la funcionalidad de un carrusel con desplazamiento
- * 
- * @param options - Opciones de configuración del carrusel
- * @returns Objeto con refs, estados y funciones para controlar el carrusel
- */
 export function useCarousel(options?: UseCarouselOptions): UseCarouselReturn {
     const { scrollFraction = 0.75, scrollDelay = 300 } = options || {};
 

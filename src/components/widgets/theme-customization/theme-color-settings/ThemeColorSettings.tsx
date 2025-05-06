@@ -1,5 +1,5 @@
-import GlassCard from "@components/ui/GlassCard";
-import Icons from "@components/ui/icons/Icons";
+import GlassCard from "@components/ui/glass-card/GlassCard";
+import Icons from "@icons/Icons";
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import AdvancedThemeSettings from "@components/widgets/theme-customization/theme-color-settings/AdvancedThemeSettings";
 import GenericThemeColorSettings from "@components/widgets/theme-customization/theme-color-settings/GenericThemeColorSettings";

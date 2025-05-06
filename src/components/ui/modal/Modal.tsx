@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import useModal from "@hooks/useModal";
-import Button from "./buttons/Button";
-import Icons from "./icons/Icons";
+import Button from "../buttons/Button";
+import Icons from "@icons/Icons";
 
 interface ModalButtonProps {
     buttonText: ReactNode;
