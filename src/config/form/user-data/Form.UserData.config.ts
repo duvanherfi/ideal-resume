@@ -1,4 +1,4 @@
-import type { UserDataItems } from "@resume-api/types/items/UserDataItems";
+import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import education from "./Form.UserData.Education.config";
 import languages from "./Form.UserData.Language.config";
 import projects from "./Form.UserData.Project.config";

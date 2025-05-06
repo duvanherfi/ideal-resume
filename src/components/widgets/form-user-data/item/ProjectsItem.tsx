@@ -1,4 +1,4 @@
-import type { Project } from "@resume-api/types/items/Project";
+import type { Project } from "@resume-api/types/user-data/items/Project";
 import ItemDescription from "./common/ItemDescription";
 import ItemTitle from "./common/ItemTitle";
 import ItemForm, { type AddedItemGenericProps } from "./common/ItemForm";

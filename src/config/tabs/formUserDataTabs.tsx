@@ -2,11 +2,11 @@ import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer"
 import MultiItemForm from "@components/widgets/form-user-data/form/common/MultiItemForm";
 import FormBasicInfo from "@components/widgets/form-user-data/form/FormBasicInfo";
 import Icons from "@icons/Icons";
-import type { Education } from "@resume-api/types/items/Education";
-import type { Language } from "@resume-api/types/items/Language";
-import type { Project } from "@resume-api/types/items/Project";
-import type { Skill } from "@resume-api/types/items/Skill";
-import type { WorkExperience } from "@resume-api/types/items/WorkExperience";
+import type { Education } from "@resume-api/types/user-data/items/Education";
+import type { Language } from "@resume-api/types/user-data/items/Language";
+import type { Project } from "@resume-api/types/user-data/items/Project";
+import type { Skill } from "@resume-api/types/user-data/items/Skill";
+import type { WorkExperience } from "@resume-api/types/user-data/items/WorkExperience";
 
 const tabs: Tab[] = [
     {

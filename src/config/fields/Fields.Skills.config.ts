@@ -1,4 +1,4 @@
-import type { Skill } from "@resume-api/types/items/Skill";
+import type { Skill } from "@resume-api/types/user-data/items/Skill";
 import type { FormField } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 

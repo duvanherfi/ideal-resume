@@ -1,6 +1,6 @@
 import FieldsLanguage from "@config/fields/Fields.Language.config";
-import type { UserDataItems } from "@resume-api/types/items/UserDataItems";
-import type { Language } from "@resume-api/types/items/Language";
+import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
+import type { Language } from "@resume-api/types/user-data/items/Language";
 import type { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "src/locales/I18nKeys";
 import { v4 as uuidv4 } from "uuid";

@@ -1,7 +1,7 @@
 import useUserData from "@api-hooks/useUserData";
 import getConfig from "@config/form/user-data/Form.UserData.config";
 import useMultiItemForm, { type FormConfig, type MultiItemFormType } from "@hooks/useMultiItemForm";
-import type { UserDataItems } from "@resume-api/types/items/UserDataItems";
+import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 
 interface UserDataFormProps {
     dataKey: keyof UserDataItems;

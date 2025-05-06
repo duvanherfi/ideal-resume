@@ -1,4 +1,4 @@
-import { FontName } from "@resume-api/context/resume-theme/availableFonts";
+import { type FontName } from "@resume-api/context/resume-theme/availableFonts";
 import type { CSSProperties } from "react";
 
 export interface ParsedFontStyle {

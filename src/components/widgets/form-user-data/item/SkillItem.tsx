@@ -1,4 +1,4 @@
-import type { Skill } from "@resume-api/types/items/Skill";
+import type { Skill } from "@resume-api/types/user-data/items/Skill";
 import ItemForm, { type AddedItemGenericProps } from "./common/ItemForm";
 import ItemTitle from "./common/ItemTitle";
 

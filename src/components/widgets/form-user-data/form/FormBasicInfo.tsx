@@ -4,7 +4,7 @@ import InputImage from "@components/ui/input/InputImage";
 import Subtitle from "@components/ui/text/Subtitle";
 import GenericField from "@components/widgets/common/form/GenericField";
 import FieldsBasicInfo from "@config/fields/Fields.BasicInfo.config";
-import { type UserData } from "@resume-api/types/UserData";
+import { type UserData } from "@resume-api/types/user-data/UserData";
 import React from "react";
 import I18n from "src/locales/I18nKeys";
 

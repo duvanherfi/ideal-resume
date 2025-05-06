@@ -1,9 +1,9 @@
-import { type UserData } from "@resume-api/types/UserData";
-import type { WorkExperience } from "@resume-api/types/items/WorkExperience";
-import type { Project } from "@resume-api/types/items/Project";
-import type { Language } from "@resume-api/types/items/Language";
-import type { Skill } from "@resume-api/types/items/Skill";
-import type { Education } from "@resume-api/types/items/Education";
+import { type UserData } from "@resume-api/types/user-data/UserData";
+import type { WorkExperience } from "@resume-api/types/user-data/items/WorkExperience";
+import type { Project } from "@resume-api/types/user-data/items/Project";
+import type { Language } from "@resume-api/types/user-data/items/Language";
+import type { Skill } from "@resume-api/types/user-data/items/Skill";
+import type { Education } from "@resume-api/types/user-data/items/Education";
 import { type AddedItemGenericProps } from "./common/ItemForm";
 import EducationItem from "./EducationItem";
 import ExperienceItem from "./ExperienceItem";
