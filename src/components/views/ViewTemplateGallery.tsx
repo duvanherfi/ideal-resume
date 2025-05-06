@@ -1,17 +1,16 @@
-import thumbGalleryTabs from "@config/tabs/thumbGalleryTabs";
-import TabsContainer from "@components/ui/tabs/TabsContainer";
-import ViewTitle from "@components/widgets/common/ViewTitle";
-import TemplateGridGallery from "@components/widgets/gallery/grid/TemplateGridGallery";
+import TemplateCarouselGallery from "@components/widgets/gallery/carousel/TemplateCarouselGallery";
+import TemplateGallery from "@components/widgets/gallery/TemplateGallery";
+import useIsMobile from "@hooks/useIsMobile";
 import React from "react";
-import I18n from "src/locales/I18nKeys";
 
 const ViewTemplateGallery: React.FC = () => {
+  const isMobile = useIsMobile();
+
   return (
-    <div className="2xl:w-full xl:px-4">
-      <ViewTitle title={I18n.GALLERY.TITLE} subtitle={I18n.GALLERY.SUBTITLE} />
-      <TabsContainer {...thumbGalleryTabs} />
-      <TemplateGridGallery className="block md:hidden" />
-    </div>
+    <>
+      <TemplateGallery />
+      {isMobile && <TemplateCarouselGallery className="rounded-md" />}
+    </>
   );
 };
 

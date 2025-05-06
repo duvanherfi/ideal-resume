@@ -20,7 +20,7 @@ const GenericFormLabels: React.FC<FormLabelsProps> = ({ title, fields }) => {
     };
 
     return (
-        <GlassCard>
+        <GlassCard className="space-y-6">
             <Subtitle>{title}</Subtitle>
             <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {fields.map(field => (

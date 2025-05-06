@@ -6,11 +6,11 @@ import ViewCustomization from "./ViewCustomization";
 
 const ViewTemplatePreview: React.FC = () => {
     return (
-        <div className="space-y-2 h-full w-full xl:bg-white/40 xl:dark:bg-black/40 backdrop-blur-xl xl:px-4 2xl:w-full overflow-y-auto scrollbar xl:pb-64">
+        <div className="space-y-4 h-full w-full xl:bg-white/40 xl:dark:bg-black/40 backdrop-blur-xl xl:px-4 2xl:w-full overflow-y-auto scrollbar lg:pb-24 xl:pb-32">
             <ViewTitle simple title={I18n.PREVIEW.TITLE} subtitle={I18n.PREVIEW.SUBTITLE} className="pt-4" />
-            <DownloadResumeLink />
             <SelectedTemplatePreview />
-            <div className="xl:hidden">
+            <DownloadResumeLink />
+            <div className="pb-8 xl:pb-0 xl:hidden">
                 <ViewCustomization />
             </div>
         </div>

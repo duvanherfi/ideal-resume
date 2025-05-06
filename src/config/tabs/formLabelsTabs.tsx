@@ -23,7 +23,7 @@ const tabs: Tab[] = [
 
 const formLabelsTabs: TabsContainerProps = {
     tabs,
-    slideDirection: "bottom"
+    slideDirection: "right"
 }
 
 export default formLabelsTabs;

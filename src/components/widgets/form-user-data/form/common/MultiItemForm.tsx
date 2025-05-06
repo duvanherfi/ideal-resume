@@ -3,7 +3,7 @@ import useUserDataForm from "@hooks/useUserDataForm";
 import type { UserDataItems } from "@resume-api/types/items/UserDataItems";
 import AddedItemList from "./AddedItemList";
 import MultiItemFormControls from "./MultiItemFormControls";
-import MultiItemFormFields from "./MultiItemFormFields";
+import MultiItemFormFields from "../MultiItemFormFields";
 
 export interface MultiItemFormProps {
     dataKey: keyof UserDataItems;

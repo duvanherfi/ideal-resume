@@ -1,5 +1,6 @@
 import useResumeTemplate from "@api-hooks/useResumeTemplate";
 import GlassCard from "@components/ui/GlassCard";
+import Icons from "@components/ui/icons/Icons";
 import { ScrollDirection } from "@hooks/useCarousel";
 import { useState } from "react";
 import ScrollButton from "../common/ScrollButton";
@@ -42,12 +43,14 @@ const TemplateGridGallery: React.FC<TemplateGridGalleryProps> = ({ className = "
                 <GalleryNavigation currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
                 <div className="grid md:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2 gap-4 max-h-[80vh] overflow-y-auto scrollbar">
                     {getCurrentPageTemplates().map((templateToPreview) => (
-                        <TemplateThumb
-                            key={templateToPreview.id}
-                            selectCurrentTemplate={() => template.select(templateToPreview)}
-                            templateToPreview={templateToPreview}
-                            isActive={templateToPreview.id === template.active?.id}
-                        />
+                        <div className="py-2" key={templateToPreview.id}>
+                            <TemplateThumb
+                                selectCurrentTemplate={() => template.select(templateToPreview)}
+                                templateToPreview={templateToPreview}
+                                isActive={templateToPreview.id === template.active?.id}
+                            />
+                            <Icons.LineSeparator />
+                        </div>
                     ))}
                 </div>
 

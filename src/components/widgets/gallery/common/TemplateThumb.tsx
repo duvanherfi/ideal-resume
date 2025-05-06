@@ -20,18 +20,18 @@ const TemplateThumb: React.FC<TemplateThumbProps> = ({ templateToPreview, select
          dark:hover:border-b-primary-700 dark:hover:border-t-primary-500 dark:hover:border-r-primary-600 dark:hover:border-l-primary-400 group absolute inset-0 transition-all duration-300`;
 
     return (
-        <div className="space-y-2 md:min-w-80">
-            <span className={`text-xl ${isActive ? "font-black text-primary-500 dark:text-primary-400" : " text-black dark:text-white"}`}>
+        <div className="space-y-2 min-w-80">
+            <span className={`text-2xl ${isActive ? "font-black text-primary-500 dark:text-primary-400" : " text-black dark:text-white"}`}>
                 {templateToPreview.name}
             </span>
 
-            <div className="relative bg-transparent flex-shrink-0 aspect-[1/1.4142]">
+            <div className="relative flex-shrink-0">
                 <button onClick={selectCurrentTemplate} className={templateCardClasses}>
                     <span className="transform rotate-45 text-xl font-bold text-white opacity-0 group-hover:opacity-100">
                         {templateToPreview.name}
                     </span>
                 </button>
-                <div className="h-full w-full">
+                <div className="mx-auto w-full md:h-full">
                     <TemplateViewer isStatic={true} data={mockedResume} theme={theme.get} labels={defaultLabels} template={templateToPreview} />
                 </div>
             </div>

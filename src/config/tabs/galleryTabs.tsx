@@ -19,7 +19,7 @@ const tabs: Tab[] = [
     },
 ];
 
-const thumbGalleryTabs: TabsContainerProps = {
+const galleryTabs: TabsContainerProps = {
     tabs,
     className: "hidden md:block",
     slideDirection: "bottom",
@@ -27,4 +27,4 @@ const thumbGalleryTabs: TabsContainerProps = {
     inline: true
 }
 
-export default thumbGalleryTabs;
+export default galleryTabs;

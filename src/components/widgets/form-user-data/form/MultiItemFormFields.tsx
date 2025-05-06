@@ -12,9 +12,9 @@ const MultiItemFormFields = <T extends { id: string }>(props: FormFieldsContaine
     const { t } = useI18N();
 
     return (
-        <div className={"w-full space-y-2"}>
+        <div className="w-full space-y-6">
             <Subtitle>{t(form.title)}</Subtitle>
-            <div className="md:grid md:grid-cols-2 xl:grid-cols-2 gap-4">
+            <div className="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {form.fields.map((field) => (
                     <GenericField key={field.name} {...field} value={form.current[field.name]} onChange={form.change} />
                 ))}

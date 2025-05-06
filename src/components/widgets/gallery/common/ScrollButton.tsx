@@ -24,7 +24,7 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({ direction, canScroll, onScr
         ? "text-primary-100 cursor-pointer hover:bg-accent-500 dark:hover:bg-accent-700"
         : "text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50";
 
-    const buttonClasses = `${baseClasses} ${stateClasses} ${positionClass} ${className}`;
+    const buttonClasses = `hidden md:block ${baseClasses} ${stateClasses} ${positionClass} ${className}`;
 
     const handleClick = () => {
         if (canScroll) {

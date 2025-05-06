@@ -41,7 +41,10 @@ const I18n = {
             ADVANCED: {
                 TITLE: "theme.color.advanced.title"
             },
-            SCHEME: (type: string): string => "theme.color.scheme." + type + ".title",
+            SCHEME: {
+                TITLE:  (type: string): string => "theme.color.scheme." + type + ".title",
+                SUBTITLE:  (type: string): string => "theme.color.scheme." + type + ".subtitle",
+            },
             SUGGESTED: {
                 LABEL: "theme.color.suggested.label",
                 OPTION: {

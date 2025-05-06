@@ -31,7 +31,7 @@ const mobileLayoutTabs: TabsContainerProps = {
   animationDuration: 300,
   slideDirection: "right",
   tabsClassName: "fixed bottom-0 z-50 h-16 w-full",
-  contentClassName: "w-full md:px-16",
+  contentClassName: "w-full lg:px-16",
 }
 
 export default mobileLayoutTabs;

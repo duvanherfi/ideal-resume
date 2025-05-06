@@ -1,9 +1,9 @@
 import GlassCard from "@components/ui/GlassCard";
-import { parseFontName } from "@components/widgets/theme-font-settings/utils/utils";
+import { parseFontName } from "@components/widgets/theme-customization/theme-font-settings/utils/utils";
 import { FontName } from "@resume-api/context/resume-theme/availableFonts";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";
 import I18n from "src/locales/I18nKeys";
-import ViewTitle from "../common/ViewTitle";
+import ViewTitle from "../../common/ViewTitle";
 
 const ThemeFontSettings: React.FC = () => {
     const theme = useResumeTheme();
@@ -18,7 +18,7 @@ const ThemeFontSettings: React.FC = () => {
                     {theme.font.available.map((font) => (
                         <button
                             onClick={() => theme.font.change(font)}
-                            className={`${statusClassName(font)} cursor-pointer dark:text-white hover:bg-accent-200/50 dark:hover:bg-accent-900/50 p-4 rounded-lg transition-all duration-300 w-full`}
+                            className={`${statusClassName(font)} cursor-pointer dark:text-white hover:bg-accent-200/50 dark:hover:bg-accent-900/50 p-2 rounded-lg transition-all duration-300 w-full`}
                             key={font}
                         >
                             <p className="text-lg" style={parseFontName(font)}>

@@ -13,11 +13,11 @@ const SuggestedThemes: React.FC<SuggestedThemesProps> = ({ property }) => {
     const suggestions = [
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.BLUE), color: "#3B82F6" },
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.GREEN), color: "#10B981" },
-        //{ name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.PURPLE), color: "#8B5CF6" },
+        { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.PURPLE), color: "#8B5CF6" },
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.RED), color: "#EF4444" },
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.ORANGE), color: "#F59E0B" },
         //{ name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.YELLOW), color: "#FACC15" },
-        //{ name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.TEAL), color: "#14B8A6" },
+        { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.TEAL), color: "#14B8A6" },
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.CYAN), color: "#06B6D4" },
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.INDIGO), color: "#6366F1" },
         { name: t(I18n.THEME.COLOR.SUGGESTED.OPTION.PINK), color: "#EC4899" },
@@ -29,7 +29,7 @@ const SuggestedThemes: React.FC<SuggestedThemesProps> = ({ property }) => {
             <span className="text-xs font-medium text-secondary-600 dark:text-secondary-200 mb-2">
                 {t(I18n.THEME.COLOR.SUGGESTED.LABEL)}
             </span>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-5 sm:flex sm:flex-wrap gap-2">
                 {suggestions.map((theme) => (
                     <ThemeColorBadge key={theme.name} property={property} {...theme} />
                 ))}
