@@ -8,7 +8,7 @@ const Subtitle: React.FC<SubtitleProps> = ({ children }) => {
     const { t } = useI18N();
 
     return (
-        <h2 className="text-xl md:text-2xl font-semibold text-accent-900 dark:text-accent-100">
+        <h2 className="text-xl md:text-2xl font-semibold py-2 text-accent-900 dark:text-accent-100">
             {t(children)}
         </h2>
     );

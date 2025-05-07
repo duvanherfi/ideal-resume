@@ -787,6 +787,10 @@ video {
   max-height: 80vh;
 }
 
+.max-h-\[2000px\]{
+  max-height: 2000px;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -1335,6 +1339,10 @@ video {
 
 .bg-white\/80{
   background-color: rgb(255 255 255 / 0.8);
+}
+
+.bg-accent-100\/40{
+  background-color: rgb(224 231 255 / 0.4);
 }
 
 .bg-gradient-to-b{
@@ -2085,6 +2093,14 @@ body {
 
 .dark\:dark\:bg-primary-500\/80:is(.dark *):is(.dark *){
   background-color: rgb(59 130 246 / 0.8);
+}
+
+.dark\:bg-accent-950\/50:is(.dark *){
+  background-color: rgb(30 27 75 / 0.5);
+}
+
+.dark\:bg-accent-950\/20:is(.dark *){
+  background-color: rgb(30 27 75 / 0.2);
 }
 
 .dark\:from-primary-950:is(.dark *){

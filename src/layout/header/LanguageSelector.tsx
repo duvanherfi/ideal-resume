@@ -17,13 +17,7 @@ const LanguageSelector: React.FC = () => {
     };
 
     return (
-        <Select
-            className="w-max"
-            name="language"
-            value={lang}
-            onChange={handleLanguageChange}
-            options={languageOptions}
-        />
+        <Select name="language" value={lang} onChange={handleLanguageChange} options={languageOptions} />
     );
 };
 

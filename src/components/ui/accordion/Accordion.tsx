@@ -12,7 +12,7 @@ const Accordion = (props: AccordionProps) => {
     const toggleIsOpen = () => setIsOpen(!isOpen);
 
     const togglerClasses = `cursor-pointer flex justify-between items-center ${props.togglerClassName}`;
-    const containerClasses = `shadow-xl rounded-md overflow-hidden transition-[max-height] duration-500 ease-in-out origin-top ${isOpen ? "max-h-[1000px] visible" : "max-h-0"}`;
+    const containerClasses = `shadow-xl rounded-md overflow-hidden transition-[max-height] duration-500 ease-in-out origin-top ${isOpen ? "max-h-[2000px] visible" : "max-h-0"}`;
 
     return (
         <div>
