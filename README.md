@@ -12,29 +12,42 @@ A React and TypeScript-based application for creating professional resumes with 
 ## Folder Structure
 
 ```
-ideal-resume/
-├── public/               # Static files and assets
-│   ├── index.html        
-│   └── favicon.ico       
-├── src/                  # Source code
-│   ├── api/              # API
-│   ├── components/       # 
-│   ├── config/           # 
-│   ├── context/          # 
-│   ├── hooks/            #  
-│   ├── locales/          #  
-│   ├── utils/            #  
-│   ├── App.tsx           # 
-│   ├── index.tsx         #  
-│   └── types/            # 
-├── .gitignore            # 
-├── webpack.config.js     # 
-├── postcss.config.js     # 
-├── tailwind.config.js    # 
-├── tsconfig.json         # 
-├── package.json          #  
-├── tsconfig.paths.json   # 
-└── README.md             # 
+src/
+├── api/           
+│   ├── context/
+│   ├── hooks/
+│   ├── templates/
+│   ├── types/
+│   ├── utils/
+│   └── workers/
+│
+├── layout/
+│   ├── header/
+│   ├── main/
+│   └── footer/
+│
+├── components/
+│   ├── ui/
+│   ├── views/
+│   └── widgets/
+│
+├── config/
+│   ├── fields/
+│   ├── form/
+│   └── tabs/
+│
+├── context/
+│   ├── app/
+│   └── language/
+│
+├── hooks/
+│
+├── locales/
+│
+├── mock/
+│
+├── App.tsx
+└── index.tsx
 ```
 
 ## Getting Started
