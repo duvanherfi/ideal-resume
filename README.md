@@ -75,7 +75,8 @@ src/
 ### Running the App
 
 Start the development server:
-```bash
+```
+npm run build:tailwind
 npm start
 ```
 The app will be available at `http://localhost:3000`.
