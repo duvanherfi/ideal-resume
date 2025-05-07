@@ -1,6 +1,6 @@
 import React from "react";
 import Text from "../text/Text";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 interface InputSuggestionsProps {
   suggestions?: string[];

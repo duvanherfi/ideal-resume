@@ -2,7 +2,7 @@ import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer"
 import TemplateCarouselGallery from "@components/widgets/gallery/carousel/TemplateCarouselGallery";
 import TemplateGridGallery from "@components/widgets/gallery/grid/TemplateGridGallery";
 import Icons from "@icons/Icons";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const tabs: Tab[] = [
     {

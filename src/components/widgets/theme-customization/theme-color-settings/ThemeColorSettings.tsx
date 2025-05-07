@@ -3,7 +3,7 @@ import Icons from "@icons/Icons";
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import AdvancedThemeSettings from "@components/widgets/theme-customization/theme-color-settings/AdvancedThemeSettings";
 import GenericThemeColorSettings from "@components/widgets/theme-customization/theme-color-settings/GenericThemeColorSettings";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const ThemeColorSettings: React.FC = () => {
     return (

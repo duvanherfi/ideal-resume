@@ -1,6 +1,6 @@
 import type { Skill } from "@resume-api/types/user-data/items/Skill";
 import type { FormField } from "@hooks/useMultiItemForm";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const FieldsSkills: FormField<Skill>[] = [
     { type: "text", name: "name", label: I18n.FORM.DATA.SKILLS.FIELD.NAME, required: true },

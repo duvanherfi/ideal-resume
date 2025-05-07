@@ -3,7 +3,7 @@ import ViewTemplatePreview from "@components/views/ViewTemplatePreview";
 import ViewTemplateGallery from "@components/views/ViewTemplateGallery";
 import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@icons/Icons";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const tabs: Tab[] = [
   {

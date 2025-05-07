@@ -1,7 +1,7 @@
 import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import themeCustomizationTabs from "@config/tabs/Tabs.ThemeCustomization.config";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const ThemeCustomization: React.FC = () => {
     return (

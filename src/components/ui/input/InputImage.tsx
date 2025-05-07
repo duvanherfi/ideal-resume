@@ -1,6 +1,6 @@
 import useI18N from "@hooks/useI18N";
 import React, { useState } from "react";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 interface InputImageProps {
   label?: string;

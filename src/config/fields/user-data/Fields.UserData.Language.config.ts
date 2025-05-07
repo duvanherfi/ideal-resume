@@ -1,6 +1,6 @@
 import type { Language } from "@resume-api/types/user-data/items/Language";
 import type { FormField } from "@hooks/useMultiItemForm";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const FieldsLanguage: FormField<Language>[] = [
     { type: "text", name: "name", label: I18n.FORM.DATA.LANGUAGE.FIELD.NAME, required: true },

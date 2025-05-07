@@ -2,7 +2,7 @@ import FieldsExperience from "@config/fields/user-data/Fields.UserData.Experienc
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import type { WorkExperience } from "@resume-api/types/user-data/items/WorkExperience";
 import type { FormConfig } from "@hooks/useMultiItemForm";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 import { v4 as uuidv4 } from "uuid";
 
 const workExperiences: FormConfig<UserDataItems, WorkExperience> = {

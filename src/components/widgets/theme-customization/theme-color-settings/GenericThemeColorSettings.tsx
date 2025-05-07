@@ -4,7 +4,7 @@ import Text from "@components/ui/text/Text";
 import CustomTheme from "@components/widgets/theme-customization/theme-color-settings/common/CustomTheme";
 import SuggestedThemes from "@components/widgets/theme-customization/theme-color-settings/common/SuggestedThemes";
 import { TemplateColorScheme, TemplateColorSchemeKey } from "@resume-api/types/template/TemplateTheme";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 interface GenericThemeColorSettingsProps {
     property?: keyof TemplateColorScheme;

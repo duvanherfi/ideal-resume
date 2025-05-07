@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 import type { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
 
 export const defaultLabels: ResumeLabels = {

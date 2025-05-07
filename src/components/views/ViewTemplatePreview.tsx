@@ -1,7 +1,7 @@
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import DownloadResumeLink from "@components/widgets/preview/DownloadResumeLink";
 import SelectedTemplatePreview from "@components/widgets/preview/SelectedTemplatePreview";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 import ViewCustomization from "./ViewCustomization";
 
 const ViewTemplatePreview: React.FC = () => {

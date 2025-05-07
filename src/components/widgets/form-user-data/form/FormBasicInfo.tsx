@@ -6,7 +6,7 @@ import GenericField from "@components/widgets/common/form/GenericField";
 import FieldsBasicInfo from "@config/fields/user-data/Fields.UserData.BasicInfo.config";
 import { type UserData } from "@resume-api/types/user-data/UserData";
 import React from "react";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const FormBasicInfo: React.FC = () => {
   const data = useUserData();

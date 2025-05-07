@@ -1,6 +1,6 @@
 import type { Education } from "@resume-api/types/user-data/items/Education";
 import type { FormField } from "@hooks/useMultiItemForm";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const FieldsEducation: FormField<Education>[] = [
     { type: "text", name: "institution", label: I18n.FORM.DATA.EDUCATION.FIELD.INSTITUTION, required: true },

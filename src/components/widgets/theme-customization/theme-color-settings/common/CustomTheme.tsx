@@ -1,7 +1,7 @@
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import useI18N from "@hooks/useI18N";
 import { TemplateColorScheme } from "@resume-api/types/template/TemplateTheme";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 import ThemeColorBadge from "./ThemeColorBadge";
 
 interface CustomThemeProps {

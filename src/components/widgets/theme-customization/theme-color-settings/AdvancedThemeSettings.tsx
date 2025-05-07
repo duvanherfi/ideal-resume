@@ -1,7 +1,7 @@
 import Accordion from "@components/ui/accordion/Accordion";
 import Subtitle from "@components/ui/text/Subtitle";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 import GenericThemeColorSettings from "./GenericThemeColorSettings";
 
 const AdvancedThemeSettings: React.FC = () => {

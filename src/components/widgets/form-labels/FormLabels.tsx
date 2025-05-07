@@ -2,7 +2,7 @@ import TabsContainer from "@components/ui/tabs/TabsContainer";
 import ViewTitle from "@components/widgets/common/ViewTitle";
 import formLabelsTabs from "@config/tabs/Tabs.FormLabels.config";
 import React from "react";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const FormLabels: React.FC = () => {
   return (

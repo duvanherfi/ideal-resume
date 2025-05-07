@@ -22,6 +22,12 @@
             ],
             "@config/*": [
                 "src/config/*"
+            ],
+            "@locales/*": [
+                "src/locales/*"
+            ],
+            "@language/*": [
+                "src/context/language/*"
             ]
         }
     }

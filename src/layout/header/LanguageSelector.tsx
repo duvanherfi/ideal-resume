@@ -1,0 +1,30 @@
+import Select from "@components/ui/input/Select";
+import useLanguage from "@hooks/useLanguage";
+import { SelectOption } from "@hooks/useSelectInput";
+import React from "react";
+import { Locale } from "src/context/language/types/types";
+
+const LanguageSelector: React.FC = () => {
+    const { lang, setLang, LANGUAGES } = useLanguage();
+
+    const languageOptions: SelectOption[] = LANGUAGES.map((language) => ({
+        label: `${language.flag} ${language.label}`,
+        value: language.code
+    }));
+
+    const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setLang(e.target.value as Locale);
+    };
+
+    return (
+        <Select
+            className="w-max"
+            name="language"
+            value={lang}
+            onChange={handleLanguageChange}
+            options={languageOptions}
+        />
+    );
+};
+
+export default LanguageSelector;

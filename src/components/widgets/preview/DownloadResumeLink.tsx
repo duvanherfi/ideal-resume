@@ -6,7 +6,7 @@ import Button from "@components/ui/buttons/Button";
 import useI18N from "@hooks/useI18N";
 import Icons from "@icons/Icons";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import I18n from "src/locales/I18nKeys";
+import I18n from "@language/common/I18nKeys";
 
 const DownloadResumeLink: React.FC = () => {
     const { t } = useI18N();

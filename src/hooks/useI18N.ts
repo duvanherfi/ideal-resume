@@ -1,4 +1,4 @@
-import wordings from "src/locales/wordings";
+import wordings from "src/context/language/common/wordings";
 import useLanguage from "./useLanguage";
 
 type UseI18NType = {
