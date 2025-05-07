@@ -12,7 +12,7 @@ interface InputSuggestionsProps {
 const InputSuggestions = React.forwardRef<HTMLUListElement, Omit<InputSuggestionsProps, "ref">>((props, ref) => {
   const { suggestions = [], showSuggestions, handleMouseDown } = props;
 
-  const listClassName = `flex flex-col absolute z-10 w-full bg-white/80 dark:bg-secondary-900/80 border border-accent-500/50 dark:border-accent-500/50 rounded-md shadow-lg overflow-y-auto scrollbar transition-all duration-300`;
+  const listClassName = `flex flex-col absolute z-10 w-full bg-white/90 dark:bg-secondary-900/90 border border-accent-500/50 dark:border-accent-500/50 rounded-md shadow-lg overflow-y-auto scrollbar transition-all duration-300`;
   const listStatusClassName = showSuggestions ? "max-h-60 opacity-100 scale-y-100 origin-top" : "max-h-0 opacity-0 scale-y-0 origin-top";
 
   return (
