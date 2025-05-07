@@ -50,6 +50,11 @@ src/
 └── index.tsx
 ```
 
+## Main Dependencies
+
+- [React PDF](https://react-pdf.org/) – Used for rendering PDFs directly in React.
+- [jsPDF](https://github.com/parallax/jsPDF) – Used for generating PDF files programmatically.
+
 ## Getting Started
 
 ### Prerequisites
