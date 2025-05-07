@@ -1,12 +1,12 @@
 import wordings from "src/context/language/common/wordings";
 import useLanguage from "./useLanguage";
 
-type UseI18NType = {
+type UseI18N = {
     t: (key: string) => string;
     tlist: (key: string) => string[];
 };
 
-const useI18N = (): UseI18NType => {
+const useI18N = (): UseI18N => {
     const { lang } = useLanguage();
 
     return {

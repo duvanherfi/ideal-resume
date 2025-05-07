@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-type UseDarkModeType = {
+type UseDarkMode = {
     darkMode: boolean;
     toggleDarkMode: () => void;
 };
 
-const useDarkMode = (): UseDarkModeType => {
+const useDarkMode = (): UseDarkMode => {
     const getInitialTheme = (): boolean => {
         const storedPreference = localStorage.getItem("theme");
         if (storedPreference !== null) {

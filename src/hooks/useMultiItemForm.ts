@@ -23,7 +23,7 @@ export interface FormConfig<P, T> {
     isValid: (item: T) => boolean;
 }
 
-export type MultiItemFormType<T> = {
+export type UseMultiItemForm<T> = {
     title: string;
     fields: FormField<T>[];
     current: T;
@@ -51,7 +51,7 @@ interface MultiItemFormProps<T, P> {
     dataHook: DataHook<P>;
 }
 
-const useMultiItemForm = <T extends { id: string }, P extends Record<string, any>>(props: MultiItemFormProps<T, P>): MultiItemFormType<T> => {
+const useMultiItemForm = <T extends { id: string }, P extends Record<string, any>>(props: MultiItemFormProps<T, P>): UseMultiItemForm<T> => {
     const { dataKey, config, dataHook } = props;
     const [currentItem, setCurrentItem] = useState<T>(config.empty());
     const [isEditing, setIsEditing] = useState(false);

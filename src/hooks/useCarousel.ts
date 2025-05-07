@@ -10,7 +10,7 @@ interface UseCarouselOptions {
     scrollDelay?: number;
 }
 
-interface UseCarouselReturn {
+interface UseCarousel {
     scrollContainerRef: React.RefObject<HTMLDivElement>;
     canScrollLeft: boolean;
     canScrollRight: boolean;
@@ -18,7 +18,7 @@ interface UseCarouselReturn {
     checkScrollability: () => void;
 }
 
-export function useCarousel(options?: UseCarouselOptions): UseCarouselReturn {
+export function useCarousel(options?: UseCarouselOptions): UseCarousel {
     const { scrollFraction = 0.75, scrollDelay = 300 } = options || {};
 
     const scrollContainerRef = useRef<HTMLDivElement>(null);

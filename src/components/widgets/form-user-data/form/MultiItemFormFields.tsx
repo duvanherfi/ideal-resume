@@ -1,10 +1,10 @@
 import Subtitle from "@components/ui/text/Subtitle";
 import GenericField from "@components/widgets/common/form/GenericField";
 import useI18N from "@hooks/useI18N";
-import type { MultiItemFormType } from "@hooks/useMultiItemForm";
+import type { UseMultiItemForm } from "@hooks/useMultiItemForm";
 
 interface FormFieldsContainerProps<T extends { id: string }> {
-    form: MultiItemFormType<T>;
+    form: UseMultiItemForm<T>;
 }
 
 const MultiItemFormFields = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {

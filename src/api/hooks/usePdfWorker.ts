@@ -2,11 +2,6 @@ import type TemplateProps from "@resume-api/types/template/TemplateProps";
 import type { Template } from "@resume-api/types/template/Template";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-interface WorkerMessage {
-    templateId: string;
-    props: TemplateProps;
-}
-
 type WorkerData = {
     success: boolean;
     blob?: Blob;
@@ -18,50 +13,55 @@ interface UsePDFWorkerProps extends TemplateProps {
     isStatic?: boolean;
 }
 
-type PDFWorkerType = {
+type PDFWorkerResult = {
     blobUrl: string | undefined;
     loading: boolean;
 }
 
-const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePDFWorkerProps): PDFWorkerType => {
+const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePDFWorkerProps): PDFWorkerResult => {
     const workerRef = useRef<Worker>();
     const [blobUrl, setBlobUrl] = useState<string>();
     const [loading, setLoading] = useState(false);
     const currentBlobUrlRef = useRef<string>();
     const hasGeneratedOnceRef = useRef<boolean>(false);
 
+    // Initialize worker
     useEffect(() => {
         workerRef.current = new Worker(
             new URL("../workers/PDFWorker.ts", import.meta.url),
             { type: "module" }
         );
-        return () => {
-            workerRef.current?.terminate();
-        };
+        return () => workerRef.current?.terminate();
     }, []);
 
+    // Generate PDF function
     const generatePdf = useCallback(
-        (templateId: string, props: TemplateProps) =>
-            new Promise<Blob>((resolve, reject) => {
+        (templateId: string, props: TemplateProps): Promise<Blob> => {
+            return new Promise((resolve, reject) => {
                 const worker = workerRef.current;
-                if (!worker) return reject(new Error("Worker no inicializado"));
+                if (!worker) return reject(new Error("Worker not initialized"));
+
                 const onMsg = (e: MessageEvent) => {
                     worker.removeEventListener("message", onMsg);
                     const { success, blob, error } = e.data as WorkerData;
                     success ? resolve(blob!) : reject(new Error(error));
                 };
+
                 worker.addEventListener("message", onMsg);
                 worker.postMessage({ templateId, props });
-            }),
+            });
+        },
         []
     );
 
+    // Generate PDF when template or props change
     useEffect(() => {
         if (!template) {
             setBlobUrl(undefined);
             return;
         }
 
+        // Skip regeneration for static PDFs that were already generated
         if (isStatic && hasGeneratedOnceRef.current && currentBlobUrlRef.current) {
             return;
         }
@@ -71,6 +71,7 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
 
         generatePdf(template.id, { data, theme, labels })
             .then(blob => {
+                // Revoke previous URL if not static
                 if (currentBlobUrlRef.current && !isStatic) {
                     URL.revokeObjectURL(currentBlobUrlRef.current);
                 }
@@ -80,13 +81,10 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
                 setBlobUrl(url);
                 hasGeneratedOnceRef.current = true;
             })
-            .catch(err => {
-                console.error("Error generando PDF:", err);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+            .catch(err => console.error("Error generating PDF:", err))
+            .finally(() => setLoading(false));
 
+        // Cleanup function
         return () => {
             if (!isStatic && url) {
                 URL.revokeObjectURL(url);
@@ -95,6 +93,7 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
         };
     }, [template, data, theme, labels, generatePdf, isStatic]);
 
+    // Final cleanup
     useEffect(() => {
         return () => {
             if (currentBlobUrlRef.current) {

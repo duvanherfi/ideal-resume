@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-type UseModalType = [boolean, () => void, () => void, (e: React.MouseEvent<HTMLDivElement>) => void];
+type UseModal = [boolean, () => void, () => void, (e: React.MouseEvent<HTMLDivElement>) => void];
 
-const useModal = (closeOnOutsideClick: boolean): UseModalType => {
+const useModal = (closeOnOutsideClick: boolean): UseModal => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => setIsOpen(true);

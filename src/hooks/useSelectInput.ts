@@ -11,7 +11,7 @@ interface UseSelectInputProps {
     onChange?: (value: string | number) => void;
 }
 
-interface UseSelectInputReturn {
+interface UseSelectInput {
     selectedValue: string | number;
     selectedLabel: string;
     isOpen: boolean;
@@ -21,7 +21,7 @@ interface UseSelectInputReturn {
     handleOptionSelect: (option: SelectOption) => void;
 }
 
-const useSelectInput = ({ options, initialValue = "", onChange }: UseSelectInputProps): UseSelectInputReturn => {
+const useSelectInput = ({ options, initialValue = "", onChange }: UseSelectInputProps): UseSelectInput => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState<string | number>(initialValue);
     const [selectedLabel, setSelectedLabel] = useState("");
