@@ -1,4 +1,4 @@
-import { type UserData } from "@resume-api/types/user-data/UserData";
+import UserData from "@resume-api/types/user-data/UserData";
 
 const initialUserData: UserData = {
     firstName: "",

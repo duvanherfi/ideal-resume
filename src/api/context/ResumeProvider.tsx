@@ -1,4 +1,4 @@
-import { type UserData } from "@resume-api/types/user-data/UserData";
+import UserData from "@resume-api/types/user-data/UserData";
 import React from "react";
 import { pdfjs } from 'react-pdf';
 import ResumeLabelProvider from "./resume-labels/ResumeLabelsProvider";

@@ -1,4 +1,4 @@
-import { UserData } from '@resume-api/types/user-data/UserData';
+import UserData from '@resume-api/types/user-data/UserData';
 
 interface ResumeRecord {
     id: string;

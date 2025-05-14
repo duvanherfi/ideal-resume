@@ -1,4 +1,4 @@
-import { type UserData } from "@resume-api/types/user-data/UserData";
+import UserData from "@resume-api/types/user-data/UserData";
 import type { WorkExperience } from "@resume-api/types/user-data/items/WorkExperience";
 import type { Project } from "@resume-api/types/user-data/items/Project";
 import type { Language } from "@resume-api/types/user-data/items/Language";

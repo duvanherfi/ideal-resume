@@ -1,7 +1,6 @@
-
 import type ResumeRecord from '@resume-api/types/storage/ResumeRecord';
 import type ResumeVersion from '@resume-api/types/storage/ResumeVersion';
-import { type UserData } from '@resume-api/types/user-data/UserData';
+import UserData from '@resume-api/types/user-data/UserData';
 
 // Constantes
 const INDEX_KEY = 'resumes:index' as const;
