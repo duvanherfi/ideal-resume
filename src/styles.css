@@ -5,6 +5,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 :root {
   --a4-width: 794px;
   --a4-height: 1123px;
@@ -12,7 +16,7 @@
 
 html,
 body {
-    font-family: "Nunito", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Contenedor principal del carrusel */

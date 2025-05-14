@@ -1,6 +1,6 @@
+import useI18N from "@hooks/useI18N";
 import React, { useEffect, useRef, useState } from "react";
 import InputSuggestions from "./InputSuggestions";
-import useI18N from "@hooks/useI18N";
 
 interface InputProps {
   label: string;
@@ -99,6 +99,10 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     };
   }, []);
 
+  const inputBaseClassName = "transition-all duration-200 w-full px-3 py-2 rounded-lg shadow-sm backdrop-blur-sm";
+  const inputFocusClassName = "focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 dark:focus:ring-accent-300 dark:focus:border-accent-300";
+  const inputClassName = `bg-white/70 dark:bg-black/50 dark:text-white border border-accent-500/50 dark:border-accent-300/50 ${inputFocusClassName} ${inputBaseClassName}`;
+
   return (
     <div ref={containerRef} className={`mb-4 ${className} w-full relative`}>
       <label htmlFor={name} className="block text-sm font-medium text-secondary-700 dark:text-white mb-1">
@@ -115,7 +119,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
         required={required}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className="transition-all duration-200 w-full px-3 py-2 bg-white/70 dark:bg-black/50 dark:text-white border dark:border-accent-300/50 border-accent-500/50 rounded-lg shadow-sm backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 dark:focus:ring-accent-300 dark:focus:border-accent-300"
+        className={inputClassName}
       />
       <InputSuggestions
         suggestions={suggestions}
