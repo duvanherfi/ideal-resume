@@ -1,11 +1,7 @@
 import type ResumeRecord from '@resume-api/types/storage/ResumeRecord';
 import type ResumeVersion from '@resume-api/types/storage/ResumeVersion';
-import UserData from '@resume-api/types/user-data/UserData';
-
-// Constantes
-const INDEX_KEY = 'resumes:index' as const;
-const LATEST_KEY = 'resumes:latest' as const;
-const PREFIX = 'resumes:data:' as const;
+import type UserData from '@resume-api/types/user-data/UserData';
+import { INDEX_KEY, PREFIX, LATEST_KEY } from './KEYS';
 
 /**
  * Obtiene el índice de IDs de CV guardados

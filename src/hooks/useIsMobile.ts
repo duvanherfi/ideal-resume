@@ -5,7 +5,7 @@ export enum ScreenSize {
     MD = 768,
     LG = 1024,
     XL = 1280,
-    '2XL' = 1536
+    XL2 = 1536
 }
 
 const useIsMobile = (breakpoint: ScreenSize = ScreenSize.MD): boolean => {
