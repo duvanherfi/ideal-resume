@@ -1,8 +1,8 @@
 import FieldsSkills from "@config/fields/user-data/Fields.UserData.Skills.config";
-import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
-import type { Skill } from "@resume-api/types/user-data/items/Skill";
 import type { FormConfig } from "@hooks/useMultiItemForm";
 import I18n from "@language/common/I18nKeys";
+import type { Skill } from "@resume-api/types/user-data/items/Skill";
+import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import { v4 as uuidv4 } from "uuid";
 
 const skills: FormConfig<UserDataItems, Skill> = {
