@@ -1,19 +1,20 @@
 import type { FormLabelsProps } from "@components/widgets/form-labels/GenericFormLabels";
+import I18n from "@language/common/I18nKeys";
 
 const FieldsLabelsOthers: FormLabelsProps = {
-    title: "form.labels.section.others",
+    title: I18n.FORM.LABELS.SECTION.OTHERS,
     fields: [
         {
             type: "text",
             name: "lastUpdated",
-            label: "form.labels.field.lastUpdated",
-            suggestions: "form.labels.field.lastUpdated.suggestions"
+            label: I18n.FORM.LABELS.FIELD.LAST_UPDATED,
+            suggestions: I18n.FORM.LABELS.FIELD.LAST_UPDATED_SUGGESTIONS
         },
         {
             type: "text",
             name: "present",
-            label: "form.labels.field.present",
-            suggestions: "form.labels.field.present.suggestions"
+            label: I18n.FORM.LABELS.FIELD.PRESENT,
+            suggestions: I18n.FORM.LABELS.FIELD.PRESENT_SUGGESTIONS
         }
     ]
 };

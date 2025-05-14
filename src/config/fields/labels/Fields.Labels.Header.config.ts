@@ -1,25 +1,26 @@
 import type { FormLabelsProps } from "@components/widgets/form-labels/GenericFormLabels";
+import I18n from "@language/common/I18nKeys";
 
 const FieldsLabelsHeader: FormLabelsProps = {
-    title: "form.labels.section.header",
+    title: I18n.FORM.LABELS.SECTION.HEADER,
     fields: [
         {
             type: "text",
             name: "email",
-            label: "form.labels.field.email",
-            suggestions: "form.labels.field.email.suggestions"
+            label: I18n.FORM.LABELS.FIELD.EMAIL,
+            suggestions: I18n.FORM.LABELS.FIELD.EMAIL_SUGGESTIONS
         },
         {
             type: "text",
             name: "phone",
-            label: "form.labels.field.phone",
-            suggestions: "form.labels.field.phone.suggestions"
+            label: I18n.FORM.LABELS.FIELD.PHONE,
+            suggestions: I18n.FORM.LABELS.FIELD.PHONE_SUGGESTIONS
         },
         {
             type: "text",
             name: "location",
-            label: "form.labels.field.location",
-            suggestions: "form.labels.field.location.suggestions"
+            label: I18n.FORM.LABELS.FIELD.LOCATION,
+            suggestions: I18n.FORM.LABELS.FIELD.LOCATION_SUGGESTIONS
         },
     ]
 };

@@ -1,5 +1,5 @@
-import LanguageSelector from "./LanguageSelector";
-import ThemeToggleButton from "./ThemeToggleButton";
+import LanguageSelector from "./actions/LanguageSelector";
+import ThemeToggleButton from "./actions/ThemeToggleButton";
 
 const Header: React.FC = () => {
   return (

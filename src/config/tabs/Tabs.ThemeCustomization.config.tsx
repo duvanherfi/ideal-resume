@@ -23,6 +23,6 @@ const themeCustomizationTabs: TabsContainerProps = {
     tabs,
     slideDirection: "bottom",
     inline: true
-}
+};
 
 export default themeCustomizationTabs;

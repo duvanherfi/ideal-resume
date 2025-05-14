@@ -3,11 +3,11 @@ import GenericField from "@components/widgets/common/form/GenericField";
 import useI18N from "@hooks/useI18N";
 import type { UseMultiItemForm } from "@hooks/useMultiItemForm";
 
-interface FormFieldsContainerProps<T extends { id: string }> {
+interface MultiItemFormFieldsProps<T extends { id: string }> {
     form: UseMultiItemForm<T>;
 }
 
-const MultiItemFormFields = <T extends { id: string }>(props: FormFieldsContainerProps<T>) => {
+const MultiItemFormFields = <T extends { id: string }>(props: MultiItemFormFieldsProps<T>) => {
     const { form } = props;
     const { t } = useI18N();
 

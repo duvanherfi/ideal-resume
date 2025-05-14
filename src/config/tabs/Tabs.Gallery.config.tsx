@@ -25,6 +25,6 @@ const galleryTabs: TabsContainerProps = {
     slideDirection: "bottom",
     tabsClassName: "flex align-end items-center w-64",
     inline: true
-}
+};
 
 export default galleryTabs;

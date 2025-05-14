@@ -13,8 +13,8 @@ const config = {
     languages
 };
 
-const getConfig = (dataKey: keyof UserDataItems) => {
+const getFormConfig = (dataKey: keyof UserDataItems) => {
     return config[dataKey];
 };
 
-export default getConfig;
+export default getFormConfig;

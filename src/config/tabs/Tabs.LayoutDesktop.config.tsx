@@ -33,6 +33,6 @@ const layoutDesktopTabs: TabsContainerProps = {
   className: "2xl:col-span-2 w-full overflow-y-auto h-full scrollbar",
   tabsClassName: "",
   contentClassName: "lg:pb-32 2xl:px-8",
-}
+};
 
 export default layoutDesktopTabs;

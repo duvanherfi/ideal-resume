@@ -32,6 +32,6 @@ const layoutMobileTabs: TabsContainerProps = {
   slideDirection: "right",
   tabsClassName: "fixed bottom-0 z-50 h-16 w-full",
   contentClassName: "w-full lg:px-16",
-}
+};
 
 export default layoutMobileTabs;

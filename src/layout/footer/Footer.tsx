@@ -1,5 +1,5 @@
-import contacts from "./contacts";
-import FooterIcon from "./FooterIcon";
+import contacts from "./common/contacts";
+import FooterIcon from "./common/FooterIcon";
 
 const Footer: React.FC = () => {
   return (
