@@ -1,7 +1,7 @@
-import ResumeVersionsContext from "@resume-api/context/resume-versions/ResumeVersionsContext";
+import ResumeVersionsContext, { ResumeVersionsContextType } from "@resume-api/context/resume-versions/ResumeVersionsContext";
 import { useContext } from "react";
 
-export default function useResumeVersions() {
+const useResumeVersions = (): ResumeVersionsContextType => {
     const context = useContext(ResumeVersionsContext);
 
     if (context === undefined) {
@@ -10,3 +10,5 @@ export default function useResumeVersions() {
 
     return context;
 }
+
+export default useResumeVersions;

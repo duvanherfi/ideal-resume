@@ -11,7 +11,7 @@ export interface ResumeVersionsContextType {
     isLoading: boolean;
     currentResumeId: string | null;
     save: (name: string) => string;
-    updateResume: (name: string, id?: string) => boolean;
+    updateResume: (name?: string, id?: string) => boolean;
     load: (id: string) => boolean;
     remove: (id: string) => boolean;
     rename: (id: string, newName: string) => boolean;

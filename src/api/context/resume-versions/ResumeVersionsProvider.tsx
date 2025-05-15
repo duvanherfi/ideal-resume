@@ -43,47 +43,40 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
      */
     const save = useCallback((name: string) => {
         const id = ResumeStorage.save(userData, name);
-        setCurrentResumeId(id); // Actualizar el ID del CV actual
-        
-        // Actualizar la lista de versiones inmediatamente
+        setCurrentResumeId(id);
+
         const newVersion: ResumeVersion = {
             id,
             name,
             updatedAt: Date.now()
         };
-        
+
         setVersions(prevVersions => [newVersion, ...prevVersions]);
-        
-        // También recargar para asegurar sincronización completa
         setTimeout(() => loadVersions(), 0);
-        
         return id;
     }, [userData, loadVersions, setCurrentResumeId]);
 
     /**
      * Actualiza un CV existente por su ID
      */
-    const updateResume = useCallback((name: string, id?: string) => {
+    const updateResume = useCallback((name?: string, id?: string) => {
         const resumeId = id || currentResumeId;
         if (!resumeId) return false;
 
         try {
             const success = ResumeStorage.update(resumeId, userData, name);
-            
+
             if (success) {
-                // Actualizar inmediatamente en la UI
-                setVersions(prevVersions => 
-                    prevVersions.map(version => 
-                        version.id === resumeId 
-                            ? { ...version, name: name || version.name, updatedAt: Date.now() } 
+                setVersions(prevVersions =>
+                    prevVersions.map(version =>
+                        version.id === resumeId
+                            ? { ...version, name: name || version.name, updatedAt: Date.now() }
                             : version
                     )
                 );
-                
-                // También recargar para asegurar sincronización
                 setTimeout(() => loadVersions(), 0);
             }
-            
+
             return success;
         } catch (error) {
             console.error("Error al actualizar el CV:", error);
@@ -115,18 +108,14 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
     const remove = useCallback((id: string) => {
         try {
             ResumeStorage.remove(id);
-            
-            // Actualizar inmediatamente en la UI
+
             setVersions(prevVersions => prevVersions.filter(version => version.id !== id));
-            
-            // Si se elimina el CV actual, resetear el currentResumeId
+
             if (id === currentResumeId) {
                 setCurrentResumeId('');
             }
-            
-            // También recargar para asegurar sincronización
             setTimeout(() => loadVersions(), 0);
-            
+
             return true;
         } catch (error) {
             console.error("Error al eliminar el CV:", error);
@@ -140,21 +129,19 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
     const rename = useCallback((id: string, newName: string) => {
         try {
             const success = ResumeStorage.rename(id, newName);
-            
+
             if (success) {
-                // Actualización inmediata para la UI
-                setVersions(prevVersions => 
-                    prevVersions.map(version => 
-                        version.id === id 
-                            ? { ...version, name: newName, updatedAt: Date.now() } 
+                setVersions(prevVersions =>
+                    prevVersions.map(version =>
+                        version.id === id
+                            ? { ...version, name: newName, updatedAt: Date.now() }
                             : version
                     )
                 );
-                
-                // También recargar para asegurar sincronización
+
                 setTimeout(() => loadVersions(), 0);
             }
-            
+
             return success;
         } catch (error) {
             console.error("Error al renombrar el CV:", error);
@@ -176,7 +163,6 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
         try {
             const id = ResumeStorage.importFromJson(jsonString);
             if (id) {
-                // Recargar la lista después de importar
                 loadVersions();
             }
             return id;
@@ -200,7 +186,6 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
         return versions.some(version => version.id === id);
     }, [versions]);
 
-    // Valor del contexto
     const contextValue: ResumeVersionsContextType = {
         versions,
         isLoading,
