@@ -1,4 +1,3 @@
-import GlassCard from '@components/ui/glass-card/GlassCard';
 import Icons from '@components/ui/icons/Icons';
 import useResumeVersions from '@resume-api/hooks/useResumeVersions';
 import React from 'react';
@@ -11,17 +10,20 @@ import ResumeVersionsTableEmpty from './table/ResumeVersionsTableEmpty';
  * y permite realizar operaciones con ellos
  */
 const ResumeVersionsManager: React.FC = () => {
-    const { versions, isLoading } = useResumeVersions();
+    const { versions, currentResumeId, isLoading } = useResumeVersions();
 
     if (isLoading) {
         return <Icons.Loading />;
     }
 
     return (
-        <GlassCard>
+        <div>
             <ResumeVersionsManagerHeader />
-            {versions.length === 0 ? (<ResumeVersionsTableEmpty />) : (<ResumeVersionsTable />)}
-        </GlassCard>
+            {versions.length === 0 ?
+                (<ResumeVersionsTableEmpty />) :
+                (<ResumeVersionsTable currentResumeId={currentResumeId} versions={versions} />)
+            }
+        </div>
     );
 };
 

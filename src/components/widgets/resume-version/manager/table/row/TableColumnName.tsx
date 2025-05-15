@@ -10,9 +10,9 @@ interface TableColumnNameProps {
 }
 
 const TableColumnName: React.FC<TableColumnNameProps> = ({ isRenaming, name, date, newName, setNewName }) => (
-    <td className="">
+    <td>
         {isRenaming ? (
-            <Input type="text" name={name} value={newName} onChange={(e) => setNewName(e.target.value)} className=""  />
+            <Input type="text" name={name} value={newName} onChange={(e) => setNewName(e.target.value)} />
         ) : (
             <span className="flex flex-col space-y-2">
                 <span className="text-lg">{name}</span>

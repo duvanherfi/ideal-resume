@@ -42,6 +42,36 @@ const save = (data: UserData, name?: string): string => {
 };
 
 /**
+ * Actualiza un CV existente manteniendo su ID y nombre pero con nuevos datos
+ * @param id ID del CV a actualizar
+ * @param data Nuevos datos para el CV
+ * @param newName Nombre opcional para actualizar el CV (si no se proporciona, mantiene el original)
+ * @returns true si se actualizó correctamente, false si el ID no existe
+ */
+const update = (id: string, data: UserData, newName?: string): boolean => {
+    const raw = localStorage.getItem(PREFIX + id);
+    if (!raw) return false;
+
+    const record = JSON.parse(raw) as ResumeRecord;
+
+    // Actualizar los datos manteniendo el ID
+    const updatedRecord: ResumeRecord = {
+        ...record,
+        data,                                 // Nuevos datos
+        updatedAt: Date.now(),                // Actualizar fecha de modificación
+        name: newName?.trim() || record.name  // Usar nuevo nombre si se proporciona, o mantener el actual
+    };
+
+    // Guardar el registro actualizado
+    localStorage.setItem(PREFIX + id, JSON.stringify(updatedRecord));
+
+    // Actualizar referencia al CV más reciente
+    localStorage.setItem(LATEST_KEY, id);
+
+    return true;
+};
+
+/**
  * Carga un CV por su ID
  * @param id ID del CV a cargar
  * @returns Los datos del CV o null si no existe
@@ -178,6 +208,7 @@ const clearAll = (): void => {
 
 export default {
     save,
+    update,
     load,
     getLatest,
     listVersions,

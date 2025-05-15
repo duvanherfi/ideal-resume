@@ -5,6 +5,7 @@ import ResumeLabelProvider from "./resume-labels/ResumeLabelsProvider";
 import ResumeTemplateProvider from "./resume-template/ResumeTemplateProvider";
 import ResumeThemeProvider from "./resume-theme/ResumeThemeProvider";
 import UserDataProvider from "./user-data/UserDataProvider";
+import ResumeVersionsProvider from "./resume-versions/ResumeVersionsProvider";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
 
@@ -15,13 +16,15 @@ interface ResumeProviderProps {
 
 const ResumeProvider = (props: ResumeProviderProps) => {
     const { defaultData } = props;
-    
+
     return (
         <UserDataProvider defaultData={defaultData}>
             <ResumeLabelProvider>
                 <ResumeTemplateProvider>
                     <ResumeThemeProvider>
-                        {props.children}
+                        <ResumeVersionsProvider>
+                            {props.children}
+                        </ResumeVersionsProvider>
                     </ResumeThemeProvider>
                 </ResumeTemplateProvider>
             </ResumeLabelProvider>

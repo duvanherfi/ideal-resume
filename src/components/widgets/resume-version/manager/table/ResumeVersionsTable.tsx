@@ -1,15 +1,18 @@
-import useResumeVersions from "@resume-api/hooks/useResumeVersions";
+import { ResumeVersion } from "@resume-api/context/resume-versions/ResumeVersionsContext";
 import React from "react";
 import TableRow from "./row/TableRow";
 
-const ResumeVersionsTable: React.FC = () => {
-    const { versions, currentResumeId } = useResumeVersions();
+interface ResumeVersionsTableProps {
+    currentResumeId: string | null;
+    versions: ResumeVersion[];
+}
 
+const ResumeVersionsTable: React.FC<ResumeVersionsTableProps> = ({ versions, currentResumeId }) => {
     return (
         <table className="min-w-full bg-white/50 dark:bg-black/50 dark:text-white rounded-lg shadow overflow-hidden">
             <tbody>
                 {versions.map((version) => (
-                    <TableRow version={version} currentResumeId={currentResumeId} />
+                    <TableRow key={version.id} version={version} currentResumeId={currentResumeId} />
                 ))}
             </tbody>
         </table>

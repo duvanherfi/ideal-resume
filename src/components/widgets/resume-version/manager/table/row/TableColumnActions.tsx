@@ -1,5 +1,6 @@
 import Icons from "@components/ui/icons/Icons";
-import useResumeVersions, { ResumeVersion } from "@resume-api/hooks/useResumeVersions";
+import { ResumeVersion } from "@resume-api/context/resume-versions/ResumeVersionsContext";
+import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React from "react";
 
 interface TableColumnActionsProps {
@@ -12,7 +13,7 @@ interface TableColumnActionsProps {
 }
 
 const TableColumnActions: React.FC<TableColumnActionsProps> = ({ version, currentResumeId, newName, setNewName, renameId, setRenameId }) => {
-    const { load, remove, rename, exportResume } = useResumeVersions();
+    const { remove, rename, exportResume } = useResumeVersions();
 
     const startRename = (id: string, currentName: string) => {
         setRenameId(id);
@@ -35,20 +36,13 @@ const TableColumnActions: React.FC<TableColumnActionsProps> = ({ version, curren
     const handleExport = (id: string, name: string) => {
         const jsonContent = exportResume(id);
         if (jsonContent) {
-            // Crear un objeto blob con el contenido JSON
             const blob = new Blob([jsonContent], { type: "application/json" });
-
-            // Crear un elemento <a> para la descarga
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.href = url;
             link.download = `${name.replace(/\s+/g, "_")}.json`;
-
-            // Simular un clic en el enlace para iniciar la descarga
             document.body.appendChild(link);
             link.click();
-
-            // Limpiar
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
         }
@@ -73,9 +67,6 @@ const TableColumnActions: React.FC<TableColumnActionsProps> = ({ version, curren
                 </>
             ) : (
                 <>
-                    <button onClick={() => load(version.id)} className="h-full bg-blue-500 hover:bg-blue-700 p-2 rounded-md" disabled={currentResumeId === version.id}>
-                        <Icons.Pick />
-                    </button>
                     <button onClick={() => startRename(version.id, version.name)} className="text-tertiary-200 bg-yellow-500 hover:bg-yellow-700 p-2 rounded-md">
                         <Icons.Draw />
                     </button>

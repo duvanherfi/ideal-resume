@@ -53,6 +53,7 @@ const UserDataProvider: React.FC<UserDataProviderProps> = ({ children, defaultDa
     updateField,
     save,
     currentResumeId,
+    setCurrentResumeId,
     createNew,
   }), [userData, currentResumeId]);
 

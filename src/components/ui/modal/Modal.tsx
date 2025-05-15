@@ -31,19 +31,21 @@ const Modal: React.FC<ModalButtonProps> = ({
             </Button>
 
             {isOpen && (
-                <div className="transition-all duration-500 inset-0 backdrop-blur-sm flex items-center justify-center z-50 w-auto absolute" onClick={handleOutsideClick}>
-                    <div className={`dark:border-primary-500/20 border-primary-500/30 bg-white dark:bg-black/ backdrop-blur-xl rounded-lg shadow-xl p-6 w-full max-w-6xl mx-4 transform transition-all duration-300 ${modalClassName} z-50`}>
-                        <div className="flex justify-end items-center">
+                <div className="fixed -inset-4 bg-black/40 backdrop-blur-xl flex items-center justify-center z-50" onClick={handleOutsideClick}>
+                    <div
+                        className={`absolute top-16 dark:border-primary-500/20 border-primary-500/30 bg-white/90 dark:bg-black/80 backdrop-blur-xl rounded-lg shadow-xl p-6 w-full max-w-3xl transform transition-all duration-300 ${modalClassName}`}
+                        onClick={e => e.stopPropagation()}>
+                        <div className="flex justify-between items-center mb-4">
                             {modalTitle && (
                                 <h3 className="text-lg font-medium text-secondary-900 dark:text-secondary-100">
                                     {modalTitle}
                                 </h3>
                             )}
-                            <button className="text-red-400 hover:text-red-500 dark:text-secondary-100 dark:hover:text-accent-500 cursor-pointer focus:outline-none absolute right-6 top-4" onClick={closeModal}>
+                            <button className="text-red-400 hover:text-red-500 dark:text-secondary-100 dark:hover:text-accent-500 focus:outline-none" onClick={closeModal}>
                                 <Icons.Cross />
                             </button>
                         </div>
-                        <div className="">{children}</div>
+                        <div>{children}</div>
                     </div>
                 </div>
             )}

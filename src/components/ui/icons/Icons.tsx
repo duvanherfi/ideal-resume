@@ -338,6 +338,23 @@ const Icons = {
             <path d="M14 21a3 3 0 0 0 3-3" />
         </svg>
     ),
+    History: () => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-5 h-5"
+        >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+            <path d="M16.5 8.5L18 7" />
+            <path d="M7.5 8.5L6 7" />
+        </svg>
+    )
 };
 
 export default Icons;
