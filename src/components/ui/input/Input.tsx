@@ -3,13 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import InputSuggestions from "./InputSuggestions";
 
 interface InputProps {
-  label: string;
+  label?: string;
   name: string;
   type?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   required?: boolean;
+  autofocus?: boolean;
+  disabled?: boolean;
   className?: string;
   error?: string;
   suggestions?: string[];
@@ -29,6 +31,8 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     error,
     suggestions = [],
     onSuggestionClick,
+    disabled,
+    autofocus
   } = props;
   const { t } = useI18N();
   const [isFocused, setIsFocused] = useState(false);
@@ -105,9 +109,11 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
 
   return (
     <div ref={containerRef} className={`mb-4 ${className} w-full relative`}>
-      <label htmlFor={name} className="block text-sm font-medium text-secondary-700 dark:text-white mb-1">
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
+      {label && (
+        <label htmlFor={name} className="block text-sm font-medium text-secondary-700 dark:text-white mb-1">
+          {label} {required && <span className="text-red-500">*</span>}
+        </label>
+      )}
       <input
         ref={inputRef}
         id={name}
@@ -120,6 +126,8 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
         onFocus={handleFocus}
         onBlur={handleBlur}
         className={inputClassName}
+        disabled={disabled}
+        autoFocus={autofocus}
       />
       <InputSuggestions
         suggestions={suggestions}
