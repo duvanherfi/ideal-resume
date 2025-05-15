@@ -23,24 +23,28 @@ const usePDFCanvas = ({ blobUrl, page = 1, scale = 1.5 }: UsePDFCanvasProps): Re
         }
 
         let canceled = false;
-        const loadingTask = pdfjs.getDocument(blobUrl);
 
-        loadingTask.promise
-            .then((pdf) => pdf.getPage(page))
-            .then((pdfPage) => {
-                if (canceled) return;
+        fetch(blobUrl)
+            .then(res => res.arrayBuffer())
+            .then(buffer => {
+                const loadingTask = pdfjs.getDocument({ data: buffer });
+                return loadingTask.promise
+                    .then((pdf) => pdf.getPage(page))
+                    .then((pdfPage) => {
+                        if (canceled) return;
 
-                const viewport = pdfPage.getViewport({ scale });
-                const canvas = canvasRef.current;
-                if (!canvas) return;
+                        const viewport = pdfPage.getViewport({ scale });
+                        const canvas = canvasRef.current;
+                        if (!canvas) return;
 
-                const context = canvas.getContext('2d');
-                if (!context) return;
+                        const context = canvas.getContext('2d');
+                        if (!context) return;
 
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
 
-                pdfPage.render({ canvasContext: context, viewport });
+                        pdfPage.render({ canvasContext: context, viewport });
+                    });
             })
             .catch((error) => console.error('Error rendering PDF page:', error));
 

@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-900 dark:text-primary-100 font-bold mb-4 md:mb-0">
-            Made with ❤️ and ☕️ by <a href="https://www.linkedin.com/in/sebastian-velo/">Sebastián Velo</a>
+            Made with 🧉, ☕️ and ❤️ by <a href="https://www.linkedin.com/in/sebastian-velo/">Sebastián Velo</a>
           </p>
           <div className="flex space-x-6 items-center">
             {contacts.map((link) => (<FooterIcon key={link.name} {...link} />))}

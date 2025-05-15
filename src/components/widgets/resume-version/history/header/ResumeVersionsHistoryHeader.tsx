@@ -1,7 +1,6 @@
 import Subtitle from "@components/ui/text/Subtitle";
 import Text from "@components/ui/text/Text";
 import React from "react";
-import ResumeVersionsManagerActions from "./ResumeVersionsManagerActions";
 
 const ResumeVersionsManagerHeader: React.FC = () => {
     return (
@@ -12,7 +11,6 @@ const ResumeVersionsManagerHeader: React.FC = () => {
                     Dale un nombre descriptivo a tu CV para poder identificarlo fácilmente
                 </Text>
             </div>
-            <ResumeVersionsManagerActions />
         </div>
     );
 };

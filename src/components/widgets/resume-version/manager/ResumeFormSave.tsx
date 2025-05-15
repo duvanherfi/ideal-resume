@@ -36,28 +36,26 @@ const ResumeFormSave: React.FC = () => {
 
   return (
     <div className="space-y-2">
-      <>
-        <div>
-          <Subtitle>Guardar CV</Subtitle>
-          <Text className="text-xs text-gray-500">
-            Dale un nombre descriptivo a tu CV para poder identificarlo fácilmente
-          </Text>
-        </div>
-        <div className="flex items-start space-x-4">
-          <Input
-            label=""
-            type="text"
-            name="Name"
-            value={resumeName}
-            onChange={(e) => setResumeName(e.target.value)}
-            placeholder="Nombre para este CV (ej: 'CV para Desarrollador')"
-            disabled={isSaving}
-          />
-          <Button variant="secondary" disabled={!resumeName.trim() || isSaving} onClick={handleSaveNew}>
-            {isSaving ? <Icons.Loading /> : <Icons.Save />}
-          </Button>
-        </div>
-      </>
+      <div>
+        <Subtitle>Guardar CV</Subtitle>
+        <Text className="text-xs text-gray-500">
+          Dale un nombre descriptivo a tu CV para poder identificarlo fácilmente
+        </Text>
+      </div>
+      <div className="flex items-start space-x-4">
+        <Input
+          label=""
+          type="text"
+          name="Name"
+          value={resumeName}
+          onChange={(e) => setResumeName(e.target.value)}
+          placeholder="Nombre para este CV (ej: 'CV para Desarrollador')"
+          disabled={isSaving}
+        />
+        <Button variant="secondary" disabled={!resumeName.trim() || isSaving} onClick={handleSaveNew}>
+          {isSaving ? <Icons.Loading /> : <Icons.Save />}
+        </Button>
+      </div>
       {showSuccess && (
         <div className="mt-3 p-2 bg-green-100 text-green-700 rounded">
           {"¡CV guardado exitosamente!"}
