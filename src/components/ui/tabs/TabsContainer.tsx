@@ -1,7 +1,7 @@
-import React, { ReactNode, useRef, useState } from "react";
+import useTabs, { SlideDirection } from "@hooks/components/useTabs";
+import React, { ReactNode } from "react";
 import { TabProps } from "./Tab";
 import TabHeader from "./TabHeader";
-import { getAnimationClasses, SlideDirection } from "./utils/utils";
 
 export interface TabType {
     id: string;
@@ -37,40 +37,25 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
     inline,
     Button
 }) => {
-    const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex);
-    const [transitioning, setTransitioning] = useState(false);
-    const previousIndexRef = useRef<number>(currentIndex);
-
-    const changeIndex = (index: number) => {
-        setCurrentIndex(index);
-        requestAnimationFrame(() => {
-            setTimeout(() => setTransitioning(false), animationDuration);
-        });
-    };
-
-    const handleTabChange = (index: number) => {
-        if (index === currentIndex || transitioning) return;
-        previousIndexRef.current = currentIndex;
-        if (onChange) {
-            onChange(index);
-        }
-        setTransitioning(true);
-        setTimeout(() => changeIndex(index), animationDuration);
-    };
-
-    const displayIndex = transitioning ? previousIndexRef.current : currentIndex;
-    const activeTab = tabs[displayIndex];
-    let activeContent = activeTab.component;
-
-    const animationClasses = getAnimationClasses(slideDirection, transitioning);
+    const {
+        currentIndex,
+        handleTabChange,
+        activeContent,
+        animationClasses
+    } = useTabs({
+        tabs,
+        defaultIndex,
+        onChange,
+        animationDuration,
+        slideDirection
+    });
     const contentClasses = `transition-all duration-${animationDuration} ${animationClasses} ${contentClassName}`;
-
+    
     return (
         <div className={className}>
             {showTabList && (
                 <TabHeader inline={inline} tabs={tabs} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} Button={Button} />
             )}
-
             <div className={contentClasses}>
                 {activeContent}
             </div>
