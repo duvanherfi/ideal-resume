@@ -1,7 +1,7 @@
 import Subtitle from "@components/ui/text/Subtitle";
 import Text from "@components/ui/text/Text";
-import CustomTheme from "@components/widgets/theme-customization/theme-color-settings/common/CustomTheme";
-import SuggestedThemes from "@components/widgets/theme-customization/theme-color-settings/common/SuggestedThemes";
+import CustomTheme from "@components/widgets/theme/theme-color-settings/common/CustomTheme";
+import SuggestedThemes from "@components/widgets/theme/theme-color-settings/common/SuggestedThemes";
 import I18n from "@language/common/I18nKeys";
 import { TemplateColorScheme, TemplateColorSchemeKey } from "@resume-api/types/template/TemplateTheme";
 

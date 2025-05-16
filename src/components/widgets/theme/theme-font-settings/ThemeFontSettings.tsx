@@ -1,6 +1,6 @@
 import GlassCard from "@components/ui/glass-card/GlassCard";
 import ViewTitle from "@components/widgets/common/ViewTitle";
-import { parseFontName } from "@components/widgets/theme-customization/theme-font-settings/utils/utils";
+import { parseFontName } from "@components/widgets/theme/theme-font-settings/utils/utils";
 import Icons from "@icons/Icons";
 import { type FontName } from "@resume-api/context/resume-theme/availableFonts";
 import useResumeTheme from "@resume-api/hooks/useResumeTheme";

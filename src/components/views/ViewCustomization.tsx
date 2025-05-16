@@ -1,5 +1,5 @@
 import FormLabels from "@components/widgets/form-labels/FormLabels";
-import ThemeCustomization from "@components/widgets/theme-customization/ThemeCustomization";
+import ThemeCustomization from "@components/widgets/theme/ThemeCustomization";
 
 const ViewCustomization: React.FC = () => {
     return (

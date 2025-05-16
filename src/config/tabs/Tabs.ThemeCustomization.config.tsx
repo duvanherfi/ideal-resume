@@ -1,6 +1,6 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
-import ThemeColorSettings from "@components/widgets/theme-customization/theme-color-settings/ThemeColorSettings";
-import ThemeFontSettings from "@components/widgets/theme-customization/theme-font-settings/ThemeFontSettings";
+import ThemeColorSettings from "@components/widgets/theme/theme-color-settings/ThemeColorSettings";
+import ThemeFontSettings from "@components/widgets/theme/theme-font-settings/ThemeFontSettings";
 import Icons from "@icons/Icons";
 import I18n from "@language/common/I18nKeys";
 
