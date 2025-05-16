@@ -189,7 +189,7 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
     const contextValue: ResumeVersionsContextType = {
         versions,
         isLoading,
-        currentResumeId: currentResumeId,
+        currentResumeId,
         save,
         updateResume,
         load,

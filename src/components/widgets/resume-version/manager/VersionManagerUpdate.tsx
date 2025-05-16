@@ -10,7 +10,6 @@ const VersionManagerUpdate: React.FC = () => {
 
   const handleOverwrite = () => {
     if (!currentResumeId) return;
-
     try {
       updateResume();
       showToast(I18n.VERSION_MANAGER.UPDATE.CONGRATS, "success");

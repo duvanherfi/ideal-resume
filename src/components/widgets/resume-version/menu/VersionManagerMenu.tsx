@@ -17,7 +17,7 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
   const { t } = useI18N();
   const { currentResumeId } = useResumeVersions();
 
-  const menuItemClass = "flex items-center px-4 py-3 text-sm text-secondary-700 dark:text-secondary-200 hover:bg-primary-100 dark:hover:bg-primary-900 cursor-pointer transition-colors duration-150";
+  const menuItemClass = "flex items-center px-4 py-3 text-sm text-secondary-700 dark:text-secondary-200 hover:bg-accent-100/50 dark:hover:bg-accent-950/50 cursor-pointer transition-colors duration-150";
   const iconClass = "mr-3 h-4 w-4 text-secondary-800 dark:text-secondary-100";
 
   return (
@@ -28,15 +28,10 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
         }`}
     >
       <div className="divide-y divide-secondary-300 dark:divide-secondary-800">
-        <div className="px-4 py-2 text-xs font-medium text-primary-900 uppercase tracking-wider bg-primary-200 dark:bg-primary-950/50 dark:text-primary-200 rounded-t-md">
+        <div className="px-4 py-2 text-xs font-medium text-accent-900 uppercase tracking-wider bg-accent-200 dark:bg-accent-950/50 dark:text-accent-200 rounded-t-md">
           {t(I18n.VERSION_MANAGER.MENU.TITLE)}
         </div>
         <>
-          <div className={menuItemClass}>
-            <History className={iconClass} />
-            <VersionHistoryModal />
-          </div>
-
           {currentResumeId ? (
             <div className={menuItemClass}>
               <Edit className={iconClass} />
@@ -51,6 +46,10 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
           <div className={menuItemClass}>
             <Upload className={iconClass} />
             <VersionManagerImport />
+          </div>
+          <div className={menuItemClass}>
+            <History className={iconClass} />
+            <VersionHistoryModal />
           </div>
           <div className={menuItemClass}>
             <RefreshCw className={iconClass} />

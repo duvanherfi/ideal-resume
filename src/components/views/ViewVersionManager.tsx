@@ -23,7 +23,7 @@ const ViewVersionManager: React.FC = () => {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-10 h-10 rounded-full  text-accent-900 dark:text-accent-300  transition-all duration-300 transform hover:scale-105"
+        className="flex items-center justify-center w-10 h-10 rounded-full  text-primary-900 dark:text-primary-200 transition-all duration-300 transform hover:scale-105"
         aria-label="Menú de versiones del currículum"
       >
         {isOpen ? <Icons.Cross /> : <Icons.Menu />}

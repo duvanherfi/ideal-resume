@@ -1,59 +1,29 @@
-import { AlertCircle, CheckCircle, Info, X } from 'lucide-react';
-import ReactDOM from 'react-dom';
-
-const TYPES = {
-    success: {
-        bgColor: 'bg-green-100',
-        textColor: 'text-green-800',
-        borderColor: 'border-green-400',
-        icon: <CheckCircle className="w-5 h-5 text-green-500" />
-    },
-    error: {
-        bgColor: 'bg-red-100',
-        textColor: 'text-red-800',
-        borderColor: 'border-red-400',
-        icon: <AlertCircle className="w-5 h-5 text-red-500" />
-    },
-    info: {
-        bgColor: 'bg-blue-100',
-        textColor: 'text-blue-800',
-        borderColor: 'border-blue-400',
-        icon: <Info className="w-5 h-5 text-blue-500" />
-    }
-};
+import variants from '@components/ui/toast/common/variants';
+import { ToastVariant } from '@components/ui/toast/types/types';
+import useI18N from '@hooks/useI18N';
+import Icons from '../icons/Icons';
 
 interface ToastProps {
-    setShow: (show: boolean) => void;
-    type?: keyof typeof TYPES;
+    variant?: keyof typeof variants;
     message: string;
+    close: () => void;
 }
 
-const Toast: React.FC<ToastProps> = ({ setShow, type = 'success', message }) => {
-    const toastStyle = TYPES[type] || TYPES.success;
+const Toast: React.FC<ToastProps> = ({ close, variant = 'success', message }) => {
+    const { t } = useI18N();
+    const toastStyle = variants[variant] || variants.success;
+    const toastClassName = (variant: ToastVariant) => `${variants[variant].bgColor} ${variants[variant].textColor} border ${variants[variant].borderColor} rounded-lg shadow-lg flex items-center justify-between px-4 py-3 w-full max-w-xl mx-auto transform transition-all duration-300 ease-in-out pointer-events-auto`;
 
-    return ReactDOM.createPortal(
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center p-4 z-50 pointer-events-none">
-            <div className={`
-                ${toastStyle.bgColor} ${toastStyle.textColor} 
-                border ${toastStyle.borderColor} rounded-lg shadow-lg
-                flex items-center justify-between px-4 py-3
-                w-full max-w-md mx-auto
-                transform transition-all duration-300 ease-in-out
-                pointer-events-auto
-            `}>
-                <div className="flex items-center">
-                    {toastStyle.icon}
-                    <p className="ml-3">{message}</p>
-                </div>
-                <button
-                    onClick={() => setShow(false)}
-                    className="ml-4 text-gray-400 hover:text-gray-600 focus:outline-none"
-                >
-                    <X className="w-4 h-4" />
-                </button>
+    return (
+        <div className={toastClassName(variant)}>
+            <div className="flex items-center">
+                {toastStyle.icon}
+                <p className="ml-3">{t(message)}</p>
             </div>
-        </div>,
-        document.body
+            <button onClick={close} className="ml-4 text-gray-400 hover:text-gray-600 focus:outline-none">
+                <Icons.Cross />
+            </button>
+        </div>
     );
 };
 

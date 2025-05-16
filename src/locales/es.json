@@ -210,7 +210,7 @@
   "versionManager.save.congrats": "¡Versión guardada con éxito!",
   "versionManager.import.button": "Importar CV",
   "versionManager.reset.button": "Restablecer",
-  "versionManager.update.button": "Actualizar versión",
+  "versionManager.update.button": "Guardar versión",
   "versionManager.update.congrats": "¡Versión actualizada correctamente!",
   "versionManager.history.button": "Historial de versiones",
   "versionManager.history.modal.title": "Historial de CVs guardados",

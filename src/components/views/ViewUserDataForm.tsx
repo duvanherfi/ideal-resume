@@ -8,10 +8,9 @@ import ViewVersionManager from "./ViewVersionManager";
 const ViewUserDataForm: React.FC = () => {
   return (
     <div className="2xl:w-full xl:px-8 2xl:px-16">
-      <div className="flex xl:items-center py-2">
-        <ViewVersionManager />
-        <ViewTitle title={I18n.FORM.DATA.TITLE} subtitle={I18n.FORM.DATA.SUBTITLE} className="w-full"/>
-      </div>
+        <ViewTitle title={I18n.FORM.DATA.TITLE} subtitle={I18n.FORM.DATA.SUBTITLE} className="w-full">
+          <ViewVersionManager />
+        </ViewTitle>
       <TabsContainer {...formUserDataTabs} />
     </div>
   );

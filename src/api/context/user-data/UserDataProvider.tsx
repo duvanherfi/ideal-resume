@@ -17,7 +17,7 @@ const UserDataProvider: React.FC<UserDataProviderProps> = ({ children, defaultDa
   const latestId = latestData ? localStorage.getItem('resumes:latest') : null;
 
   const [userData, setUserData] = useState<UserData>(
-    defaultData ?? latestData ?? initialUserData
+    defaultData ?? /*latestData ??*/ initialUserData
   );
 
   const [currentResumeId, setCurrentResumeId] = useState<string | null>(latestId);
