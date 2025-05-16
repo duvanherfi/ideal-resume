@@ -31,6 +31,32 @@ const I18n = {
         }
     },
 
+    VERSION_MANAGER: {
+        MENU: {
+            TITLE: "versionManager.menu.title"
+        },
+        SAVE: {
+            BUTTON: "versionManager.save.button",
+            TITLE: "versionManager.save.title",
+            SUBTITLE: "versionManager.save.subtitle",
+            PLACEHOLDER: "versionManager.save.placeholder",
+            CONGRATS: "versionManager.save.congrats"
+        },
+        IMPORT: {
+            BUTTON: "versionManager.import.button"
+        },
+        RESET: {
+            BUTTON: "versionManager.reset.button"
+        },
+        UPDATE: {
+            BUTTON: "versionManager.update.button",
+            CONGRATS: "versionManager.update.congrats"
+        },
+        HISTORY: {
+            BUTTON: "versionManager.history.button"
+        }
+    },
+
     THEME: {
         COLOR: {
             TITLE: "theme.color.title",

@@ -3,6 +3,8 @@ import Icons from "@components/ui/icons/Icons";
 import Input from "@components/ui/input/Input";
 import Subtitle from "@components/ui/text/Subtitle";
 import Text from "@components/ui/text/Text";
+import useToast from "@hooks/useToast";
+import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React, { useState } from "react";
 
@@ -11,9 +13,9 @@ import React, { useState } from "react";
  */
 const ResumeFormSave: React.FC = () => {
   const { save } = useResumeVersions();
+  const { showToast } = useToast();
   const [resumeName, setResumeName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSaveNew = () => {
     if (!resumeName.trim()) return;
@@ -22,11 +24,7 @@ const ResumeFormSave: React.FC = () => {
     try {
       save(resumeName);
       setResumeName("");
-      setShowSuccess(true);
-
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 3000);
+      showToast(I18n.VERSION_MANAGER.SAVE.CONGRATS, "success");
     } catch (error) {
       console.error("Error al guardar nuevo CV:", error);
     } finally {
@@ -37,9 +35,9 @@ const ResumeFormSave: React.FC = () => {
   return (
     <div className="space-y-2">
       <div>
-        <Subtitle>Guardar CV</Subtitle>
+        <Subtitle>{I18n.VERSION_MANAGER.SAVE.TITLE}</Subtitle>
         <Text className="text-xs text-gray-500">
-          Dale un nombre descriptivo a tu CV para poder identificarlo fácilmente
+          {I18n.VERSION_MANAGER.SAVE.SUBTITLE}
         </Text>
       </div>
       <div className="flex items-start space-x-4">
@@ -49,18 +47,13 @@ const ResumeFormSave: React.FC = () => {
           name="Name"
           value={resumeName}
           onChange={(e) => setResumeName(e.target.value)}
-          placeholder="Nombre para este CV (ej: 'CV para Desarrollador')"
+          placeholder={I18n.VERSION_MANAGER.SAVE.PLACEHOLDER}
           disabled={isSaving}
         />
         <Button variant="secondary" disabled={!resumeName.trim() || isSaving} onClick={handleSaveNew}>
           {isSaving ? <Icons.Loading /> : <Icons.Save />}
         </Button>
       </div>
-      {showSuccess && (
-        <div className="mt-3 p-2 bg-green-100 text-green-700 rounded">
-          {"¡CV guardado exitosamente!"}
-        </div>
-      )}
     </div>
   );
 };

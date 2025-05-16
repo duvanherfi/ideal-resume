@@ -1,4 +1,5 @@
 import { AlertCircle, CheckCircle, Info, X } from 'lucide-react';
+import ReactDOM from 'react-dom';
 
 const TYPES = {
     success: {
@@ -30,8 +31,8 @@ interface ToastProps {
 const Toast: React.FC<ToastProps> = ({ setShow, type = 'success', message }) => {
     const toastStyle = TYPES[type] || TYPES.success;
 
-    return (
-        <div className="fixed top-0 left-0 right-0 flex justify-center items-center p-4 z-50 pointer-events-none">
+    return ReactDOM.createPortal(
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex justify-center items-center p-4 z-50 pointer-events-none">
             <div className={`
                 ${toastStyle.bgColor} ${toastStyle.textColor} 
                 border ${toastStyle.borderColor} rounded-lg shadow-lg
@@ -51,7 +52,8 @@ const Toast: React.FC<ToastProps> = ({ setShow, type = 'success', message }) => 
                     <X className="w-4 h-4" />
                 </button>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

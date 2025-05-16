@@ -4,9 +4,12 @@ import Button from "../buttons/Button";
 import Icons from "@icons/Icons";
 
 interface ModalButtonProps {
-    buttonText: ReactNode;
-    buttonVariant?: "primary" | "secondary" | "outline";
-    buttonClassName?: string;
+    button?: {
+        text: ReactNode;
+        variant?: "primary" | "secondary" | "outline";
+        className?: string;
+    };
+    customTrigger?: ReactNode;
     children: ReactNode;
     modalTitle?: string;
     modalClassName?: string;
@@ -14,9 +17,8 @@ interface ModalButtonProps {
 }
 
 const Modal: React.FC<ModalButtonProps> = ({
-    buttonText,
-    buttonVariant = "primary",
-    buttonClassName = "",
+    button,
+    customTrigger,
     children,
     modalTitle,
     modalClassName = "",
@@ -26,9 +28,17 @@ const Modal: React.FC<ModalButtonProps> = ({
 
     return (
         <>
-            <Button variant={buttonVariant} onClick={openModal} className={buttonClassName}>
-                {buttonText}
-            </Button>
+            {button && (
+                <Button variant={button.variant} onClick={openModal} className={button.className}>
+                    {button.text}
+                </Button>
+            )}
+
+            {customTrigger && (
+                <button onClick={openModal}>
+                    {customTrigger}
+                </button>
+            )}
 
             {isOpen && (
                 <div className="fixed -inset-4 bg-black/40 backdrop-blur-xl flex items-center justify-center z-50" onClick={handleOutsideClick}>

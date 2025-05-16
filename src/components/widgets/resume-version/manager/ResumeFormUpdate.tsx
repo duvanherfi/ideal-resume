@@ -1,39 +1,30 @@
-import Button from "@components/ui/buttons/Button";
-import Icons from "@components/ui/icons/Icons";
-import Toast from "@components/ui/toast/Toast";
+import Text from "@components/ui/text/Text";
+import useToast from "@hooks/useToast";
+import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
-import React, { useState } from "react";
+import React from "react";
 
 const ResumeFormUpdate: React.FC = () => {
   const { currentResumeId, updateResume } = useResumeVersions();
-  const [isSaving, setIsSaving] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const { showToast } = useToast();
 
   const handleOverwrite = () => {
     if (!currentResumeId) return;
 
-    setIsSaving(true);
     try {
       updateResume();
-      setShowSuccess(true);
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 3000);
+      showToast(I18n.VERSION_MANAGER.UPDATE.CONGRATS, "success");
+
     } catch (error) {
       console.error("Error al sobrescribir CV:", error);
-    } finally {
-      setIsSaving(false);
     }
   };
 
   return (
-    <div className="mt-2 flex items-center">
-      <Button variant="outline" onClick={handleOverwrite}>
-        {isSaving ? <Icons.Loading /> : <Icons.Save />}
-      </Button>
-      {showSuccess && (
-        <Toast type="success" message="CV ACTUALIZADO" setShow={setShowSuccess} />
-      )}
+    <div className="mt-2 flex items-center" onClick={handleOverwrite}>
+      <Text>
+        {I18n.VERSION_MANAGER.UPDATE.BUTTON}
+      </Text>
     </div>
   );
 };
