@@ -20,7 +20,7 @@ const ResumeFormUpdate: React.FC = () => {
   };
 
   return (
-    <div className="mt-2 flex items-center" onClick={handleOverwrite}>
+    <div className="flex items-center" onClick={handleOverwrite}>
       <Text>
         {I18n.VERSION_MANAGER.UPDATE.BUTTON}
       </Text>
