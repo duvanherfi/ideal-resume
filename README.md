@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sebastianvelo/ideal-resume)
+
 # Ideal Resume
 
 A React and TypeScript-based application for creating professional resumes with ease. This project provides a user-friendly interface to design, customize, and export resumes.
