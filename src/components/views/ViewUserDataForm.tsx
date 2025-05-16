@@ -3,7 +3,7 @@ import ViewTitle from "@components/widgets/common/ViewTitle";
 import formUserDataTabs from "@config/tabs/Tabs.FormUserData.config";
 import I18n from "@language/common/I18nKeys";
 import React from "react";
-import ViewVersionManager from "./ViewVersionManager";
+import ViewVersionManager from "../widgets/version-manager/VersionManager";
 
 const ViewUserDataForm: React.FC = () => {
   return (

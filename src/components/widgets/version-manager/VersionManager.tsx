@@ -1,23 +1,13 @@
 import Icons from "@components/ui/icons/Icons";
 import VersionManagerMenu from "@components/widgets/version-manager/menu/VersionManagerMenu";
-import React, { useEffect, useRef, useState } from "react";
+import useClickOutside from "@hooks/app/useClickOutside";
+import React, { useRef, useState } from "react";
 
 const ViewVersionManager: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  useClickOutside(menuRef, () => { setIsOpen(false); });
 
   return (
     <div className="relative" ref={menuRef}>

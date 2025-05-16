@@ -49,16 +49,16 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
               <VersionManagerImport />
             </div>
           )}
-          {versions.length > 0 && (
-            <div className={menuItemClass}>
-              <History className={iconClass} />
-              <VersionHistoryModal />
-            </div>
-          )}
           {!dataIsEmpty() && (
             <div className={menuItemClass}>
               <RefreshCw className={iconClass} />
               <VersionManagerReset />
+            </div>
+          )}
+          {versions.length > 0 && (
+            <div className={menuItemClass}>
+              <History className={iconClass} />
+              <VersionHistoryModal />
             </div>
           )}
         </>

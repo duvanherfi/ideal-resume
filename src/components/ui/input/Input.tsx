@@ -1,3 +1,4 @@
+import useClickOutside from "@hooks/app/useClickOutside";
 import useI18N from "@hooks/app/useI18N";
 import React, { useEffect, useRef, useState } from "react";
 import InputSuggestions from "./InputSuggestions";
@@ -90,18 +91,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     };
   }, [showSuggestions]);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setShowSuggestions(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  useClickOutside(containerRef, () => { setShowSuggestions(false); });
 
   const inputBaseClassName = "transition-all duration-200 w-full px-3 py-2 rounded-lg shadow-sm backdrop-blur-sm";
   const inputFocusClassName = "focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 dark:focus:ring-accent-300 dark:focus:border-accent-300";
