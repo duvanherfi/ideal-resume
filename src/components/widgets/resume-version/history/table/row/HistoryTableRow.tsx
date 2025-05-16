@@ -1,15 +1,15 @@
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import ResumeVersion from "@resume-api/types/storage/ResumeVersion";
 import React, { useState } from "react";
-import TableColumnActions from "./TableColumnActions";
-import TableColumnName from "./TableColumnName";
+import HistoryColumnActions from "./HistoryColumnActions";
+import HistoryColumnName from "./HistoryColumnName";
 
-interface TableRowProps {
+interface HistoryTableRowProps {
     currentResumeId: string | null;
     version: ResumeVersion;
 }
 
-const TableRow: React.FC<TableRowProps> = ({ currentResumeId, version }) => {
+const HistoryTableRow: React.FC<HistoryTableRowProps> = ({ currentResumeId, version }) => {
     const [renameId, setRenameId] = useState<string | null>(null);
     const [newName, setNewName] = useState<string>("");
     const { load } = useResumeVersions();
@@ -21,10 +21,10 @@ const TableRow: React.FC<TableRowProps> = ({ currentResumeId, version }) => {
 
     return (
         <tr onClick={() => load(version.id)} className={`${classNameStatus(version)} ${classNameNormal}`}>
-            <TableColumnName isRenaming={renameId === version.id} name={version.name} newName={newName} setNewName={setNewName} date={new Date(version.updatedAt).toLocaleString()} />
-            <TableColumnActions version={version} renameId={renameId} setRenameId={setRenameId} newName={newName} setNewName={setNewName} currentResumeId={currentResumeId} />
+            <HistoryColumnName isRenaming={renameId === version.id} name={version.name} newName={newName} setNewName={setNewName} date={new Date(version.updatedAt).toLocaleString()} />
+            <HistoryColumnActions version={version} renameId={renameId} setRenameId={setRenameId} newName={newName} setNewName={setNewName} currentResumeId={currentResumeId} />
         </tr>
     )
 };
 
-export default TableRow;
+export default HistoryTableRow;

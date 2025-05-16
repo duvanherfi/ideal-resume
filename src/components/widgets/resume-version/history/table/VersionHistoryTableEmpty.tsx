@@ -2,7 +2,7 @@ import useI18N from '@hooks/useI18N';
 import I18n from '@language/common/I18nKeys';
 import React from 'react';
 
-const VersionsTableEmpty: React.FC = () => {
+const VersionHistoryTableEmpty: React.FC = () => {
     const { t } = useI18N();
     return (
         <div className="text-gray-500 py-4">
@@ -11,4 +11,4 @@ const VersionsTableEmpty: React.FC = () => {
     );
 };
 
-export default VersionsTableEmpty;
+export default VersionHistoryTableEmpty;

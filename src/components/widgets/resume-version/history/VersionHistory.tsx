@@ -2,8 +2,8 @@ import Icons from '@components/ui/icons/Icons';
 import useResumeVersions from '@resume-api/hooks/useResumeVersions';
 import React from 'react';
 import VersionHistoryHeader from './header/VersionHistoryHeader';
-import VersionsTable from './table/VersionsTable';
-import VersionsTableEmpty from './table/VersionsTableEmpty';
+import VersionHistoryTable from './table/VersionHistoryTable';
+import VersionHistoryTableEmpty from './table/VersionHistoryTableEmpty';
 
 /**
  * Componente que muestra el listado de CVs guardados
@@ -20,8 +20,8 @@ const VersionHistory: React.FC = () => {
         <div>
             <VersionHistoryHeader />
             {versions.length === 0 ?
-                (<VersionsTableEmpty />) :
-                (<VersionsTable currentResumeId={currentResumeId} versions={versions} />)
+                (<VersionHistoryTableEmpty />) :
+                (<VersionHistoryTable currentResumeId={currentResumeId} versions={versions} />)
             }
         </div>
     );

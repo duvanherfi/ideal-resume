@@ -3,7 +3,7 @@ import { ResumeVersion } from "@resume-api/context/resume-versions/ResumeVersion
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React from "react";
 
-interface TableColumnActionsProps {
+interface HistoryColumnActionsProps {
     version: ResumeVersion;
     currentResumeId: string | null;
     renameId: string | null;
@@ -12,7 +12,7 @@ interface TableColumnActionsProps {
     setNewName: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const TableColumnActions: React.FC<TableColumnActionsProps> = ({ version, currentResumeId, newName, setNewName, renameId, setRenameId }) => {
+const HistoryColumnActions: React.FC<HistoryColumnActionsProps> = ({ version, newName, setNewName, renameId, setRenameId }) => {
     const { remove, rename, exportResume } = useResumeVersions();
 
     const startRename = (id: string, currentName: string) => {
@@ -82,4 +82,4 @@ const TableColumnActions: React.FC<TableColumnActionsProps> = ({ version, curren
     );
 };
 
-export default TableColumnActions;
+export default HistoryColumnActions;

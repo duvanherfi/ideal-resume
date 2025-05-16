@@ -1,7 +1,7 @@
 import Input from '@components/ui/input/Input';
 import React from 'react';
 
-interface TableColumnNameProps {
+interface HistoryColumnNameProps {
     newName: string;
     setNewName: React.Dispatch<React.SetStateAction<string>>;
     isRenaming: boolean;
@@ -9,7 +9,7 @@ interface TableColumnNameProps {
     date: string;
 }
 
-const TableColumnName: React.FC<TableColumnNameProps> = ({ isRenaming, name, date, newName, setNewName }) => (
+const HistoryColumnName: React.FC<HistoryColumnNameProps> = ({ isRenaming, name, date, newName, setNewName }) => (
     <td>
         {isRenaming ? (
             <Input type="text" name={name} value={newName} onChange={(e) => setNewName(e.target.value)} />
@@ -22,4 +22,4 @@ const TableColumnName: React.FC<TableColumnNameProps> = ({ isRenaming, name, dat
     </td>
 );
 
-export default TableColumnName;
+export default HistoryColumnName;
