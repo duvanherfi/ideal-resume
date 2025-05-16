@@ -1,5 +1,4 @@
 import ResumeProvider from "@resume-api/context/ResumeProvider";
-import React from "react";
 import LanguageProvider from "../language/LanguageProvider";
 import ToastProvider from "../toast/ToastProvider";
 
@@ -17,6 +16,6 @@ const AppProvider = (props: AppProviderProps) => {
             </ResumeProvider>
         </LanguageProvider>
     );
-}
+};
 
 export default AppProvider;

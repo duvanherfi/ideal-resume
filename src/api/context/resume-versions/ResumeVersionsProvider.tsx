@@ -18,6 +18,12 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
         currentResumeId
     } = useUserData();
 
+    const dataIsEmpty = (): boolean => {
+        return Object.values(userData).every((v) => {
+            return (typeof v === 'string' && v.trim() === '') || (Array.isArray(v) && v.length === 0);
+        });
+    };
+
     /**
      * Carga la lista de versiones guardadas
      */
@@ -199,7 +205,8 @@ const ResumeVersionsProvider: React.FC<{ children: ReactNode }> = ({ children })
         importResume,
         getResumeDetails,
         refresh: loadVersions,
-        exists
+        exists,
+        dataIsEmpty
     };
 
     return (

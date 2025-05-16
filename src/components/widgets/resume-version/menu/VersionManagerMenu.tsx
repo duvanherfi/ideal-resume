@@ -15,7 +15,7 @@ interface ResumeVersionsMenuProps {
 
 const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
   const { t } = useI18N();
-  const { currentResumeId } = useResumeVersions();
+  const { currentResumeId, dataIsEmpty, versions } = useResumeVersions();
 
   const menuItemClass = "flex items-center px-4 py-3 text-sm text-secondary-700 dark:text-secondary-200 hover:bg-accent-100/50 dark:hover:bg-accent-950/50 cursor-pointer transition-colors duration-150";
   const iconClass = "mr-3 h-4 w-4 text-secondary-800 dark:text-secondary-100";
@@ -43,18 +43,24 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
               <VersionManagerSaveModal />
             </div>
           )}
-          <div className={menuItemClass}>
-            <Upload className={iconClass} />
-            <VersionManagerImport />
-          </div>
-          <div className={menuItemClass}>
-            <History className={iconClass} />
-            <VersionHistoryModal />
-          </div>
-          <div className={menuItemClass}>
-            <RefreshCw className={iconClass} />
-            <VersionManagerReset />
-          </div>
+          {dataIsEmpty() && (
+            <div className={menuItemClass}>
+              <Upload className={iconClass} />
+              <VersionManagerImport />
+            </div>
+          )}
+          {versions.length > 0 && (
+            <div className={menuItemClass}>
+              <History className={iconClass} />
+              <VersionHistoryModal />
+            </div>
+          )}
+          {!dataIsEmpty() && (
+            <div className={menuItemClass}>
+              <RefreshCw className={iconClass} />
+              <VersionManagerReset />
+            </div>
+          )}
         </>
       </div>
     </div>

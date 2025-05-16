@@ -20,6 +20,7 @@ export interface ResumeVersionsContextType {
     getResumeDetails: (id: string) => any | null;
     refresh: () => void;
     exists: (id: string) => boolean;
+    dataIsEmpty: () => boolean;
 }
 
 const ResumeVersionsContext = createContext<ResumeVersionsContextType | undefined>(undefined);

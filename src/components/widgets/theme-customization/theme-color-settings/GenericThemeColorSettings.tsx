@@ -11,7 +11,7 @@ interface GenericThemeColorSettingsProps {
 
 const GenericThemeColorSettings: React.FC<GenericThemeColorSettingsProps> = ({ property = TemplateColorSchemeKey.ALL }) => {
     return (
-        <div className="flex flex-col space-y-2 lg:space-y-4 py-2 xl:py-6 xl:px-8 bg-accent-100/40 dark:bg-accent-950/20 border-secondary-500/30 dark:border-secondary-500/20 backdrop-blur-xl shadow-md p-4 w-full mx-auto border">
+        <div className="flex flex-col space-y-2 lg:space-y-4 px-4 py-2 xl:py-4 xl:px-8 bg-accent-100/40 dark:bg-accent-950/20 border-secondary-500/30 dark:border-secondary-500/20 backdrop-blur-xl shadow-md w-full mx-auto border">
             <div className="flex flex-col pb-4 2xl:pb-0">
                 <Subtitle>{I18n.THEME.COLOR.SCHEME.TITLE(property)}</Subtitle>
                 <Text className="text-secondary-600 dark:text-secondary-400 text-xs md:text-sm">
