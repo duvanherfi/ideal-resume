@@ -11,7 +11,7 @@ import React, { useState } from "react";
 /**
  * Componente para guardar un CV con nombre
  */
-const ResumeFormSave: React.FC = () => {
+const VersionManagerSave: React.FC = () => {
   const { save } = useResumeVersions();
   const { showToast } = useToast();
   const [resumeName, setResumeName] = useState("");
@@ -58,4 +58,4 @@ const ResumeFormSave: React.FC = () => {
   );
 };
 
-export default ResumeFormSave;
+export default VersionManagerSave;

@@ -3,7 +3,7 @@ import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React from "react";
 
-const ResumeFormImport: React.FC = () => {
+const VersionManagerImport: React.FC = () => {
     const { load, importResume } = useResumeVersions();
 
     const handleImport = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,4 +32,4 @@ const ResumeFormImport: React.FC = () => {
     );
 };
 
-export default ResumeFormImport;
+export default VersionManagerImport;

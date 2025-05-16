@@ -1,8 +1,8 @@
 import Icons from "@components/ui/icons/Icons";
-import ResumeVersionsMenu from "@components/widgets/resume-version/menu/ResumeVersionsMenu";
+import VersionManagerMenu from "@components/widgets/resume-version/menu/VersionManagerMenu";
 import React, { useEffect, useRef, useState } from "react";
 
-const ViewResumeVersionsManager: React.FC = () => {
+const ViewVersionManager: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -28,9 +28,9 @@ const ViewResumeVersionsManager: React.FC = () => {
       >
         {isOpen ? <Icons.Cross /> : <Icons.Menu />}
       </button>
-      <ResumeVersionsMenu isOpen={isOpen} />
+      <VersionManagerMenu isOpen={isOpen} />
     </div>
   );
 };
 
-export default ViewResumeVersionsManager;
+export default ViewVersionManager;

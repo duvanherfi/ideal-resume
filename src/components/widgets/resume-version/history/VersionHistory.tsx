@@ -1,15 +1,15 @@
 import Icons from '@components/ui/icons/Icons';
 import useResumeVersions from '@resume-api/hooks/useResumeVersions';
 import React from 'react';
-import ResumeVersionsHistoryHeader from './header/ResumeVersionsHistoryHeader';
-import ResumeVersionsTable from './table/ResumeVersionsTable';
-import ResumeVersionsTableEmpty from './table/ResumeVersionsTableEmpty';
+import VersionHistoryHeader from './header/VersionHistoryHeader';
+import VersionsTable from './table/VersionsTable';
+import VersionsTableEmpty from './table/VersionsTableEmpty';
 
 /**
  * Componente que muestra el listado de CVs guardados
  * y permite realizar operaciones con ellos
  */
-const ResumeVersionsHistory: React.FC = () => {
+const VersionHistory: React.FC = () => {
     const { versions, currentResumeId, isLoading } = useResumeVersions();
 
     if (isLoading) {
@@ -18,13 +18,13 @@ const ResumeVersionsHistory: React.FC = () => {
 
     return (
         <div>
-            <ResumeVersionsHistoryHeader />
+            <VersionHistoryHeader />
             {versions.length === 0 ?
-                (<ResumeVersionsTableEmpty />) :
-                (<ResumeVersionsTable currentResumeId={currentResumeId} versions={versions} />)
+                (<VersionsTableEmpty />) :
+                (<VersionsTable currentResumeId={currentResumeId} versions={versions} />)
             }
         </div>
     );
 };
 
-export default ResumeVersionsHistory;
+export default VersionHistory;

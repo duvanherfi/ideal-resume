@@ -1,8 +1,8 @@
-import ResumeVersionsHistoryModal from "@components/widgets/resume-version/history/ResumeVersionsHistoryModal";
-import ResumeFormImport from "@components/widgets/resume-version/manager/ResumeFormImport";
-import ResumeFormReset from "@components/widgets/resume-version/manager/ResumeFormReset";
-import ResumeFormSaveModal from "@components/widgets/resume-version/manager/ResumeFormSaveModal";
-import ResumeFormUpdate from "@components/widgets/resume-version/manager/ResumeFormUpdate";
+import VersionHistoryModal from "@components/widgets/resume-version/history/VersionHistoryModal";
+import VersionManagerImport from "@components/widgets/resume-version/manager/VersionManagerImport";
+import VersionManagerReset from "@components/widgets/resume-version/manager/VersionManagerReset";
+import VersionManagerSaveModal from "@components/widgets/resume-version/manager/VersionManagerSaveModal";
+import VersionManagerUpdate from "@components/widgets/resume-version/manager/VersionManagerUpdate";
 import useI18N from "@hooks/useI18N";
 import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
@@ -13,7 +13,7 @@ interface ResumeVersionsMenuProps {
   isOpen: boolean;
 }
 
-const ResumeVersionsMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
+const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
   const { t } = useI18N();
   const { currentResumeId } = useResumeVersions();
 
@@ -34,27 +34,27 @@ const ResumeVersionsMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
         <>
           <div className={menuItemClass}>
             <History className={iconClass} />
-            <ResumeVersionsHistoryModal />
+            <VersionHistoryModal />
           </div>
 
           {currentResumeId ? (
             <div className={menuItemClass}>
               <Edit className={iconClass} />
-              <ResumeFormUpdate />
+              <VersionManagerUpdate />
             </div>
           ) : (
             <div className={menuItemClass}>
               <Save className={iconClass} />
-              <ResumeFormSaveModal />
+              <VersionManagerSaveModal />
             </div>
           )}
           <div className={menuItemClass}>
             <Upload className={iconClass} />
-            <ResumeFormImport />
+            <VersionManagerImport />
           </div>
           <div className={menuItemClass}>
             <RefreshCw className={iconClass} />
-            <ResumeFormReset />
+            <VersionManagerReset />
           </div>
         </>
       </div>
@@ -62,4 +62,4 @@ const ResumeVersionsMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
   );
 };
 
-export default ResumeVersionsMenu;
+export default VersionManagerMenu;

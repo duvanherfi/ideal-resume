@@ -3,7 +3,7 @@ import I18n from "@language/common/I18nKeys";
 import useUserData from "@resume-api/hooks/useUserData";
 import React from "react";
 
-const ResumeFormReset: React.FC = () => {
+const VersionManagerReset: React.FC = () => {
     const { createNew } = useUserData();
 
     return (
@@ -13,4 +13,4 @@ const ResumeFormReset: React.FC = () => {
     );
 };
 
-export default ResumeFormReset;
+export default VersionManagerReset;

@@ -57,7 +57,8 @@ const I18n = {
             MODAL: {
                 TITLE: "versionManager.history.modal.title",
                 SUBTITLE: "versionManager.history.modal.subtitle"
-            }
+            },
+            EMPTY: "versionManager.history.modal.empty"
         }
     },
 

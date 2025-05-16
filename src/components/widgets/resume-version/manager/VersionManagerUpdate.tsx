@@ -4,7 +4,7 @@ import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React from "react";
 
-const ResumeFormUpdate: React.FC = () => {
+const VersionManagerUpdate: React.FC = () => {
   const { currentResumeId, updateResume } = useResumeVersions();
   const { showToast } = useToast();
 
@@ -28,4 +28,4 @@ const ResumeFormUpdate: React.FC = () => {
   );
 };
 
-export default ResumeFormUpdate;
+export default VersionManagerUpdate;

@@ -1,15 +1,15 @@
 import Modal from "@components/ui/modal/Modal";
 import Text from "@components/ui/text/Text";
-import ResumeFormSave from "@components/widgets/resume-version/manager/ResumeFormSave";
+import VersionManagerSave from "@components/widgets/resume-version/manager/VersionManagerSave";
 import I18n from "@language/common/I18nKeys";
 import React from "react";
 
-const ResumeFormSaveModal: React.FC = () => {
+const VersionManagerSaveModal: React.FC = () => {
   return (
     <Modal customTrigger={<Text>{I18n.VERSION_MANAGER.SAVE.BUTTON}</Text>}>
-      <ResumeFormSave />
+      <VersionManagerSave />
     </Modal>
   );
 };
 
-export default ResumeFormSaveModal;
+export default VersionManagerSaveModal;

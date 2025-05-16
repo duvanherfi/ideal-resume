@@ -7,7 +7,7 @@ interface ResumeVersionsTableProps {
     versions: ResumeVersion[];
 }
 
-const ResumeVersionsTable: React.FC<ResumeVersionsTableProps> = ({ versions, currentResumeId }) => {
+const VersionsTable: React.FC<ResumeVersionsTableProps> = ({ versions, currentResumeId }) => {
     return (
         <table className="min-w-full bg-white/50 dark:bg-black/50 dark:text-white rounded-lg shadow overflow-hidden">
             <tbody>
@@ -19,4 +19,4 @@ const ResumeVersionsTable: React.FC<ResumeVersionsTableProps> = ({ versions, cur
     );
 };
 
-export default ResumeVersionsTable;
+export default VersionsTable;

@@ -3,7 +3,7 @@ import Text from "@components/ui/text/Text";
 import I18n from "@language/common/I18nKeys";
 import React from "react";
 
-const ResumeVersionsHistoryHeader: React.FC = () => {
+const VersionHistoryHeader: React.FC = () => {
     return (
         <div className="flex justify-between items-center mb-4">
             <div>
@@ -16,4 +16,4 @@ const ResumeVersionsHistoryHeader: React.FC = () => {
     );
 };
 
-export default ResumeVersionsHistoryHeader;
+export default VersionHistoryHeader;
