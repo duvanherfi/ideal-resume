@@ -17,6 +17,7 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
   const { t } = useI18N();
   const { currentResumeId, dataIsEmpty, versions } = useResumeVersions();
 
+  const menuClass = "";
   const menuItemClass = "flex items-center px-4 py-3 text-sm text-secondary-700 dark:text-secondary-200 hover:bg-accent-100/50 dark:hover:bg-accent-950/50 cursor-pointer transition-colors duration-150";
   const iconClass = "mr-3 h-4 w-4 text-secondary-800 dark:text-secondary-100";
 

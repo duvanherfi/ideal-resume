@@ -57,26 +57,46 @@ const HistoryColumnActions: React.FC<HistoryColumnActionsProps> = ({ version, ne
     return (
         <td className="flex h-full w-full items-stretch justify-end space-x-2 text-black py-3 px-2">
             {renameId === version.id ? (
-                <>
-                    <button onClick={confirmRename} className="text-tertiary-200 bg-green-500 hover:bg-green-700 p-2 rounded-md">
-                        <Icons.Save />
+                <div className="flex space-x-2">
+                    <button
+                        onClick={confirmRename}
+                        className="p-1.5 rounded-md text-green-600 hover:bg-green-100 hover:text-green-800 transition-colors"
+                        title="Guardar"
+                    >
+                        <Icons.Save size={18} />
                     </button>
-                    <button onClick={cancelRename} className="text-tertiary-200 bg-red-500 hover:bg-red-700 p-2 rounded-md">
-                        <Icons.Cross />
+                    <button
+                        onClick={cancelRename}
+                        className="p-1.5 rounded-md text-red-600 hover:bg-red-100 hover:text-red-800 transition-colors"
+                        title="Cancelar"
+                    >
+                        <Icons.Cross size={18} />
                     </button>
-                </>
+                </div>
             ) : (
-                <>
-                    <button onClick={() => startRename(version.id, version.name)} className="text-tertiary-200 bg-yellow-500 hover:bg-yellow-700 p-2 rounded-md">
-                        <Icons.Draw />
+                <div className="flex space-x-2">
+                    <button
+                        onClick={() => startRename(version.id, version.name)}
+                        className="p-1.5 rounded-md text-amber-600 hover:bg-amber-100 hover:text-amber-800 transition-colors"
+                        title="Renombrar"
+                    >
+                        <Icons.Draw size={18} />
                     </button>
-                    <button onClick={() => handleExport(version.id, version.name)} className="text-tertiary-200 bg-green-500 hover:bg-green-700 p-2 rounded-md">
-                        <Icons.Export />
+                    <button
+                        onClick={() => handleExport(version.id, version.name)}
+                        className="p-1.5 rounded-md text-green-600 hover:bg-green-100 hover:text-green-800 transition-colors"
+                        title="Exportar"
+                    >
+                        <Icons.Export size={18} />
                     </button>
-                    <button onClick={() => handleDelete(version.id)} className="text-tertiary-200 bg-red-500 hover:bg-red-700 p-2 rounded-md h-full">
-                        <Icons.Trash />
+                    <button
+                        onClick={() => handleDelete(version.id)}
+                        className="p-1.5 rounded-md text-red-600 hover:bg-red-100 hover:text-red-800 transition-colors"
+                        title="Eliminar"
+                    >
+                        <Icons.Trash size={18} />
                     </button>
-                </>
+                </div>
             )}
         </td>
     );

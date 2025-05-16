@@ -14,10 +14,10 @@ const HistoryTableRow: React.FC<HistoryTableRowProps> = ({ currentResumeId, vers
     const [newName, setNewName] = useState<string>("");
     const { load } = useResumeVersions();
 
-    const classNameNormal = `cursor-pointer flex items-center w-full px-3 py-2 transition-all text-sm md:text-base lg:text-lg whitespace-nowrap border-b-4`;
+    const classNameNormal = `cursor-pointer flex items-center w-full px-3 py-2 transition-all text-sm md:text-base lg:text-lg whitespace-nowrap border border-secondary-500/50`;
     const classNameStatus = (version: ResumeVersion) => currentResumeId === version.id
-        ? "rounded-tr-md rounded-tl-md bg-accent-200/50 dark:bg-accent-900 font-bold text-accent-900 dark:text-accent-300 border-accent-900 dark:border-accent-300"
-        : "text-secondary-700 dark:text-secondary-300 border-transparent hover:bg-secondary-100 dark:hover:bg-secondary-800 hover:text-accent-800 dark:hover:text-accent-200";
+        ? "bg-accent-200/50 dark:bg-accent-950 font-bold text-secondary-900 dark:text-secondary-300"
+        : " bg-secondary-100/50 dark:bg-secondary-900/50 text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 hover:text-secondary-800 dark:hover:text-secondary-200";
 
     return (
         <tr onClick={() => load(version.id)} className={`${classNameStatus(version)} ${classNameNormal}`}>
