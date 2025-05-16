@@ -1,18 +1,19 @@
 import Subtitle from "@components/ui/text/Subtitle";
 import Text from "@components/ui/text/Text";
+import I18n from "@language/common/I18nKeys";
 import React from "react";
 
-const ResumeVersionsManagerHeader: React.FC = () => {
+const ResumeVersionsHistoryHeader: React.FC = () => {
     return (
         <div className="flex justify-between items-center mb-4">
             <div>
-                <Subtitle>Mis CVs Guardados</Subtitle>
+                <Subtitle>{I18n.VERSION_MANAGER.HISTORY.MODAL.TITLE}</Subtitle>
                 <Text className="text-xs text-gray-500">
-                    Dale un nombre descriptivo a tu CV para poder identificarlo fácilmente
+                    {I18n.VERSION_MANAGER.HISTORY.MODAL.SUBTITLE}
                 </Text>
             </div>
         </div>
     );
 };
 
-export default ResumeVersionsManagerHeader;
+export default ResumeVersionsHistoryHeader;

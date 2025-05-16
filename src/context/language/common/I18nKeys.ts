@@ -53,7 +53,11 @@ const I18n = {
             CONGRATS: "versionManager.update.congrats"
         },
         HISTORY: {
-            BUTTON: "versionManager.history.button"
+            BUTTON: "versionManager.history.button",
+            MODAL: {
+                TITLE: "versionManager.history.modal.title",
+                SUBTITLE: "versionManager.history.modal.subtitle"
+            }
         }
     },
 
@@ -68,8 +72,8 @@ const I18n = {
                 TITLE: "theme.color.advanced.title"
             },
             SCHEME: {
-                TITLE:  (type: string): string => "theme.color.scheme." + type + ".title",
-                SUBTITLE:  (type: string): string => "theme.color.scheme." + type + ".subtitle",
+                TITLE: (type: string): string => "theme.color.scheme." + type + ".title",
+                SUBTITLE: (type: string): string => "theme.color.scheme." + type + ".subtitle",
             },
             SUGGESTED: {
                 LABEL: "theme.color.suggested.label",
@@ -245,6 +249,10 @@ const I18n = {
         SUGGESTIONS: {
             TITLE: "input.suggestions.title"
         }
+    },
+    
+    FOOTER: {
+        AUTHOR: "footer.author"
     }
 };
 

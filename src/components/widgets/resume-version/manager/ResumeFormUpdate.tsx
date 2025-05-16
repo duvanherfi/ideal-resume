@@ -14,7 +14,6 @@ const ResumeFormUpdate: React.FC = () => {
     try {
       updateResume();
       showToast(I18n.VERSION_MANAGER.UPDATE.CONGRATS, "success");
-
     } catch (error) {
       console.error("Error al sobrescribir CV:", error);
     }

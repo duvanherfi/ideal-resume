@@ -1,7 +1,7 @@
 import Icons from '@components/ui/icons/Icons';
 import useResumeVersions from '@resume-api/hooks/useResumeVersions';
 import React from 'react';
-import ResumeVersionsManagerHeader from './header/ResumeVersionsHistoryHeader';
+import ResumeVersionsHistoryHeader from './header/ResumeVersionsHistoryHeader';
 import ResumeVersionsTable from './table/ResumeVersionsTable';
 import ResumeVersionsTableEmpty from './table/ResumeVersionsTableEmpty';
 
@@ -18,7 +18,7 @@ const ResumeVersionsHistory: React.FC = () => {
 
     return (
         <div>
-            <ResumeVersionsManagerHeader />
+            <ResumeVersionsHistoryHeader />
             {versions.length === 0 ?
                 (<ResumeVersionsTableEmpty />) :
                 (<ResumeVersionsTable currentResumeId={currentResumeId} versions={versions} />)

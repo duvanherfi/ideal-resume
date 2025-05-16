@@ -201,5 +201,19 @@
   "form.font.subtitle": "Selecciona la fuente y estilo que prefieras.",
   "input.image.load": "Cargar",
   "input.image.empty": "Sin imagen",
-  "input.suggestions.title": "Sugerido"
+  "input.suggestions.title": "Sugerido",
+  "versionManager.menu.title": "Gestor de versiones",
+  "versionManager.save.button": "Guardar versión",
+  "versionManager.save.title": "Guardar tu CV",
+  "versionManager.save.subtitle": "Asigna un nombre para identificar esta versión",
+  "versionManager.save.placeholder": "Nombre de la versión (p. ej. «Mi CV abril 2025»)",
+  "versionManager.save.congrats": "¡Versión guardada con éxito!",
+  "versionManager.import.button": "Importar CV",
+  "versionManager.reset.button": "Restablecer",
+  "versionManager.update.button": "Actualizar versión",
+  "versionManager.update.congrats": "¡Versión actualizada correctamente!",
+  "versionManager.history.button": "Historial de versiones",
+  "versionManager.history.modal.title": "Historial de CVs guardados",
+  "versionManager.history.modal.subtitle": "Selecciona una versión para volver a ella",
+  "footer.author": "Hecho con 🧉, ☕️ y ❤️ por "
 }
