@@ -1,9 +1,9 @@
 import React, { ReactNode, useRef, useState } from "react";
-import { TabButtonProps } from "./TabButton";
-import Tabs from "./Tabs";
+import { TabProps } from "./Tab";
+import TabHeader from "./TabHeader";
 import { getAnimationClasses, SlideDirection } from "./utils/utils";
 
-export interface Tab {
+export interface TabType {
     id: string;
     text?: string;
     component?: ReactNode;
@@ -11,7 +11,7 @@ export interface Tab {
 }
 
 export interface TabsContainerProps {
-    tabs: Tab[];
+    tabs: TabType[];
     defaultIndex?: number;
     onChange?: (index: number) => void;
     className?: string;
@@ -21,7 +21,7 @@ export interface TabsContainerProps {
     slideDirection?: SlideDirection;
     showTabList?: boolean;
     inline?: boolean;
-    Button?: React.FC<TabButtonProps>;
+    Button?: React.FC<TabProps>;
 }
 
 const TabsContainer: React.FC<TabsContainerProps> = ({
@@ -68,7 +68,7 @@ const TabsContainer: React.FC<TabsContainerProps> = ({
     return (
         <div className={className}>
             {showTabList && (
-                <Tabs inline={inline} tabs={tabs} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} Button={Button} />
+                <TabHeader inline={inline} tabs={tabs} currentIndex={currentIndex} onChange={handleTabChange} className={tabsClassName} Button={Button} />
             )}
 
             <div className={contentClasses}>

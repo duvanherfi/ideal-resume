@@ -1,10 +1,10 @@
-import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import type { TabType, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import ThemeColorSettings from "@components/widgets/theme/theme-color-settings/ThemeColorSettings";
 import ThemeFontSettings from "@components/widgets/theme/theme-font-settings/ThemeFontSettings";
 import Icons from "@icons/Icons";
 import I18n from "@language/common/I18nKeys";
 
-const tabs: Tab[] = [
+const tabs: TabType[] = [
     {
         id: "theme",
         component: <ThemeColorSettings />,

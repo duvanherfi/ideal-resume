@@ -1,7 +1,7 @@
 import useI18N from "@hooks/app/useI18N";
 import { getButtonClassName } from "./utils/utils";
 
-export interface TabButtonProps {
+export interface TabProps {
   text?: string;
   children?: React.ReactNode;
   onClick: () => void;
@@ -9,7 +9,7 @@ export interface TabButtonProps {
   inline?: boolean;
 }
 
-const TabButton: React.FC<TabButtonProps> = ({ onClick, active, text = "", children, inline = false }) => {
+const Tab: React.FC<TabProps> = ({ onClick, active, text = "", children, inline = false }) => {
   const { t } = useI18N();
 
   return (
@@ -20,4 +20,4 @@ const TabButton: React.FC<TabButtonProps> = ({ onClick, active, text = "", child
   );
 };
 
-export default TabButton;
+export default Tab;

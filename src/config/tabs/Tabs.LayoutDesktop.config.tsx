@@ -1,11 +1,11 @@
-import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import type { TabType, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import ViewCustomization from "@components/views/ViewCustomization";
 import ViewTemplateGallery from "@components/views/ViewTemplateGallery";
 import ViewUserDataForm from "@components/views/ViewUserDataForm";
 import Icons from "@icons/Icons";
 import I18n from "@language/common/I18nKeys";
 
-const tabs: Tab[] = [
+const tabs: TabType[] = [
   {
     id: "userData",
     text: I18n.APP.TAB.FORM,

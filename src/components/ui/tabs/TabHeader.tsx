@@ -1,17 +1,17 @@
 import React from "react";
-import TabButton, { TabButtonProps } from "./TabButton";
-import { Tab } from "./TabsContainer";
+import Tab, { TabProps } from "./Tab";
+import type { TabType } from "./TabsContainer";
 
-export interface TabListProps {
-  tabs: Tab[];
+export interface TabHeaderProps {
+  tabs: TabType[];
   currentIndex: number;
   onChange: (index: number) => void;
   className?: string;
   inline?: boolean;
-  Button?: React.FC<TabButtonProps>;
+  Button?: React.FC<TabProps>;
 }
 
-const Tabs: React.FC<TabListProps> = ({ tabs, currentIndex, onChange, className = "", inline, Button = TabButton }) => {
+const TabHeader: React.FC<TabHeaderProps> = ({ tabs, currentIndex, onChange, className = "", inline, Button = Tab }) => {
 
   return (
     <div className={`${className} flex justify-start md:justify-between bg-white/50 backdrop-blur-xl dark:bg-black/50 rounded-tr-lg rounded-tl-lg overflow-x-auto scrollbar`}>
@@ -26,4 +26,4 @@ const Tabs: React.FC<TabListProps> = ({ tabs, currentIndex, onChange, className 
   );
 };
 
-export default Tabs;
+export default TabHeader;

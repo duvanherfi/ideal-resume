@@ -1,4 +1,4 @@
-import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
+import type { TabType, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import MultiItemForm from "@components/widgets/form-user-data/form/MultiItemForm";
 import FormBasicInfo from "@components/widgets/form-user-data/form/FormBasicInfo";
 import Icons from "@icons/Icons";
@@ -8,7 +8,7 @@ import type { Project } from "@resume-api/types/user-data/items/Project";
 import type { Skill } from "@resume-api/types/user-data/items/Skill";
 import type { WorkExperience } from "@resume-api/types/user-data/items/WorkExperience";
 
-const tabs: Tab[] = [
+const tabs: TabType[] = [
     {
         id: "basicInfo",
         component: <FormBasicInfo />,
