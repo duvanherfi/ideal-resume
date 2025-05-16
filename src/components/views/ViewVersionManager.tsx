@@ -1,5 +1,5 @@
 import Icons from "@components/ui/icons/Icons";
-import VersionManagerMenu from "@components/widgets/resume-version/menu/VersionManagerMenu";
+import VersionManagerMenu from "@components/widgets/version-manager/menu/VersionManagerMenu";
 import React, { useEffect, useRef, useState } from "react";
 
 const ViewVersionManager: React.FC = () => {

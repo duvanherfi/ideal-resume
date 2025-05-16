@@ -1,6 +1,6 @@
 import Modal from "@components/ui/modal/Modal";
 import Text from "@components/ui/text/Text";
-import VersionManagerSave from "@components/widgets/resume-version/manager/VersionManagerSave";
+import VersionManagerSave from "@components/widgets/version-manager/manager/VersionManagerSave";
 import I18n from "@language/common/I18nKeys";
 import React from "react";
 
