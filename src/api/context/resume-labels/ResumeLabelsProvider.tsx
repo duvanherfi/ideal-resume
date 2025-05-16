@@ -1,4 +1,4 @@
-import useI18N from "@hooks/useI18N";
+import useI18N from "@hooks/app/useI18N";
 import type { ResumeLabels } from "@resume-api/types/template/ResumeLabels";
 import React, { useMemo, useState } from "react";
 import ResumeLabelContext, { defaultLabels } from "./ResumeLabelsContext";

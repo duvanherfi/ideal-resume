@@ -1,4 +1,4 @@
-import useI18N from "@hooks/useI18N";
+import useI18N from "@hooks/app/useI18N";
 import I18n from "@language/common/I18nKeys";
 import contacts from "./common/contacts";
 import FooterIcon from "./common/FooterIcon";

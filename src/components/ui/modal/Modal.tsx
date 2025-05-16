@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import ReactDOM from "react-dom";
-import useModal from "@hooks/useModal";
+import useModal from "@hooks/components/useModal";
 import Button from "../buttons/Button";
 import Icons from "@icons/Icons";
 

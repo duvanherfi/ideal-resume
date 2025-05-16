@@ -1,4 +1,4 @@
-import useI18N from "@hooks/useI18N";
+import useI18N from "@hooks/app/useI18N";
 import React, { useEffect, useRef, useState } from "react";
 import InputSuggestions from "./InputSuggestions";
 

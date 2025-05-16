@@ -1,5 +1,5 @@
 import GlassCard from "@components/ui/glass-card/GlassCard";
-import useUserDataForm from "@hooks/useUserDataForm";
+import useUserDataForm from "@hooks/form/useUserDataForm";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import AddedItemList from "./common/AddedItemList";
 import MultiItemFormControls from "./common/MultiItemFormControls";

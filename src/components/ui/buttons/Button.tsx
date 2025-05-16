@@ -1,4 +1,4 @@
-import useI18N from "@hooks/useI18N";
+import useI18N from "@hooks/app/useI18N";
 import React from "react";
 
 interface ButtonProps {

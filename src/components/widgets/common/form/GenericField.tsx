@@ -2,8 +2,8 @@ import Input from "@components/ui/input/Input";
 import InputImage from "@components/ui/input/InputImage";
 import Select from "@components/ui/input/Select";
 import TextArea from "@components/ui/input/TextArea";
-import useI18N from "@hooks/useI18N";
-import { SelectOption } from "@hooks/useSelectInput";
+import useI18N from "@hooks/app/useI18N";
+import { SelectOption } from "@hooks/components/useSelectInput";
 
 const GenericField = (props: any) => {
     const { t, tlist: list } = useI18N();

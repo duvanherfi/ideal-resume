@@ -1,5 +1,5 @@
 import Button from "@components/ui/buttons/Button";
-import type { UseMultiItemForm } from "@hooks/useMultiItemForm";
+import type { UseMultiItemForm } from "@hooks/form/useMultiItemForm";
 import Icons from "@icons/Icons";
 
 interface MultiItemFormControlsProps<T extends { id: string }> {

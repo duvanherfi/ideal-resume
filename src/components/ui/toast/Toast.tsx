@@ -1,6 +1,6 @@
 import variants from '@components/ui/toast/common/variants';
 import { ToastVariant } from '@components/ui/toast/types/types';
-import useI18N from '@hooks/useI18N';
+import useI18N from '@hooks/app/useI18N';
 import Icons from '../icons/Icons';
 
 interface ToastProps {

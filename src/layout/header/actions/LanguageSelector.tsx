@@ -1,7 +1,7 @@
 import Select from "@components/ui/input/Select";
-import useIsMobile from "@hooks/useIsMobile";
-import useLanguage from "@hooks/useLanguage";
-import { SelectOption } from "@hooks/useSelectInput";
+import useIsMobile from "@hooks/app/useIsMobile";
+import useLanguage from "@hooks/app/useLanguage";
+import { SelectOption } from "@hooks/components/useSelectInput";
 import React from "react";
 import { Locale } from "src/context/language/types/types";
 

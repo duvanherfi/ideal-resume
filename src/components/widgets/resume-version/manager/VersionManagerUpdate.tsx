@@ -1,5 +1,5 @@
 import Text from "@components/ui/text/Text";
-import useToast from "@hooks/useToast";
+import useToast from "@hooks/components/useToast";
 import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React from "react";

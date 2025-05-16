@@ -1,4 +1,4 @@
-import useDarkMode from "@hooks/useDarkMode";
+import useDarkMode from "@hooks/app/useDarkMode";
 import Icons from "@icons/Icons";
 
 const ThemeToggleButton: React.FC = () => {

@@ -1,6 +1,6 @@
 import useUserData from "@api-hooks/useUserData";
 import getFormConfig from "@config/form/user-data/Form.UserData.config";
-import useMultiItemForm, { type FormConfig, type UseMultiItemForm } from "@hooks/useMultiItemForm";
+import useMultiItemForm, { type FormConfig, type UseMultiItemForm } from "@hooks/form/useMultiItemForm";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 
 interface UserDataFormProps {

@@ -1,4 +1,4 @@
-import useIsMobile, { ScreenSize } from "@hooks/useIsMobile";
+import useIsMobile, { ScreenSize } from "@hooks/app/useIsMobile";
 import LayoutDesktop from "./desktop/LayoutDesktop";
 import LayoutMobile from "./mobile/LayoutMobile";
 

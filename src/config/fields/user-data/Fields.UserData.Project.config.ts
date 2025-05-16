@@ -1,5 +1,5 @@
 import type { Project } from "@resume-api/types/user-data/items/Project";
-import type { FormField } from "@hooks/useMultiItemForm";
+import type { FormField } from "@hooks/form/useMultiItemForm";
 import I18n from "@language/common/I18nKeys";
 
 const FieldsProject: FormField<Project>[] = [

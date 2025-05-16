@@ -3,7 +3,7 @@ import VersionManagerImport from "@components/widgets/resume-version/manager/Ver
 import VersionManagerReset from "@components/widgets/resume-version/manager/VersionManagerReset";
 import VersionManagerSaveModal from "@components/widgets/resume-version/manager/VersionManagerSaveModal";
 import VersionManagerUpdate from "@components/widgets/resume-version/manager/VersionManagerUpdate";
-import useI18N from "@hooks/useI18N";
+import useI18N from "@hooks/app/useI18N";
 import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import { Edit, History, RefreshCw, Save, Upload } from "lucide-react";

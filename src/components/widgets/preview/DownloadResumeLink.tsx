@@ -3,7 +3,7 @@ import useResumeTemplate from "@api-hooks/useResumeTemplate";
 import useResumeTheme from "@api-hooks/useResumeTheme";
 import useUserData from "@api-hooks/useUserData";
 import Button from "@components/ui/buttons/Button";
-import useI18N from "@hooks/useI18N";
+import useI18N from "@hooks/app/useI18N";
 import Icons from "@icons/Icons";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import I18n from "@language/common/I18nKeys";

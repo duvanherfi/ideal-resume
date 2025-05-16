@@ -1,24 +1,24 @@
 import type { Tab, TabsContainerProps } from "@components/ui/tabs/TabsContainer";
 import GenericFormLabels from "@components/widgets/form-labels/GenericFormLabels";
-import FieldsLabelsHeader from "@config/fields/labels/Fields.Labels.Header.config";
-import FieldsLabelsOthers from "@config/fields/labels/Fields.Labels.Others.config";
-import FieldsLabelsSections from "@config/fields/labels/Fields.Labels.Sections.config";
+import FormLabelsHeader from "@config/form/labels/Form.Labels.Header.config";
+import FormLabelsOthers from "@config/form/labels/Form.Labels.Others.config";
+import FormLabelsSections from "@config/form/labels/Form.Labels.Sections.config";
 import Icons from "@icons/Icons";
 
 const tabs: Tab[] = [
     {
         id: "header",
-        component: <GenericFormLabels {...FieldsLabelsHeader} />,
+        component: <GenericFormLabels {...FormLabelsHeader} />,
         children: <Icons.Header />
     },
     {
         id: "sections",
-        component: <GenericFormLabels {...FieldsLabelsSections} />,
+        component: <GenericFormLabels {...FormLabelsSections} />,
         children: <Icons.Sections />
     },
     {
         id: "other",
-        component: <GenericFormLabels {...FieldsLabelsOthers} />,
+        component: <GenericFormLabels {...FormLabelsOthers} />,
         children: <Icons.Other />
     },
 ];

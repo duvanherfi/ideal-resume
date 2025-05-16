@@ -3,7 +3,7 @@ import Icons from "@components/ui/icons/Icons";
 import Input from "@components/ui/input/Input";
 import Subtitle from "@components/ui/text/Subtitle";
 import Text from "@components/ui/text/Text";
-import useToast from "@hooks/useToast";
+import useToast from "@hooks/components/useToast";
 import I18n from "@language/common/I18nKeys";
 import useResumeVersions from "@resume-api/hooks/useResumeVersions";
 import React, { useState } from "react";

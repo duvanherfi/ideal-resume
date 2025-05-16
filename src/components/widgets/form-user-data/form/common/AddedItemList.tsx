@@ -1,5 +1,5 @@
 import Text from "@components/ui/text/Text";
-import type { UseMultiItemForm } from "@hooks/useMultiItemForm";
+import type { UseMultiItemForm } from "@hooks/form/useMultiItemForm";
 import Icons from "@icons/Icons";
 import type { UserDataItems } from "@resume-api/types/user-data/items/UserDataItems";
 import { DndProvider } from "react-dnd";
