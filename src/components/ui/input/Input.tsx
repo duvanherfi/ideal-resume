@@ -119,12 +119,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
         disabled={disabled}
         autoFocus={autofocus}
       />
-      <InputSuggestions
-        suggestions={suggestions}
-        showSuggestions={showSuggestions && isFocused}
-        handleMouseDown={handleSuggestionMouseDown}
-        ref={suggestionsRef}
-      />
+      <InputSuggestions suggestions={suggestions} showSuggestions={showSuggestions && isFocused} handleMouseDown={handleSuggestionMouseDown} ref={suggestionsRef} />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
   );

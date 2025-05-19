@@ -17,26 +17,15 @@ const variantStyles = {
   outline: "bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white shadow-lg",
 };
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  onClick,
-  type = "button",
-  variant = "primary",
-  className = "",
-  disabled = false,
-}) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, type = "button", variant = "primary", className = "", disabled = false }) => {
   const { t } = useI18N();
-  const baseStyles = "px-4 py-2 rounded-lg font-medium transition-all duration-300 focus:outline-none";
-
   const content = typeof children === "string" ? t(children) : children;
 
+  const baseClassName = "px-4 py-2 rounded-lg font-medium transition-all duration-300 focus:outline-none";
+  const buttonClassName = `${baseClassName} ${variantStyles[variant]} ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`;
+
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} className={buttonClassName}>
       {content}
     </button>
   );

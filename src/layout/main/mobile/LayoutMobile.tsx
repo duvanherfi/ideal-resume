@@ -3,7 +3,7 @@ import layoutMobileTabs from "@config/tabs/Tabs.LayoutMobile.config";
 
 const LayoutMobile: React.FC = () => {
     return (
-        <div className="min-h-screen py-12 overflow-x-hidden">
+        <div className="min-h-screen py-14 overflow-x-hidden">
             <TabsContainer {...layoutMobileTabs} />
         </div>
     );

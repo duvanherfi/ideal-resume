@@ -4,7 +4,7 @@ import useI18N from '@hooks/app/useI18N';
 import Icons from '../icons/Icons';
 
 interface ToastProps {
-    variant?: keyof typeof variants;
+    variant?: ToastVariant;
     message: string;
     close: () => void;
 }

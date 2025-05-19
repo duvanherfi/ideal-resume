@@ -18,9 +18,7 @@ const LanguageSelector: React.FC = () => {
         setLang(e.target.value as Locale);
     };
 
-    return (
-        <Select name="language" value={lang} onChange={handleLanguageChange} options={languageOptions} />
-    );
+    return <Select name="language" value={lang} onChange={handleLanguageChange} options={languageOptions} />;
 };
 
 export default LanguageSelector;

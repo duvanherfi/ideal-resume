@@ -4,7 +4,7 @@ import layoutDesktopTabs from "@config/tabs/Tabs.LayoutDesktop.config";
 
 const LayoutDesktop: React.FC = () => {
     return (
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-3 xl:h-screen overflow-hidden mt-16">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-3 lg:h-screen overflow-hidden mt-16">
             <TabsContainer {...layoutDesktopTabs} />
             <ViewTemplatePreview />
         </div>

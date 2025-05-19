@@ -22,7 +22,7 @@ const VersionManagerMenu: React.FC<ResumeVersionsMenuProps> = ({ isOpen }) => {
 
   return (
     <div
-      className={`absolute left-0 mt-2 w-64 backdrop-blur-xl bg-white/80 dark:bg-black/80 rounded-lg shadow-xl overflow-hidden transition-all duration-300 transform origin-top-right z-50 ${isOpen
+      className={`absolute left-2 w-64 backdrop-blur-xl bg-white/80 dark:bg-black/80 rounded-lg shadow-xl overflow-hidden transition-all duration-300 transform origin-top-right z-50 ${isOpen
         ? "opacity-100 scale-100 translate-y-0"
         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
         }`}
