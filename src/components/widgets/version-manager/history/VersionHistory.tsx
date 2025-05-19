@@ -5,10 +5,6 @@ import VersionHistoryHeader from './header/VersionHistoryHeader';
 import VersionHistoryTable from './table/VersionHistoryTable';
 import VersionHistoryTableEmpty from './table/VersionHistoryTableEmpty';
 
-/**
- * Componente que muestra el listado de CVs guardados
- * y permite realizar operaciones con ellos
- */
 const VersionHistory: React.FC = () => {
     const { versions, currentResumeId, isLoading } = useResumeVersions();
 

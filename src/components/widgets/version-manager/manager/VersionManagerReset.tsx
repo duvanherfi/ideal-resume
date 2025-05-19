@@ -7,7 +7,7 @@ const VersionManagerReset: React.FC = () => {
     const { createNew } = useUserData();
 
     return (
-        <button onClick={createNew}>
+        <button className="w-full text-left" onClick={createNew}>
             <Text>{I18n.VERSION_MANAGER.RESET.BUTTON}</Text>
         </button>
     );

@@ -28,14 +28,8 @@ const Modal: React.FC<ModalButtonProps> = ({
     const [isOpen, openModal, closeModal, handleOutsideClick] = useModal(closeOnOutsideClick);
 
     const modalContent = isOpen ? (
-        <div
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50"
-            onClick={handleOutsideClick}
-        >
-            <div
-                className={`absolute top-16 dark:border-primary-500/20 border-primary-500/30 bg-white/90 dark:bg-black/80 backdrop-blur-xl rounded-lg shadow-xl p-6 w-full max-w-3xl transform transition-all duration-300 ${modalClassName}`}
-                onClick={(e) => e.stopPropagation()}
-            >
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50" onClick={handleOutsideClick}>
+            <div className={`absolute top-16 dark:border-primary-500/20 border-primary-500/30 bg-white/90 dark:bg-black/80 backdrop-blur-xl rounded-lg shadow-xl p-6 w-full max-w-3xl transform transition-all duration-300 ${modalClassName}`} onClick={(e) => e.stopPropagation()}>
                 <div className="flex justify-between items-center mb-4">
                     {modalTitle && (
                         <h3 className="text-lg font-medium text-secondary-900 dark:text-secondary-100">
@@ -61,7 +55,7 @@ const Modal: React.FC<ModalButtonProps> = ({
                     {button.text}
                 </Button>
             )}
-            {customTrigger && <button onClick={openModal}>{customTrigger}</button>}
+            {customTrigger && <button className="w-full" onClick={openModal}>{customTrigger}</button>}
             {ReactDOM.createPortal(modalContent, document.body)}
         </>
     );

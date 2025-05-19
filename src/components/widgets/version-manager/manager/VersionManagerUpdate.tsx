@@ -19,7 +19,7 @@ const VersionManagerUpdate: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center" onClick={handleOverwrite}>
+    <div className="flex items-center w-full" onClick={handleOverwrite}>
       <Text>
         {I18n.VERSION_MANAGER.UPDATE.BUTTON}
       </Text>

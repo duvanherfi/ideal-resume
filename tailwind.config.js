@@ -14,6 +14,9 @@ module.exports = {
                 secondary: defaultColors.slate,
                 accent: defaultColors.blue
             },
+            fontFamily: {
+                stoke: ['Stoke', 'serif'],
+            }
         },
     },
     plugins: [

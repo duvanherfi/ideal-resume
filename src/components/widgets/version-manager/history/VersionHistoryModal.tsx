@@ -6,7 +6,7 @@ import VersionHistory from "./VersionHistory";
 
 const VersionHistoryModal: React.FC = () => {
     return (
-        <Modal customTrigger={<Text>{I18n.VERSION_MANAGER.HISTORY.BUTTON}</Text>}>
+        <Modal customTrigger={<Text className="text-left">{I18n.VERSION_MANAGER.HISTORY.BUTTON}</Text>}>
             <VersionHistory />
         </Modal>
     );

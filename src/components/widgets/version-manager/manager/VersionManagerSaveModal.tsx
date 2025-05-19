@@ -6,7 +6,7 @@ import React from "react";
 
 const VersionManagerSaveModal: React.FC = () => {
   return (
-    <Modal customTrigger={<Text>{I18n.VERSION_MANAGER.SAVE.BUTTON}</Text>}>
+    <Modal customTrigger={<Text className="text-left">{I18n.VERSION_MANAGER.SAVE.BUTTON}</Text>}>
       <VersionManagerSave />
     </Modal>
   );

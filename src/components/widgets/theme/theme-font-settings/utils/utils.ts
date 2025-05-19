@@ -7,9 +7,6 @@ export interface ParsedFontStyle {
   fontStyle?: CSSProperties["fontStyle"];
 }
 
-/**
- * Parses a font name like "Courier-BoldOblique" into CSS-friendly properties.
- */
 export function parseFontName(font: FontName): ParsedFontStyle {
   const [family, ...modifiers] = font.split("-");
 
