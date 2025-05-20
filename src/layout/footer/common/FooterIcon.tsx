@@ -1,17 +1,4 @@
-import Icons from "@icons/Icons";
-
-const SocialIcon = ({ icon }: { icon: string }) => {
-    switch (icon) {
-        case "linkedin":
-            return <Icons.Linkedin />;
-        case "github":
-            return <Icons.Github />;
-        case "mail":
-            return <Icons.Mail />;
-        default:
-            return null;
-    }
-};
+import SocialIcon from "./SocialIcon";
 
 interface FooterIconProps {
     id: string;
