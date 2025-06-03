@@ -25,7 +25,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
     const currentBlobUrlRef = useRef<string>();
     const hasGeneratedOnceRef = useRef<boolean>(false);
 
-    // Initialize worker
     useEffect(() => {
         workerRef.current = new Worker(
             new URL("../workers/PDFWorker.ts", import.meta.url),
@@ -54,14 +53,12 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
         []
     );
 
-    // Generate PDF when template or props change
     useEffect(() => {
         if (!template) {
             setBlobUrl(undefined);
             return;
         }
 
-        // Skip regeneration for static PDFs that were already generated
         if (isStatic && hasGeneratedOnceRef.current && currentBlobUrlRef.current) {
             return;
         }
@@ -71,7 +68,6 @@ const usePDFWorker = ({ template, data, theme, labels, isStatic = false }: UsePD
 
         generatePdf(template.id, { data, theme, labels })
             .then(blob => {
-                // Revoke previous URL if not static
                 if (currentBlobUrlRef.current && !isStatic) {
                     URL.revokeObjectURL(currentBlobUrlRef.current);
                 }
