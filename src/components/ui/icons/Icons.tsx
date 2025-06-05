@@ -120,7 +120,7 @@ const Icons = {
         </svg>
     ),
     History: History,
-    Reset: RefreshCw
+    Reset: RefreshCw,
 };
 
 export default Icons;
