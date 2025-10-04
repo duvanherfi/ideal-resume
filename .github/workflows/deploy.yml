@@ -30,6 +30,13 @@ jobs:
           node-version: "24"
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Set homepage in package.json
+        run: |
+          sudo apt-get update && sudo apt-get install jq -y
+          REPO_NAME=$(basename $GITHUB_REPOSITORY)
+          USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f1)
+          jq ".homepage = \"https://$USER_NAME.github.io/$REPO_NAME\"" package.json > package.tmp.json
+          mv package.tmp.json package.json
       - name: Install dependencies
         run: npm install
       - name: Build with Typescript
@@ -38,7 +45,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'build'
+          path: './build'
   deploy:
     environment:
        name: github-pages
