@@ -1,4 +1,4 @@
-import usePDFWorker from "@api-hooks/usePDFWorker";
+import usePDFWorker from "@api-hooks/usePdfWorker";
 import usePDFCanvas from "@api-hooks/usePDFCanvas";
 import Icons from "@icons/Icons";
 import type { Template } from "@resume-api/types/template/Template";

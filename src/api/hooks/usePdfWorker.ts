@@ -8,6 +8,7 @@ type WorkerData = {
     error?: string;
 }
 
+
 interface UsePDFWorkerProps extends TemplateProps {
     template?: Template | null;
     isStatic?: boolean;
