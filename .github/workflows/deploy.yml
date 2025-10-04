@@ -27,7 +27,8 @@ jobs:
           sudo apt-get update && sudo apt-get install jq -y
           REPO_NAME=$(basename $GITHUB_REPOSITORY)
           USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f1)
-          jq ".homepage = \"https://$USER_NAME.github.io/$REPO_NAME\", .private = false" package.json
+          jq ".homepage = \"https://$USER_NAME.github.io/$REPO_NAME\"" package.json
+          jq ".private = false" package.json
           cat package.json
       - name: Install dependencies
         run: npm install
