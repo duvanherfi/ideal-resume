@@ -28,7 +28,7 @@ jobs:
           REPO_NAME=$(basename $GITHUB_REPOSITORY)
           USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f1)
           jq ".homepage = \"https://$USER_NAME.github.io/$REPO_NAME\"" package.json > package.tmp.json
-          jq ".private = false package.tmp.json > package.tmp.json
+          jq ".private = false" package.tmp.json > package.tmp.json
           mv package.tmp.json package.json
           cat package.json
       - name: Install dependencies
