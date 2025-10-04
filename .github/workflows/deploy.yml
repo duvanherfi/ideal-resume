@@ -5,12 +5,6 @@ on:
   push:
     branches:
       - main
-      
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -28,14 +22,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
       - name: Set homepage in package.json
         run: |
           sudo apt-get update && sudo apt-get install jq -y
           REPO_NAME=$(basename $GITHUB_REPOSITORY)
           USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f1)
           jq ".homepage = \"https://$USER_NAME.github.io/$REPO_NAME\"" package.json > package.tmp.json
+          jq ".private = false package.tmp.json > package.tmp.json
           mv package.tmp.json package.json
           cat package.json
       - name: Install dependencies
@@ -46,14 +39,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './build'
+          path: 'build/.'
   deploy:
-    environment:
-       name: github-pages
-       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/'
+    
     steps:
+       - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
